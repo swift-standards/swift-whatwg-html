@@ -1,0 +1,34 @@
+// ===----------------------------------------------------------------------===//
+//
+// Copyright (c) 2025 Coen ten Thije Boonkkamp
+// Licensed under Apache License v2.0
+//
+// See LICENSE.txt for license information
+// See CONTRIBUTORS.txt for the list of project contributors
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+// ===----------------------------------------------------------------------===//
+
+import WHATWG_HTML_Shared
+
+/// Represents the marginwidth attribute for frame elements.
+@dynamicMemberLookup
+public struct MarginWidth: WHATWG_HTML.StringAttribute {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "marginwidth" }
+
+    /// The attribute value
+    public let rawValue: String
+
+    /// Initialize with a value for the marginwidth attribute
+    public init(value: String) {
+        self.rawValue = value
+    }
+}
+
+extension MarginWidth: ExpressibleByIntegerLiteral {
+    public init(integerLiteral value: IntegerLiteralType) {
+        self.rawValue = String(value)
+    }
+}
