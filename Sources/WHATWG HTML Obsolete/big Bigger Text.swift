@@ -30,6 +30,7 @@ import WHATWG_HTML_Shared
 /// - Consider using CSS `font-size` property instead as `<big>` is deprecated
 /// - For modern development, prefer using semantic elements with appropriate CSS styling
 ///
+@available(*, deprecated, message: "Use CSS for styling instead")
 public struct Big: WHATWG_HTML.Element {
     /// The HTML tag name
     @inlinable public static var tag: String { "big" }

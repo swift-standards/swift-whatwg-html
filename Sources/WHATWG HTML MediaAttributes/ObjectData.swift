@@ -51,3 +51,16 @@ public struct ObjectData: WHATWG_HTML.StringAttribute {
         self.rawValue = value
     }
 }
+
+#if canImport(FoundationEssentials)
+    import FoundationEssentials
+#elseif canImport(Foundation)
+    import Foundation
+#endif
+
+extension ObjectData {
+    /// Initialize with a URL object
+    public init(_ url: URL) {
+        self = .init(url.absoluteString)
+    }
+}

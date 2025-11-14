@@ -89,3 +89,16 @@ extension Action {
     /// Creates an action for client-side handling (no server submission)
     public static let clientSide: Action = Action("#")
 }
+
+#if canImport(FoundationEssentials)
+    import FoundationEssentials
+#elseif canImport(Foundation)
+    import Foundation
+#endif
+
+extension Action {
+    /// Initialize with a URL object
+    public init(_ url: URL) {
+        self = .init(url.absoluteString)
+    }
+}

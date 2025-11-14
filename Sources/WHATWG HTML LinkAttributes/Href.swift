@@ -166,3 +166,74 @@ let fileLink = Link(href: Href.file("/path/to/document.pdf"), rel: "nofollow")
 let facetimeLink = Link(href: Href.facetime("user@example.com"), rel: "nofollow")
 let facetimeVideoLink = Link(href: Href.facetimeVideo("+1-555-123-4567"), rel: "nofollow")
 */
+
+#if canImport(FoundationEssentials)
+    import FoundationEssentials
+#endif
+
+extension Href {
+    /// Initialize with a URL
+    public init(_ url: URL) {
+        self = .init(url.absoluteString)
+    }
+
+    public static func url(_ url: URL) -> Href {
+        .init(url)
+    }
+
+    /// Creates a link with a fragment identifier (#section)
+    public static func fragment(_ base: String, fragment: String) -> Href {
+        let baseWithoutFragment = base.split(separator: "#")[0]
+        let fragmentWithoutHash = fragment.hasPrefix("#") ? String(fragment.dropFirst()) : fragment
+        return Href("\(baseWithoutFragment)#\(fragmentWithoutHash)")
+    }
+
+    /// Creates a link to a specific fragment on the current page
+    public static func anchor(_ fragmentId: String) -> Href {
+        let fragmentWithoutHash = fragmentId.hasPrefix("#") ? fragmentId : "#\(fragmentId)"
+        return Href(fragmentWithoutHash)
+    }
+}
+
+#if canImport(Foundation)
+    import Foundation
+
+    extension Href {
+        /// Creates an email link (mailto:) with optional subject and body - Foundation only
+        public static func email(
+            _ address: String,
+            subject: String? = nil,
+            body: String? = nil
+        ) -> Href {
+            // Define a custom allowed character set that excludes ?, &, =, and other special chars
+            var allowedCharacters = CharacterSet.urlQueryAllowed
+            allowedCharacters.remove(charactersIn: "?&=+%")
+
+            var url = "mailto:\(address)"
+
+            if subject != nil || body != nil {
+                url += "?"
+                var queryParts: [String] = []
+
+                if let subject = subject {
+                    // Properly encode the subject
+                    let encodedSubject =
+                        subject.addingPercentEncoding(withAllowedCharacters: allowedCharacters)
+                        ?? subject
+                    queryParts.append("subject=\(encodedSubject)")
+                }
+
+                if let body = body {
+                    // Properly encode the body
+                    let encodedBody =
+                        body.addingPercentEncoding(withAllowedCharacters: allowedCharacters) ?? body
+                    queryParts.append("body=\(encodedBody)")
+                }
+
+                url += queryParts.joined(separator: "&")
+            }
+
+            return Href(url)
+        }
+    }
+#endif
