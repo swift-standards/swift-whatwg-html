@@ -457,8 +457,7 @@ let package = Package(
         .testTarget(
             name: .whatwgHTML.tests,
             dependencies: [
-                .whatwgHTMLElements,
-                .whatwgHTMLAttributes
+                .whatwgHTML
             ]
         ),
     ],
