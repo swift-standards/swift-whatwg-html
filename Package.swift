@@ -9,6 +9,9 @@ extension String {
     // Core shared module (namespace + protocols)
     static let whatwgHTMLShared: Self = "WHATWG HTML Shared"
 
+    // Data types module
+    static let whatwgHTMLFormData: Self = "WHATWG HTML FormData"
+
     // Umbrella module
     static let whatwgHTML: Self = "WHATWG HTML"
 
@@ -46,6 +49,7 @@ extension String {
 extension Target.Dependency {
     // Core
     static var whatwgHTMLShared: Self { .target(name: .whatwgHTMLShared) }
+    static var whatwgHTMLFormData: Self { .target(name: .whatwgHTMLFormData) }
     static var whatwgHTML: Self { .target(name: .whatwgHTML) }
 
     // Elements
@@ -94,6 +98,14 @@ let package = Package(
         .library(
             name: .whatwgHTMLShared,
             targets: [.whatwgHTMLShared]
+        ),
+
+        // ============================================================
+        // MARK: Data Types Module
+        // ============================================================
+        .library(
+            name: .whatwgHTMLFormData,
+            targets: [.whatwgHTMLFormData]
         ),
 
         // ============================================================
@@ -220,6 +232,14 @@ let package = Package(
         .target(
             name: .whatwgHTMLShared,
             dependencies: []
+        ),
+
+        // ============================================================
+        // MARK: Data Types Target
+        // ============================================================
+        .target(
+            name: .whatwgHTMLFormData,
+            dependencies: [.whatwgHTMLShared]
         ),
 
         // ============================================================
@@ -446,6 +466,7 @@ let package = Package(
             name: .whatwgHTML,
             dependencies: [
                 .whatwgHTMLShared,
+                .whatwgHTMLFormData,
                 .whatwgHTMLElements,
                 .whatwgHTMLAttributes
             ]
