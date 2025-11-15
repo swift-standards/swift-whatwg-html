@@ -11,8 +11,9 @@
 // ===----------------------------------------------------------------------===//
 
 import WHATWG_HTML_Shared
+import WHATWG_HTML_Forms
 
-extension WHATWG_HTML.FormData {
+extension Form.Data.Entry {
     /// A collection of form data entries representing a "form data set".
     ///
     /// An entry list is an ordered collection of name-value pairs that represents the data
@@ -29,7 +30,7 @@ extension WHATWG_HTML.FormData {
     /// ## Example
     ///
     /// ```swift
-    /// var formData = WHATWG_HTML.FormData.EntryList()
+    /// var formData = Form.Data.Entry.List()
     ///
     /// // Add string entries
     /// formData.append(name: "username", value: "alice")
@@ -42,7 +43,7 @@ extension WHATWG_HTML.FormData {
     /// // Add a file entry
     /// formData.append(
     ///     name: "avatar",
-    ///     file: WHATWG_HTML.FormData.File(
+    ///     file: Form.Data.File(
     ///         name: "avatar.png",
     ///         type: "image/png",
     ///         body: imageData
@@ -53,12 +54,12 @@ extension WHATWG_HTML.FormData {
     /// let username = formData["username"]?.first?.stringValue  // "alice"
     /// let interests = formData["interests"]  // [.string("swift"), .string("webdev")]
     /// ```
-    public struct EntryList: Sendable {
+    public struct List: Sendable {
         /// The ordered list of entries.
         ///
         /// Order is preserved as entries are added, which is important for form submission.
         @usableFromInline
-        internal private(set) var entries: [Entry]
+        internal private(set) var entries: [Form.Data.Entry]
 
         /// Creates an empty entry list.
         @inlinable
@@ -70,7 +71,7 @@ extension WHATWG_HTML.FormData {
         ///
         /// - Parameter entries: The initial entries
         @inlinable
-        public init(entries: [Entry]) {
+        public init(entries: [Form.Data.Entry]) {
             self.entries = entries
         }
 
@@ -78,7 +79,7 @@ extension WHATWG_HTML.FormData {
         ///
         /// - Parameter entry: The entry to append
         @inlinable
-        public mutating func append(_ entry: Entry) {
+        public mutating func append(_ entry: Form.Data.Entry) {
             entries.append(entry)
         }
 
@@ -88,8 +89,8 @@ extension WHATWG_HTML.FormData {
         ///   - name: The entry name
         ///   - value: The entry value
         @inlinable
-        public mutating func append(name: String, value: Value) {
-            append(Entry(name: name, value: value))
+        public mutating func append(name: String, value: Form.Data.Value) {
+            append(Form.Data.Entry(name: name, value: value))
         }
 
         /// Appends a string entry with the specified name and value.
@@ -99,7 +100,7 @@ extension WHATWG_HTML.FormData {
         ///   - value: The string value
         @inlinable
         public mutating func append(name: String, value: String) {
-            append(Entry(name: name, value: .string(value)))
+            append(Form.Data.Entry(name: name, value: .string(value)))
         }
 
         /// Appends a file entry with the specified name and file.
@@ -108,8 +109,8 @@ extension WHATWG_HTML.FormData {
         ///   - name: The entry name
         ///   - file: The file value
         @inlinable
-        public mutating func append(name: String, file: File) {
-            append(Entry(name: name, value: .file(file)))
+        public mutating func append(name: String, file: Form.Data.File) {
+            append(Form.Data.Entry(name: name, value: .file(file)))
         }
 
         /// Returns all values for the specified name.
@@ -117,7 +118,7 @@ extension WHATWG_HTML.FormData {
         /// - Parameter name: The entry name to look up
         /// - Returns: An array of values, or `nil` if no entries exist with that name
         @inlinable
-        public subscript(name: String) -> [Value]? {
+        public subscript(name: String) -> [Form.Data.Value]? {
             let values = entries.filter { $0.name == name }.map(\.value)
             return values.isEmpty ? nil : values
         }
@@ -129,7 +130,7 @@ extension WHATWG_HTML.FormData {
         /// - Parameter name: The entry name to look up
         /// - Returns: The first value, or `nil` if no entries exist with that name
         @inlinable
-        public func first(named name: String) -> Value? {
+        public func first(named name: String) -> Form.Data.Value? {
             entries.first { $0.name == name }?.value
         }
 
@@ -138,7 +139,7 @@ extension WHATWG_HTML.FormData {
         /// - Parameter name: The entry name to look up
         /// - Returns: An array of all values for that name (empty if none exist)
         @inlinable
-        public func all(named name: String) -> [Value] {
+        public func all(named name: String) -> [Form.Data.Value] {
             entries.filter { $0.name == name }.map(\.value)
         }
 
@@ -192,9 +193,9 @@ extension WHATWG_HTML.FormData {
 
 // MARK: - Collection Conformance
 
-extension WHATWG_HTML.FormData.EntryList: Collection {
-    public typealias Index = Array<WHATWG_HTML.FormData.Entry>.Index
-    public typealias Element = WHATWG_HTML.FormData.Entry
+extension Form.Data.Entry.List: Collection {
+    public typealias Index = Array<Form.Data.Entry>.Index
+    public typealias Element = Form.Data.Entry
 
     @inlinable
     public var startIndex: Index {
@@ -207,7 +208,7 @@ extension WHATWG_HTML.FormData.EntryList: Collection {
     }
 
     @inlinable
-    public subscript(position: Index) -> WHATWG_HTML.FormData.Entry {
+    public subscript(position: Index) -> Form.Data.Entry {
         entries[position]
     }
 
@@ -219,32 +220,32 @@ extension WHATWG_HTML.FormData.EntryList: Collection {
 
 // MARK: - Sequence Protocol
 
-extension WHATWG_HTML.FormData.EntryList: Sequence {
+extension Form.Data.Entry.List: Sequence {
     @inlinable
-    public func makeIterator() -> Array<WHATWG_HTML.FormData.Entry>.Iterator {
+    public func makeIterator() -> Array<Form.Data.Entry>.Iterator {
         entries.makeIterator()
     }
 }
 
 // MARK: - ExpressibleByArrayLiteral
 
-extension WHATWG_HTML.FormData.EntryList: ExpressibleByArrayLiteral {
+extension Form.Data.Entry.List: ExpressibleByArrayLiteral {
     @inlinable
-    public init(arrayLiteral elements: WHATWG_HTML.FormData.Entry...) {
+    public init(arrayLiteral elements: Form.Data.Entry...) {
         self.entries = elements
     }
 }
 
 // MARK: - Equatable & Hashable
 
-extension WHATWG_HTML.FormData.EntryList: Equatable {
+extension Form.Data.Entry.List: Equatable {
     @inlinable
     public static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.entries == rhs.entries
     }
 }
 
-extension WHATWG_HTML.FormData.EntryList: Hashable {
+extension Form.Data.Entry.List: Hashable {
     @inlinable
     public func hash(into hasher: inout Hasher) {
         hasher.combine(entries)
@@ -253,7 +254,7 @@ extension WHATWG_HTML.FormData.EntryList: Hashable {
 
 // MARK: - CustomStringConvertible
 
-extension WHATWG_HTML.FormData.EntryList: CustomStringConvertible {
+extension Form.Data.Entry.List: CustomStringConvertible {
     public var description: String {
         let entryDescriptions = entries.map { entry in
             "\(entry.name): \(entry.value)"
@@ -264,10 +265,10 @@ extension WHATWG_HTML.FormData.EntryList: CustomStringConvertible {
 
 // MARK: - CustomDebugStringConvertible
 
-extension WHATWG_HTML.FormData.EntryList: CustomDebugStringConvertible {
+extension Form.Data.Entry.List: CustomDebugStringConvertible {
     public var debugDescription: String {
         """
-        WHATWG_HTML.FormData.EntryList(count: \(count)) {
+        Form.Data.Entry.List(count: \(count)) {
         \(entries.map { "  \($0.name): \($0.value)" }.joined(separator: "\n"))
         }
         """

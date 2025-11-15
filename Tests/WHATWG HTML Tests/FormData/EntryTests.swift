@@ -12,7 +12,7 @@
 
 import Testing
 import Foundation
-import WHATWG_HTML_Shared
+import WHATWG_HTML_Forms
 @testable import WHATWG_HTML_FormData
 
 @Suite("Entry Tests")
@@ -20,8 +20,8 @@ struct EntryTests {
 
     @Test("Entry initialization with name and value")
     func entryInit() {
-        let value = WHATWG_HTML.FormData.Value.string("test value")
-        let entry = WHATWG_HTML.FormData.Entry(
+        let value = Form.Data.Value.string("test value")
+        let entry = Form.Data.Entry(
             name: "field_name",
             value: value
         )
@@ -32,7 +32,7 @@ struct EntryTests {
 
     @Test("Entry convenience init with string value")
     func entryStringInit() {
-        let entry = WHATWG_HTML.FormData.Entry(
+        let entry = Form.Data.Entry(
             name: "username",
             stringValue: "alice"
         )
@@ -44,12 +44,12 @@ struct EntryTests {
 
     @Test("Entry convenience init with file")
     func entryFileInit() {
-        let file = WHATWG_HTML.FormData.File(
+        let file = Form.Data.File(
             name: "avatar.png",
             type: "image/png",
             body: Data([1, 2, 3])
         )
-        let entry = WHATWG_HTML.FormData.Entry(
+        let entry = Form.Data.Entry(
             name: "avatar",
             file: file
         )
@@ -61,11 +61,11 @@ struct EntryTests {
 
     @Test("Entry conforms to Hashable")
     func entryHashable() {
-        let entry1 = WHATWG_HTML.FormData.Entry(
+        let entry1 = Form.Data.Entry(
             name: "test",
             stringValue: "value"
         )
-        let entry2 = WHATWG_HTML.FormData.Entry(
+        let entry2 = Form.Data.Entry(
             name: "test",
             stringValue: "value"
         )
@@ -76,11 +76,11 @@ struct EntryTests {
 
     @Test("Entries with different names are not equal")
     func entryDifferentNames() {
-        let entry1 = WHATWG_HTML.FormData.Entry(
+        let entry1 = Form.Data.Entry(
             name: "field1",
             stringValue: "value"
         )
-        let entry2 = WHATWG_HTML.FormData.Entry(
+        let entry2 = Form.Data.Entry(
             name: "field2",
             stringValue: "value"
         )
@@ -90,11 +90,11 @@ struct EntryTests {
 
     @Test("Entries with different values are not equal")
     func entryDifferentValues() {
-        let entry1 = WHATWG_HTML.FormData.Entry(
+        let entry1 = Form.Data.Entry(
             name: "field",
             stringValue: "value1"
         )
-        let entry2 = WHATWG_HTML.FormData.Entry(
+        let entry2 = Form.Data.Entry(
             name: "field",
             stringValue: "value2"
         )
@@ -106,7 +106,7 @@ struct EntryTests {
     func entrySendable() {
         // Compile-time check that Entry is Sendable
         func acceptSendable<T: Sendable>(_: T) {}
-        let entry = WHATWG_HTML.FormData.Entry(
+        let entry = Form.Data.Entry(
             name: "test",
             stringValue: "value"
         )

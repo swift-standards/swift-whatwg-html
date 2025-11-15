@@ -11,8 +11,9 @@
 // ===----------------------------------------------------------------------===//
 
 import WHATWG_HTML_Shared
+import WHATWG_HTML_Forms
 
-extension WHATWG_HTML.FormData {
+extension Form.Data {
     /// Represents a single entry in a form data set.
     ///
     /// Each entry consists of a name and an associated value. An entry list can contain multiple
@@ -30,15 +31,15 @@ extension WHATWG_HTML.FormData {
     ///
     /// ```swift
     /// // String entry
-    /// let nameEntry = WHATWG_HTML.FormData.Entry(
+    /// let nameEntry = WHATWG_HTML.Form.Data.Entry(
     ///     name: "username",
     ///     value: .string("alice")
     /// )
     ///
     /// // File entry
-    /// let fileEntry = WHATWG_HTML.FormData.Entry(
+    /// let fileEntry = WHATWG_HTML.Form.Data.Entry(
     ///     name: "avatar",
-    ///     value: .file(WHATWG_HTML.FormData.File(
+    ///     value: .file(WHATWG_HTML.Form.Data.File(
     ///         name: "avatar.png",
     ///         type: "image/png",
     ///         body: imageData

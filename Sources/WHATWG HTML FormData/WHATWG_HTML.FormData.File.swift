@@ -17,8 +17,9 @@ import Foundation
 #endif
 
 import WHATWG_HTML_Shared
+import WHATWG_HTML_Forms
 
-extension WHATWG_HTML.FormData {
+extension Form.Data {
     /// Represents a file value in form data.
     ///
     /// File values are used when submitting forms with file input controls (`<input type="file">`).
@@ -34,13 +35,13 @@ extension WHATWG_HTML.FormData {
     /// ## Example
     ///
     /// ```swift
-    /// let imageFile = WHATWG_HTML.FormData.File(
+    /// let imageFile = WHATWG_HTML.Form.Data.File(
     ///     name: "profile.jpg",
     ///     type: "image/jpeg",
     ///     body: jpegData
     /// )
     ///
-    /// let pdfFile = WHATWG_HTML.FormData.File(
+    /// let pdfFile = WHATWG_HTML.Form.Data.File(
     ///     name: "document.pdf",
     ///     type: "application/pdf",
     ///     body: pdfData
@@ -97,7 +98,7 @@ extension WHATWG_HTML.FormData {
 
 // MARK: - CustomStringConvertible
 
-extension WHATWG_HTML.FormData.File: CustomStringConvertible {
+extension Form.Data.File: CustomStringConvertible {
     public var description: String {
         "<File: \(name), type: \(type), size: \(size) bytes>"
     }
@@ -105,7 +106,7 @@ extension WHATWG_HTML.FormData.File: CustomStringConvertible {
 
 // MARK: - Common MIME Types
 
-extension WHATWG_HTML.FormData.File {
+extension Form.Data.File {
     /// Common MIME types for file uploads.
     public enum MIMEType {
         /// Plain text files

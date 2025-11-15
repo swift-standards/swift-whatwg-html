@@ -28,23 +28,9 @@ import Foundation
 /// ```swift
 /// import WHATWG_HTML_Forms
 ///
-/// let form = WHATWG_HTML.Forms.Form(
+/// let form = Form(
 ///     action: .relative("/submit"),
 ///     method: .post
 /// )
 /// ```
-public enum WHATWG_HTML {
-    /// FormData API namespace for parser implementations
-    ///
-    /// This namespace type is extended by parser libraries (e.g., swift-url-routing)
-    /// to provide parsing and printing functionality for application/x-www-form-urlencoded
-    /// data as defined in the WHATWG HTML Standard.
-    ///
-    /// The underlying encoding/decoding uses the WHATWG URL Standard's
-    /// application/x-www-form-urlencoded serialization algorithm.
-    ///
-    /// ## Reference
-    ///
-    /// [Form submission algorithm](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#form-submission-algorithm)
-    public enum FormData {}
-}
+public enum WHATWG_HTML {}

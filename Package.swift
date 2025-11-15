@@ -239,7 +239,10 @@ let package = Package(
         // ============================================================
         .target(
             name: .whatwgHTMLFormData,
-            dependencies: [.whatwgHTMLShared]
+            dependencies: [
+                .whatwgHTMLShared,
+                .whatwgHTMLForms
+            ]
         ),
 
         // ============================================================

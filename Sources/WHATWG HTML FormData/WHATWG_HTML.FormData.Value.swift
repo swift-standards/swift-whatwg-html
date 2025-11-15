@@ -11,8 +11,9 @@
 // ===----------------------------------------------------------------------===//
 
 import WHATWG_HTML_Shared
+import WHATWG_HTML_Forms
 
-extension WHATWG_HTML.FormData {
+extension Form.Data {
     /// The value of a form data entry.
     ///
     /// Per the WHATWG HTML specification, form data values can be either strings or files.
@@ -29,11 +30,11 @@ extension WHATWG_HTML.FormData {
     ///
     /// ```swift
     /// // String value
-    /// let stringValue: WHATWG_HTML.FormData.Value = .string("Hello")
+    /// let stringValue: WHATWG_HTML.Form.Data.Value = .string("Hello")
     ///
     /// // File value
-    /// let fileValue: WHATWG_HTML.FormData.Value = .file(
-    ///     WHATWG_HTML.FormData.File(
+    /// let fileValue: WHATWG_HTML.Form.Data.Value = .file(
+    ///     WHATWG_HTML.Form.Data.File(
     ///         name: "document.pdf",
     ///         type: "application/pdf",
     ///         body: pdfData
@@ -84,7 +85,7 @@ extension WHATWG_HTML.FormData {
 
 // MARK: - ExpressibleByStringLiteral
 
-extension WHATWG_HTML.FormData.Value: ExpressibleByStringLiteral {
+extension Form.Data.Value: ExpressibleByStringLiteral {
     @inlinable
     public init(stringLiteral value: String) {
         self = .string(value)
@@ -93,7 +94,7 @@ extension WHATWG_HTML.FormData.Value: ExpressibleByStringLiteral {
 
 // MARK: - CustomStringConvertible
 
-extension WHATWG_HTML.FormData.Value: CustomStringConvertible {
+extension Form.Data.Value: CustomStringConvertible {
     public var description: String {
         switch self {
         case .string(let value):

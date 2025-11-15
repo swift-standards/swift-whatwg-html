@@ -12,7 +12,7 @@
 
 import Testing
 import Foundation
-import WHATWG_HTML_Shared
+import WHATWG_HTML_Forms
 @testable import WHATWG_HTML_FormData
 
 @Suite("File Tests")
@@ -21,7 +21,7 @@ struct FileTests {
     @Test("File initialization stores properties correctly")
     func fileInitialization() {
         let data = Data([1, 2, 3, 4, 5])
-        let file = WHATWG_HTML.FormData.File(
+        let file = Form.Data.File(
             name: "test.txt",
             type: "text/plain",
             body: data
@@ -35,7 +35,7 @@ struct FileTests {
     @Test("File size property returns correct byte count")
     func fileSize() {
         let data = Data([1, 2, 3, 4, 5])
-        let file = WHATWG_HTML.FormData.File(
+        let file = Form.Data.File(
             name: "test.bin",
             type: "application/octet-stream",
             body: data
@@ -46,7 +46,7 @@ struct FileTests {
 
     @Test("File isEmpty returns true for empty data")
     func fileEmpty() {
-        let file = WHATWG_HTML.FormData.File(
+        let file = Form.Data.File(
             name: "empty.txt",
             type: "text/plain",
             body: Data()
@@ -57,7 +57,7 @@ struct FileTests {
 
     @Test("File isEmpty returns false for non-empty data")
     func fileNotEmpty() {
-        let file = WHATWG_HTML.FormData.File(
+        let file = Form.Data.File(
             name: "data.txt",
             type: "text/plain",
             body: Data([1])
@@ -69,7 +69,7 @@ struct FileTests {
     @Test("File description includes name, type, and size")
     func fileDescription() {
         let data = Data([1, 2, 3])
-        let file = WHATWG_HTML.FormData.File(
+        let file = Form.Data.File(
             name: "image.png",
             type: "image/png",
             body: data
@@ -84,12 +84,12 @@ struct FileTests {
     @Test("File conforms to Hashable")
     func fileHashable() {
         let data = Data([1, 2, 3])
-        let file1 = WHATWG_HTML.FormData.File(
+        let file1 = Form.Data.File(
             name: "test.txt",
             type: "text/plain",
             body: data
         )
-        let file2 = WHATWG_HTML.FormData.File(
+        let file2 = Form.Data.File(
             name: "test.txt",
             type: "text/plain",
             body: data
@@ -101,12 +101,12 @@ struct FileTests {
 
     @Test("File with different data are not equal")
     func fileDifferentData() {
-        let file1 = WHATWG_HTML.FormData.File(
+        let file1 = Form.Data.File(
             name: "test.txt",
             type: "text/plain",
             body: Data([1, 2, 3])
         )
-        let file2 = WHATWG_HTML.FormData.File(
+        let file2 = Form.Data.File(
             name: "test.txt",
             type: "text/plain",
             body: Data([4, 5, 6])
@@ -117,20 +117,20 @@ struct FileTests {
 
     @Test("MIME type constants are correct")
     func mimeTypeConstants() {
-        #expect(WHATWG_HTML.FormData.File.MIMEType.plainText == "text/plain")
-        #expect(WHATWG_HTML.FormData.File.MIMEType.html == "text/html")
-        #expect(WHATWG_HTML.FormData.File.MIMEType.json == "application/json")
-        #expect(WHATWG_HTML.FormData.File.MIMEType.pdf == "application/pdf")
-        #expect(WHATWG_HTML.FormData.File.MIMEType.jpeg == "image/jpeg")
-        #expect(WHATWG_HTML.FormData.File.MIMEType.png == "image/png")
-        #expect(WHATWG_HTML.FormData.File.MIMEType.octetStream == "application/octet-stream")
+        #expect(Form.Data.File.MIMEType.plainText == "text/plain")
+        #expect(Form.Data.File.MIMEType.html == "text/html")
+        #expect(Form.Data.File.MIMEType.json == "application/json")
+        #expect(Form.Data.File.MIMEType.pdf == "application/pdf")
+        #expect(Form.Data.File.MIMEType.jpeg == "image/jpeg")
+        #expect(Form.Data.File.MIMEType.png == "image/png")
+        #expect(Form.Data.File.MIMEType.octetStream == "application/octet-stream")
     }
 
     @Test("File conforms to Sendable")
     func fileSendable() {
         // Compile-time check that File is Sendable
         func acceptSendable<T: Sendable>(_: T) {}
-        let file = WHATWG_HTML.FormData.File(
+        let file = Form.Data.File(
             name: "test.txt",
             type: "text/plain",
             body: Data()
