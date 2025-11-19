@@ -389,7 +389,7 @@ email.renderWithMarkdown()
 4. **Composition Over Monoliths**: Small, focused packages that compose
 5. **Standards Fidelity**: Name types after spec sections (e.g., `RFC_5322.EmailAddress`)
 6. **Separation of Concerns**: Pure types vs. builder APIs vs. rendering
-7. **Module Names Use Spaces**: `"RFC 5322"` not `"RFC_5322"` or `"RFC5322"`
+7. **Module Names Use Spaces**: `"RFC 5322"` not `"RFC 5322"` or `"RFC5322"`
 
 ### How This Applies to HTML
 
