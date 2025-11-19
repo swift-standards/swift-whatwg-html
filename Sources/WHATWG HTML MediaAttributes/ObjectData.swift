@@ -55,8 +55,7 @@ public struct ObjectData: WHATWG_HTML.StringAttribute {
 #if canImport(FoundationEssentials)
     import FoundationEssentials
 #elseif canImport(Foundation)
-    import Foundation
-#endif
+    #endif
 
 extension ObjectData {
     /// Initialize with a URL object

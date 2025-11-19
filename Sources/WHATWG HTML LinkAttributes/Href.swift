@@ -196,8 +196,7 @@ extension Href {
 }
 
 #if canImport(Foundation)
-    import Foundation
-
+    
     extension Href {
         /// Creates an email link (mailto:) with optional subject and body - Foundation only
         public static func email(

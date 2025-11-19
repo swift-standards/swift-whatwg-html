@@ -11,7 +11,6 @@
 // ===----------------------------------------------------------------------===//
 
 #if canImport(Foundation)
-import Foundation
 #endif
 
 /// WHATWG HTML Living Standard namespace

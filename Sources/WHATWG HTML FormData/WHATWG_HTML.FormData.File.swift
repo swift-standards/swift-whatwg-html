@@ -13,7 +13,6 @@
 #if canImport(FoundationEssentials)
 import FoundationEssentials
 #elseif canImport(Foundation)
-import Foundation
 #endif
 
 import WHATWG_HTML_Shared

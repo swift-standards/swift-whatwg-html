@@ -306,16 +306,16 @@ Package: swift-rfc-2045
         └── Charset.swift
 ```
 
-**swift-emailaddress-type** - Composite EmailAddress type
+**swift-emailaddress-standard** - Composite EmailAddress type
 
 ```
-Package: swift-emailaddress-type
+Package: swift-emailaddress-standard
 Dependencies:
   - swift-rfc-2822
   - swift-rfc-5321
   - swift-rfc-5322
   - swift-rfc-6531
-  - swift-domain-type
+  - swift-domain-standard
 
 └── Sources/
     └── EmailAddress/
@@ -326,12 +326,12 @@ Dependencies:
         └── EmailAddress+RFC6531.swift
 ```
 
-**swift-email-type** - Application-level Email type
+**swift-email-standard** - Application-level Email type
 
 ```
-Package: swift-email-type
+Package: swift-email-standard
 Dependencies:
-  - swift-emailaddress-type
+  - swift-emailaddress-standard
   - swift-rfc-2045
   - swift-rfc-2046
   - swift-rfc-5322
@@ -349,7 +349,7 @@ Dependencies:
 ```
 Package: swift-email (in coenttb org)
 Dependencies:
-  - swift-email-type (standard)
+  - swift-email-standard (standard)
   - swift-rfc-5322 (standard)
   - swift-html (high-level, also in coenttb)
   - swift-dependencies
@@ -1116,12 +1116,6 @@ import PackageDescription
 
 let package = Package(
     name: "swift-whatwg-html",
-    platforms: [
-        .macOS(.v15),
-        .iOS(.v18),
-        .tvOS(.v18),
-        .watchOS(.v11)
-    ],
     products: [
         // Core namespace (required by all)
         .library(name: "WHATWG HTML", targets: ["WHATWG HTML"]),
@@ -1521,7 +1515,6 @@ extension WHATWG_HTML.LinkAttributes {
 
 // Foundation integration in same file
 #if canImport(Foundation)
-import Foundation
 
 extension WHATWG_HTML.LinkAttributes.Href {
     /// Initialize with a Foundation URL
@@ -1556,7 +1549,6 @@ extension WHATWG_HTML.LinkAttributes.Href {
 **Example usage**:
 ```swift
 // When Foundation is available
-import Foundation
 import WHATWG_HTML_LinkAttributes
 
 let href = WHATWG_HTML.LinkAttributes.Href(url: URL(string: "https://example.com")!)

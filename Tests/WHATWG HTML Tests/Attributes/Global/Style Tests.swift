@@ -16,8 +16,7 @@ import Testing
 #if canImport(FoundationEssentials)
     import FoundationEssentials
 #elseif canImport(Foundation)
-    import Foundation
-#endif
+    #endif
 
 @Suite("WHATWG_HTML_GlobalAttributes.Style Test")
 struct StyleTests {

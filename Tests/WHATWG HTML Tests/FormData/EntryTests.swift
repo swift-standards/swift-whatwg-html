@@ -11,7 +11,6 @@
 // ===----------------------------------------------------------------------===//
 
 import Testing
-import Foundation
 import WHATWG_HTML_Forms
 @testable import WHATWG_HTML_FormData
 

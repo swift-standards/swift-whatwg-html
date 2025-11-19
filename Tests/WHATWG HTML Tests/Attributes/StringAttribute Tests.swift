@@ -16,8 +16,7 @@ import Testing
 #if canImport(FoundationEssentials)
     import FoundationEssentials
 #elseif canImport(Foundation)
-    import Foundation
-#endif
+    #endif
 
 @dynamicMemberLookup
 private struct TestStringAttribute: WHATWG_HTML.StringAttribute {
@@ -137,7 +136,7 @@ struct StringAttributeTests {
 
     @Test("Long string value")
     func longStringValue() {
-        let longValue = String(repeating: "test ", count: 100).trimmingCharacters(in: .whitespaces)
+        let longValue = String(repeating: "test ", count: 100).trimming(.whitespaces)
         let attr = TestStringAttribute(value: longValue)
         #expect(attr.rawValue == longValue)
     }

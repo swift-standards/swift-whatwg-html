@@ -122,8 +122,7 @@ extension Min: ExpressibleByFloatLiteral {
 #if canImport(FoundationEssentials)
     import FoundationEssentials
 #elseif canImport(Foundation)
-    import Foundation
-
+    
     extension Min {
         /// Initialize with a date (Foundation only)
         public init(date: Date, format: DateFormat = .fullDate) {
@@ -139,7 +138,7 @@ extension Min: ExpressibleByFloatLiteral {
             case .week:
                 // Week format requires custom handling for ISO week number
                 let calendar = Calendar(identifier: .iso8601)
-                let components = calendar.dateComponents(
+                let components = calendar.RFC_5322.Date.Components(
                     [.yearForWeekOfYear, .weekOfYear],
                     from: date
                 )

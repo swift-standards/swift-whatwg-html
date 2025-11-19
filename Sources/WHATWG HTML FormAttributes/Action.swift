@@ -93,8 +93,7 @@ extension Action {
 #if canImport(FoundationEssentials)
     import FoundationEssentials
 #elseif canImport(Foundation)
-    import Foundation
-#endif
+    #endif
 
 extension Action {
     /// Initialize with a URL object

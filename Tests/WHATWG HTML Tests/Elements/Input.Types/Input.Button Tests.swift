@@ -10,7 +10,6 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import Foundation
 import Testing
 
 @Suite("Input.Button Test")

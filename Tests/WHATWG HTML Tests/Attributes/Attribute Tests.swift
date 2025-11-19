@@ -16,8 +16,7 @@ import Testing
 #if canImport(FoundationEssentials)
     import FoundationEssentials
 #elseif canImport(Foundation)
-    import Foundation
-#endif
+    #endif
 
 private struct TestAttribute: WHATWG_HTML.Attribute {
     static var attribute: String { "test-attribute" }
