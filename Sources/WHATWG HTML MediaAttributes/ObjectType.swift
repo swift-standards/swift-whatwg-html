@@ -11,6 +11,7 @@
 // ===----------------------------------------------------------------------===//
 
 public import WHATWG_HTML_Shared
+public import RFC_2045
 
 /// Represents the HTML type attribute for the `<object>` element.
 ///
@@ -18,24 +19,30 @@ public import WHATWG_HTML_Shared
 /// This attribute is essential for the browser to determine how to process the resource.
 /// At least one of `data` or `type` attributes must be defined for the object element.
 ///
+/// ## Academic Correctness
+///
+/// Per WHATWG HTML specification, the type attribute must be a valid MIME type string
+/// as defined in RFC 2045. This implementation uses `RFC_2045.ContentType` to ensure
+/// academic correctness and type safety.
+///
 /// ## Usage Notes
 ///
 /// - Specifies the MIME type of the resource specified by the `data` attribute
 /// - Common types include: "application/pdf", "video/mp4", "audio/mpeg", etc.
 /// - Helps the browser understand how to process and display the content
-/// - Must be a valid MIME type string
+/// - Must be a valid MIME type string per RFC 2045
 ///
 /// ## Examples
 ///
-/// ```html
-/// <!-- PDF object -->
-/// <object data="document.pdf" type="application/pdf" width="600" height="400"></object>
+/// ```swift
+/// // PDF object
+/// HTML.object.data("document.pdf").type(ObjectType(contentType: .applicationPDF))
 ///
-/// <!-- Video object -->
-/// <object data="video.mp4" type="video/mp4" width="640" height="480"></object>
+/// // Video object
+/// HTML.object.data("video.mp4").type(ObjectType(contentType: .videoMP4))
 ///
-/// <!-- Flash object (for legacy content) -->
-/// <object data="animation.swf" type="application/x-shockwave-flash" width="400" height="300"></object>
+/// // Using string literal (parsed as MIME type)
+/// HTML.object.type("image/jpeg")
 /// ```
 @dynamicMemberLookup
 public struct ObjectType: WHATWG_HTML.StringAttribute {
@@ -49,14 +56,41 @@ public struct ObjectType: WHATWG_HTML.StringAttribute {
     public init(value: String) {
         self.rawValue = value
     }
+
+    /// Initialize with an RFC 2045 Content-Type
+    public init(contentType: RFC_2045.ContentType) {
+        self.rawValue = contentType.headerValue
+    }
 }
 
+// MARK: - Common MIME Types
+
 extension ObjectType {
-    /// Common MIME types
-    public static let pdf = ObjectType("application/pdf")
-    public static let mp4 = ObjectType("video/mp4")
-    public static let mp3 = ObjectType("audio/mpeg")
-    public static let jpeg = ObjectType("image/jpeg")
-    public static let png = ObjectType("image/png")
-    public static let html = ObjectType("text/html")
+    /// application/pdf
+    public static let pdf = ObjectType(contentType: .applicationPDF)
+
+    /// video/mp4
+    public static let mp4 = ObjectType(contentType: .videoMP4)
+
+    /// audio/mpeg (MP3)
+    public static let mp3 = ObjectType(contentType: .audioMPEG)
+
+    /// image/jpeg
+    public static let jpeg = ObjectType(contentType: .imageJPEG)
+
+    /// image/png
+    public static let png = ObjectType(contentType: .imagePNG)
+
+    /// text/html
+    public static let html = ObjectType(contentType: .textHTML)
+}
+
+// MARK: - RFC 2045 ContentType Extensions
+
+extension RFC_2045.ContentType {
+    /// video/mp4
+    public static let videoMP4 = RFC_2045.ContentType(type: "video", subtype: "mp4")
+
+    /// audio/mpeg (MP3)
+    public static let audioMPEG = RFC_2045.ContentType(type: "audio", subtype: "mpeg")
 }

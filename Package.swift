@@ -79,6 +79,9 @@ extension Target.Dependency {
     // Umbrella
     static var whatwgHTMLElements: Self { .target(name: .whatwgHTMLElements) }
     static var whatwgHTMLAttributes: Self { .target(name: .whatwgHTMLAttributes) }
+
+    // External dependencies
+    static var rfc2045: Self { .product(name: "RFC 2045", package: "swift-rfc-2045") }
 }
 
 // MARK: - Package Definition
@@ -223,7 +226,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        // No external dependencies - pure Swift implementation
+        .package(path: "../swift-rfc-2045")
     ],
     targets: [
         // ============================================================
@@ -256,16 +259,23 @@ let package = Package(
             name: .whatwgHTMLFormAttributes,
             dependencies: [
                 .whatwgHTMLShared,
-                .whatwgHTMLGlobalAttributes
+                .whatwgHTMLGlobalAttributes,
+                .rfc2045
             ]
         ),
         .target(
             name: .whatwgHTMLLinkAttributes,
-            dependencies: [.whatwgHTMLShared]
+            dependencies: [
+                .whatwgHTMLShared,
+                .rfc2045
+            ]
         ),
         .target(
             name: .whatwgHTMLMediaAttributes,
-            dependencies: [.whatwgHTMLShared]
+            dependencies: [
+                .whatwgHTMLShared,
+                .rfc2045
+            ]
         ),
         .target(
             name: .whatwgHTMLTableAttributes,
@@ -273,7 +283,10 @@ let package = Package(
         ),
         .target(
             name: .whatwgHTMLScriptAttributes,
-            dependencies: [.whatwgHTMLShared]
+            dependencies: [
+                .whatwgHTMLShared,
+                .rfc2045
+            ]
         ),
 
         // ============================================================

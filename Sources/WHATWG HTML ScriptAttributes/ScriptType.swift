@@ -11,20 +11,32 @@
 // ===----------------------------------------------------------------------===//
 
 public import WHATWG_HTML_Shared
+public import RFC_2045
 
 /// Represents the HTML type attribute for the `<script>` element.
 ///
-/// The `type` attribute indicates the type of script represented. The most common values are:
-/// - No type or empty string: Default behavior, indicates a classic JavaScript script
+/// The `type` attribute indicates the type of script represented. It can be either:
+/// - A MIME type for data or non-JavaScript content (e.g., "application/json")
+/// - A special keyword for JavaScript variants ("module", "importmap", "speculationrules")
+/// - Omitted or empty for classic JavaScript scripts (default behavior)
+///
+/// ## Special Keywords
+///
 /// - `module`: Indicates the code is a JavaScript module
 /// - `importmap`: Indicates the body contains an import map
 /// - `speculationrules`: Indicates the body contains speculation rules
-/// - Other MIME types: For embedding data or non-JavaScript code
+///
+/// ## MIME Types
+///
+/// For embedding data blocks, use standard MIME types:
+/// - `application/json`: JSON data
+/// - `text/plain`: Plain text data
+/// - Other valid MIME types as needed
 ///
 /// ## Examples
 ///
 /// ```html
-/// <!-- Classic JavaScript (default) -->
+/// <!-- Classic JavaScript (default, no type attribute needed) -->
 /// <script src="script.js"></script>
 ///
 /// <!-- JavaScript Module -->
@@ -39,7 +51,7 @@ public import WHATWG_HTML_Shared
 ///   }
 /// </script>
 ///
-/// <!-- Data -->
+/// <!-- JSON Data Block -->
 /// <script type="application/json" id="data">
 ///   {"user": "John", "id": 123}
 /// </script>
@@ -56,10 +68,16 @@ public struct ScriptType: WHATWG_HTML.StringAttribute {
     public init(value: String) {
         self.rawValue = value
     }
+
+    /// Initialize with a MIME content type
+    public init(contentType: RFC_2045.ContentType) {
+        self.rawValue = contentType.headerValue
+    }
 }
 
-extension ScriptType {
+// MARK: - Special Keywords
 
+extension ScriptType {
     /// JavaScript module
     public static let module = ScriptType("module")
 
@@ -68,10 +86,21 @@ extension ScriptType {
 
     /// Speculation rules
     public static let speculationrules = ScriptType("speculationrules")
+}
 
-    /// JSON data
-    public static let json = ScriptType("application/json")
+// MARK: - Common MIME Types
 
-    /// Text data
-    public static let text = ScriptType("text/plain")
+extension ScriptType {
+    /// application/json - for JSON data blocks
+    public static let json = ScriptType(contentType: .applicationJSON)
+
+    /// text/plain - for plain text data blocks
+    public static let textPlain = ScriptType(contentType: .textPlain)
+}
+
+// MARK: - RFC 2045 ContentType Support
+
+extension RFC_2045.ContentType {
+    /// application/json
+    public static let applicationJSON = RFC_2045.ContentType(type: "application", subtype: "json")
 }

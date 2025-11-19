@@ -11,37 +11,40 @@
 // ===----------------------------------------------------------------------===//
 
 public import WHATWG_HTML_Shared
+public import RFC_2045
 
 /// Represents the HTML type attribute for the `<link>` element.
 ///
-/// The `type` attribute specifies the MIME type of the linked resource, helping browsers understand how to process it.
-/// Common values include:
-/// - `text/css` for stylesheets
-/// - `text/javascript` for JavaScript files
-/// - `image/x-icon` for favicons
-/// - `application/json` for JSON data
-/// - `application/manifest+json` for web app manifests
+/// The `type` attribute specifies the MIME type of the linked resource, helping browsers
+/// understand how to process it.
+///
+/// ## Academic Correctness
+///
+/// Per WHATWG HTML specification, the type attribute must be a valid MIME type
+/// as defined in RFC 2045. This implementation uses `RFC_2045.ContentType` to
+/// ensure academic correctness.
 ///
 /// ## Usage Notes
 ///
 /// - This attribute is valid on the `<link>` element
-/// - Should contain a valid MIME type string
+/// - Should contain a valid MIME type string per RFC 2045
 /// - For stylesheets, modern browsers will correctly interpret CSS with or without this attribute
+/// - Helps browsers understand resource types for preloading and processing
 ///
 /// ## Examples
 ///
-/// ```html
-/// <!-- CSS Stylesheet -->
-/// <link rel="stylesheet" type="text/css" href="styles.css">
+/// ```swift
+/// // CSS Stylesheet
+/// HTML.link.rel("stylesheet").type(LinkType(contentType: .textCSS)).href("styles.css")
 ///
-/// <!-- Favicon -->
-/// <link rel="icon" type="image/x-icon" href="favicon.ico">
+/// // Favicon
+/// HTML.link.rel("icon").type(LinkType(contentType: .imageXIcon)).href("favicon.ico")
 ///
-/// <!-- Web App Manifest -->
-/// <link rel="manifest" type="application/manifest+json" href="manifest.json">
+/// // Web App Manifest
+/// HTML.link.rel("manifest").type(LinkType(contentType: .applicationManifestJSON)).href("manifest.json")
 ///
-/// <!-- Alternative Formats -->
-/// <link rel="alternate" type="application/rss+xml" href="rss.xml">
+/// // Using string literal
+/// HTML.link.type("text/css")
 /// ```
 @dynamicMemberLookup
 public struct LinkType: WHATWG_HTML.StringAttribute {
@@ -55,33 +58,40 @@ public struct LinkType: WHATWG_HTML.StringAttribute {
     public init(value: String) {
         self.rawValue = value
     }
+
+    /// Initialize with an RFC 2045 Content-Type
+    public init(contentType: RFC_2045.ContentType) {
+        self.rawValue = contentType.headerValue
+    }
 }
 
+// MARK: - Common Link MIME Types
+
 extension LinkType {
-    /// CSS stylesheet
-    public static let css = LinkType("text/css")
+    /// text/css - CSS stylesheet
+    public static let css = LinkType(contentType: .textCSS)
 
-    /// JavaScript
-    public static let javascript = LinkType("text/javascript")
+    /// text/javascript - JavaScript
+    public static let javascript = LinkType(contentType: .textJavaScript)
 
-    /// Favicon
-    public static let icon = LinkType("image/x-icon")
+    /// image/x-icon - Favicon
+    public static let icon = LinkType(contentType: .imageXIcon)
 
-    /// SVG image
-    public static let svg = LinkType("image/svg+xml")
+    /// image/svg+xml - SVG image
+    public static let svg = LinkType(contentType: .imageSVG)
 
-    /// PNG image
-    public static let png = LinkType("image/png")
+    /// image/png - PNG image
+    public static let png = LinkType(contentType: .imagePNG)
 
-    /// Web app manifest
-    public static let manifest = LinkType("application/manifest+json")
+    /// application/manifest+json - Web app manifest
+    public static let manifest = LinkType(contentType: .applicationManifestJSON)
 
-    /// RSS feed
-    public static let rss = LinkType("application/rss+xml")
+    /// application/rss+xml - RSS feed
+    public static let rss = LinkType(contentType: .applicationRSSXML)
 
-    /// Atom feed
-    public static let atom = LinkType("application/atom+xml")
+    /// application/atom+xml - Atom feed
+    public static let atom = LinkType(contentType: .applicationAtomXML)
 
-    /// JSON data
-    public static let json = LinkType("application/json")
+    /// application/json - JSON data
+    public static let json = LinkType(contentType: .applicationJSON)
 }

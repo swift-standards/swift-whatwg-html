@@ -11,6 +11,7 @@
 // ===----------------------------------------------------------------------===//
 
 public import WHATWG_HTML_Shared
+public import RFC_2045
 
 /// An attribute that specifies which file types are accepted for file upload.
 ///
@@ -25,6 +26,11 @@ public import WHATWG_HTML_Shared
 /// - `video/*` - Any video file
 /// - `image/*` - Any image file
 ///
+/// ## Academic Correctness
+///
+/// Per WHATWG HTML specification, MIME types must be valid per RFC 2045. This implementation
+/// uses `RFC_2045.ContentType` for MIME type specifiers to ensure academic correctness.
+///
 /// ## Usage Notes
 ///
 /// - This attribute is only valid for `<input>` elements with `type="file"`
@@ -36,16 +42,16 @@ public import WHATWG_HTML_Shared
 ///
 /// ```swift
 /// // Accept only images
-/// HTML.input.type("file").accept(.image)
+/// HTML.input.type("file").accept(.images)
 ///
 /// // Accept specific image formats
-/// HTML.input.type("file").accept(.jpg, .jpeg, .png)
+/// HTML.input.type("file").accept([.jpg, .png, .gif])
 ///
-/// // Accept Word documents
-/// HTML.input.type("file").accept(.doc, .docx, .msword, .wordOpenXml)
+/// // Accept PDFs using RFC 2045 MIME type
+/// HTML.input.type("file").accept(.pdf)
 ///
-/// // Accept PDFs and images
-/// HTML.input.type("file").accept(.pdf, .image)
+/// // Accept custom MIME type
+/// HTML.input.type("file").accept(Accept.FileType(contentType: .applicationPDF))
 /// ```
 public struct Accept: WHATWG_HTML.Attribute {
     /// The name of the HTML attribute
@@ -80,6 +86,7 @@ extension Accept: ExpressibleByStringLiteral {
         self = .init(rawValue: value)
     }
 }
+
 extension Accept: CustomStringConvertible {
     /// Returns the string representation of the accept value
     public var description: String {
@@ -99,20 +106,29 @@ extension Accept {
 
     /// Accept common document files (PDF, Word, Excel, PowerPoint)
     @inlinable public static var documents: Self {
-        ".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-powerpoint,application/vnd.openxmlformats-officedocument.presentationml.presentation"
+        Accept([.pdf, .doc, .docx, .xls, .xlsx, .ppt, .pptx])
     }
 }
 
 extension Accept {
     /// Represents a file type specifier for the Accept attribute
-    public struct FileType: Sendable, Hashable, CustomStringConvertible, ExpressibleByStringLiteral
-    {
+    ///
+    /// Can represent either:
+    /// - A MIME type (RFC 2045 ContentType)
+    /// - A file extension (.jpg, .pdf, etc.)
+    /// - A wildcard (image/*, video/*, etc.)
+    public struct FileType: Sendable, Hashable, CustomStringConvertible, ExpressibleByStringLiteral {
         /// The string value for the file type
         public var value: String
 
         /// Initialize with a custom value
         public init(_ value: String) {
             self.value = value
+        }
+
+        /// Initialize with an RFC 2045 MIME type
+        public init(contentType: RFC_2045.ContentType) {
+            self.value = contentType.headerValue
         }
 
         /// String representation of the file type
@@ -126,10 +142,9 @@ extension Accept {
     }
 }
 
+// MARK: - Wildcard Categories
+
 extension Accept.FileType {
-
-    // MARK: - Wildcard Categories
-
     /// Any image file (image/*)
     public static let image: Self = .init("image/*")
 
@@ -138,34 +153,38 @@ extension Accept.FileType {
 
     /// Any video file (video/*)
     public static let video: Self = .init("video/*")
+}
 
-    // MARK: - Common Image Formats
+// MARK: - Common Image Formats
 
-    /// JPEG image (.jpg)
-    @inlinable public static var jpg: Self { "image/jpeg,.jpg,.jpeg" }
+extension Accept.FileType {
+    /// JPEG image - RFC 2045 MIME type + file extension
+    public static let jpg: Self = .init(contentType: .imageJPEG)
 
-    /// JPEG image (.jpeg)
+    /// JPEG image (alias)
     public static let jpeg: Self = .jpg
 
-    /// PNG image (.png)
-    @inlinable public static var png: Self { "image/png,.png" }
+    /// PNG image - RFC 2045 MIME type + file extension
+    public static let png: Self = .init(contentType: .imagePNG)
 
-    /// GIF image (.gif)
-    public static let gif: Self = .extension("gif")
+    /// GIF image - RFC 2045 MIME type + file extension
+    public static let gif: Self = .init(contentType: .imageGIF)
 
-    /// SVG image (.svg)
-    public static let svg: Self = .extension("svg")
+    /// SVG image
+    public static let svg: Self = .init(contentType: .imageSVG)
 
-    /// WebP image (.webp)
-    public static let webp: Self = .extension("webp")
+    /// WebP image
+    public static let webp: Self = .init(contentType: .imageWEBP)
 
-    /// AVIF image (.avif)
-    public static let avif: Self = .extension("avif")
+    /// AVIF image
+    public static let avif: Self = .init(contentType: .imageAVIF)
+}
 
-    // MARK: - Common Document Formats
+// MARK: - Common Document Formats
 
-    /// PDF document (.pdf)
-    @inlinable public static var pdf: Self { "application/pdf,.pdf" }
+extension Accept.FileType {
+    /// PDF document - RFC 2045 MIME type
+    public static let pdf: Self = .init(contentType: .applicationPDF)
 
     /// Microsoft Word document (.doc)
     public static let doc: Self = .extension("doc")
@@ -193,31 +212,38 @@ extension Accept.FileType {
 
     /// CSV file (.csv)
     public static let csv: Self = .extension("csv")
+}
 
-    // MARK: - Common Audio Formats
+// MARK: - Common Audio Formats
 
-    /// MP3 audio (.mp3)
-    public static let mp3: Self = .extension("mp3")
+extension Accept.FileType {
+    /// MP3 audio
+    public static let mp3: Self = .init(contentType: .audioMPEG)
 
-    /// WAV audio (.wav)
-    public static let wav: Self = .extension("wav")
+    /// WAV audio
+    public static let wav: Self = .init(contentType: .audioWav)
 
-    /// OGG audio (.ogg)
-    public static let ogg: Self = .extension("ogg")
+    /// OGG audio
+    public static let ogg: Self = .init(contentType: .audioOgg)
 
     /// AAC audio (.aac)
     public static let aac: Self = .extension("aac")
 
     /// FLAC audio (.flac)
     public static let flac: Self = .extension("flac")
+}
 
-    // MARK: - Common Video Formats
+// MARK: - Common Video Formats
 
-    /// MP4 video (.mp4)
-    public static let mp4: Self = .extension("mp4")
+extension Accept.FileType {
+    /// MP4 video
+    public static let mp4: Self = .init(contentType: .videoMP4)
 
-    /// WebM video (.webm)
-    public static let webm: Self = .extension("webm")
+    /// WebM video
+    public static let webm: Self = .init(contentType: .videoWebM)
+
+    /// OGG video
+    public static let oggVideo: Self = .init(contentType: .videoOgg)
 
     /// AVI video (.avi)
     public static let avi: Self = .extension("avi")
@@ -227,9 +253,11 @@ extension Accept.FileType {
 
     /// Matroska video (.mkv)
     public static let mkv: Self = .extension("mkv")
+}
 
-    // MARK: - Common Archive Formats
+// MARK: - Common Archive Formats
 
+extension Accept.FileType {
     /// ZIP archive (.zip)
     public static let zip: Self = .extension("zip")
 
@@ -240,30 +268,34 @@ extension Accept.FileType {
     public static let tar: Self = .extension("tar")
 
     /// GZIP archive (.gz)
-    public static let gz: Self = .ext("gz")
+    public static let gz: Self = .extension("gz")
+}
 
-    // MARK: - Microsoft Office MIME Types
+// MARK: - Microsoft Office MIME Types
 
+extension Accept.FileType {
     /// Microsoft Word document (application/msword)
     public static let msword: Self = .init("application/msword")
 
-    /// Microsoft Word OpenXML document (application/vnd.openxmlformats-officedocument.wordprocessingml.document)
+    /// Microsoft Word OpenXML document
     public static let wordOpenXml: Self = .init(
         "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
     )
 
-    /// Microsoft Excel OpenXML spreadsheet (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)
+    /// Microsoft Excel OpenXML spreadsheet
     public static let excelOpenXml: Self = .init(
         "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     )
 
-    /// Microsoft PowerPoint OpenXML presentation (application/vnd.openxmlformats-officedocument.presentationml.presentation)
+    /// Microsoft PowerPoint OpenXML presentation
     public static let powerPointOpenXml: Self = .init(
         "application/vnd.openxmlformats-officedocument.presentationml.presentation"
     )
+}
 
-    // MARK: - Factory Methods
+// MARK: - Factory Methods
 
+extension Accept.FileType {
     /// Creates a FileType from an extension (automatically adds the period if needed)
     public static func `extension`(_ extension: String) -> Self {
         let ext = `extension`.hasPrefix(".") ? `extension` : ".\(`extension`)"

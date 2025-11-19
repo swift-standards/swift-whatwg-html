@@ -11,7 +11,41 @@
 // ===----------------------------------------------------------------------===//
 
 public import WHATWG_HTML_Shared
+public import RFC_2045
 
+/// An attribute that specifies how form data should be encoded when submitted via a specific button.
+///
+/// The `formenctype` attribute overrides the form's `enctype` attribute for the specific submit button.
+/// It defines the MIME type of the form submission and is only relevant when the form's method is POST.
+///
+/// ## Academic Correctness
+///
+/// Per WHATWG HTML specification, the formenctype attribute must be a valid MIME type.
+/// This implementation uses `RFC_2045.ContentType` to ensure academic correctness
+/// per RFC 2045 MIME type specifications.
+///
+/// ## Usage Notes
+///
+/// - Only valid on `<button>` and `<input type="submit">` elements
+/// - Overrides the form's `enctype` attribute when this button is used to submit
+/// - Same encoding types as `enctype`: urlencoded, multipartFormData, textPlain
+/// - Only applies to forms using the POST method
+///
+/// ## Examples
+///
+/// ```swift
+/// // Button that overrides form encoding for file upload
+/// HTML.button
+///     .type(.submit)
+///     .formenctype(.multipartFormData)
+///     .text("Upload File")
+///
+/// // Submit button with debug encoding
+/// HTML.input
+///     .type(.submit)
+///     .formenctype(.textPlain)
+///     .value("Debug Submit")
+/// ```
 @dynamicMemberLookup
 public struct FormEncType: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
@@ -24,15 +58,22 @@ public struct FormEncType: WHATWG_HTML.StringAttribute {
     public init(value: String) {
         self.rawValue = value
     }
+
+    /// Initialize with an RFC 2045 Content-Type
+    public init(contentType: RFC_2045.ContentType) {
+        self.rawValue = contentType.headerValue
+    }
 }
 
+// MARK: - Form Encoding Types
+
 extension FormEncType {
-    /// Standard form encoding (default)
-    @inlinable public static var urlEncoded: Self { "application/x-www-form-urlencoded" }
+    /// Standard form encoding (default) - application/x-www-form-urlencoded
+    public static let urlEncoded = FormEncType(contentType: .applicationXWWWFormURLEncoded)
 
-    /// Required for file uploads
-    @inlinable public static var multipartFormData: Self { "multipart/form-data" }
+    /// Required for file uploads - multipart/form-data (RFC 7578)
+    public static let multipartFormData = FormEncType(contentType: .multipartFormData())
 
-    /// Minimal encoding, useful for debugging
-    @inlinable public static var textPlain: Self { "text/plain" }
+    /// Minimal encoding, useful for debugging - text/plain
+    public static let textPlain = FormEncType(contentType: .textPlain)
 }
