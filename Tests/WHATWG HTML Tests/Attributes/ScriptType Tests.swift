@@ -13,15 +13,15 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("ScriptType Test")
-struct ScriptTypeTests {
-    @Test("ScriptType attribute should be type")
-    func attribute() {
+@Suite
+struct `ScriptType Test` {
+    @Test
+    func `ScriptType attribute should be type`() {
         #expect(ScriptType.attribute == "type")
     }
 
-    @Test("ScriptType should have predefined values")
-    func predefinedValues() {
+    @Test
+    func `ScriptType should have predefined values`() {
         #expect(ScriptType.module.rawValue == "module")
         #expect(ScriptType.importmap.rawValue == "importmap")
         #expect(ScriptType.speculationrules.rawValue == "speculationrules")

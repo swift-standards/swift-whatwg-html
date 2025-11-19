@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Media or Image Source Test")
-struct MediaOrImageSourceTests {
+@Suite
+struct `Media or Image Source Test` {
 
 }

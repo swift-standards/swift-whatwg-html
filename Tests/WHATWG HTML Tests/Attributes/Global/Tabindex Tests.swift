@@ -18,27 +18,27 @@ import Testing
 #elseif canImport(Foundation)
     #endif
 
-@Suite("Tabindex Test")
-struct TabindexTests {
-    @Test("Tabindex attribute should be tabindex")
-    func attribute() {
+@Suite
+struct `Tabindex Test` {
+    @Test
+    func `Tabindex attribute should be tabindex`() {
         #expect(Tabindex.attribute == "tabindex")
     }
 
-    @Test("Tabindex should store and return its value")
-    func valueStorage() {
+    @Test
+    func `Tabindex should store and return its value`() {
         let tabindex = Tabindex(2)
         #expect(tabindex.value == 2)
     }
 
-    @Test("Tabindex description should return its value as string")
-    func description() {
+    @Test
+    func `Tabindex description should return its value as string`() {
         let tabindex = Tabindex(-1)
         #expect(tabindex.description == "-1")
     }
 
-    @Test("Tabindex should have predefined constants")
-    func predefinedConstants() {
+    @Test
+    func `Tabindex should have predefined constants`() {
         #expect(Tabindex.notTabbable.value == -1)
         #expect(Tabindex.inDocumentOrder.value == 0)
     }

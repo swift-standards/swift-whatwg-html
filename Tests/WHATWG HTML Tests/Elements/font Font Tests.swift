@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Font Test")
-struct FontTests {
+@Suite
+struct `Font Test` {
 
 }

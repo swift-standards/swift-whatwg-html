@@ -13,21 +13,21 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("FontSize Test")
-struct FontSizeTests {
-    @Test("FontSize attribute should be size")
-    func attribute() {
+@Suite
+struct `FontSize Test` {
+    @Test
+    func `FontSize attribute should be size`() {
         #expect(FontSize.attribute == "size")
     }
 
-    @Test("FontSize should support numeric initialization")
-    func numericInitialization() {
+    @Test
+    func `FontSize should support numeric initialization`() {
         let fontSize = FontSize(numericValue: 5)
         #expect(fontSize.rawValue == "5")
     }
 
-    @Test("FontSize should support relative initialization")
-    func relativeInitialization() {
+    @Test
+    func `FontSize should support relative initialization`() {
         let positiveRelative = FontSize(relativeValue: 2)
         #expect(positiveRelative.rawValue == "+2")
 
@@ -35,8 +35,8 @@ struct FontSizeTests {
         #expect(negativeRelative.rawValue == "-1")
     }
 
-    @Test("FontSize should support integer literal")
-    func integerLiteral() {
+    @Test
+    func `FontSize should support integer literal`() {
         let fontSize: FontSize = 3
         #expect(fontSize.rawValue == "3")
     }

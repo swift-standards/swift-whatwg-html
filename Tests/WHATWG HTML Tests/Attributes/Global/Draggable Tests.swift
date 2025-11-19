@@ -18,10 +18,10 @@ import Testing
 #elseif canImport(Foundation)
     #endif
 
-@Suite("Draggable Test")
-struct DraggableTests {
-    @Test("Draggable attribute should be draggable")
-    func attribute() {
+@Suite
+struct `Draggable Test` {
+    @Test
+    func `Draggable attribute should be draggable`() {
         #expect(Draggable.attribute == "draggable")
     }
 
@@ -38,8 +38,8 @@ struct DraggableTests {
         }
     }
 
-    @Test("Draggable should conform to CaseIterable")
-    func conformsToCaseIterable() {
+    @Test
+    func `Draggable should conform to CaseIterable`() {
         #expect(Draggable.allCases.count == 3)
         #expect(Draggable.allCases.contains(.true))
         #expect(Draggable.allCases.contains(.false))

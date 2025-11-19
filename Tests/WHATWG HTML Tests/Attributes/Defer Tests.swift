@@ -13,10 +13,10 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Defer Test")
-struct DeferTests {
-    @Test("Defer attribute should be defer")
-    func attribute() {
+@Suite
+struct `Defer Test` {
+    @Test
+    func `Defer attribute should be defer`() {
         #expect(Defer.attribute == "defer")
     }
 }

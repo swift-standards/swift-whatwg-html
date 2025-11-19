@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Embed Text Track Test")
-struct EmbedTextTrackTests {
+@Suite
+struct `Embed Text Track Test` {
 
 }

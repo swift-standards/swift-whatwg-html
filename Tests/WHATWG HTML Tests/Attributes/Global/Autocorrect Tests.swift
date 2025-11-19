@@ -18,10 +18,10 @@ import Testing
 #elseif canImport(Foundation)
     #endif
 
-@Suite("Autocorrect Test")
-struct AutocorrectTests {
-    @Test("Autocorrect attribute should be autocorrect")
-    func attribute() {
+@Suite
+struct `Autocorrect Test` {
+    @Test
+    func `Autocorrect attribute should be autocorrect`() {
         #expect(Autocorrect.attribute == "autocorrect")
     }
 
@@ -38,8 +38,8 @@ struct AutocorrectTests {
         }
     }
 
-    @Test("Autocorrect should conform to CaseIterable")
-    func conformsToCaseIterable() {
+    @Test
+    func `Autocorrect should conform to CaseIterable`() {
         #expect(Autocorrect.allCases.count == 3)
         #expect(Autocorrect.allCases.contains(.on))
         #expect(Autocorrect.allCases.contains(.empty))
@@ -66,8 +66,8 @@ struct AutocorrectTests {
         #expect(Autocorrect(rawValue: input) == expected)
     }
 
-    @Test("Autocorrect empty case should have the correct raw value")
-    func emptyCaseRawValue() {
+    @Test
+    func `Autocorrect empty case should have the correct raw value`() {
         #expect(Autocorrect.empty.rawValue == "\"\"")
     }
 }

@@ -18,10 +18,10 @@ import Testing
 #elseif canImport(Foundation)
     #endif
 
-@Suite("Inert Test")
-struct InertTests {
-    @Test("Inert attribute should be inert")
-    func attribute() {
+@Suite
+struct `Inert Test` {
+    @Test
+    func `Inert attribute should be inert`() {
         #expect(Inert.attribute == "inert")
     }
 }

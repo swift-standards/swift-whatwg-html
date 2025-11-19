@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Deleted Text Test")
-struct DeletedTextTests {
+@Suite
+struct `Deleted Text Test` {
 
 }

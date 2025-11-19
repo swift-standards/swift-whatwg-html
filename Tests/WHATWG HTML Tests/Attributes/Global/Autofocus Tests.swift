@@ -18,10 +18,10 @@ import Testing
 #elseif canImport(Foundation)
     #endif
 
-@Suite("Autofocus Test")
-struct AutofocusTests {
-    @Test("Autofocus attribute should be autofocus")
-    func attribute() {
+@Suite
+struct `Autofocus Test` {
+    @Test
+    func `Autofocus attribute should be autofocus`() {
         #expect(Autofocus.attribute == "autofocus")
     }
 }

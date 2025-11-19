@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Web Component Slot Test")
-struct WebComponentSlotTests {
+@Suite
+struct `Web Component Slot Test` {
 
 }

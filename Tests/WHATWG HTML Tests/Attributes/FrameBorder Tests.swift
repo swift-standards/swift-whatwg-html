@@ -13,15 +13,15 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("FrameBorder Test")
-struct FrameBorderTests {
-    @Test("FrameBorder attribute should be frameborder")
-    func attribute() {
+@Suite
+struct `FrameBorder Test` {
+    @Test
+    func `FrameBorder attribute should be frameborder`() {
         #expect(FrameBorder.attribute == "frameborder")
     }
 
-    @Test("FrameBorder should support integer literal")
-    func integerLiteral() {
+    @Test
+    func `FrameBorder should support integer literal`() {
         let frameBorder: FrameBorder = 1
         #expect(frameBorder.rawValue == "1")
     }

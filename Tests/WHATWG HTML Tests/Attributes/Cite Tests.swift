@@ -13,10 +13,10 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Cite Test")
-struct CiteTests {
-    @Test("Cite attribute should be cite")
-    func attribute() {
+@Suite
+struct `Cite Test` {
+    @Test
+    func `Cite attribute should be cite`() {
         #expect(Cite.attribute == "cite")
     }
 }

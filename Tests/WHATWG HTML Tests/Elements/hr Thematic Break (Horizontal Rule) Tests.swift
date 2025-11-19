@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Thematic Break Horizontal Rule Test")
-struct ThematicBreakHorizontalRuleTests {
+@Suite
+struct `Thematic Break Horizontal Rule Test` {
 
 }

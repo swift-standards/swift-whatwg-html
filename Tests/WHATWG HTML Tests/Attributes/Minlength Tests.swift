@@ -13,28 +13,28 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Minlength Test")
-struct MinlengthTests {
-    @Test("Minlength attribute should be minlength")
-    func attribute() {
+@Suite
+struct `Minlength Test` {
+    @Test
+    func `Minlength attribute should be minlength`() {
         #expect(Minlength.attribute == "minlength")
     }
 
-    @Test("Minlength should support integer literal")
-    func integerLiteral() {
+    @Test
+    func `Minlength should support integer literal`() {
         let minlength: Minlength = 5
         #expect(minlength.value == 5)
         #expect(minlength.description == "5")
     }
 
-    @Test("Minlength should enforce non-negative values")
-    func nonNegativeValues() {
+    @Test
+    func `Minlength should enforce non-negative values`() {
         let minlength = Minlength(-5)
         #expect(minlength.value == 0)
     }
 
-    @Test("Minlength convenience properties and methods")
-    func conveniencePropertiesAndMethods() {
+    @Test
+    func `Minlength convenience properties and methods`() {
         #expect(Minlength.none.value == 0)
         #expect(Minlength.characters(10).value == 10)
     }

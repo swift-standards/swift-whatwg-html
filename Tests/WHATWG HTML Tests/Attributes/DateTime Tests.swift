@@ -13,10 +13,10 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("DateTime Test")
-struct DateTimeTests {
-    @Test("DateTime attribute should be datetime")
-    func attribute() {
+@Suite
+struct `DateTime Test` {
+    @Test
+    func `DateTime attribute should be datetime`() {
         #expect(DateTime.attribute == "datetime")
     }
 }

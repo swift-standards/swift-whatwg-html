@@ -13,15 +13,15 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Target Test")
-struct TargetTests {
-    @Test("Target attribute should be target")
-    func attribute() {
+@Suite
+struct `Target Test` {
+    @Test
+    func `Target attribute should be target`() {
         #expect(Target.attribute == "target")
     }
 
-    @Test("Target convenience properties")
-    func convenienceProperties() {
+    @Test
+    func `Target convenience properties`() {
         #expect(Target.`self`.rawValue == "_self")
         #expect(Target.blank.rawValue == "_blank")
         #expect(Target.parent.rawValue == "_parent")

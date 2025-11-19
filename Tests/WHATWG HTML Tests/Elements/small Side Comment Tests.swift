@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Side Comment Test")
-struct SideCommentTests {
+@Suite
+struct `Side Comment Test` {
 
 }

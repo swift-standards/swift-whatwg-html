@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Ordered List Test")
-struct OrderedListTests {
+@Suite
+struct `Ordered List Test` {
 
 }

@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Input.Time Test")
-struct InputTimeTests {
+@Suite
+struct `Input.Time Test` {
 
 }

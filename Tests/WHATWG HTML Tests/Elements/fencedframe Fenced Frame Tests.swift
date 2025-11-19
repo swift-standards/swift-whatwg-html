@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Fenced Frame Test")
-struct FencedFrameTests {
+@Suite
+struct `Fenced Frame Test` {
 
 }

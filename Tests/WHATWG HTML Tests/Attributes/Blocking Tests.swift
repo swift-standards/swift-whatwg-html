@@ -13,15 +13,15 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Blocking Test")
-struct BlockingTests {
-    @Test("Blocking attribute should be blocking")
-    func attribute() {
+@Suite
+struct `Blocking Test` {
+    @Test
+    func `Blocking attribute should be blocking`() {
         #expect(Blocking.attribute == "blocking")
     }
 
-    @Test("Blocking should have render preset")
-    func renderPreset() {
+    @Test
+    func `Blocking should have render preset`() {
         #expect(Blocking.render.rawValue == "render")
     }
 }

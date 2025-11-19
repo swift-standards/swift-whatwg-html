@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Non-Breaking Text Test")
-struct NonBreakingTextTests {
+@Suite
+struct `Non-Breaking Text Test` {
 
 }

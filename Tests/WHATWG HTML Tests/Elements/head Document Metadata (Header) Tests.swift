@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Document Metadata Header Test")
-struct DocumentMetadataHeaderTests {
+@Suite
+struct `Document Metadata Header Test` {
 
 }

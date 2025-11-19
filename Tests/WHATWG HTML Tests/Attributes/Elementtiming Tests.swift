@@ -13,15 +13,15 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Elementtiming Test")
-struct ElementtimingTests {
-    @Test("Elementtiming attribute should be elementtiming")
-    func attribute() {
+@Suite
+struct `Elementtiming Test` {
+    @Test
+    func `Elementtiming attribute should be elementtiming`() {
         #expect(Elementtiming.attribute == "elementtiming")
     }
 
-    @Test("Elementtiming should support category-based initialization")
-    func categoryBasedInitialization() {
+    @Test
+    func `Elementtiming should support category-based initialization`() {
         let timing = Elementtiming(category: "hero", name: "image")
         #expect(timing.rawValue == "hero-image")
 
@@ -29,16 +29,16 @@ struct ElementtimingTests {
         #expect(customSeparator.rawValue == "main_content")
     }
 
-    @Test("Elementtiming should have predefined categories")
-    func predefinedCategories() {
+    @Test
+    func `Elementtiming should have predefined categories`() {
         #expect(Elementtiming.Category.hero.value == "hero")
         #expect(Elementtiming.Category.main.value == "main")
         #expect(Elementtiming.Category.header.value == "header")
         #expect(Elementtiming.Category.image.value == "image")
     }
 
-    @Test("Elementtiming should support Category-based initialization")
-    func categoryStructInitialization() {
+    @Test
+    func `Elementtiming should support Category-based initialization`() {
         let timing = Elementtiming(category: .hero, name: "banner")
         #expect(timing.rawValue == "hero-banner")
 

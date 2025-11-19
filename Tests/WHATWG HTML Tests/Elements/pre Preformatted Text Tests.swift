@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Preformatted Text Test")
-struct PreformattedTextTests {
+@Suite
+struct `Preformatted Text Test` {
 
 }

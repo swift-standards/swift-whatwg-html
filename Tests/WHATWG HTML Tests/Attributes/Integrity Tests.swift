@@ -13,15 +13,15 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Integrity Test")
-struct IntegrityTests {
-    @Test("Integrity attribute should be integrity")
-    func attribute() {
+@Suite
+struct `Integrity Test` {
+    @Test
+    func `Integrity attribute should be integrity`() {
         #expect(Integrity.attribute == "integrity")
     }
 
-    @Test("Integrity hash factory methods")
-    func hashFactoryMethods() {
+    @Test
+    func `Integrity hash factory methods`() {
         let hash = "oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQ"
         #expect(Integrity.sha256(hash).rawValue == "sha256-\(hash)")
         #expect(Integrity.sha384(hash).rawValue == "sha384-\(hash)")

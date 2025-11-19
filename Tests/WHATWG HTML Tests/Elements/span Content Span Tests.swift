@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Content Span Test")
-struct ContentSpanTests {
+@Suite
+struct `Content Span Test` {
 
 }

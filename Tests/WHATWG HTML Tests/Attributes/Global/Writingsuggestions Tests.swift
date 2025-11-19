@@ -18,15 +18,15 @@ import Testing
 #elseif canImport(Foundation)
     #endif
 
-@Suite("Writingsuggestions Test")
-struct WritingsuggestionsTests {
-    @Test("Writingsuggestions attribute should be writingsuggestions")
-    func attribute() {
+@Suite
+struct `Writingsuggestions Test` {
+    @Test
+    func `Writingsuggestions attribute should be writingsuggestions`() {
         #expect(Writingsuggestions.attribute == "writingsuggestions")
     }
 
-    @Test("Writingsuggestions description should match the spec")
-    func description() {
+    @Test
+    func `Writingsuggestions description should match the spec`() {
         #expect(Writingsuggestions.true.description == "true")
         #expect(Writingsuggestions.false.description == "false")
     }

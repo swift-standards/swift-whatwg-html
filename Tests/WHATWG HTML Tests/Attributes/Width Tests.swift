@@ -13,21 +13,21 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Width Test")
-struct WidthTests {
-    @Test("Width attribute should be width")
-    func attribute() {
+@Suite
+struct `Width Test` {
+    @Test
+    func `Width attribute should be width`() {
         #expect(Width.attribute == "width")
     }
 
-    @Test("Width should support integer literal")
-    func integerLiteral() {
+    @Test
+    func `Width should support integer literal`() {
         let width: Width = 400
         #expect(width.rawValue == "400")
     }
 
-    @Test("Width should support integer init")
-    func integerInit() {
+    @Test
+    func `Width should support integer init`() {
         let width = Width(300)
         #expect(width.rawValue == "300")
     }

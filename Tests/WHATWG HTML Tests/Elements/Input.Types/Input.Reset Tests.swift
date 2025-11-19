@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Input.Reset Test")
-struct InputResetTests {
+@Suite
+struct `Input.Reset Test` {
 
 }

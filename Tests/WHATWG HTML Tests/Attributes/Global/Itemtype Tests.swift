@@ -18,39 +18,39 @@ import Testing
 #elseif canImport(Foundation)
     #endif
 
-@Suite("Itemtype Test")
-struct ItemtypeTests {
-    @Test("Itemtype attribute should be itemtype")
-    func attribute() {
+@Suite
+struct `Itemtype Test` {
+    @Test
+    func `Itemtype attribute should be itemtype`() {
         #expect(Itemtype.attribute == "itemtype")
     }
 
-    @Test("Itemtype should store and return its value")
-    func valueStorage() {
+    @Test
+    func `Itemtype should store and return its value`() {
         let itemtype = Itemtype("https://schema.org/Person")
         #expect(itemtype.rawValue == "https://schema.org/Person")
     }
 
-    @Test("Itemtype description should return its value")
-    func description() {
+    @Test
+    func `Itemtype description should return its value`() {
         let itemtype = Itemtype("https://schema.org/Product")
         #expect(itemtype.description == "https://schema.org/Product")
     }
 
-    @Test("Itemtype should be initializable with string literal")
-    func stringLiteralInitialization() {
+    @Test
+    func `Itemtype should be initializable with string literal`() {
         let itemtype: Itemtype = "https://schema.org/Movie"
         #expect(itemtype.rawValue == "https://schema.org/Movie")
     }
 
-    @Test("Itemtype should be initializable with array literal")
-    func arrayLiteralInitialization() {
+    @Test
+    func `Itemtype should be initializable with array literal`() {
         let itemtype: Itemtype = ["https://schema.org/Person", "https://schema.org/Teacher"]
         #expect(itemtype.rawValue == "https://schema.org/Person https://schema.org/Teacher")
     }
 
-    @Test("Itemtype should support SchemaOrg initialization")
-    func schemaOrgInitialization() {
+    @Test
+    func `Itemtype should support SchemaOrg initialization`() {
         let itemtype = Itemtype(schemaOrg: "Person")
         #expect(itemtype.rawValue == "https://schema.org/Person")
     }

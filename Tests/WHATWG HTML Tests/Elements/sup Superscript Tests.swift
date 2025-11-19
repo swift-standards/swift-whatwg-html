@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Superscript Test")
-struct SuperscriptTests {
+@Suite
+struct `Superscript Test` {
 
 }

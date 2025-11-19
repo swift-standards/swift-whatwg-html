@@ -13,10 +13,10 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Loop Test")
-struct LoopTests {
-    @Test("Loop attribute should be loop")
-    func attribute() {
+@Suite
+struct `Loop Test` {
+    @Test
+    func `Loop attribute should be loop`() {
         #expect(Loop.attribute == "loop")
     }
 }

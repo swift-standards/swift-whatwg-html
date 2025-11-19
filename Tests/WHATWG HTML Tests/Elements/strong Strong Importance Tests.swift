@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Strong Importance Test")
-struct StrongImportanceTests {
+@Suite
+struct `Strong Importance Test` {
 
 }

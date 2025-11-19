@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Object Parameter Test")
-struct ObjectParameterTests {
+@Suite
+struct `Object Parameter Test` {
 
 }

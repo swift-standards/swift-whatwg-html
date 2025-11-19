@@ -13,15 +13,15 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("LinkType Test")
-struct LinkTypeTests {
-    @Test("LinkType attribute should be type")
-    func attribute() {
+@Suite
+struct `LinkType Test` {
+    @Test
+    func `LinkType attribute should be type`() {
         #expect(LinkType.attribute == "type")
     }
 
-    @Test("LinkType convenience properties")
-    func convenienceProperties() {
+    @Test
+    func `LinkType convenience properties`() {
         #expect(LinkType.css.rawValue == "text/css")
         #expect(LinkType.javascript.rawValue == "text/javascript")
         #expect(LinkType.icon.rawValue == "image/x-icon")

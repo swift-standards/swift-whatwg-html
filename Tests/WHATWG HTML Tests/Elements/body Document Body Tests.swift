@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Document Body Test")
-struct DocumentBodyTests {
+@Suite
+struct `Document Body Test` {
 
 }

@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Line Break Opportunity Test")
-struct LineBreakOpportunityTests {
+@Suite
+struct `Line Break Opportunity Test` {
 
 }

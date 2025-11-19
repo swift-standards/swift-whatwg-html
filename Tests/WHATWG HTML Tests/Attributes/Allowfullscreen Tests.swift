@@ -13,10 +13,10 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Allowfullscreen Test")
-struct AllowfullscreenTests {
-    @Test("Allowfullscreen attribute should be allowfullscreen")
-    func attribute() {
+@Suite
+struct `Allowfullscreen Test` {
+    @Test
+    func `Allowfullscreen attribute should be allowfullscreen`() {
         #expect(Allowfullscreen.attribute == "allowfullscreen")
     }
 }

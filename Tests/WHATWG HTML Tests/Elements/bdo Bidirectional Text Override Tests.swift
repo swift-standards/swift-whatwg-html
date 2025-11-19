@@ -13,195 +13,195 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Bidirectional Text Override Tests")
-struct BidirectionalTextOverrideTests {
+@Suite
+struct `Bidirectional Text Override Tests` {
 
-    @Test("Basic BDO element creation with required dir attribute")
-    func basicBDOElementCreation() {
+    @Test
+    func `Basic BDO element creation with required dir attribute`() {
         let bdo = BidirectionalTextOverride(dir: .ltr)
         #expect(BidirectionalTextOverride.tag == "bdo")
         #expect(bdo.dir.rawValue == "ltr")
     }
 
-    @Test("BDO element conforms to HTMLElement")
-    func bdoElementConformsToHTMLElement() {
+    @Test
+    func `BDO element conforms to HTMLElement`() {
         let bdo = BidirectionalTextOverride(dir: .rtl)
         let element: any WHATWG_HTML.Element = bdo
         #expect(type(of: element).tag == "bdo")
     }
 
-    @Suite("Direction Attribute Tests")
-    struct DirectionAttributeTests {
+    @Suite
+struct `Direction Attribute Tests` {
 
-        @Test("BDO with left-to-right direction")
-        func bdoWithLeftToRightDirection() {
+        @Test
+    func `BDO with left-to-right direction`() {
             let bdo = BidirectionalTextOverride(dir: .ltr)
             #expect(bdo.dir.rawValue == "ltr")
             #expect(BidirectionalTextOverride.tag == "bdo")
         }
 
-        @Test("BDO with right-to-left direction")
-        func bdoWithRightToLeftDirection() {
+        @Test
+    func `BDO with right-to-left direction`() {
             let bdo = BidirectionalTextOverride(dir: .rtl)
             #expect(bdo.dir.rawValue == "rtl")
             #expect(BidirectionalTextOverride.tag == "bdo")
         }
 
-        @Test("BDO with auto direction")
-        func bdoWithAutoDirection() {
+        @Test
+    func `BDO with auto direction`() {
             let bdo = BidirectionalTextOverride(dir: .auto)
             #expect(bdo.dir.rawValue == "auto")
             #expect(BidirectionalTextOverride.tag == "bdo")
         }
 
-        @Test("Direction attribute is required")
-        func directionAttributeIsRequired() {
+        @Test
+    func `Direction attribute is required`() {
             // This test confirms that dir parameter is required in initializer
             let bdo = BidirectionalTextOverride(dir: .ltr)
             #expect(bdo.dir.rawValue == "ltr")
         }
     }
 
-    @Suite("Text Direction Override")
-    struct TextDirectionOverride {
+    @Suite
+struct `Text Direction Override` {
 
-        @Test("Overriding natural text direction")
-        func overridingNaturalTextDirection() {
+        @Test
+    func `Overriding natural text direction`() {
             let bdo = BidirectionalTextOverride(dir: .rtl)
             #expect(bdo.dir.rawValue == "rtl")
             #expect(BidirectionalTextOverride.tag == "bdo")
         }
 
-        @Test("Forcing specific text rendering direction")
-        func forcingSpecificTextRenderingDirection() {
+        @Test
+    func `Forcing specific text rendering direction`() {
             let bdo = BidirectionalTextOverride(dir: .ltr)
             #expect(bdo.dir.rawValue == "ltr")
             #expect(BidirectionalTextOverride.tag == "bdo")
         }
 
-        @Test("Overriding bidirectional algorithm")
-        func overridingBidirectionalAlgorithm() {
+        @Test
+    func `Overriding bidirectional algorithm`() {
             let bdo = BidirectionalTextOverride(dir: .rtl)
             #expect(bdo.dir.rawValue == "rtl")
             #expect(BidirectionalTextOverride.tag == "bdo")
         }
 
-        @Test("Character order reversal behavior")
-        func characterOrderReversalBehavior() {
+        @Test
+    func `Character order reversal behavior`() {
             let bdo = BidirectionalTextOverride(dir: .rtl)
             #expect(bdo.dir.rawValue == "rtl")
             #expect(BidirectionalTextOverride.tag == "bdo")
         }
     }
 
-    @Suite("Common Use Cases")
-    struct CommonUseCases {
+    @Suite
+struct `Common Use Cases` {
 
-        @Test("Displaying text in opposite direction")
-        func displayingTextInOppositeDirection() {
+        @Test
+    func `Displaying text in opposite direction`() {
             let bdo = BidirectionalTextOverride(dir: .rtl)
             #expect(bdo.dir.rawValue == "rtl")
             #expect(BidirectionalTextOverride.tag == "bdo")
         }
 
-        @Test("Demonstrating bidirectional features")
-        func demonstratingBidirectionalFeatures() {
+        @Test
+    func `Demonstrating bidirectional features`() {
             let bdo = BidirectionalTextOverride(dir: .ltr)
             #expect(bdo.dir.rawValue == "ltr")
             #expect(BidirectionalTextOverride.tag == "bdo")
         }
 
-        @Test("Fixing incorrectly displayed multilingual content")
-        func fixingIncorrectlyDisplayedMultilingualContent() {
+        @Test
+    func `Fixing incorrectly displayed multilingual content`() {
             let bdo = BidirectionalTextOverride(dir: .rtl)
             #expect(bdo.dir.rawValue == "rtl")
             #expect(BidirectionalTextOverride.tag == "bdo")
         }
 
-        @Test("Educational text direction examples")
-        func educationalTextDirectionExamples() {
+        @Test
+    func `Educational text direction examples`() {
             let bdo = BidirectionalTextOverride(dir: .auto)
             #expect(bdo.dir.rawValue == "auto")
             #expect(BidirectionalTextOverride.tag == "bdo")
         }
 
-        @Test("Typography and design effects")
-        func typographyAndDesignEffects() {
+        @Test
+    func `Typography and design effects`() {
             let bdo = BidirectionalTextOverride(dir: .rtl)
             #expect(bdo.dir.rawValue == "rtl")
             #expect(BidirectionalTextOverride.tag == "bdo")
         }
     }
 
-    @Suite("Language Support")
-    struct LanguageSupport {
+    @Suite
+struct `Language Support` {
 
-        @Test("Arabic text direction override")
-        func arabicTextDirectionOverride() {
+        @Test
+    func `Arabic text direction override`() {
             let bdo = BidirectionalTextOverride(dir: .rtl)
             #expect(bdo.dir.rawValue == "rtl")
             #expect(BidirectionalTextOverride.tag == "bdo")
         }
 
-        @Test("Hebrew text direction override")
-        func hebrewTextDirectionOverride() {
+        @Test
+    func `Hebrew text direction override`() {
             let bdo = BidirectionalTextOverride(dir: .rtl)
             #expect(bdo.dir.rawValue == "rtl")
             #expect(BidirectionalTextOverride.tag == "bdo")
         }
 
-        @Test("English text in RTL context")
-        func englishTextInRTLContext() {
+        @Test
+    func `English text in RTL context`() {
             let bdo = BidirectionalTextOverride(dir: .ltr)
             #expect(bdo.dir.rawValue == "ltr")
             #expect(BidirectionalTextOverride.tag == "bdo")
         }
 
-        @Test("Mixed script content override")
-        func mixedScriptContentOverride() {
-            let bdo = BidirectionalTextOverride(dir: .auto)
-            #expect(bdo.dir.rawValue == "auto")
-            #expect(BidirectionalTextOverride.tag == "bdo")
-        }
-    }
-
-    @Suite("Educational and Demonstration")
-    struct EducationalAndDemonstration {
-
-        @Test("Teaching bidirectional text concepts")
-        func teachingBidirectionalTextConcepts() {
-            let bdo = BidirectionalTextOverride(dir: .rtl)
-            #expect(bdo.dir.rawValue == "rtl")
-            #expect(BidirectionalTextOverride.tag == "bdo")
-        }
-
-        @Test("Demonstrating text rendering differences")
-        func demonstratingTextRenderingDifferences() {
-            let bdo = BidirectionalTextOverride(dir: .ltr)
-            #expect(bdo.dir.rawValue == "ltr")
-            #expect(BidirectionalTextOverride.tag == "bdo")
-        }
-
-        @Test("Showing script direction examples")
-        func showingScriptDirectionExamples() {
-            let bdo = BidirectionalTextOverride(dir: .rtl)
-            #expect(bdo.dir.rawValue == "rtl")
-            #expect(BidirectionalTextOverride.tag == "bdo")
-        }
-
-        @Test("Internationalization tutorials")
-        func internationalizationTutorials() {
+        @Test
+    func `Mixed script content override`() {
             let bdo = BidirectionalTextOverride(dir: .auto)
             #expect(bdo.dir.rawValue == "auto")
             #expect(BidirectionalTextOverride.tag == "bdo")
         }
     }
 
-    @Suite("Integration Tests")
-    struct IntegrationTests {
+    @Suite
+struct `Educational and Demonstration` {
 
-        @Test("Multiple BDO elements with different directions")
-        func multipleBDOElementsWithDifferentDirections() {
+        @Test
+    func `Teaching bidirectional text concepts`() {
+            let bdo = BidirectionalTextOverride(dir: .rtl)
+            #expect(bdo.dir.rawValue == "rtl")
+            #expect(BidirectionalTextOverride.tag == "bdo")
+        }
+
+        @Test
+    func `Demonstrating text rendering differences`() {
+            let bdo = BidirectionalTextOverride(dir: .ltr)
+            #expect(bdo.dir.rawValue == "ltr")
+            #expect(BidirectionalTextOverride.tag == "bdo")
+        }
+
+        @Test
+    func `Showing script direction examples`() {
+            let bdo = BidirectionalTextOverride(dir: .rtl)
+            #expect(bdo.dir.rawValue == "rtl")
+            #expect(BidirectionalTextOverride.tag == "bdo")
+        }
+
+        @Test
+    func `Internationalization tutorials`() {
+            let bdo = BidirectionalTextOverride(dir: .auto)
+            #expect(bdo.dir.rawValue == "auto")
+            #expect(BidirectionalTextOverride.tag == "bdo")
+        }
+    }
+
+    @Suite
+struct `Integration Tests` {
+
+        @Test
+    func `Multiple BDO elements with different directions`() {
             let ltrBdo = BidirectionalTextOverride(dir: .ltr)
             let rtlBdo = BidirectionalTextOverride(dir: .rtl)
             let autoBdo = BidirectionalTextOverride(dir: .auto)
@@ -218,8 +218,8 @@ struct BidirectionalTextOverrideTests {
             }
         }
 
-        @Test("BDO element within content flow")
-        func bdoElementWithinContentFlow() {
+        @Test
+    func `BDO element within content flow`() {
             let bdo = BidirectionalTextOverride(dir: .rtl)
             let element: any WHATWG_HTML.Element = bdo
 
@@ -227,8 +227,8 @@ struct BidirectionalTextOverrideTests {
             #expect(bdo.dir.rawValue == "rtl")
         }
 
-        @Test("Nested direction overrides")
-        func nestedDirectionOverrides() {
+        @Test
+    func `Nested direction overrides`() {
             let outerBdo = BidirectionalTextOverride(dir: .rtl)
             let innerBdo = BidirectionalTextOverride(dir: .ltr)
 
@@ -239,26 +239,26 @@ struct BidirectionalTextOverrideTests {
             #expect(innerBdo is any WHATWG_HTML.Element)
         }
 
-        @Test("BDO with different HTML context elements")
-        func bdoWithDifferentHTMLContextElements() {
+        @Test
+    func `BDO with different HTML context elements`() {
             let bdo = BidirectionalTextOverride(dir: .rtl)
             #expect(BidirectionalTextOverride.tag == "bdo")
             #expect(bdo.dir.rawValue == "rtl")
         }
     }
 
-    @Suite("Technical Specifications")
-    struct TechnicalSpecifications {
+    @Suite
+struct `Technical Specifications` {
 
-        @Test("Required dir attribute validation")
-        func requiredDirAttributeValidation() {
+        @Test
+    func `Required dir attribute validation`() {
             // Testing that dir is a required property
             let bdo = BidirectionalTextOverride(dir: .ltr)
             #expect(bdo.dir.rawValue == "ltr")
         }
 
-        @Test("Direction attribute values correctness")
-        func directionAttributeValuesCorrectness() {
+        @Test
+    func `Direction attribute values correctness`() {
             let ltrDir = Dir.ltr
             let rtlDir = Dir.rtl
             let autoDir = Dir.auto
@@ -268,41 +268,41 @@ struct BidirectionalTextOverrideTests {
             #expect(autoDir.rawValue == "auto")
         }
 
-        @Test("BDO tag name validation")
-        func bdoTagNameValidation() {
+        @Test
+    func `BDO tag name validation`() {
             #expect(BidirectionalTextOverride.tag == "bdo")
         }
 
-        @Test("HTMLElement protocol compliance")
-        func htmlElementProtocolCompliance() {
+        @Test
+    func `HTMLElement protocol compliance`() {
             let bdo = BidirectionalTextOverride(dir: .ltr)
             #expect(bdo is any WHATWG_HTML.Element)
         }
     }
 
-    @Suite("Best Practices")
-    struct BestPractices {
+    @Suite
+struct `Best Practices` {
 
-        @Test("Use BDO only when override is needed")
-        func useBDOOnlyWhenOverrideIsNeeded() {
+        @Test
+    func `Use BDO only when override is needed`() {
             let bdo = BidirectionalTextOverride(dir: .rtl)
             #expect(BidirectionalTextOverride.tag == "bdo")
         }
 
-        @Test("Prefer BDI for isolation over BDO for override")
-        func preferBDIForIsolationOverBDOForOverride() {
+        @Test
+    func `Prefer BDI for isolation over BDO for override`() {
             let bdo = BidirectionalTextOverride(dir: .ltr)
             #expect(BidirectionalTextOverride.tag == "bdo")
         }
 
-        @Test("Clear semantic intent with explicit direction")
-        func clearSemanticIntentWithExplicitDirection() {
+        @Test
+    func `Clear semantic intent with explicit direction`() {
             let bdo = BidirectionalTextOverride(dir: .rtl)
             #expect(bdo.dir.rawValue == "rtl")
         }
 
-        @Test("Consider accessibility implications")
-        func considerAccessibilityImplications() {
+        @Test
+    func `Consider accessibility implications`() {
             let bdo = BidirectionalTextOverride(dir: .auto)
             #expect(BidirectionalTextOverride.tag == "bdo")
         }

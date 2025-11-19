@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Inline Quotation Test")
-struct InlineQuotationTests {
+@Suite
+struct `Inline Quotation Test` {
 
 }

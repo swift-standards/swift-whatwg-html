@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Content Division Test")
-struct ContentDivisionTests {
+@Suite
+struct `Content Division Test` {
 
 }

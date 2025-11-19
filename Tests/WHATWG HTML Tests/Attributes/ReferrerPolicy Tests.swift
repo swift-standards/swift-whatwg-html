@@ -13,15 +13,15 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("ReferrerPolicy Test")
-struct ReferrerPolicyTests {
-    @Test("ReferrerPolicy attribute should be referrerpolicy")
-    func attribute() {
+@Suite
+struct `ReferrerPolicy Test` {
+    @Test
+    func `ReferrerPolicy attribute should be referrerpolicy`() {
         #expect(ReferrerPolicy.attribute == "referrerpolicy")
     }
 
-    @Test("ReferrerPolicy convenience properties")
-    func convenienceProperties() {
+    @Test
+    func `ReferrerPolicy convenience properties`() {
         #expect(ReferrerPolicy.noReferrer.rawValue == "no-referrer")
         #expect(ReferrerPolicy.noReferrerWhenDowngrade.rawValue == "no-referrer-when-downgrade")
         #expect(ReferrerPolicy.origin.rawValue == "origin")

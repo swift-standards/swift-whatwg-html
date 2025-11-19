@@ -13,28 +13,28 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Maxlength Test")
-struct MaxlengthTests {
-    @Test("Maxlength attribute should be maxlength")
-    func attribute() {
+@Suite
+struct `Maxlength Test` {
+    @Test
+    func `Maxlength attribute should be maxlength`() {
         #expect(Maxlength.attribute == "maxlength")
     }
 
-    @Test("Maxlength should support integer literal")
-    func integerLiteral() {
+    @Test
+    func `Maxlength should support integer literal`() {
         let maxlength: Maxlength = 100
         #expect(maxlength.value == 100)
         #expect(maxlength.description == "100")
     }
 
-    @Test("Maxlength should enforce non-negative values")
-    func nonNegativeValues() {
+    @Test
+    func `Maxlength should enforce non-negative values`() {
         let maxlength = Maxlength(-10)
         #expect(maxlength.value == 0)
     }
 
-    @Test("Maxlength characters factory method")
-    func charactersFactory() {
+    @Test
+    func `Maxlength characters factory method`() {
         let maxlength = Maxlength.characters(50)
         #expect(maxlength.value == 50)
         #expect(maxlength.description == "50")

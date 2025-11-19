@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Field Set Test")
-struct FieldSetTests {
+@Suite
+struct `Field Set Test` {
 
 }

@@ -13,15 +13,15 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Href Test")
-struct HrefTests {
-    @Test("Href attribute should be href")
-    func attribute() {
+@Suite
+struct `Href Test` {
+    @Test
+    func `Href attribute should be href`() {
         #expect(Href.attribute == "href")
     }
 
-    @Test("Href convenience methods")
-    func convenienceMethods() {
+    @Test
+    func `Href convenience methods`() {
         #expect(Href.tel("123-456-7890").rawValue == "tel:123-456-7890")
         #expect(Href.mailto("test@example.com").rawValue == "mailto:test@example.com")
         #expect(Href.sms("123-456-7890").rawValue == "sms:123-456-7890")

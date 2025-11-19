@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Table Foot Test")
-struct TableFootTests {
+@Suite
+struct `Table Foot Test` {
 
 }

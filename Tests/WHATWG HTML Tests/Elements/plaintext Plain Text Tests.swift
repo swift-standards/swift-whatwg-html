@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Plain Text Test")
-struct PlainTextTests {
+@Suite
+struct `Plain Text Test` {
 
 }

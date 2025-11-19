@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Idiomatic Text Test")
-struct IdiomaticTextTests {
+@Suite
+struct `Idiomatic Text Test` {
 
 }

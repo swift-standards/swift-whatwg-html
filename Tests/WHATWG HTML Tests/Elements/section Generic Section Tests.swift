@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Generic Section Test")
-struct GenericSectionTests {
+@Suite
+struct `Generic Section Test` {
 
 }

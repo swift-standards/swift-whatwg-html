@@ -13,11 +13,11 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Document Base URL Tests")
-struct DocumentBaseURLTests {
+@Suite
+struct `Document Base URL Tests` {
 
-    @Test("Basic base element creation with href")
-    func basicBaseElementCreationWithHref() {
+    @Test
+    func `Basic base element creation with href`() {
         let href = Href("https://example.com/")
         let base = Base(href: href)
         #expect(Base.tag == "base")
@@ -25,8 +25,8 @@ struct DocumentBaseURLTests {
         #expect(base.target == nil)
     }
 
-    @Test("Basic base element creation with target")
-    func basicBaseElementCreationWithTarget() {
+    @Test
+    func `Basic base element creation with target`() {
         let target = Target.blank
         let base = Base(target: target)
         #expect(Base.tag == "base")
@@ -34,8 +34,8 @@ struct DocumentBaseURLTests {
         #expect(base.target == target)
     }
 
-    @Test("Basic base element creation with both href and target")
-    func basicBaseElementCreationWithBoth() {
+    @Test
+    func `Basic base element creation with both href and target`() {
         let href = Href("https://example.com/")
         let target = Target.blank
         let base = Base(href: href, target: target)
@@ -44,19 +44,19 @@ struct DocumentBaseURLTests {
         #expect(base.target == target)
     }
 
-    @Test("Base element conforms to HTMLElement")
-    func baseElementConformsToHTMLElement() {
+    @Test
+    func `Base element conforms to HTMLElement`() {
         let href = Href("https://example.com/")
         let base = Base(href: href)
         let element: any WHATWG_HTML.Element = base
         #expect(type(of: element).tag == "base")
     }
 
-    @Suite("Configuration Tests")
-    struct ConfigurationTests {
+    @Suite
+struct `Configuration Tests` {
 
-        @Test("Configuration with href only")
-        func configurationWithHrefOnly() {
+        @Test
+    func `Configuration with href only`() {
             let href = Href("https://example.com/")
             let configuration = Base.Configuration.href(href)
             let base = Base(configuration: configuration)
@@ -66,8 +66,8 @@ struct DocumentBaseURLTests {
             #expect(base.target == nil)
         }
 
-        @Test("Configuration with target only")
-        func configurationWithTargetOnly() {
+        @Test
+    func `Configuration with target only`() {
             let target = Target.blank
             let configuration = Base.Configuration.target(target)
             let base = Base(configuration: configuration)
@@ -77,8 +77,8 @@ struct DocumentBaseURLTests {
             #expect(base.target == target)
         }
 
-        @Test("Configuration with both href and target")
-        func configurationWithBoth() {
+        @Test
+    func `Configuration with both href and target`() {
             let href = Href("https://example.com/")
             let target = Target.blank
             let configuration = Base.Configuration.both(href: href, target: target)
@@ -89,8 +89,8 @@ struct DocumentBaseURLTests {
             #expect(base.target == target)
         }
 
-        @Test("Configuration equality")
-        func configurationEquality() {
+        @Test
+    func `Configuration equality`() {
             let href1 = Href("https://example.com/")
             let href2 = Href("https://example.com/")
             let href3 = Href("https://different.com/")
@@ -106,8 +106,8 @@ struct DocumentBaseURLTests {
             #expect(config1 != config4)
         }
 
-        @Test("Configuration is hashable")
-        func configurationIsHashable() {
+        @Test
+    func `Configuration is hashable`() {
             let href = Href("https://example.com/")
             let target = Target.blank
 
@@ -121,11 +121,11 @@ struct DocumentBaseURLTests {
         }
     }
 
-    @Suite("Convenience Initializers")
-    struct ConvenienceInitializers {
+    @Suite
+struct `Convenience Initializers` {
 
-        @Test("Href convenience initializer")
-        func hrefConvenienceInitializer() {
+        @Test
+    func `Href convenience initializer`() {
             let href = Href("https://example.com/")
             let base = Base(href: href)
 
@@ -139,8 +139,8 @@ struct DocumentBaseURLTests {
             }
         }
 
-        @Test("Target convenience initializer")
-        func targetConvenienceInitializer() {
+        @Test
+    func `Target convenience initializer`() {
             let target = Target.blank
             let base = Base(target: target)
 
@@ -154,8 +154,8 @@ struct DocumentBaseURLTests {
             }
         }
 
-        @Test("Both href and target convenience initializer")
-        func bothHrefAndTargetConvenienceInitializer() {
+        @Test
+    func `Both href and target convenience initializer`() {
             let href = Href("https://example.com/")
             let target = Target.blank
             let base = Base(href: href, target: target)
@@ -172,82 +172,82 @@ struct DocumentBaseURLTests {
         }
     }
 
-    @Suite("Target Attribute Tests")
-    struct TargetAttributeTests {
+    @Suite
+struct `Target Attribute Tests` {
 
-        @Test("Target self")
-        func targetSelf() {
+        @Test
+    func `Target self`() {
             let target = Target.`self`
             let base = Base(target: target)
             #expect(base.target == target)
         }
 
-        @Test("Target blank")
-        func targetBlank() {
+        @Test
+    func `Target blank`() {
             let target = Target.blank
             let base = Base(target: target)
             #expect(base.target == target)
         }
 
-        @Test("Target parent")
-        func targetParent() {
+        @Test
+    func `Target parent`() {
             let target = Target.parent
             let base = Base(target: target)
             #expect(base.target == target)
         }
 
-        @Test("Target top")
-        func targetTop() {
+        @Test
+    func `Target top`() {
             let target = Target.top
             let base = Base(target: target)
             #expect(base.target == target)
         }
 
-        @Test("Custom target")
-        func customTarget() {
+        @Test
+    func `Custom target`() {
             let target = Target("myframe")
             let base = Base(target: target)
             #expect(base.target == target)
         }
     }
 
-    @Suite("Common Use Cases")
-    struct CommonUseCases {
+    @Suite
+struct `Common Use Cases` {
 
-        @Test("Absolute base URL")
-        func absoluteBaseURL() {
+        @Test
+    func `Absolute base URL`() {
             let href = Href("https://cdn.example.com/assets/")
             let base = Base(href: href)
 
             #expect(base.href == href)
         }
 
-        @Test("Relative base URL")
-        func relativeBaseURL() {
+        @Test
+    func `Relative base URL`() {
             let href = Href("/assets/")
             let base = Base(href: href)
 
             #expect(base.href == href)
         }
 
-        @Test("Base URL with subdirectory")
-        func baseURLWithSubdirectory() {
+        @Test
+    func `Base URL with subdirectory`() {
             let href = Href("https://example.com/app/v1/")
             let base = Base(href: href)
 
             #expect(base.href == href)
         }
 
-        @Test("Default target for external links")
-        func defaultTargetForExternalLinks() {
+        @Test
+    func `Default target for external links`() {
             let target = Target.blank
             let base = Base(target: target)
 
             #expect(base.target == target)
         }
 
-        @Test("CDN with new window target")
-        func cdnWithNewWindowTarget() {
+        @Test
+    func `CDN with new window target`() {
             let href = Href("https://cdn.example.com/")
             let target = Target.blank
             let base = Base(href: href, target: target)
@@ -256,16 +256,16 @@ struct DocumentBaseURLTests {
             #expect(base.target == target)
         }
 
-        @Test("Development environment base")
-        func developmentEnvironmentBase() {
+        @Test
+    func `Development environment base`() {
             let href = Href("http://localhost:3000/")
             let base = Base(href: href)
 
             #expect(base.href == href)
         }
 
-        @Test("Production environment base")
-        func productionEnvironmentBase() {
+        @Test
+    func `Production environment base`() {
             let href = Href("https://myapp.com/")
             let base = Base(href: href)
 
@@ -273,11 +273,11 @@ struct DocumentBaseURLTests {
         }
     }
 
-    @Suite("Integration Tests")
-    struct IntegrationTests {
+    @Suite
+struct `Integration Tests` {
 
-        @Test("Base element for document head")
-        func baseElementForDocumentHead() {
+        @Test
+    func `Base element for document head`() {
             let href = Href("https://example.com/")
             let base = Base(href: href)
             let element: any WHATWG_HTML.Element = base
@@ -285,8 +285,8 @@ struct DocumentBaseURLTests {
             #expect(type(of: element).tag == "base")
         }
 
-        @Test("Multiple base configurations")
-        func multipleBaseConfigurations() {
+        @Test
+    func `Multiple base configurations`() {
             let bases = [
                 Base(href: Href("https://example.com/")),
                 Base(target: Target.blank),
@@ -300,8 +300,8 @@ struct DocumentBaseURLTests {
             }
         }
 
-        @Test("Base element as HTMLElement")
-        func baseElementAsHTMLElement() {
+        @Test
+    func `Base element as HTMLElement`() {
             let href = Href("https://example.com/")
             let base = Base(href: href)
             let element: any WHATWG_HTML.Element = base
@@ -310,35 +310,35 @@ struct DocumentBaseURLTests {
         }
     }
 
-    @Suite("URL Resolution")
-    struct URLResolution {
+    @Suite
+struct `URL Resolution` {
 
-        @Test("Base URL for relative paths")
-        func baseURLForRelativePaths() {
+        @Test
+    func `Base URL for relative paths`() {
             let href = Href("https://example.com/assets/")
             let base = Base(href: href)
 
             #expect(base.href == href)
         }
 
-        @Test("Base URL for root-relative paths")
-        func baseURLForRootRelativePaths() {
+        @Test
+    func `Base URL for root-relative paths`() {
             let href = Href("/")
             let base = Base(href: href)
 
             #expect(base.href == href)
         }
 
-        @Test("Base URL with trailing slash")
-        func baseURLWithTrailingSlash() {
+        @Test
+    func `Base URL with trailing slash`() {
             let href = Href("https://example.com/app/")
             let base = Base(href: href)
 
             #expect(base.href == href)
         }
 
-        @Test("Base URL without trailing slash")
-        func baseURLWithoutTrailingSlash() {
+        @Test
+    func `Base URL without trailing slash`() {
             let href = Href("https://example.com/app")
             let base = Base(href: href)
 
@@ -346,27 +346,27 @@ struct DocumentBaseURLTests {
         }
     }
 
-    @Suite("Security and Validation")
-    struct SecurityAndValidation {
+    @Suite
+struct `Security and Validation` {
 
-        @Test("HTTPS base URL")
-        func httpsBaseURL() {
+        @Test
+    func `HTTPS base URL`() {
             let href = Href("https://secure.example.com/")
             let base = Base(href: href)
 
             #expect(base.href == href)
         }
 
-        @Test("HTTP base URL")
-        func httpBaseURL() {
+        @Test
+    func `HTTP base URL`() {
             let href = Href("http://example.com/")
             let base = Base(href: href)
 
             #expect(base.href == href)
         }
 
-        @Test("File protocol base URL")
-        func fileProtocolBaseURL() {
+        @Test
+    func `File protocol base URL`() {
             let href = Href("file:///path/to/directory/")
             let base = Base(href: href)
 
@@ -374,11 +374,11 @@ struct DocumentBaseURLTests {
         }
     }
 
-    @Suite("Best Practices")
-    struct BestPractices {
+    @Suite
+struct `Best Practices` {
 
-        @Test("Single base element per document")
-        func singleBaseElementPerDocument() {
+        @Test
+    func `Single base element per document`() {
             let href = Href("https://example.com/")
             let base = Base(href: href)
 
@@ -386,16 +386,16 @@ struct DocumentBaseURLTests {
             #expect(base.href == href)
         }
 
-        @Test("Base element in document head")
-        func baseElementInDocumentHead() {
+        @Test
+    func `Base element in document head`() {
             let href = Href("https://example.com/")
             let base = Base(href: href)
 
             #expect(base is any WHATWG_HTML.Element)
         }
 
-        @Test("Base element before other URL references")
-        func baseElementBeforeOtherURLReferences() {
+        @Test
+    func `Base element before other URL references`() {
             let href = Href("https://example.com/")
             let base = Base(href: href)
 

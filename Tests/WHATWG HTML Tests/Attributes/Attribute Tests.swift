@@ -38,17 +38,17 @@ private struct NumericTestAttribute: WHATWG_HTML.Attribute {
     }
 }
 
-@Suite("Attribute Protocol Tests")
-struct AttributeTests {
+@Suite
+struct `Attribute Protocol Tests` {
 
-    @Test("Attribute has correct static attribute name")
-    func attributeName() {
+    @Test
+    func `Attribute has correct static attribute name`() {
         #expect(TestAttribute.attribute == "test-attribute")
         #expect(NumericTestAttribute.attribute == "numeric-test")
     }
 
-    @Test("Attribute is Sendable")
-    func sendableConformance() {
+    @Test
+    func `Attribute is Sendable`() {
         let attr = TestAttribute("test")
 
         Task {
@@ -56,8 +56,8 @@ struct AttributeTests {
         }
     }
 
-    @Test("Attribute supports equality comparison")
-    func equality() {
+    @Test
+    func `Attribute supports equality comparison`() {
         let attr1 = TestAttribute("same")
         let attr2 = TestAttribute("same")
         let attr3 = TestAttribute("different")

@@ -13,35 +13,35 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Section Heading Test")
-struct SectionHeaderingTests {
-    @Suite("H1")
-    struct H1Tests {
+@Suite
+struct `Section Heading Test` {
+    @Suite
+struct `H1` {
 
     }
 
-    @Suite("H2")
-    struct H2Tests {
+    @Suite
+struct `H2` {
 
     }
 
-    @Suite("H3")
-    struct H3Tests {
+    @Suite
+struct `H3` {
 
     }
 
-    @Suite("H4")
-    struct H4Tests {
+    @Suite
+struct `H4` {
 
     }
 
-    @Suite("H5")
-    struct H5Tests {
+    @Suite
+struct `H5` {
 
     }
 
-    @Suite("H6")
-    struct H6Tests {
+    @Suite
+struct `H6` {
 
     }
 }

@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Navigation Section Test")
-struct NavigationSectionTests {
+@Suite
+struct `Navigation Section Test` {
 
 }

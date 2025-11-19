@@ -13,31 +13,31 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Contact Address Tests")
-struct AddressTests {
+@Suite
+struct `Contact Address Tests` {
 
-    @Test("Basic address creation")
-    func basicAddressCreation() {
+    @Test
+    func `Basic address creation`() {
         let address = Address()
         #expect(type(of: address).tag == "address")
     }
 
-    @Test("Address conforms to HTMLElement")
-    func addressConformsToHTMLElement() {
+    @Test
+    func `Address conforms to HTMLElement`() {
         let address = Address()
         let element: any WHATWG_HTML.Element = address
         #expect(type(of: element).tag == "address")
     }
 
-    @Test("Address is equatable")
-    func addressIsEquatable() {
+    @Test
+    func `Address is equatable`() {
         let address1 = Address()
         let address2 = Address()
         #expect(address1 == address2)
     }
 
-    @Test("Address is sendable")
-    func addressIsSendable() {
+    @Test
+    func `Address is sendable`() {
         let address = Address()
 
         Task {
@@ -47,91 +47,91 @@ struct AddressTests {
         #expect(address == Address())
     }
 
-    @Suite("Common Use Cases")
-    struct CommonUseCases {
+    @Suite
+struct `Common Use Cases` {
 
-        @Test("Author contact information")
-        func authorContactInformation() {
+        @Test
+    func `Author contact information`() {
             let address = Address()
             #expect(address == Address())
         }
 
-        @Test("Business contact information")
-        func businessContactInformation() {
+        @Test
+    func `Business contact information`() {
             let address = Address()
             #expect(address == Address())
         }
 
-        @Test("Article author contact")
-        func articleAuthorContact() {
+        @Test
+    func `Article author contact`() {
             let address = Address()
             #expect(address == Address())
         }
 
-        @Test("Website contact information")
-        func websiteContactInformation() {
+        @Test
+    func `Website contact information`() {
             let address = Address()
             #expect(address == Address())
         }
 
-        @Test("Organization contact details")
-        func organizationContactDetails() {
-            let address = Address()
-            #expect(address == Address())
-        }
-    }
-
-    @Suite("Semantic Usage")
-    struct SemanticUsage {
-
-        @Test("Physical address representation")
-        func physicalAddressRepresentation() {
-            let address = Address()
-            #expect(address == Address())
-        }
-
-        @Test("Email contact representation")
-        func emailContactRepresentation() {
-            let address = Address()
-            #expect(address == Address())
-        }
-
-        @Test("Phone number representation")
-        func phoneNumberRepresentation() {
-            let address = Address()
-            #expect(address == Address())
-        }
-
-        @Test("Social media handle representation")
-        func socialMediaHandleRepresentation() {
-            let address = Address()
-            #expect(address == Address())
-        }
-
-        @Test("Geographic coordinates representation")
-        func geographicCoordinatesRepresentation() {
-            let address = Address()
-            #expect(address == Address())
-        }
-
-        @Test("URL contact representation")
-        func urlContactRepresentation() {
+        @Test
+    func `Organization contact details`() {
             let address = Address()
             #expect(address == Address())
         }
     }
 
-    @Suite("Best Practices Validation")
-    struct BestPracticesValidation {
+    @Suite
+struct `Semantic Usage` {
 
-        @Test("Simple address element")
-        func simpleAddressElement() {
+        @Test
+    func `Physical address representation`() {
             let address = Address()
             #expect(address == Address())
         }
 
-        @Test("Multiple address elements")
-        func multipleAddressElements() {
+        @Test
+    func `Email contact representation`() {
+            let address = Address()
+            #expect(address == Address())
+        }
+
+        @Test
+    func `Phone number representation`() {
+            let address = Address()
+            #expect(address == Address())
+        }
+
+        @Test
+    func `Social media handle representation`() {
+            let address = Address()
+            #expect(address == Address())
+        }
+
+        @Test
+    func `Geographic coordinates representation`() {
+            let address = Address()
+            #expect(address == Address())
+        }
+
+        @Test
+    func `URL contact representation`() {
+            let address = Address()
+            #expect(address == Address())
+        }
+    }
+
+    @Suite
+struct `Best Practices Validation` {
+
+        @Test
+    func `Simple address element`() {
+            let address = Address()
+            #expect(address == Address())
+        }
+
+        @Test
+    func `Multiple address elements`() {
             let authorAddress = Address()
             let businessAddress = Address()
             let contactAddress = Address()
@@ -141,54 +141,54 @@ struct AddressTests {
             #expect(authorAddress == contactAddress)
         }
 
-        @Test("Consistent address structure")
-        func consistentAddressStructure() {
+        @Test
+    func `Consistent address structure`() {
             let address1 = Address()
             let address2 = Address()
             #expect(address1 == address2)
         }
 
-        @Test("Address element immutability")
-        func addressElementImmutability() {
+        @Test
+    func `Address element immutability`() {
             let address = Address()
             let addressCopy = address
             #expect(address == addressCopy)
         }
     }
 
-    @Suite("Element Properties")
-    struct ElementProperties {
+    @Suite
+struct `Element Properties` {
 
-        @Test("Tag name is correct")
-        func tagNameIsCorrect() {
+        @Test
+    func `Tag name is correct`() {
             #expect(Address.tag == "address")
         }
 
-        @Test("Element creation is consistent")
-        func elementCreationIsConsistent() {
+        @Test
+    func `Element creation is consistent`() {
             let address1 = Address()
             let address2 = Address()
             #expect(address1 == address2)
         }
 
-        @Test("Element has no mutable state")
-        func elementHasNoMutableState() {
+        @Test
+    func `Element has no mutable state`() {
             let address = Address()
             let copy = address
             #expect(address == copy)
         }
 
-        @Test("Static tag property access")
-        func staticTagPropertyAccess() {
+        @Test
+    func `Static tag property access`() {
             #expect(Address.tag == "address")
         }
     }
 
-    @Suite("Integration Tests")
-    struct IntegrationTests {
+    @Suite
+struct `Integration Tests` {
 
-        @Test("Can be used in collections")
-        func canBeUsedInCollections() {
+        @Test
+    func `Can be used in collections`() {
             let addresses = [
                 Address(),
                 Address(),
@@ -199,8 +199,8 @@ struct AddressTests {
             #expect(addresses.allSatisfy { $0 == Address() })
         }
 
-        @Test("Can be used as dictionary keys")
-        func canBeUsedAsDictionaryKeys() {
+        @Test
+    func `Can be used as dictionary keys`() {
             let addressTypes: [Address: String] = [
                 Address(): "contact"
             ]
@@ -209,8 +209,8 @@ struct AddressTests {
             #expect(addressTypes[Address()] == "contact")
         }
 
-        @Test("Can be used as dictionary values")
-        func canBeUsedAsDictionaryValues() {
+        @Test
+    func `Can be used as dictionary values`() {
             let contactMethods: [String: Address] = [
                 "email": Address(),
                 "postal": Address(),
@@ -221,8 +221,8 @@ struct AddressTests {
             #expect(contactMethods.values.allSatisfy { $0 == Address() })
         }
 
-        @Test("Can be used in optional contexts")
-        func canBeUsedInOptionalContexts() {
+        @Test
+    func `Can be used in optional contexts`() {
             let maybeAddress: Address? = Address()
             let noAddress: Address? = nil
 
@@ -231,8 +231,8 @@ struct AddressTests {
             #expect(noAddress == nil)
         }
 
-        @Test("Can be used in sets")
-        func canBeUsedInSets() {
+        @Test
+    func `Can be used in sets`() {
             let addressSet: Set<Address> = [
                 Address(),
                 Address(),
@@ -244,29 +244,29 @@ struct AddressTests {
         }
     }
 
-    @Suite("Contextual Usage")
-    struct ContextualUsage {
+    @Suite
+struct `Contextual Usage` {
 
-        @Test("Footer section usage")
-        func footerSectionUsage() {
+        @Test
+    func `Footer section usage`() {
             let address = Address()
             #expect(address == Address())
         }
 
-        @Test("Article footer usage")
-        func articleFooterUsage() {
+        @Test
+    func `Article footer usage`() {
             let address = Address()
             #expect(address == Address())
         }
 
-        @Test("Document footer usage")
-        func documentFooterUsage() {
+        @Test
+    func `Document footer usage`() {
             let address = Address()
             #expect(address == Address())
         }
 
-        @Test("Contact section usage")
-        func contactSectionUsage() {
+        @Test
+    func `Contact section usage`() {
             let address = Address()
             #expect(address == Address())
         }

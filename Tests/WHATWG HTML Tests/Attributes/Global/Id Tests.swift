@@ -18,27 +18,27 @@ import Testing
 #elseif canImport(Foundation)
     #endif
 
-@Suite("Id Test")
-struct IdTests {
-    @Test("Id attribute should be id")
-    func attribute() {
+@Suite
+struct `Id Test` {
+    @Test
+    func `Id attribute should be id`() {
         #expect(Id.attribute == "id")
     }
 
-    @Test("Id should store and return its value")
-    func valueStorage() {
+    @Test
+    func `Id should store and return its value`() {
         let id = Id("header-section")
         #expect(id.rawValue == "header-section")
     }
 
-    @Test("Id description should return its value")
-    func description() {
+    @Test
+    func `Id description should return its value`() {
         let id = Id("main-content")
         #expect(id.description == "main-content")
     }
 
-    @Test("Id should be initializable with string literal")
-    func stringLiteralInitialization() {
+    @Test
+    func `Id should be initializable with string literal`() {
         let id: Id = "footer"
         #expect(id.rawValue == "footer")
     }

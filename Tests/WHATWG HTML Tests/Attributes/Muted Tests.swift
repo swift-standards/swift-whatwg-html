@@ -13,10 +13,10 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Muted Test")
-struct MutedTests {
-    @Test("Muted attribute should be muted")
-    func attribute() {
+@Suite
+struct `Muted Test` {
+    @Test
+    func `Muted attribute should be muted`() {
         #expect(Muted.attribute == "muted")
     }
 }

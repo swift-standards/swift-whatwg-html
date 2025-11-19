@@ -13,10 +13,10 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("SrcLang Test")
-struct SrcLangTests {
-    @Test("SrcLang attribute should be srclang")
-    func attribute() {
+@Suite
+struct `SrcLang Test` {
+    @Test
+    func `SrcLang attribute should be srclang`() {
         #expect(SrcLang.attribute == "srclang")
     }
 }

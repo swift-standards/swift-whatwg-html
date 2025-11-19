@@ -13,203 +13,203 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Bigger Text Tests")
-struct BiggerTextTests {
+@Suite
+struct `Bigger Text Tests` {
 
-    @Test("Basic Big element creation")
-    func basicBigElementCreation() {
+    @Test
+    func `Basic Big element creation`() {
         let big = Big()
         #expect(Big.tag == "big")
     }
 
-    @Test("Big element conforms to HTMLElement")
-    func bigElementConformsToHTMLElement() {
+    @Test
+    func `Big element conforms to HTMLElement`() {
         let big = Big()
         let element: any WHATWG_HTML.Element = big
         #expect(type(of: element).tag == "big")
     }
 
-    @Suite("Deprecated Element Usage")
-    struct DeprecatedElementUsage {
+    @Suite
+struct `Deprecated Element Usage` {
 
-        @Test("Understanding deprecation status")
-        func understandingDeprecationStatus() {
+        @Test
+    func `Understanding deprecation status`() {
             let big = Big()
             // Big element is deprecated in HTML standards
             #expect(Big.tag == "big")
         }
 
-        @Test("Legacy content support")
-        func legacyContentSupport() {
+        @Test
+    func `Legacy content support`() {
             let big = Big()
             #expect(Big.tag == "big")
         }
 
-        @Test("Backward compatibility maintenance")
-        func backwardCompatibilityMaintenance() {
+        @Test
+    func `Backward compatibility maintenance`() {
             let big = Big()
             #expect(Big.tag == "big")
         }
 
-        @Test("Historical HTML document parsing")
-        func historicalHTMLDocumentParsing() {
-            let big = Big()
-            #expect(Big.tag == "big")
-        }
-    }
-
-    @Suite("Font Size Enhancement")
-    struct FontSizeEnhancement {
-
-        @Test("Text size increase by one level")
-        func textSizeIncreaseByOneLevel() {
-            let big = Big()
-            #expect(Big.tag == "big")
-        }
-
-        @Test("Relative font size scaling")
-        func relativeFontSizeScaling() {
-            let big = Big()
-            #expect(Big.tag == "big")
-        }
-
-        @Test("Visual emphasis through size")
-        func visualEmphasisThroughSize() {
-            let big = Big()
-            #expect(Big.tag == "big")
-        }
-
-        @Test("Text prominence enhancement")
-        func textProminenceEnhancement() {
+        @Test
+    func `Historical HTML document parsing`() {
             let big = Big()
             #expect(Big.tag == "big")
         }
     }
 
-    @Suite("Legacy Use Cases")
-    struct LegacyUseCases {
+    @Suite
+struct `Font Size Enhancement` {
 
-        @Test("Older HTML documents")
-        func olderHTMLDocuments() {
+        @Test
+    func `Text size increase by one level`() {
             let big = Big()
             #expect(Big.tag == "big")
         }
 
-        @Test("Maintenance of existing codebases")
-        func maintenanceOfExistingCodebases() {
+        @Test
+    func `Relative font size scaling`() {
             let big = Big()
             #expect(Big.tag == "big")
         }
 
-        @Test("HTML content migration")
-        func htmlContentMigration() {
+        @Test
+    func `Visual emphasis through size`() {
             let big = Big()
             #expect(Big.tag == "big")
         }
 
-        @Test("Browser compatibility testing")
-        func browserCompatibilityTesting() {
-            let big = Big()
-            #expect(Big.tag == "big")
-        }
-
-        @Test("Legacy CMS content")
-        func legacyCMSContent() {
+        @Test
+    func `Text prominence enhancement`() {
             let big = Big()
             #expect(Big.tag == "big")
         }
     }
 
-    @Suite("Modern Alternatives")
-    struct ModernAlternatives {
+    @Suite
+struct `Legacy Use Cases` {
 
-        @Test("CSS font-size property recommendation")
-        func cssFontSizePropertyRecommendation() {
+        @Test
+    func `Older HTML documents`() {
+            let big = Big()
+            #expect(Big.tag == "big")
+        }
+
+        @Test
+    func `Maintenance of existing codebases`() {
+            let big = Big()
+            #expect(Big.tag == "big")
+        }
+
+        @Test
+    func `HTML content migration`() {
+            let big = Big()
+            #expect(Big.tag == "big")
+        }
+
+        @Test
+    func `Browser compatibility testing`() {
+            let big = Big()
+            #expect(Big.tag == "big")
+        }
+
+        @Test
+    func `Legacy CMS content`() {
+            let big = Big()
+            #expect(Big.tag == "big")
+        }
+    }
+
+    @Suite
+struct `Modern Alternatives` {
+
+        @Test
+    func `CSS font-size property recommendation`() {
             let big = Big()
             // Modern approach would use CSS font-size: larger or specific size
             #expect(Big.tag == "big")
         }
 
-        @Test("Semantic HTML over presentational")
-        func semanticHTMLOverPresentational() {
+        @Test
+    func `Semantic HTML over presentational`() {
             let big = Big()
             #expect(Big.tag == "big")
         }
 
-        @Test("CSS styling separation")
-        func cssStylinSeparation() {
+        @Test
+    func `CSS styling separation`() {
             let big = Big()
             #expect(Big.tag == "big")
         }
 
-        @Test("Responsive design considerations")
-        func responsiveDesignConsiderations() {
-            let big = Big()
-            #expect(Big.tag == "big")
-        }
-    }
-
-    @Suite("Typography Context")
-    struct TypographyContext {
-
-        @Test("Text hierarchy establishment")
-        func textHierarchyEstablishment() {
-            let big = Big()
-            #expect(Big.tag == "big")
-        }
-
-        @Test("Visual text differentiation")
-        func visualTextDifferentiation() {
-            let big = Big()
-            #expect(Big.tag == "big")
-        }
-
-        @Test("Reading emphasis creation")
-        func readingEmphasisCreation() {
-            let big = Big()
-            #expect(Big.tag == "big")
-        }
-
-        @Test("Content scanning aids")
-        func contentScanningAids() {
+        @Test
+    func `Responsive design considerations`() {
             let big = Big()
             #expect(Big.tag == "big")
         }
     }
 
-    @Suite("Historical Context")
-    struct HistoricalContext {
+    @Suite
+struct `Typography Context` {
 
-        @Test("HTML 3.2 and 4.0 era support")
-        func html32And40EraSupport() {
+        @Test
+    func `Text hierarchy establishment`() {
             let big = Big()
             #expect(Big.tag == "big")
         }
 
-        @Test("Early web development practices")
-        func earlyWebDevelopmentPractices() {
+        @Test
+    func `Visual text differentiation`() {
             let big = Big()
             #expect(Big.tag == "big")
         }
 
-        @Test("Presentational markup era")
-        func presentationalMarkupEra() {
+        @Test
+    func `Reading emphasis creation`() {
             let big = Big()
             #expect(Big.tag == "big")
         }
 
-        @Test("Pre-CSS styling approaches")
-        func preCSSStylingApproaches() {
+        @Test
+    func `Content scanning aids`() {
             let big = Big()
             #expect(Big.tag == "big")
         }
     }
 
-    @Suite("Integration Tests")
-    struct IntegrationTests {
+    @Suite
+struct `Historical Context` {
 
-        @Test("Multiple Big elements")
-        func multipleBigElements() {
+        @Test
+    func `HTML 3.2 and 4.0 era support`() {
+            let big = Big()
+            #expect(Big.tag == "big")
+        }
+
+        @Test
+    func `Early web development practices`() {
+            let big = Big()
+            #expect(Big.tag == "big")
+        }
+
+        @Test
+    func `Presentational markup era`() {
+            let big = Big()
+            #expect(Big.tag == "big")
+        }
+
+        @Test
+    func `Pre-CSS styling approaches`() {
+            let big = Big()
+            #expect(Big.tag == "big")
+        }
+    }
+
+    @Suite
+struct `Integration Tests` {
+
+        @Test
+    func `Multiple Big elements`() {
             let big1 = Big()
             let big2 = Big()
             let big3 = Big()
@@ -222,16 +222,16 @@ struct BiggerTextTests {
             }
         }
 
-        @Test("Big element within content flow")
-        func bigElementWithinContentFlow() {
+        @Test
+    func `Big element within content flow`() {
             let big = Big()
             let element: any WHATWG_HTML.Element = big
 
             #expect(type(of: element).tag == "big")
         }
 
-        @Test("Nested Big elements")
-        func nestedBigElements() {
+        @Test
+    func `Nested Big elements`() {
             let outerBig = Big()
             let innerBig = Big()
 
@@ -240,93 +240,93 @@ struct BiggerTextTests {
             #expect(innerBig is any WHATWG_HTML.Element)
         }
 
-        @Test("Big element with other inline elements")
-        func bigElementWithOtherInlineElements() {
+        @Test
+    func `Big element with other inline elements`() {
             let big = Big()
             #expect(Big.tag == "big")
         }
     }
 
-    @Suite("Accessibility Considerations")
-    struct AccessibilityConsiderations {
+    @Suite
+struct `Accessibility Considerations` {
 
-        @Test("Screen reader size announcement")
-        func screenReaderSizeAnnouncement() {
+        @Test
+    func `Screen reader size announcement`() {
             let big = Big()
             #expect(Big.tag == "big")
         }
 
-        @Test("Visual impairment user support")
-        func visualImpairmentUserSupport() {
+        @Test
+    func `Visual impairment user support`() {
             let big = Big()
             #expect(Big.tag == "big")
         }
 
-        @Test("Text scaling behavior")
-        func textScalingBehavior() {
+        @Test
+    func `Text scaling behavior`() {
             let big = Big()
             #expect(Big.tag == "big")
         }
 
-        @Test("Contrast and readability")
-        func contrastAndReadability() {
+        @Test
+    func `Contrast and readability`() {
             let big = Big()
             #expect(Big.tag == "big")
         }
     }
 
-    @Suite("Best Practices")
-    struct BestPractices {
+    @Suite
+struct `Best Practices` {
 
-        @Test("Avoid Big in new development")
-        func avoidBigInNewDevelopment() {
+        @Test
+    func `Avoid Big in new development`() {
             let big = Big()
             // Should prefer CSS font-size in modern development
             #expect(Big.tag == "big")
         }
 
-        @Test("Use CSS for font sizing")
-        func useCSSForFontSizing() {
+        @Test
+    func `Use CSS for font sizing`() {
             let big = Big()
             #expect(Big.tag == "big")
         }
 
-        @Test("Semantic markup over presentational")
-        func semanticMarkupOverPresentational() {
+        @Test
+    func `Semantic markup over presentational`() {
             let big = Big()
             #expect(Big.tag == "big")
         }
 
-        @Test("Migration to modern approaches")
-        func migrationToModernApproaches() {
+        @Test
+    func `Migration to modern approaches`() {
             let big = Big()
             #expect(Big.tag == "big")
         }
     }
 
-    @Suite("Document Migration")
-    struct DocumentMigration {
+    @Suite
+struct `Document Migration` {
 
-        @Test("Legacy document processing")
-        func legacyDocumentProcessing() {
+        @Test
+    func `Legacy document processing`() {
             let big = Big()
             #expect(Big.tag == "big")
         }
 
-        @Test("Content transformation scenarios")
-        func contentTransformationScenarios() {
+        @Test
+    func `Content transformation scenarios`() {
             let big = Big()
             #expect(Big.tag == "big")
         }
 
-        @Test("HTML parser compatibility")
-        func htmlParserCompatibility() {
+        @Test
+    func `HTML parser compatibility`() {
             let big = Big()
             #expect(Big.tag == "big")
         }
 
-        @Test("Browser rendering consistency")
-        func browserRenderingConsistency() {
+        @Test
+    func `Browser rendering consistency`() {
             let big = Big()
             #expect(Big.tag == "big")
         }

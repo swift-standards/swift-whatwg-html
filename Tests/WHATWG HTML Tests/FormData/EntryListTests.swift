@@ -14,19 +14,19 @@ import Testing
 import WHATWG_HTML_Forms
 @testable import WHATWG_HTML_FormData
 
-@Suite("EntryList Tests")
-struct EntryListTests {
+@Suite
+struct `EntryList Tests` {
 
-    @Test("EntryList empty initialization")
-    func entryListEmpty() {
+    @Test
+    func `EntryList empty initialization`() {
         let list = Form.Data.Entry.List()
 
         #expect(list.count == 0)
         #expect(list.isEmpty == true)
     }
 
-    @Test("EntryList initialization with entries")
-    func entryListWithEntries() {
+    @Test
+    func `EntryList initialization with entries`() {
         let entries = [
             Form.Data.Entry(name: "field1", stringValue: "value1"),
             Form.Data.Entry(name: "field2", stringValue: "value2")
@@ -37,8 +37,8 @@ struct EntryListTests {
         #expect(list.isEmpty == false)
     }
 
-    @Test("EntryList append entry")
-    func entryListAppend() {
+    @Test
+    func `EntryList append entry`() {
         var list = Form.Data.Entry.List()
         let entry = Form.Data.Entry(name: "test", stringValue: "value")
 
@@ -48,8 +48,8 @@ struct EntryListTests {
         #expect(list[0].name == "test")
     }
 
-    @Test("EntryList append with name and value")
-    func entryListAppendNameValue() {
+    @Test
+    func `EntryList append with name and value`() {
         var list = Form.Data.Entry.List()
         list.append(name: "username", value: .string("alice"))
 
@@ -58,8 +58,8 @@ struct EntryListTests {
         #expect(list[0].value.stringValue == "alice")
     }
 
-    @Test("EntryList append string convenience")
-    func entryListAppendString() {
+    @Test
+    func `EntryList append string convenience`() {
         var list = Form.Data.Entry.List()
         list.append(name: "email", value: "alice@example.com")
 
@@ -67,8 +67,8 @@ struct EntryListTests {
         #expect(list[0].value.stringValue == "alice@example.com")
     }
 
-    @Test("EntryList append file convenience")
-    func entryListAppendFile() {
+    @Test
+    func `EntryList append file convenience`() {
         var list = Form.Data.Entry.List()
         let file = Form.Data.File(
             name: "photo.jpg",
@@ -81,8 +81,8 @@ struct EntryListTests {
         #expect(list[0].value.fileValue == file)
     }
 
-    @Test("EntryList subscript by name returns all values")
-    func entryListSubscript() {
+    @Test
+    func `EntryList subscript by name returns all values`() {
         var list = Form.Data.Entry.List()
         list.append(name: "interests", value: "swift")
         list.append(name: "interests", value: "webdev")
@@ -98,14 +98,14 @@ struct EntryListTests {
         #expect(username?[0].stringValue == "alice")
     }
 
-    @Test("EntryList subscript returns nil for missing name")
-    func entryListSubscriptMissing() {
+    @Test
+    func `EntryList subscript returns nil for missing name`() {
         let list = Form.Data.Entry.List()
         #expect(list["nonexistent"] == nil)
     }
 
-    @Test("EntryList first named returns first value")
-    func entryListFirst() {
+    @Test
+    func `EntryList first named returns first value`() {
         var list = Form.Data.Entry.List()
         list.append(name: "field", value: "first")
         list.append(name: "field", value: "second")
@@ -115,14 +115,14 @@ struct EntryListTests {
         #expect(first?.stringValue == "first")
     }
 
-    @Test("EntryList first named returns nil for missing")
-    func entryListFirstMissing() {
+    @Test
+    func `EntryList first named returns nil for missing`() {
         let list = Form.Data.Entry.List()
         #expect(list.first(named: "missing") == nil)
     }
 
-    @Test("EntryList all named returns all values")
-    func entryListAll() {
+    @Test
+    func `EntryList all named returns all values`() {
         var list = Form.Data.Entry.List()
         list.append(name: "tags", value: "swift")
         list.append(name: "tags", value: "web")
@@ -136,16 +136,16 @@ struct EntryListTests {
         #expect(tags[2].stringValue == "server")
     }
 
-    @Test("EntryList all named returns empty array for missing")
-    func entryListAllMissing() {
+    @Test
+    func `EntryList all named returns empty array for missing`() {
         let list = Form.Data.Entry.List()
         let values = list.all(named: "missing")
 
         #expect(values.isEmpty == true)
     }
 
-    @Test("EntryList contains name")
-    func entryListContains() {
+    @Test
+    func `EntryList contains name`() {
         var list = Form.Data.Entry.List()
         list.append(name: "username", value: "alice")
 
@@ -153,8 +153,8 @@ struct EntryListTests {
         #expect(list.contains(name: "email") == false)
     }
 
-    @Test("EntryList remove by name")
-    func entryListRemove() {
+    @Test
+    func `EntryList remove by name`() {
         var list = Form.Data.Entry.List()
         list.append(name: "field1", value: "value1")
         list.append(name: "field2", value: "value2")
@@ -167,8 +167,8 @@ struct EntryListTests {
         #expect(list[0].name == "field2")
     }
 
-    @Test("EntryList names returns unique names in order")
-    func entryListNames() {
+    @Test
+    func `EntryList names returns unique names in order`() {
         var list = Form.Data.Entry.List()
         list.append(name: "username", value: "alice")
         list.append(name: "email", value: "alice@example.com")
@@ -182,8 +182,8 @@ struct EntryListTests {
         #expect(names == ["username", "email", "age"])
     }
 
-    @Test("EntryList conforms to Collection")
-    func entryListCollection() {
+    @Test
+    func `EntryList conforms to Collection`() {
         var list = Form.Data.Entry.List()
         list.append(name: "field1", value: "value1")
         list.append(name: "field2", value: "value2")
@@ -195,8 +195,8 @@ struct EntryListTests {
         #expect(second.name == "field2")
     }
 
-    @Test("EntryList can be iterated")
-    func entryListIteration() {
+    @Test
+    func `EntryList can be iterated`() {
         var list = Form.Data.Entry.List()
         list.append(name: "a", value: "1")
         list.append(name: "b", value: "2")
@@ -210,8 +210,8 @@ struct EntryListTests {
         #expect(names == ["a", "b", "c"])
     }
 
-    @Test("EntryList array literal initialization")
-    func entryListArrayLiteral() {
+    @Test
+    func `EntryList array literal initialization`() {
         let list: Form.Data.Entry.List = [
             Form.Data.Entry(name: "field1", stringValue: "value1"),
             Form.Data.Entry(name: "field2", stringValue: "value2")
@@ -222,8 +222,8 @@ struct EntryListTests {
         #expect(list[1].name == "field2")
     }
 
-    @Test("EntryList conforms to Equatable")
-    func entryListEquatable() {
+    @Test
+    func `EntryList conforms to Equatable`() {
         let list1: Form.Data.Entry.List = [
             Form.Data.Entry(name: "a", stringValue: "1"),
             Form.Data.Entry(name: "b", stringValue: "2")
@@ -236,8 +236,8 @@ struct EntryListTests {
         #expect(list1 == list2)
     }
 
-    @Test("EntryList different entries not equal")
-    func entryListNotEqual() {
+    @Test
+    func `EntryList different entries not equal`() {
         let list1: Form.Data.Entry.List = [
             Form.Data.Entry(name: "a", stringValue: "1")
         ]
@@ -248,8 +248,8 @@ struct EntryListTests {
         #expect(list1 != list2)
     }
 
-    @Test("EntryList conforms to Hashable")
-    func entryListHashable() {
+    @Test
+    func `EntryList conforms to Hashable`() {
         let list1: Form.Data.Entry.List = [
             Form.Data.Entry(name: "a", stringValue: "1")
         ]
@@ -260,8 +260,8 @@ struct EntryListTests {
         #expect(list1.hashValue == list2.hashValue)
     }
 
-    @Test("EntryList description")
-    func entryListDescription() {
+    @Test
+    func `EntryList description`() {
         var list = Form.Data.Entry.List()
         list.append(name: "username", value: "alice")
         list.append(name: "email", value: "alice@example.com")
@@ -274,8 +274,8 @@ struct EntryListTests {
         #expect(description.contains("alice@example.com"))
     }
 
-    @Test("EntryList debug description")
-    func entryListDebugDescription() {
+    @Test
+    func `EntryList debug description`() {
         var list = Form.Data.Entry.List()
         list.append(name: "test", value: "value")
 
@@ -286,8 +286,8 @@ struct EntryListTests {
         #expect(debugDescription.contains("test"))
     }
 
-    @Test("EntryList preserves insertion order")
-    func entryListOrder() {
+    @Test
+    func `EntryList preserves insertion order`() {
         var list = Form.Data.Entry.List()
         list.append(name: "third", value: "3")
         list.append(name: "first", value: "1")
@@ -298,8 +298,8 @@ struct EntryListTests {
         #expect(list[2].name == "second")
     }
 
-    @Test("EntryList supports multiple values for same name")
-    func entryListMultipleValues() {
+    @Test
+    func `EntryList supports multiple values for same name`() {
         var list = Form.Data.Entry.List()
         list.append(name: "checkbox", value: "option1")
         list.append(name: "checkbox", value: "option2")
@@ -313,8 +313,8 @@ struct EntryListTests {
         #expect(values[2].stringValue == "option3")
     }
 
-    @Test("EntryList conforms to Sendable")
-    func entryListSendable() {
+    @Test
+    func `EntryList conforms to Sendable`() {
         // Compile-time check that EntryList is Sendable
         func acceptSendable<T: Sendable>(_: T) {}
         let list = Form.Data.Entry.List()

@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Graphics Canvas Test")
-struct GraphicsCanvasTests {
+@Suite
+struct `Graphics Canvas Test` {
 
 }

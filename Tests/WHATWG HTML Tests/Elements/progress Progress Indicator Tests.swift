@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Progress Indicator Test")
-struct ProgressIndicatorTests {
+@Suite
+struct `Progress Indicator Test` {
 
 }

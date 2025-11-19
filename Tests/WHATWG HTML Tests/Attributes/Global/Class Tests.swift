@@ -18,15 +18,15 @@ import Testing
 #elseif canImport(Foundation)
     #endif
 
-@Suite("Class Test")
-struct ClassTests {
-    @Test("Class attribute should be class")
-    func attribute() {
+@Suite
+struct `Class Test` {
+    @Test
+    func `Class attribute should be class`() {
         #expect(Class.attribute == "class")
     }
 
-    @Test("Class description should reflect the initialized values")
-    func description() {
+    @Test
+    func `Class description should reflect the initialized values`() {
         let singleClass: Class = Class("header")
         #expect(singleClass.description == "header")
 
@@ -37,8 +37,8 @@ struct ClassTests {
         #expect(emptyClass.description == "")
     }
 
-    @Test("Class can be initialized with single string or array of strings")
-    func initialization() {
+    @Test
+    func `Class can be initialized with single string or array of strings`() {
         let singleClass: Class = ("header")
         let arrayClass: Class = ["header"]
         #expect(singleClass.description == arrayClass.description)

@@ -13,10 +13,10 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Multiple Test")
-struct MultipleTests {
-    @Test("Multiple attribute should be multiple")
-    func attribute() {
+@Suite
+struct `Multiple Test` {
+    @Test
+    func `Multiple attribute should be multiple`() {
         #expect(Multiple.attribute == "multiple")
     }
 }

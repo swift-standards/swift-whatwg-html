@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Description Term Test")
-struct DescriptionTermTests {
+@Suite
+struct `Description Term Test` {
 
 }

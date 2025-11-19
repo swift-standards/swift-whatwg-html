@@ -13,15 +13,15 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Headers Test")
-struct HeadersTests {
-    @Test("Headers attribute should be headers")
-    func attribute() {
+@Suite
+struct `Headers Test` {
+    @Test
+    func `Headers attribute should be headers`() {
         #expect(Headers.attribute == "headers")
     }
 
-    @Test("Headers array literal support")
-    func arrayLiteral() {
+    @Test
+    func `Headers array literal support`() {
         let headers: Headers = ["header1", "header2", "header3"]
         #expect(headers.rawValue == "header1 header2 header3")
     }

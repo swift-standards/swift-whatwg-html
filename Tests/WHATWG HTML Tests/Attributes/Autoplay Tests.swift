@@ -13,10 +13,10 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Autoplay Test")
-struct AutoplayTests {
-    @Test("Autoplay attribute should be autoplay")
-    func attribute() {
+@Suite
+struct `Autoplay Test` {
+    @Test
+    func `Autoplay attribute should be autoplay`() {
         #expect(Autoplay.attribute == "autoplay")
     }
 }

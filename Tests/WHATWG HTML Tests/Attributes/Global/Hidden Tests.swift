@@ -18,10 +18,10 @@ import Testing
 #elseif canImport(Foundation)
     #endif
 
-@Suite("Hidden Test")
-struct HiddenTests {
-    @Test("Hidden attribute should be hidden")
-    func attribute() {
+@Suite
+struct `Hidden Test` {
+    @Test
+    func `Hidden attribute should be hidden`() {
         #expect(Hidden.attribute == "hidden")
     }
 
@@ -38,8 +38,8 @@ struct HiddenTests {
         }
     }
 
-    @Test("Hidden should conform to CaseIterable")
-    func conformsToCaseIterable() {
+    @Test
+    func `Hidden should conform to CaseIterable`() {
         #expect(Hidden.allCases.count == 3)
         #expect(Hidden.allCases.contains(.hidden))
         #expect(Hidden.allCases.contains(.untilFound))
@@ -65,8 +65,8 @@ struct HiddenTests {
         #expect(Hidden(rawValue: input) == expected)
     }
 
-    @Test("Empty Hidden should use default mode")
-    func emptyInitialization() {
+    @Test
+    func `Empty Hidden should use default mode`() {
         let hiddenDefault = Hidden()
         #expect(hiddenDefault == .hidden)
     }

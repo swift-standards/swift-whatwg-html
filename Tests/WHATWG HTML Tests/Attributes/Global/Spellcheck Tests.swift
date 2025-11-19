@@ -18,10 +18,10 @@ import Testing
 #elseif canImport(Foundation)
     #endif
 
-@Suite("Spellcheck Test")
-struct SpellcheckTests {
-    @Test("Spellcheck attribute should be spellcheck")
-    func attribute() {
+@Suite
+struct `Spellcheck Test` {
+    @Test
+    func `Spellcheck attribute should be spellcheck`() {
         #expect(Spellcheck.attribute == "spellcheck")
     }
 
@@ -36,8 +36,8 @@ struct SpellcheckTests {
         }
     }
 
-    @Test("Spellcheck should conform to CaseIterable")
-    func conformsToCaseIterable() {
+    @Test
+    func `Spellcheck should conform to CaseIterable`() {
         #expect(Spellcheck.allCases.count == 2)
         #expect(Spellcheck.allCases.contains(true))
         #expect(Spellcheck.allCases.contains(false))

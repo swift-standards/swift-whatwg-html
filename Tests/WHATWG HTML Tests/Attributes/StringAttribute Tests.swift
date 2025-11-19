@@ -29,46 +29,46 @@ private struct TestStringAttribute: WHATWG_HTML.StringAttribute {
     }
 }
 
-@Suite("WHATWG_HTML.StringAttribute Test")
-struct StringAttributeTests {
+@Suite
+struct `WHATWG_HTML.StringAttribute Test` {
 
-    @Test("Attribute name is correct")
-    func attributeName() {
+    @Test
+    func `Attribute name is correct`() {
         #expect(TestStringAttribute.attribute == "test-attr")
     }
 
-    @Test("Init with value stores rawValue correctly")
-    func initWithValue() {
+    @Test
+    func `Init with value stores rawValue correctly`() {
         let attr = TestStringAttribute(value: "container")
         #expect(attr.rawValue == "container")
     }
 
-    @Test("Convenience init stores value correctly")
-    func convenienceInit() {
+    @Test
+    func `Convenience init stores value correctly`() {
         let attr = TestStringAttribute("button primary")
         #expect(attr.rawValue == "button primary")
     }
 
-    @Test("String literal initialization")
-    func stringLiteralInit() {
+    @Test
+    func `String literal initialization`() {
         let attr: TestStringAttribute = "navbar"
         #expect(attr.rawValue == "navbar")
     }
 
-    @Test("RawRepresentable init with valid value")
-    func rawRepresentableInit() {
+    @Test
+    func `RawRepresentable init with valid value`() {
         let attr = TestStringAttribute(rawValue: "modal")
         #expect(attr?.rawValue == "modal")
     }
 
-    @Test("Description returns rawValue")
-    func description() {
+    @Test
+    func `Description returns rawValue`() {
         let attr = TestStringAttribute(value: "header")
         #expect(attr.description == "header")
     }
 
-    @Test("Dynamic member lookup for String properties")
-    func dynamicMemberLookup() {
+    @Test
+    func `Dynamic member lookup for String properties`() {
         let attr = TestStringAttribute(value: "hello world")
         #expect(attr.count == 11)
         #expect(attr.isEmpty == false)
@@ -76,15 +76,15 @@ struct StringAttributeTests {
         //        #expect(attr.lowercased() == "hello world")
     }
 
-    @Test("Dynamic member lookup with empty string")
-    func dynamicMemberLookupEmpty() {
+    @Test
+    func `Dynamic member lookup with empty string`() {
         let attr = TestStringAttribute(value: "")
         #expect(attr.isEmpty == true)
         #expect(attr.isEmpty)
     }
 
-    @Test("Equality comparison")
-    func equality() {
+    @Test
+    func `Equality comparison`() {
         let attr1 = TestStringAttribute(value: "container")
         let attr2 = TestStringAttribute(value: "container")
         let attr3 = TestStringAttribute(value: "wrapper")
@@ -93,34 +93,34 @@ struct StringAttributeTests {
         #expect(attr1 != attr3)
     }
 
-    @Test("Empty string value")
-    func emptyStringValue() {
+    @Test
+    func `Empty string value`() {
         let attr = TestStringAttribute(value: "")
         #expect(attr.rawValue == "")
         #expect(attr.description == "")
     }
 
-    @Test("String with spaces")
-    func stringWithSpaces() {
+    @Test
+    func `String with spaces`() {
         let attr = TestStringAttribute(value: "nav item active")
         #expect(attr.rawValue == "nav item active")
     }
 
-    @Test("String with special characters")
-    func stringWithSpecialChars() {
+    @Test
+    func `String with special characters`() {
         let attr = TestStringAttribute(value: "btn-primary_large")
         #expect(attr.rawValue == "btn-primary_large")
     }
 
-    @Test("String interpolation works")
-    func stringInterpolation() {
+    @Test
+    func `String interpolation works`() {
         let attr = TestStringAttribute(value: "item-1")
         let message = "Attribute: \(attr)"
         #expect(message == "Attribute: item-1")
     }
 
-    @Test("Sendable conformance (compile-time check)")
-    func sendableConformance() {
+    @Test
+    func `Sendable conformance (compile-time check)`() {
         let attr = TestStringAttribute(value: "test")
 
         Task {
@@ -128,28 +128,28 @@ struct StringAttributeTests {
         }
     }
 
-    @Test("Unicode string support")
-    func unicodeString() {
+    @Test
+    func `Unicode string support`() {
         let attr = TestStringAttribute(value: "测试-класс")
         #expect(attr.rawValue == "测试-класс")
     }
 
-    @Test("Long string value")
-    func longStringValue() {
+    @Test
+    func `Long string value`() {
         let longValue = String(repeating: "test ", count: 100).trimming(.whitespaces)
         let attr = TestStringAttribute(value: longValue)
         #expect(attr.rawValue == longValue)
     }
 
-    @Test("Any WHATWG_HTML.StringAttribute type erasure")
-    func anyStringAttribute() {
+    @Test
+    func `Any WHATWG_HTML.StringAttribute type erasure`() {
         let attr: any WHATWG_HTML.StringAttribute = TestStringAttribute(value: "type-erased")
         #expect(attr.rawValue == "type-erased")
         #expect(attr.description == "type-erased")
     }
 
-    @Test("Any WHATWG_HTML.StringAttribute equality through protocol")
-    func anyStringAttributeEquality() {
+    @Test
+    func `Any WHATWG_HTML.StringAttribute equality through protocol`() {
         let attr1: any WHATWG_HTML.StringAttribute = TestStringAttribute(value: "same")
         let attr2: any WHATWG_HTML.StringAttribute = TestStringAttribute(value: "same")
         let attr3: any WHATWG_HTML.StringAttribute = TestStringAttribute(value: "different")

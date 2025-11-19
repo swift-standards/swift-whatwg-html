@@ -13,33 +13,33 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Step Test")
-struct StepTests {
-    @Test("Step attribute should be step")
-    func attribute() {
+@Suite
+struct `Step Test` {
+    @Test
+    func `Step attribute should be step`() {
         #expect(Step.attribute == "step")
     }
 
-    @Test("Step should support enum cases")
-    func enumCases() {
+    @Test
+    func `Step should support enum cases`() {
         #expect(Step.any.rawValue == "any")
         #expect(Step.value(1.5).rawValue == "1.5")
     }
 
-    @Test("Step should support integer literal")
-    func integerLiteral() {
+    @Test
+    func `Step should support integer literal`() {
         let step: Step = 5
         #expect(step.rawValue == "5.0")
     }
 
-    @Test("Step should support float literal")
-    func floatLiteral() {
+    @Test
+    func `Step should support float literal`() {
         let step: Step = 0.1
         #expect(step.rawValue == "0.1")
     }
 
-    @Test("Step should have predefined convenience values")
-    func convenienceValues() {
+    @Test
+    func `Step should have predefined convenience values`() {
         #expect(Step.integer.rawValue == "1.0")
         #expect(Step.tenth.rawValue == "0.1")
         #expect(Step.hundredth.rawValue == "0.01")

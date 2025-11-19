@@ -13,10 +13,10 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("ShadowRootClonable Test")
-struct ShadowRootClonableTests {
-    @Test("ShadowRootClonable attribute should be shadowrootclonable")
-    func attribute() {
+@Suite
+struct `ShadowRootClonable Test` {
+    @Test
+    func `ShadowRootClonable attribute should be shadowrootclonable`() {
         #expect(ShadowRootClonable.attribute == "shadowrootclonable")
     }
 }

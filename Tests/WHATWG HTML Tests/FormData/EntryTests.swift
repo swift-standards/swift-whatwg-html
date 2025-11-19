@@ -14,11 +14,11 @@ import Testing
 import WHATWG_HTML_Forms
 @testable import WHATWG_HTML_FormData
 
-@Suite("Entry Tests")
-struct EntryTests {
+@Suite
+struct `Entry Tests` {
 
-    @Test("Entry initialization with name and value")
-    func entryInit() {
+    @Test
+    func `Entry initialization with name and value`() {
         let value = Form.Data.Value.string("test value")
         let entry = Form.Data.Entry(
             name: "field_name",
@@ -29,8 +29,8 @@ struct EntryTests {
         #expect(entry.value == value)
     }
 
-    @Test("Entry convenience init with string value")
-    func entryStringInit() {
+    @Test
+    func `Entry convenience init with string value`() {
         let entry = Form.Data.Entry(
             name: "username",
             stringValue: "alice"
@@ -41,8 +41,8 @@ struct EntryTests {
         #expect(entry.value.isString == true)
     }
 
-    @Test("Entry convenience init with file")
-    func entryFileInit() {
+    @Test
+    func `Entry convenience init with file`() {
         let file = Form.Data.File(
             name: "avatar.png",
             type: "image/png",
@@ -58,8 +58,8 @@ struct EntryTests {
         #expect(entry.value.isFile == true)
     }
 
-    @Test("Entry conforms to Hashable")
-    func entryHashable() {
+    @Test
+    func `Entry conforms to Hashable`() {
         let entry1 = Form.Data.Entry(
             name: "test",
             stringValue: "value"
@@ -73,8 +73,8 @@ struct EntryTests {
         #expect(entry1.hashValue == entry2.hashValue)
     }
 
-    @Test("Entries with different names are not equal")
-    func entryDifferentNames() {
+    @Test
+    func `Entries with different names are not equal`() {
         let entry1 = Form.Data.Entry(
             name: "field1",
             stringValue: "value"
@@ -87,8 +87,8 @@ struct EntryTests {
         #expect(entry1 != entry2)
     }
 
-    @Test("Entries with different values are not equal")
-    func entryDifferentValues() {
+    @Test
+    func `Entries with different values are not equal`() {
         let entry1 = Form.Data.Entry(
             name: "field",
             stringValue: "value1"
@@ -101,8 +101,8 @@ struct EntryTests {
         #expect(entry1 != entry2)
     }
 
-    @Test("Entry conforms to Sendable")
-    func entrySendable() {
+    @Test
+    func `Entry conforms to Sendable`() {
         // Compile-time check that Entry is Sendable
         func acceptSendable<T: Sendable>(_: T) {}
         let entry = Form.Data.Entry(

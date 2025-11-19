@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("HTML Document Root element Test")
-struct HTMLDocumentRootElementTests {
+@Suite
+struct `HTML Document Root element Test` {
 
 }

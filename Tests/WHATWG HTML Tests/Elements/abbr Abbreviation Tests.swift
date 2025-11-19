@@ -18,31 +18,31 @@ import Testing
 #elseif canImport(Foundation)
     #endif
 
-@Suite("Abbreviation Tests")
-struct AbbreviationTests {
+@Suite
+struct `Abbreviation Tests` {
 
-    @Test("Basic abbreviation creation")
-    func basicAbbreviationCreation() {
+    @Test
+    func `Basic abbreviation creation`() {
         let abbreviation = Abbreviation()
         #expect(Abbreviation.tag == "abbr")
     }
 
-    @Test("Abbreviation conforms to HTMLElement")
-    func abbreviationConformsToHTMLElement() {
+    @Test
+    func `Abbreviation conforms to HTMLElement`() {
         let abbreviation = Abbreviation()
         let element: any WHATWG_HTML.Element = abbreviation
         #expect(type(of: element).tag == "abbr")
     }
 
-    @Test("Abbreviation is equatable")
-    func abbreviationIsEquatable() {
+    @Test
+    func `Abbreviation is equatable`() {
         let abbreviation1 = Abbreviation()
         let abbreviation2 = Abbreviation()
         #expect(abbreviation1 == abbreviation2)
     }
 
-    @Test("Abbreviation is sendable")
-    func abbreviationIsSendable() {
+    @Test
+    func `Abbreviation is sendable`() {
         let abbreviation = Abbreviation()
 
         Task {
@@ -52,86 +52,86 @@ struct AbbreviationTests {
         #expect(abbreviation == Abbreviation())
     }
 
-    @Suite("Common Use Cases")
-    struct CommonUseCases {
+    @Suite
+struct `Common Use Cases` {
 
-        @Test("Technical abbreviation")
-        func technicalAbbreviation() {
+        @Test
+    func `Technical abbreviation`() {
             let abbreviation = Abbreviation()
             #expect(abbreviation == Abbreviation())
         }
 
-        @Test("Business abbreviation")
-        func businessAbbreviation() {
+        @Test
+    func `Business abbreviation`() {
             let abbreviation = Abbreviation()
             #expect(abbreviation == Abbreviation())
         }
 
-        @Test("Government abbreviation")
-        func governmentAbbreviation() {
+        @Test
+    func `Government abbreviation`() {
             let abbreviation = Abbreviation()
             #expect(abbreviation == Abbreviation())
         }
 
-        @Test("Medical abbreviation")
-        func medicalAbbreviation() {
+        @Test
+    func `Medical abbreviation`() {
             let abbreviation = Abbreviation()
             #expect(abbreviation == Abbreviation())
         }
 
-        @Test("Academic abbreviation")
-        func academicAbbreviation() {
-            let abbreviation = Abbreviation()
-            #expect(abbreviation == Abbreviation())
-        }
-    }
-
-    @Suite("Semantic Usage")
-    struct SemanticUsage {
-
-        @Test("Acronym usage")
-        func acronymUsage() {
-            let abbreviation = Abbreviation()
-            #expect(abbreviation == Abbreviation())
-        }
-
-        @Test("Initialism usage")
-        func initialismUsage() {
-            let abbreviation = Abbreviation()
-            #expect(abbreviation == Abbreviation())
-        }
-
-        @Test("Shortened form usage")
-        func shortenedFormUsage() {
-            let abbreviation = Abbreviation()
-            #expect(abbreviation == Abbreviation())
-        }
-
-        @Test("Symbol usage")
-        func symbolUsage() {
+        @Test
+    func `Academic abbreviation`() {
             let abbreviation = Abbreviation()
             #expect(abbreviation == Abbreviation())
         }
     }
 
-    @Suite("Best Practices Validation")
-    struct BestPracticesValidation {
+    @Suite
+struct `Semantic Usage` {
 
-        @Test("Simple abbreviation element")
-        func simpleAbbreviationElement() {
+        @Test
+    func `Acronym usage`() {
             let abbreviation = Abbreviation()
             #expect(abbreviation == Abbreviation())
         }
 
-        @Test("Consistent abbreviation structure")
-        func consistentAbbreviationStructure() {
+        @Test
+    func `Initialism usage`() {
+            let abbreviation = Abbreviation()
+            #expect(abbreviation == Abbreviation())
+        }
+
+        @Test
+    func `Shortened form usage`() {
+            let abbreviation = Abbreviation()
+            #expect(abbreviation == Abbreviation())
+        }
+
+        @Test
+    func `Symbol usage`() {
+            let abbreviation = Abbreviation()
+            #expect(abbreviation == Abbreviation())
+        }
+    }
+
+    @Suite
+struct `Best Practices Validation` {
+
+        @Test
+    func `Simple abbreviation element`() {
+            let abbreviation = Abbreviation()
+            #expect(abbreviation == Abbreviation())
+        }
+
+        @Test
+    func `Consistent abbreviation structure`() {
             let abbreviation1 = Abbreviation()
             let abbreviation2 = Abbreviation()
             #expect(abbreviation1 == abbreviation2)
         }
 
-        @Test("Multiple abbreviations")
-        func multipleAbbreviations() {
+        @Test
+    func `Multiple abbreviations`() {
             let htmlAbbr = Abbreviation()
             let cssAbbr = Abbreviation()
             let jsAbbr = Abbreviation()
@@ -142,34 +142,34 @@ struct AbbreviationTests {
         }
     }
 
-    @Suite("Element Properties")
-    struct ElementProperties {
+    @Suite
+struct `Element Properties` {
 
-        @Test("Tag name is correct")
-        func tagNameIsCorrect() {
+        @Test
+    func `Tag name is correct`() {
             #expect(Abbreviation.tag == "abbr")
         }
 
-        @Test("Element creation is consistent")
-        func elementCreationIsConsistent() {
+        @Test
+    func `Element creation is consistent`() {
             let abbreviation1 = Abbreviation()
             let abbreviation2 = Abbreviation()
             #expect(abbreviation1 == abbreviation2)
         }
 
-        @Test("Element has no mutable state")
-        func elementHasNoMutableState() {
+        @Test
+    func `Element has no mutable state`() {
             let abbreviation = Abbreviation()
             let copy = abbreviation
             #expect(abbreviation == copy)
         }
     }
 
-    @Suite("Integration Tests")
-    struct IntegrationTests {
+    @Suite
+struct `Integration Tests` {
 
-        @Test("Can be used in collections")
-        func canBeUsedInCollections() {
+        @Test
+    func `Can be used in collections`() {
             let abbreviations = [
                 Abbreviation(),
                 Abbreviation(),
@@ -180,8 +180,8 @@ struct AbbreviationTests {
             #expect(abbreviations.allSatisfy { $0 == Abbreviation() })
         }
 
-        @Test("Can be used as dictionary values")
-        func canBeUsedAsDictionaryValues() {
+        @Test
+    func `Can be used as dictionary values`() {
             let abbreviationMap: [String: Abbreviation] = [
                 "HTML": Abbreviation(),
                 "CSS": Abbreviation(),
@@ -192,8 +192,8 @@ struct AbbreviationTests {
             #expect(abbreviationMap.values.allSatisfy { $0 == Abbreviation() })
         }
 
-        @Test("Can be used in optional contexts")
-        func canBeUsedInOptionalContexts() {
+        @Test
+    func `Can be used in optional contexts`() {
             let maybeAbbreviation: Abbreviation? = Abbreviation()
             let noAbbreviation: Abbreviation? = nil
 

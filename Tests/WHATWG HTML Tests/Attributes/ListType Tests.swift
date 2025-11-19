@@ -13,15 +13,15 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("ListType Test")
-struct ListTypeTests {
-    @Test("ListType attribute should be type")
-    func attribute() {
+@Suite
+struct `ListType Test` {
+    @Test
+    func `ListType attribute should be type`() {
         #expect(ListType.attribute == "type")
     }
 
-    @Test("ListType should have predefined values")
-    func predefinedValues() {
+    @Test
+    func `ListType should have predefined values`() {
         #expect(ListType.lowerAlpha.rawValue == "a")
         #expect(ListType.upperAlpha.rawValue == "A")
         #expect(ListType.lowerRoman.rawValue == "i")

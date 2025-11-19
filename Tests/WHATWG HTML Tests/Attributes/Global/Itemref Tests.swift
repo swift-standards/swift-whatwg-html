@@ -18,33 +18,33 @@ import Testing
 #elseif canImport(Foundation)
     #endif
 
-@Suite("Itemref Test")
-struct ItemrefTests {
-    @Test("Itemref attribute should be itemref")
-    func attribute() {
+@Suite
+struct `Itemref Test` {
+    @Test
+    func `Itemref attribute should be itemref`() {
         #expect(Itemref.attribute == "itemref")
     }
 
-    @Test("Itemref should store and return its value")
-    func valueStorage() {
+    @Test
+    func `Itemref should store and return its value`() {
         let itemref = Itemref("details contact")
         #expect(itemref.rawValue == "details contact")
     }
 
-    @Test("Itemref description should return its value")
-    func description() {
+    @Test
+    func `Itemref description should return its value`() {
         let itemref = Itemref("name address")
         #expect(itemref.description == "name address")
     }
 
-    @Test("Itemref should be initializable with string literal")
-    func stringLiteralInitialization() {
+    @Test
+    func `Itemref should be initializable with string literal`() {
         let itemref: Itemref = "profile contact"
         #expect(itemref.rawValue == "profile contact")
     }
 
-    @Test("Itemref should be initializable with array literal")
-    func arrayLiteralInitialization() {
+    @Test
+    func `Itemref should be initializable with array literal`() {
         let itemref: Itemref = ["name", "address", "contact"]
         #expect(itemref.rawValue == "name address contact")
     }

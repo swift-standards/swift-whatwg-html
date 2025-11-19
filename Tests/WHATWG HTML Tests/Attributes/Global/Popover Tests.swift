@@ -18,10 +18,10 @@ import Testing
 #elseif canImport(Foundation)
     #endif
 
-@Suite("Popover Test")
-struct PopoverTests {
-    @Test("Popover attribute should be popover")
-    func attribute() {
+@Suite
+struct `Popover Test` {
+    @Test
+    func `Popover attribute should be popover`() {
         #expect(Popover.attribute == "popover")
     }
 
@@ -38,8 +38,8 @@ struct PopoverTests {
         }
     }
 
-    @Test("Popover should conform to CaseIterable")
-    func conformsToCaseIterable() {
+    @Test
+    func `Popover should conform to CaseIterable`() {
         #expect(Popover.allCases.count == 3)
         #expect(Popover.allCases.contains(.auto))
         #expect(Popover.allCases.contains(.manual))

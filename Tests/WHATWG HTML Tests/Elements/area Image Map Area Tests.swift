@@ -13,11 +13,11 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Image Map Area Tests")
-struct ImageMapAreaTests {
+@Suite
+struct `Image Map Area Tests` {
 
-    @Test("Basic area creation")
-    func basicAreaCreation() {
+    @Test
+    func `Basic area creation`() {
         let area = Area()
         #expect(Area.tag == "area")
         #expect(area.shape == nil)
@@ -25,15 +25,15 @@ struct ImageMapAreaTests {
         #expect(area.alt == nil)
     }
 
-    @Test("Area conforms to HTMLElement")
-    func areaConformsToHTMLElement() {
+    @Test
+    func `Area conforms to HTMLElement`() {
         let area = Area()
         let element: any WHATWG_HTML.Element = area
         #expect(type(of: element).tag == "area")
     }
 
-    @Test("Area with rectangular shape")
-    func areaWithRectangularShape() {
+    @Test
+    func `Area with rectangular shape`() {
         let shape = Shape.rect(coords: "0,0,100,100")
         let href = Href("page1.html")
         let alt = Alt("Rectangle area")
@@ -45,8 +45,8 @@ struct ImageMapAreaTests {
         #expect(area.coords == "0,0,100,100")
     }
 
-    @Test("Area with circular shape")
-    func areaWithCircularShape() {
+    @Test
+    func `Area with circular shape`() {
         let shape = Shape.circle(coords: "50,50,30")
         let href = Href("page2.html")
         let alt = Alt("Circle area")
@@ -58,8 +58,8 @@ struct ImageMapAreaTests {
         #expect(area.coords == "50,50,30")
     }
 
-    @Test("Area with polygon shape")
-    func areaWithPolygonShape() {
+    @Test
+    func `Area with polygon shape`() {
         let shape = Shape.poly(coords: "0,0,50,0,25,43")
         let href = Href("page3.html")
         let alt = Alt("Triangle area")
@@ -71,8 +71,8 @@ struct ImageMapAreaTests {
         #expect(area.coords == "0,0,50,0,25,43")
     }
 
-    @Test("Area with default shape")
-    func areaWithDefaultShape() {
+    @Test
+    func `Area with default shape`() {
         let shape = Shape.default
         let href = Href("default.html")
         let alt = Alt("Default area")
@@ -84,8 +84,8 @@ struct ImageMapAreaTests {
         #expect(area.coords == nil)
     }
 
-    @Test("Area with all attributes")
-    func areaWithAllAttributes() {
+    @Test
+    func `Area with all attributes`() {
         let shape = Shape.rect(coords: "10,10,90,90")
         let alt = Alt("Complete area")
         let href = Href("complete.html")
@@ -116,35 +116,35 @@ struct ImageMapAreaTests {
         #expect(area.target == target)
     }
 
-    @Suite("Shape Tests")
-    struct ShapeTests {
+    @Suite
+struct `Shape Tests` {
 
-        @Test("Rectangle shape label")
-        func rectangleShapeLabel() {
+        @Test
+    func `Rectangle shape label`() {
             let shape = Shape.rect(coords: "0,0,100,100")
             #expect(shape.label == "rect")
         }
 
-        @Test("Circle shape label")
-        func circleShapeLabel() {
+        @Test
+    func `Circle shape label`() {
             let shape = Shape.circle(coords: "50,50,25")
             #expect(shape.label == "circle")
         }
 
-        @Test("Polygon shape label")
-        func polygonShapeLabel() {
+        @Test
+    func `Polygon shape label`() {
             let shape = Shape.poly(coords: "0,0,50,0,25,43")
             #expect(shape.label == "poly")
         }
 
-        @Test("Default shape label")
-        func defaultShapeLabel() {
+        @Test
+    func `Default shape label`() {
             let shape = Shape.default
             #expect(shape.label == "default")
         }
 
-        @Test("Shape equality")
-        func shapeEquality() {
+        @Test
+    func `Shape equality`() {
             let rect1 = Shape.rect(coords: "0,0,100,100")
             let rect2 = Shape.rect(coords: "0,0,100,100")
             let rect3 = Shape.rect(coords: "10,10,90,90")
@@ -153,8 +153,8 @@ struct ImageMapAreaTests {
             #expect(rect1 != rect3)
         }
 
-        @Test("Shape is hashable")
-        func shapeIsHashable() {
+        @Test
+    func `Shape is hashable`() {
             let shapes: Set<Shape> = [
                 .rect(coords: "0,0,100,100"),
                 .circle(coords: "50,50,25"),
@@ -166,11 +166,11 @@ struct ImageMapAreaTests {
         }
     }
 
-    @Suite("Convenience Creators")
-    struct ConvenienceCreators {
+    @Suite
+struct `Convenience Creators` {
 
-        @Test("Rectangle creator")
-        func rectangleCreator() {
+        @Test
+    func `Rectangle creator`() {
             let href = Href("rect.html")
             let alt = Alt("Rectangle link")
             let target = Target.blank
@@ -197,8 +197,8 @@ struct ImageMapAreaTests {
             }
         }
 
-        @Test("Circle creator")
-        func circleCreator() {
+        @Test
+    func `Circle creator`() {
             let href = Href("circle.html")
             let alt = Alt("Circle link")
 
@@ -221,8 +221,8 @@ struct ImageMapAreaTests {
             }
         }
 
-        @Test("Polygon creator")
-        func polygonCreator() {
+        @Test
+    func `Polygon creator`() {
             let href = Href("poly.html")
             let alt = Alt("Polygon link")
             let points = [(0, 0), (50, 0), (25, 43)]
@@ -244,8 +244,8 @@ struct ImageMapAreaTests {
             }
         }
 
-        @Test("Default area creator")
-        func defaultAreaCreator() {
+        @Test
+    func `Default area creator`() {
             let href = Href("default.html")
             let alt = Alt("Default link")
             let target = Target.`self`
@@ -264,11 +264,11 @@ struct ImageMapAreaTests {
         }
     }
 
-    @Suite("Common Use Cases")
-    struct CommonUseCases {
+    @Suite
+struct `Common Use Cases` {
 
-        @Test("Image map navigation")
-        func imageMapNavigation() {
+        @Test
+    func `Image map navigation`() {
             let area1 = Area.rectangle(
                 x1: 0,
                 y1: 0,
@@ -291,8 +291,8 @@ struct ImageMapAreaTests {
             #expect(area2.coords == "0,50,100,100")
         }
 
-        @Test("Interactive diagram")
-        func interactiveDiagram() {
+        @Test
+    func `Interactive diagram`() {
             let buttonArea = Area.circle(
                 x: 50,
                 y: 30,
@@ -305,8 +305,8 @@ struct ImageMapAreaTests {
             #expect(buttonArea.alt?.description == "Button component")
         }
 
-        @Test("Geographic map")
-        func geographicMap() {
+        @Test
+    func `Geographic map`() {
             let region = Area.polygon(
                 points: [(100, 50), (150, 75), (125, 125), (75, 100)],
                 href: Href("region-details.html"),
@@ -317,11 +317,11 @@ struct ImageMapAreaTests {
         }
     }
 
-    @Suite("Accessibility Tests")
-    struct AccessibilityTests {
+    @Suite
+struct `Accessibility Tests` {
 
-        @Test("Alt text is required for links")
-        func altTextIsRequiredForLinks() {
+        @Test
+    func `Alt text is required for links`() {
             let href = Href("link.html")
             let alt = Alt("Accessible link")
             let area = Area(
@@ -334,8 +334,8 @@ struct ImageMapAreaTests {
             #expect(area.href == href)
         }
 
-        @Test("Descriptive alt text")
-        func descriptiveAltText() {
+        @Test
+    func `Descriptive alt text`() {
             let alt = Alt("Navigate to product details page")
             let area = Area(
                 shape: .circle(coords: "50,50,25"),
@@ -347,11 +347,11 @@ struct ImageMapAreaTests {
         }
     }
 
-    @Suite("Integration Tests")
-    struct IntegrationTests {
+    @Suite
+struct `Integration Tests` {
 
-        @Test("Multiple areas in image map")
-        func multipleAreasInImageMap() {
+        @Test
+    func `Multiple areas in image map`() {
             let areas = [
                 Area.rectangle(
                     x1: 0,
@@ -377,8 +377,8 @@ struct ImageMapAreaTests {
             #expect(areas[2].coords == nil)
         }
 
-        @Test("Area with security attributes")
-        func areaWithSecurityAttributes() {
+        @Test
+    func `Area with security attributes`() {
             let area = Area(
                 shape: .rect(coords: "0,0,100,100"),
                 alt: Alt("External link"),

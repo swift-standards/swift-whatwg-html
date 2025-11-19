@@ -13,29 +13,29 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Low Test")
-struct LowTests {
-    @Test("Low attribute should be low")
-    func attribute() {
+@Suite
+struct `Low Test` {
+    @Test
+    func `Low attribute should be low`() {
         #expect(Low.attribute == "low")
     }
 
-    @Test("Low should support integer literal")
-    func integerLiteral() {
+    @Test
+    func `Low should support integer literal`() {
         let low: Low = 25
         #expect(low.value == 25.0)
         #expect(low.description == "25.0")
     }
 
-    @Test("Low should support float literal")
-    func floatLiteral() {
+    @Test
+    func `Low should support float literal`() {
         let low: Low = 33.3
         #expect(low.value == 33.3)
         #expect(low.description == "33.3")
     }
 
-    @Test("Low init with double")
-    func initWithDouble() {
+    @Test
+    func `Low init with double`() {
         let low = Low(15.5)
         #expect(low.value == 15.5)
         #expect(low.description == "15.5")

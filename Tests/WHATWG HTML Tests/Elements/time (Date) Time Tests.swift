@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Time Element Tests")
-struct TimeElementTests {
+@Suite
+struct `Time Element Tests` {
 
 }

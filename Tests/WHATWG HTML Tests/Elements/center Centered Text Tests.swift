@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Centered Text Test")
-struct CenteredTextTests {
+@Suite
+struct `Centered Text Test` {
 
 }

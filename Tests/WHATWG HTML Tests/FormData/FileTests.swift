@@ -14,11 +14,11 @@ import Testing
 import WHATWG_HTML_Forms
 @testable import WHATWG_HTML_FormData
 
-@Suite("File Tests")
-struct FileTests {
+@Suite
+struct `File Tests` {
 
-    @Test("File initialization stores properties correctly")
-    func fileInitialization() {
+    @Test
+    func `File initialization stores properties correctly`() {
         let data = Data([1, 2, 3, 4, 5])
         let file = Form.Data.File(
             name: "test.txt",
@@ -31,8 +31,8 @@ struct FileTests {
         #expect(file.body == data)
     }
 
-    @Test("File size property returns correct byte count")
-    func fileSize() {
+    @Test
+    func `File size property returns correct byte count`() {
         let data = Data([1, 2, 3, 4, 5])
         let file = Form.Data.File(
             name: "test.bin",
@@ -43,8 +43,8 @@ struct FileTests {
         #expect(file.size == 5)
     }
 
-    @Test("File isEmpty returns true for empty data")
-    func fileEmpty() {
+    @Test
+    func `File isEmpty returns true for empty data`() {
         let file = Form.Data.File(
             name: "empty.txt",
             type: "text/plain",
@@ -54,8 +54,8 @@ struct FileTests {
         #expect(file.isEmpty == true)
     }
 
-    @Test("File isEmpty returns false for non-empty data")
-    func fileNotEmpty() {
+    @Test
+    func `File isEmpty returns false for non-empty data`() {
         let file = Form.Data.File(
             name: "data.txt",
             type: "text/plain",
@@ -65,8 +65,8 @@ struct FileTests {
         #expect(file.isEmpty == false)
     }
 
-    @Test("File description includes name, type, and size")
-    func fileDescription() {
+    @Test
+    func `File description includes name, type, and size`() {
         let data = Data([1, 2, 3])
         let file = Form.Data.File(
             name: "image.png",
@@ -80,8 +80,8 @@ struct FileTests {
         #expect(description.contains("3"))
     }
 
-    @Test("File conforms to Hashable")
-    func fileHashable() {
+    @Test
+    func `File conforms to Hashable`() {
         let data = Data([1, 2, 3])
         let file1 = Form.Data.File(
             name: "test.txt",
@@ -98,8 +98,8 @@ struct FileTests {
         #expect(file1.hashValue == file2.hashValue)
     }
 
-    @Test("File with different data are not equal")
-    func fileDifferentData() {
+    @Test
+    func `File with different data are not equal`() {
         let file1 = Form.Data.File(
             name: "test.txt",
             type: "text/plain",
@@ -114,8 +114,8 @@ struct FileTests {
         #expect(file1 != file2)
     }
 
-    @Test("MIME type constants are correct")
-    func mimeTypeConstants() {
+    @Test
+    func `MIME type constants are correct`() {
         #expect(Form.Data.File.MIMEType.plainText == "text/plain")
         #expect(Form.Data.File.MIMEType.html == "text/html")
         #expect(Form.Data.File.MIMEType.json == "application/json")
@@ -125,8 +125,8 @@ struct FileTests {
         #expect(Form.Data.File.MIMEType.octetStream == "application/octet-stream")
     }
 
-    @Test("File conforms to Sendable")
-    func fileSendable() {
+    @Test
+    func `File conforms to Sendable`() {
         // Compile-time check that File is Sendable
         func acceptSendable<T: Sendable>(_: T) {}
         let file = Form.Data.File(

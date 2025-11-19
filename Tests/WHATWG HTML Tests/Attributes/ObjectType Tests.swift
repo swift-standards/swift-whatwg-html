@@ -13,15 +13,15 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("ObjectType Test")
-struct ObjectTypeTests {
-    @Test("ObjectType attribute should be type")
-    func attribute() {
+@Suite
+struct `ObjectType Test` {
+    @Test
+    func `ObjectType attribute should be type`() {
         #expect(ObjectType.attribute == "type")
     }
 
-    @Test("ObjectType should have predefined MIME types")
-    func predefinedMimeTypes() {
+    @Test
+    func `ObjectType should have predefined MIME types`() {
         #expect(ObjectType.pdf.rawValue == "application/pdf")
         #expect(ObjectType.mp4.rawValue == "video/mp4")
         #expect(ObjectType.mp3.rawValue == "audio/mpeg")

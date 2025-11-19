@@ -13,10 +13,10 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("FormNovalidate Test")
-struct FormNovalidateTests {
-    @Test("FormNovalidate attribute should be formnovalidate")
-    func attribute() {
+@Suite
+struct `FormNovalidate Test` {
+    @Test
+    func `FormNovalidate attribute should be formnovalidate`() {
         #expect(FormNovalidate.attribute == "formnovalidate")
     }
 }

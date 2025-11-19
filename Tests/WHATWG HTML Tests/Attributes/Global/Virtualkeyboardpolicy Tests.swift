@@ -18,15 +18,15 @@ import Testing
 #elseif canImport(Foundation)
     #endif
 
-@Suite("Virtualkeyboardpolicy Test")
-struct VirtualkeyboardpolicyTests {
-    @Test("Virtualkeyboardpolicy attribute should be virtualkeyboardpolicy")
-    func attribute() {
+@Suite
+struct `Virtualkeyboardpolicy Test` {
+    @Test
+    func `Virtualkeyboardpolicy attribute should be virtualkeyboardpolicy`() {
         #expect(Virtualkeyboardpolicy.attribute == "virtualkeyboardpolicy")
     }
 
-    @Test("Virtualkeyboardpolicy description should match the spec")
-    func description() {
+    @Test
+    func `Virtualkeyboardpolicy description should match the spec`() {
         #expect(Virtualkeyboardpolicy.auto.description == "auto")
         #expect(Virtualkeyboardpolicy.manual.description == "manual")
     }

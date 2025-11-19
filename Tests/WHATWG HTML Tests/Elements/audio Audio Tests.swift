@@ -13,11 +13,11 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Audio Tests")
-struct AudioTests {
+@Suite
+struct `Audio Tests` {
 
-    @Test("Basic audio creation")
-    func basicAudioCreation() {
+    @Test
+    func `Basic audio creation`() {
         let audio = Audio()
         #expect(Audio.tag == "audio")
         #expect(audio.src == nil)
@@ -31,64 +31,64 @@ struct AudioTests {
         #expect(audio.disableremoteplayback == nil)
     }
 
-    @Test("Audio conforms to HTMLElement")
-    func audioConformsToHTMLElement() {
+    @Test
+    func `Audio conforms to HTMLElement`() {
         let audio = Audio()
         let element: any WHATWG_HTML.Element = audio
         #expect(type(of: element).tag == "audio")
     }
 
-    @Test("Audio with src attribute")
-    func audioWithSrc() {
+    @Test
+    func `Audio with src attribute`() {
         let src = Src("audio-file.mp3")
         let audio = Audio(src: src)
         #expect(audio.src == src)
     }
 
-    @Test("Audio with controls")
-    func audioWithControls() {
+    @Test
+    func `Audio with controls`() {
         let controls = Controls()
         let audio = Audio(controls: controls)
         #expect(audio.controls == controls)
     }
 
-    @Test("Audio with autoplay")
-    func audioWithAutoplay() {
+    @Test
+    func `Audio with autoplay`() {
         let autoplay = Autoplay()
         let audio = Audio(autoplay: autoplay)
         #expect(audio.autoplay == autoplay)
     }
 
-    @Test("Audio with loop")
-    func audioWithLoop() {
+    @Test
+    func `Audio with loop`() {
         let loop = Loop()
         let audio = Audio(loop: loop)
         #expect(audio.loop == loop)
     }
 
-    @Test("Audio with muted")
-    func audioWithMuted() {
+    @Test
+    func `Audio with muted`() {
         let muted = Muted()
         let audio = Audio(muted: muted)
         #expect(audio.muted == muted)
     }
 
-    @Test("Audio with crossorigin")
-    func audioWithCrossorigin() {
+    @Test
+    func `Audio with crossorigin`() {
         let crossorigin = Crossorigin.anonymous
         let audio = Audio(crossorigin: crossorigin)
         #expect(audio.crossorigin == crossorigin)
     }
 
-    @Test("Audio with disable remote playback")
-    func audioWithDisableRemotePlayback() {
+    @Test
+    func `Audio with disable remote playback`() {
         let disableremoteplayback = DisableRemotePlayback()
         let audio = Audio(disableremoteplayback: disableremoteplayback)
         #expect(audio.disableremoteplayback == disableremoteplayback)
     }
 
-    @Test("Complete audio configuration")
-    func completeAudioConfiguration() {
+    @Test
+    func `Complete audio configuration`() {
         let src = Src("audio-file.mp3")
         let controls = Controls()
         let autoplay = Autoplay()
@@ -122,27 +122,27 @@ struct AudioTests {
         #expect(audio.disableremoteplayback == disableremoteplayback)
     }
 
-    @Suite("Preload Options")
-    struct PreloadOptions {
+    @Suite
+struct `Preload Options` {
 
-        @Test("Preload none")
-        func preloadNone() {
+        @Test
+    func `Preload none`() {
             let preload = Audio.Preload.none
             let audio = Audio(preload: preload)
             #expect(audio.preload == preload)
             #expect(preload.rawValue == "none")
         }
 
-        @Test("Preload metadata")
-        func preloadMetadata() {
+        @Test
+    func `Preload metadata`() {
             let preload = Audio.Preload.metadata
             let audio = Audio(preload: preload)
             #expect(audio.preload == preload)
             #expect(preload.rawValue == "metadata")
         }
 
-        @Test("Preload auto")
-        func preloadAuto() {
+        @Test
+    func `Preload auto`() {
             let preload = Audio.Preload.auto
             let audio = Audio(preload: preload)
             #expect(audio.preload == preload)
@@ -150,11 +150,11 @@ struct AudioTests {
         }
     }
 
-    @Suite("Controls List")
-    struct ControlsListTests {
+    @Suite
+struct `Controls List` {
 
-        @Test("Default controls list")
-        func defaultControlsList() {
+        @Test
+    func `Default controls list`() {
             let controlslist = Audio.ControlsList()
             #expect(controlslist.nodownload == false)
             #expect(controlslist.nofullscreen == false)
@@ -162,29 +162,29 @@ struct AudioTests {
             #expect(controlslist.description == "")
         }
 
-        @Test("Controls list with nodownload")
-        func controlsListWithNodownload() {
+        @Test
+    func `Controls list with nodownload`() {
             let controlslist = Audio.ControlsList(nodownload: true)
             #expect(controlslist.nodownload == true)
             #expect(controlslist.description == "nodownload")
         }
 
-        @Test("Controls list with nofullscreen")
-        func controlsListWithNofullscreen() {
+        @Test
+    func `Controls list with nofullscreen`() {
             let controlslist = Audio.ControlsList(nofullscreen: true)
             #expect(controlslist.nofullscreen == true)
             #expect(controlslist.description == "nofullscreen")
         }
 
-        @Test("Controls list with noremoteplayback")
-        func controlsListWithNoremoteplayback() {
+        @Test
+    func `Controls list with noremoteplayback`() {
             let controlslist = Audio.ControlsList(noremoteplayback: true)
             #expect(controlslist.noremoteplayback == true)
             #expect(controlslist.description == "noremoteplayback")
         }
 
-        @Test("Controls list with multiple options")
-        func controlsListWithMultipleOptions() {
+        @Test
+    func `Controls list with multiple options`() {
             let controlslist = Audio.ControlsList(
                 nodownload: true,
                 nofullscreen: true,
@@ -196,8 +196,8 @@ struct AudioTests {
             #expect(controlslist.description == "nodownload nofullscreen noremoteplayback")
         }
 
-        @Test("Controls list is hashable")
-        func controlsListIsHashable() {
+        @Test
+    func `Controls list is hashable`() {
             let controlslist1 = Audio.ControlsList(nodownload: true)
             let controlslist2 = Audio.ControlsList(nodownload: true)
             let controlslist3 = Audio.ControlsList(nofullscreen: true)
@@ -210,11 +210,11 @@ struct AudioTests {
         }
     }
 
-    @Suite("Common Use Cases")
-    struct CommonUseCases {
+    @Suite
+struct `Common Use Cases` {
 
-        @Test("Simple audio with controls")
-        func simpleAudioWithControls() {
+        @Test
+    func `Simple audio with controls`() {
             let src = Src("podcast.mp3")
             let controls = Controls()
             let audio = Audio(src: src, controls: controls)
@@ -223,8 +223,8 @@ struct AudioTests {
             #expect(audio.controls == controls)
         }
 
-        @Test("Background music with autoplay and loop")
-        func backgroundMusicWithAutoplayAndLoop() {
+        @Test
+    func `Background music with autoplay and loop`() {
             let src = Src("background-music.mp3")
             let autoplay = Autoplay()
             let loop = Loop()
@@ -243,8 +243,8 @@ struct AudioTests {
             #expect(audio.muted == muted)
         }
 
-        @Test("Podcast player")
-        func podcastPlayer() {
+        @Test
+    func `Podcast player`() {
             let src = Src("episode-001.mp3")
             let controls = Controls()
             let preload = Audio.Preload.metadata
@@ -260,8 +260,8 @@ struct AudioTests {
             #expect(audio.preload == preload)
         }
 
-        @Test("Audio with multiple sources (no src attribute)")
-        func audioWithMultipleSources() {
+        @Test
+    func `Audio with multiple sources (no src attribute)`() {
             let controls = Controls()
             let preload = Audio.Preload.none
 
@@ -275,8 +275,8 @@ struct AudioTests {
             #expect(audio.preload == preload)
         }
 
-        @Test("Audio with CORS enabled")
-        func audioWithCORSEnabled() {
+        @Test
+    func `Audio with CORS enabled`() {
             let src = Src("https://example.com/audio.mp3")
             let controls = Controls()
             let crossorigin = Crossorigin.anonymous
@@ -292,8 +292,8 @@ struct AudioTests {
             #expect(audio.crossorigin == crossorigin)
         }
 
-        @Test("Audio with restricted controls")
-        func audioWithRestrictedControls() {
+        @Test
+    func `Audio with restricted controls`() {
             let src = Src("restricted-audio.mp3")
             let controls = Controls()
             let controlslist = Audio.ControlsList(
@@ -313,11 +313,11 @@ struct AudioTests {
         }
     }
 
-    @Suite("Accessibility and User Experience")
-    struct AccessibilityAndUserExperience {
+    @Suite
+struct `Accessibility and User Experience` {
 
-        @Test("Audio with considerate autoplay")
-        func audioWithConsiderateAutoplay() {
+        @Test
+    func `Audio with considerate autoplay`() {
             let src = Src("notification.mp3")
             let autoplay = Autoplay()
             let muted = Muted()
@@ -334,8 +334,8 @@ struct AudioTests {
             #expect(audio.muted == muted)
         }
 
-        @Test("Audio with user-friendly preloading")
-        func audioWithUserFriendlyPreloading() {
+        @Test
+    func `Audio with user-friendly preloading`() {
             let src = Src("large-audio.mp3")
             let controls = Controls()
             let preload = Audio.Preload.metadata
@@ -349,8 +349,8 @@ struct AudioTests {
             #expect(audio.preload == preload)
         }
 
-        @Test("Audio without autoplay for better UX")
-        func audioWithoutAutoplayForBetterUX() {
+        @Test
+    func `Audio without autoplay for better UX`() {
             let src = Src("music.mp3")
             let controls = Controls()
 
@@ -361,11 +361,11 @@ struct AudioTests {
         }
     }
 
-    @Suite("Integration Tests")
-    struct IntegrationTests {
+    @Suite
+struct `Integration Tests` {
 
-        @Test("Multiple audio elements")
-        func multipleAudioElements() {
+        @Test
+    func `Multiple audio elements`() {
             let audio1 = Audio(src: Src("track1.mp3"), controls: Controls())
             let audio2 = Audio(src: Src("track2.mp3"), controls: Controls())
             let audio3 = Audio(src: Src("track3.mp3"), controls: Controls())
@@ -380,8 +380,8 @@ struct AudioTests {
             }
         }
 
-        @Test("Audio playlist simulation")
-        func audioPlaylistSimulation() {
+        @Test
+    func `Audio playlist simulation`() {
             let playlist = [
                 Audio(src: Src("song1.mp3"), controls: Controls(), preload: Audio.Preload.metadata),
                 Audio(src: Src("song2.mp3"), controls: Controls(), preload: Audio.Preload.metadata),
@@ -395,8 +395,8 @@ struct AudioTests {
             }
         }
 
-        @Test("Audio as HTMLElement")
-        func audioAsHTMLElement() {
+        @Test
+    func `Audio as HTMLElement`() {
             let audio = Audio(src: Src("test.mp3"))
             let element: any WHATWG_HTML.Element = audio
 
@@ -404,11 +404,11 @@ struct AudioTests {
         }
     }
 
-    @Suite("Performance and Optimization")
-    struct PerformanceAndOptimization {
+    @Suite
+struct `Performance and Optimization` {
 
-        @Test("Audio with no preload for bandwidth conservation")
-        func audioWithNoPreloadForBandwidthConservation() {
+        @Test
+    func `Audio with no preload for bandwidth conservation`() {
             let src = Src("large-file.mp3")
             let controls = Controls()
             let preload = Audio.Preload.none
@@ -422,8 +422,8 @@ struct AudioTests {
             #expect(audio.preload == preload)
         }
 
-        @Test("Audio with metadata preload for quick info")
-        func audioWithMetadataPreloadForQuickInfo() {
+        @Test
+    func `Audio with metadata preload for quick info`() {
             let src = Src("podcast.mp3")
             let controls = Controls()
             let preload = Audio.Preload.metadata
@@ -437,8 +437,8 @@ struct AudioTests {
             #expect(audio.preload == preload)
         }
 
-        @Test("Audio with auto preload for immediate playback")
-        func audioWithAutoPreloadForImmediatePlayback() {
+        @Test
+    func `Audio with auto preload for immediate playback`() {
             let src = Src("short-clip.mp3")
             let controls = Controls()
             let preload = Audio.Preload.auto

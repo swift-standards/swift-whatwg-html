@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Noscript Test")
-struct NoscriptTests {
+@Suite
+struct `Noscript Test` {
 
 }

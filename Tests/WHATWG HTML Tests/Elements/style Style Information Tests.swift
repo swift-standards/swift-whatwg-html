@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Style Information Test")
-struct StyleInformationTests {
+@Suite
+struct `Style Information Test` {
 
 }

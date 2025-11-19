@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Strike Test")
-struct StrikeTests {
+@Suite
+struct `Strike Test` {
 
 }

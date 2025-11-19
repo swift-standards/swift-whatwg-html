@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Dialog Test")
-struct DialogTests {
+@Suite
+struct `Dialog Test` {
 
 }

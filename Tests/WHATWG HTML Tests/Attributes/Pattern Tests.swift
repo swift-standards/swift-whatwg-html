@@ -13,15 +13,15 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Pattern Test")
-struct PatternTests {
-    @Test("Pattern attribute should be pattern")
-    func attribute() {
+@Suite
+struct `Pattern Test` {
+    @Test
+    func `Pattern attribute should be pattern`() {
         #expect(Pattern.attribute == "pattern")
     }
 
-    @Test("Pattern convenience properties")
-    func convenienceProperties() {
+    @Test
+    func `Pattern convenience properties`() {
         #expect(Pattern.username.rawValue == "[a-zA-Z0-9]{3,16}")
         #expect(Pattern.usPhone.rawValue == "[0-9]{3}-[0-9]{3}-[0-9]{4}")
         #expect(Pattern.usZipCode.rawValue == "[0-9]{5}(-[0-9]{4})?")

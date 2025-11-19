@@ -18,10 +18,10 @@ import Testing
 #elseif canImport(Foundation)
     #endif
 
-@Suite("Inputmode Test")
-struct InputmodeTests {
-    @Test("Inputmode attribute should be inputmode")
-    func attribute() {
+@Suite
+struct `Inputmode Test` {
+    @Test
+    func `Inputmode attribute should be inputmode`() {
         #expect(Inputmode.attribute == "inputmode")
     }
 
@@ -43,8 +43,8 @@ struct InputmodeTests {
         }
     }
 
-    @Test("Inputmode should conform to CaseIterable")
-    func conformsToCaseIterable() {
+    @Test
+    func `Inputmode should conform to CaseIterable`() {
         #expect(Inputmode.allCases.count == 8)
         #expect(Inputmode.allCases.contains(.none))
         #expect(Inputmode.allCases.contains(.text))

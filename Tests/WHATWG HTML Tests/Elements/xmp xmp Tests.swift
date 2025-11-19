@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("xmp Test")
-struct XmpTests {
+@Suite
+struct `xmp Test` {
 
 }

@@ -13,11 +13,11 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Anchor Tests")
-struct AnchorTests {
+@Suite
+struct `Anchor Tests` {
 
-    @Test("Basic anchor creation")
-    func basicAnchorCreation() {
+    @Test
+    func `Basic anchor creation`() {
         let anchor = Anchor()
         #expect(Anchor.tag == "a")
         #expect(anchor.href == nil)
@@ -25,64 +25,64 @@ struct AnchorTests {
         #expect(anchor.rel == nil)
     }
 
-    @Test("Anchor with href")
-    func anchorWithHref() {
+    @Test
+    func `Anchor with href`() {
         let href = Href("https://example.com")
         let anchor = Anchor(href: href)
         #expect(anchor.href == href)
     }
 
-    @Test("Anchor with target")
-    func anchorWithTarget() {
+    @Test
+    func `Anchor with target`() {
         let target = Target.blank
         let anchor = Anchor(target: target)
         #expect(anchor.target == target)
     }
 
-    @Test("Anchor with rel")
-    func anchorWithRel() {
+    @Test
+    func `Anchor with rel`() {
         let rel = Rel("noopener noreferrer")
         let anchor = Anchor(rel: rel)
         #expect(anchor.rel == rel)
     }
 
-    @Test("Anchor with download")
-    func anchorWithDownload() {
+    @Test
+    func `Anchor with download`() {
         let download = Download("filename.pdf")
         let anchor = Anchor(download: download)
         #expect(anchor.download == download)
     }
 
-    @Test("Anchor with hreflang")
-    func anchorWithHreflang() {
+    @Test
+    func `Anchor with hreflang`() {
         let hreflang = Hreflang("en")
         let anchor = Anchor(hreflang: hreflang)
         #expect(anchor.hreflang == hreflang)
     }
 
-    @Test("Anchor with ping")
-    func anchorWithPing() {
+    @Test
+    func `Anchor with ping`() {
         let ping = Ping("https://analytics.example.com/ping")
         let anchor = Anchor(ping: ping)
         #expect(anchor.ping == ping)
     }
 
-    @Test("Anchor with referrer policy")
-    func anchorWithReferrerPolicy() {
+    @Test
+    func `Anchor with referrer policy`() {
         let policy = ReferrerPolicy.noReferrer
         let anchor = Anchor(referrerpolicy: policy)
         #expect(anchor.referrerpolicy == policy)
     }
 
-    @Test("Anchor with attribution source")
-    func anchorWithAttributionSrc() {
+    @Test
+    func `Anchor with attribution source`() {
         let attributionsrc = AttributionSrc()
         let anchor = Anchor(attributionsrc: attributionsrc)
         #expect(anchor.attributionsrc == attributionsrc)
     }
 
-    @Test("Complete anchor configuration")
-    func completeAnchorConfiguration() {
+    @Test
+    func `Complete anchor configuration`() {
         let href = Href("https://example.com")
         let target = Target.blank
         let rel = Rel("noopener noreferrer")
@@ -113,32 +113,32 @@ struct AnchorTests {
         #expect(anchor.target == target)
     }
 
-    @Suite("Common Use Cases")
-    struct CommonUseCases {
+    @Suite
+struct `Common Use Cases` {
 
-        @Test("Email link")
-        func emailLink() {
+        @Test
+    func `Email link`() {
             let href = Href("mailto:contact@example.com")
             let anchor = Anchor(href: href)
             #expect(anchor.href == href)
         }
 
-        @Test("Telephone link")
-        func telephoneLink() {
+        @Test
+    func `Telephone link`() {
             let href = Href("tel:+15555555555")
             let anchor = Anchor(href: href)
             #expect(anchor.href == href)
         }
 
-        @Test("In-page navigation")
-        func inPageNavigation() {
+        @Test
+    func `In-page navigation`() {
             let href = Href("#section-id")
             let anchor = Anchor(href: href)
             #expect(anchor.href == href)
         }
 
-        @Test("External link with security")
-        func externalLinkWithSecurity() {
+        @Test
+    func `External link with security`() {
             let href = Href("https://external-site.com")
             let target = Target.blank
             let rel = Rel("noopener noreferrer")
@@ -154,8 +154,8 @@ struct AnchorTests {
             #expect(anchor.rel == rel)
         }
 
-        @Test("Download link")
-        func downloadLink() {
+        @Test
+    func `Download link`() {
             let href = Href("/files/document.pdf")
             let download = Download("important-document.pdf")
 
@@ -168,8 +168,8 @@ struct AnchorTests {
             #expect(anchor.download == download)
         }
 
-        @Test("Multilingual link")
-        func multilingualLink() {
+        @Test
+    func `Multilingual link`() {
             let href = Href("https://example.fr")
             let hreflang = Hreflang("fr")
 
@@ -182,8 +182,8 @@ struct AnchorTests {
             #expect(anchor.hreflang == hreflang)
         }
 
-        @Test("Tracked link")
-        func trackedLink() {
+        @Test
+    func `Tracked link`() {
             let href = Href("https://example.com")
             let ping = Ping(
                 "https://analytics.example.com/ping https://tracking.example.com/click"
@@ -199,71 +199,71 @@ struct AnchorTests {
         }
     }
 
-    @Suite("Target Attribute Tests")
-    struct TargetAttributeTests {
+    @Suite
+struct `Target Attribute Tests` {
 
-        @Test("Target self")
-        func targetSelf() {
+        @Test
+    func `Target self`() {
             let target = Target.`self`
             let anchor = Anchor(target: target)
             #expect(anchor.target == target)
         }
 
-        @Test("Target blank")
-        func targetBlank() {
+        @Test
+    func `Target blank`() {
             let target = Target.blank
             let anchor = Anchor(target: target)
             #expect(anchor.target == target)
         }
 
-        @Test("Target parent")
-        func targetParent() {
+        @Test
+    func `Target parent`() {
             let target = Target.parent
             let anchor = Anchor(target: target)
             #expect(anchor.target == target)
         }
 
-        @Test("Target top")
-        func targetTop() {
+        @Test
+    func `Target top`() {
             let target = Target.top
             let anchor = Anchor(target: target)
             #expect(anchor.target == target)
         }
 
-        @Test("Custom target")
-        func customTarget() {
+        @Test
+    func `Custom target`() {
             let target = Target("myframe")
             let anchor = Anchor(target: target)
             #expect(anchor.target == target)
         }
     }
 
-    @Suite("Referrer Policy Tests")
-    struct ReferrerPolicyTests {
+    @Suite
+struct `Referrer Policy Tests` {
 
-        @Test("No referrer")
-        func noReferrer() {
+        @Test
+    func `No referrer`() {
             let policy = ReferrerPolicy.noReferrer
             let anchor = Anchor(referrerpolicy: policy)
             #expect(anchor.referrerpolicy == policy)
         }
 
-        @Test("Origin")
-        func origin() {
+        @Test
+    func `Origin`() {
             let policy = ReferrerPolicy.origin
             let anchor = Anchor(referrerpolicy: policy)
             #expect(anchor.referrerpolicy == policy)
         }
 
-        @Test("Same origin")
-        func sameOrigin() {
+        @Test
+    func `Same origin`() {
             let policy = ReferrerPolicy.sameOrigin
             let anchor = Anchor(referrerpolicy: policy)
             #expect(anchor.referrerpolicy == policy)
         }
 
-        @Test("Strict origin")
-        func strictOrigin() {
+        @Test
+    func `Strict origin`() {
             let policy = ReferrerPolicy.strictOrigin
             let anchor = Anchor(referrerpolicy: policy)
             #expect(anchor.referrerpolicy == policy)

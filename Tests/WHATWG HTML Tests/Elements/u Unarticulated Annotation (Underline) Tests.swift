@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Unarticulated Annotation Underline Test")
-struct UnarticultedAnnotationUnderlineTests {
+@Suite
+struct `Unarticulated Annotation Underline Test` {
 
 }

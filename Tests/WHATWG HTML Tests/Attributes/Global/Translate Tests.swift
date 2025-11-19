@@ -18,21 +18,21 @@ import Testing
 #elseif canImport(Foundation)
     #endif
 
-@Suite("Translate Test")
-struct TranslateTests {
-    @Test("Translate attribute should be translate")
-    func attribute() {
+@Suite
+struct `Translate Test` {
+    @Test
+    func `Translate attribute should be translate`() {
         #expect(Translate.attribute == "translate")
     }
 
-    @Test("Translate description should match the spec")
-    func description() {
+    @Test
+    func `Translate description should match the spec`() {
         #expect(Translate.yes.description == "yes")
         #expect(Translate.no.description == "no")
     }
 
-    @Test("Translate should be initializable with boolean literals")
-    func booleanLiteralInitialization() {
+    @Test
+    func `Translate should be initializable with boolean literals`() {
         let yesTranslate: Translate = true
         let noTranslate: Translate = false
 

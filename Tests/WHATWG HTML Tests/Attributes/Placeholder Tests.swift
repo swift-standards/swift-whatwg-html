@@ -13,15 +13,15 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Placeholder Test")
-struct PlaceholderTests {
-    @Test("Placeholder attribute should be placeholder")
-    func attribute() {
+@Suite
+struct `Placeholder Test` {
+    @Test
+    func `Placeholder attribute should be placeholder`() {
         #expect(Placeholder.attribute == "placeholder")
     }
 
-    @Test("Placeholder convenience properties")
-    func convenienceProperties() {
+    @Test
+    func `Placeholder convenience properties`() {
         #expect(Placeholder.email.rawValue == "email")
         #expect(Placeholder.phone.rawValue == "phone")
         #expect(Placeholder.name.rawValue == "name")

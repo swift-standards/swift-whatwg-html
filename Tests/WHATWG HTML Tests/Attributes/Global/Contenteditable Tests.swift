@@ -18,10 +18,10 @@ import Testing
 #elseif canImport(Foundation)
     #endif
 
-@Suite("Contenteditable Test")
-struct ContenteditableTests {
-    @Test("Contenteditable attribute should be contenteditable")
-    func attribute() {
+@Suite
+struct `Contenteditable Test` {
+    @Test
+    func `Contenteditable attribute should be contenteditable`() {
         #expect(Contenteditable.attribute == "contenteditable")
     }
 
@@ -39,8 +39,8 @@ struct ContenteditableTests {
         }
     }
 
-    @Test("Contenteditable should conform to CaseIterable")
-    func conformsToCaseIterable() {
+    @Test
+    func `Contenteditable should conform to CaseIterable`() {
         #expect(Contenteditable.allCases.count == 4)
         #expect(Contenteditable.allCases.contains(.true))
         #expect(Contenteditable.allCases.contains(.false))

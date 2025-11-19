@@ -13,10 +13,10 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Readonly Test")
-struct ReadonlyTests {
-    @Test("Readonly attribute should be readonly")
-    func attribute() {
+@Suite
+struct `Readonly Test` {
+    @Test
+    func `Readonly attribute should be readonly`() {
         #expect(Readonly.attribute == "readonly")
     }
 }

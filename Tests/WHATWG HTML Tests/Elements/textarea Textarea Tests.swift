@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Textarea Test")
-struct TextareaTests {
+@Suite
+struct `Textarea Test` {
 
 }

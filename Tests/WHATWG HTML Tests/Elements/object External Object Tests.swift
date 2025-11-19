@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("External Object Test")
-struct ExternalObjectTests {
+@Suite
+struct `External Object Test` {
 
 }

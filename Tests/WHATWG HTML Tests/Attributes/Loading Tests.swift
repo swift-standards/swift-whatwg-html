@@ -13,21 +13,21 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Loading Test")
-struct LoadingTests {
-    @Test("Loading attribute should be loading")
-    func attribute() {
+@Suite
+struct `Loading Test` {
+    @Test
+    func `Loading attribute should be loading`() {
         #expect(Loading.attribute == "loading")
     }
 
-    @Test("Loading convenience properties")
-    func convenienceProperties() {
+    @Test
+    func `Loading convenience properties`() {
         #expect(Loading.lazy.rawValue == "lazy")
         #expect(Loading.eager.rawValue == "eager")
     }
 
-    @Test("Loading should conform to CaseIterable")
-    func caseIterable() {
+    @Test
+    func `Loading should conform to CaseIterable`() {
         #expect(Loading.allCases.count == 2)
         #expect(Loading.allCases.contains(.lazy))
         #expect(Loading.allCases.contains(.eager))

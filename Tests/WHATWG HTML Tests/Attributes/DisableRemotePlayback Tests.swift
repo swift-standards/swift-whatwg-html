@@ -13,10 +13,10 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("DisableRemotePlayback Test")
-struct DisableRemotePlaybackTests {
-    @Test("DisableRemotePlayback attribute should be disableremoteplayback")
-    func attribute() {
+@Suite
+struct `DisableRemotePlayback Test` {
+    @Test
+    func `DisableRemotePlayback attribute should be disableremoteplayback`() {
         #expect(DisableRemotePlayback.attribute == "disableremoteplayback")
     }
 }

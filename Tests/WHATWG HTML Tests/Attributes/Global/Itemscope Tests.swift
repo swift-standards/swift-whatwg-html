@@ -18,10 +18,10 @@ import Testing
 #elseif canImport(Foundation)
     #endif
 
-@Suite("Itemscope Test")
-struct ItemscopeTests {
-    @Test("Itemscope attribute should be itemscope")
-    func attribute() {
+@Suite
+struct `Itemscope Test` {
+    @Test
+    func `Itemscope attribute should be itemscope`() {
         #expect(Itemscope.attribute == "itemscope")
     }
 }

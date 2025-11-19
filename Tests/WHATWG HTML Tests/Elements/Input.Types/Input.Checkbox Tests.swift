@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Input.Checkbox Test")
-struct InputCheckboxTests {
+@Suite
+struct `Input.Checkbox Test` {
 
 }

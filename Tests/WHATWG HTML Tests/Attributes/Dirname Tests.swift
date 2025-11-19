@@ -13,15 +13,15 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Dirname Test")
-struct DirnameTests {
-    @Test("Dirname attribute should be dirname")
-    func attribute() {
+@Suite
+struct `Dirname Test` {
+    @Test
+    func `Dirname attribute should be dirname`() {
         #expect(Dirname.attribute == "dirname")
     }
 
-    @Test("Dirname should support initialization based on element name")
-    func basedOnElementName() {
+    @Test
+    func `Dirname should support initialization based on element name`() {
         let dirname = Dirname(basedOn: "comment")
         #expect(dirname.rawValue == "comment-direction")
 

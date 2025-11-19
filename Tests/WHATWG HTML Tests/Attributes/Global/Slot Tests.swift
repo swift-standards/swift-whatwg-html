@@ -18,27 +18,27 @@ import Testing
 #elseif canImport(Foundation)
     #endif
 
-@Suite("Slot Test")
-struct SlotTests {
-    @Test("Slot attribute should be slot")
-    func attribute() {
+@Suite
+struct `Slot Test` {
+    @Test
+    func `Slot attribute should be slot`() {
         #expect(Slot.attribute == "slot")
     }
 
-    @Test("Slot should store and return its value")
-    func valueStorage() {
+    @Test
+    func `Slot should store and return its value`() {
         let slot = Slot("header")
         #expect(slot.rawValue == "header")
     }
 
-    @Test("Slot description should return its value")
-    func description() {
+    @Test
+    func `Slot description should return its value`() {
         let slot = Slot("footer")
         #expect(slot.description == "footer")
     }
 
-    @Test("Slot should be initializable with string literal")
-    func stringLiteralInitialization() {
+    @Test
+    func `Slot should be initializable with string literal`() {
         let slot: Slot = "sidebar"
         #expect(slot.rawValue == "sidebar")
     }

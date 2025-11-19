@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Keyboard Input Test")
-struct KeyboardInputTests {
+@Suite
+struct `Keyboard Input Test` {
 
 }

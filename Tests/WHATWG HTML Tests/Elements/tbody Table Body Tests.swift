@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Table Body Test")
-struct TableBodyTests {
+@Suite
+struct `Table Body Test` {
 
 }

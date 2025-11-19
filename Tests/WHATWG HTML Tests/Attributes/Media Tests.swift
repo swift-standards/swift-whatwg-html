@@ -13,10 +13,10 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Media Test")
-struct MediaTests {
-    @Test("Media attribute should be media")
-    func attribute() {
+@Suite
+struct `Media Test` {
+    @Test
+    func `Media attribute should be media`() {
         #expect(Media.attribute == "media")
     }
 }

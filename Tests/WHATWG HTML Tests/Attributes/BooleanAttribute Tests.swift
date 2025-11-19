@@ -29,64 +29,64 @@ private struct TestBooleanAttribute: WHATWG_HTML.BooleanAttribute {
     }
 }
 
-@Suite("WHATWG_HTML.BooleanAttribute Test")
-struct BooleanAttributeTests {
+@Suite
+struct `WHATWG_HTML.BooleanAttribute Test` {
 
-    @Test("Attribute name is correct")
-    func attributeName() {
+    @Test
+    func `Attribute name is correct`() {
         #expect(TestBooleanAttribute.attribute == "test-bool-attr")
     }
 
-    @Test("Init with true value stores rawValue correctly")
-    func initWithTrueValue() {
+    @Test
+    func `Init with true value stores rawValue correctly`() {
         let attr = TestBooleanAttribute(value: true)
         #expect(attr.rawValue == true)
     }
 
-    @Test("Init with false value stores rawValue correctly")
-    func initWithFalseValue() {
+    @Test
+    func `Init with false value stores rawValue correctly`() {
         let attr = TestBooleanAttribute(value: false)
         #expect(attr.rawValue == false)
     }
 
-    @Test("Boolean literal initialization with true")
-    func booleanLiteralInitTrue() {
+    @Test
+    func `Boolean literal initialization with true`() {
         let attr: TestBooleanAttribute = true
         #expect(attr.rawValue == true)
     }
 
-    @Test("Boolean literal initialization with false")
-    func booleanLiteralInitFalse() {
+    @Test
+    func `Boolean literal initialization with false`() {
         let attr: TestBooleanAttribute = false
         #expect(attr.rawValue == false)
     }
 
-    @Test("RawRepresentable init with true value")
-    func rawRepresentableInitTrue() {
+    @Test
+    func `RawRepresentable init with true value`() {
         let attr = TestBooleanAttribute(rawValue: true)
         #expect(attr?.rawValue == true)
     }
 
-    @Test("RawRepresentable init with false value")
-    func rawRepresentableInitFalse() {
+    @Test
+    func `RawRepresentable init with false value`() {
         let attr = TestBooleanAttribute(rawValue: false)
         #expect(attr?.rawValue == false)
     }
 
-    @Test("Description returns correct string for true")
-    func descriptionTrue() {
+    @Test
+    func `Description returns correct string for true`() {
         let attr = TestBooleanAttribute(value: true)
         #expect(attr.description == "true")
     }
 
-    @Test("Description returns correct string for false")
-    func descriptionFalse() {
+    @Test
+    func `Description returns correct string for false`() {
         let attr = TestBooleanAttribute(value: false)
         #expect(attr.description == "false")
     }
 
-    @Test("Dynamic member lookup for Bool properties")
-    func dynamicMemberLookup() {
+    @Test
+    func `Dynamic member lookup for Bool properties`() {
         let trueAttr = TestBooleanAttribute(value: true)
         let falseAttr = TestBooleanAttribute(value: false)
 
@@ -94,23 +94,23 @@ struct BooleanAttributeTests {
         #expect(falseAttr.hashValue == false.hashValue)
     }
 
-    @Test("CaseIterable conformance")
-    func caseIterable() {
+    @Test
+    func `CaseIterable conformance`() {
         let allCases = TestBooleanAttribute.allCases
         #expect(allCases.count == 2)
         #expect(allCases.contains { $0.rawValue == true })
         #expect(allCases.contains { $0.rawValue == false })
     }
 
-    @Test("CaseIterable all cases are correct")
-    func caseIterableValues() {
+    @Test
+    func `CaseIterable all cases are correct`() {
         let allCases = TestBooleanAttribute.allCases
         let values = Set(allCases.map(\.rawValue))
         #expect(values == Set([true, false]))
     }
 
-    @Test("Equality comparison")
-    func equality() {
+    @Test
+    func `Equality comparison`() {
         let trueAttr1 = TestBooleanAttribute(value: true)
         let trueAttr2 = TestBooleanAttribute(value: true)
         let falseAttr = TestBooleanAttribute(value: false)
@@ -120,8 +120,8 @@ struct BooleanAttributeTests {
         #expect(trueAttr2 != falseAttr)
     }
 
-    @Test("Sendable conformance (compile-time check)")
-    func sendableConformance() {
+    @Test
+    func `Sendable conformance (compile-time check)`() {
         let attr = TestBooleanAttribute(value: true)
 
         Task {
@@ -129,8 +129,8 @@ struct BooleanAttributeTests {
         }
     }
 
-    @Test("String interpolation works")
-    func stringInterpolation() {
+    @Test
+    func `String interpolation works`() {
         let trueAttr = TestBooleanAttribute(value: true)
         let falseAttr = TestBooleanAttribute(value: false)
 
@@ -141,8 +141,8 @@ struct BooleanAttributeTests {
         #expect(falseMessage == "Bool attribute: false")
     }
 
-    @Test("Any WHATWG_HTML.BooleanAttribute type erasure")
-    func anyBooleanAttribute() {
+    @Test
+    func `Any WHATWG_HTML.BooleanAttribute type erasure`() {
         let trueAttr: any WHATWG_HTML.BooleanAttribute = TestBooleanAttribute(value: true)
         let falseAttr: any WHATWG_HTML.BooleanAttribute = TestBooleanAttribute(value: false)
 
@@ -152,8 +152,8 @@ struct BooleanAttributeTests {
         #expect(falseAttr.description == "false")
     }
 
-    @Test("Any WHATWG_HTML.BooleanAttribute equality through protocol")
-    func anyBooleanAttributeEquality() {
+    @Test
+    func `Any WHATWG_HTML.BooleanAttribute equality through protocol`() {
         let trueAttr1: any WHATWG_HTML.BooleanAttribute = TestBooleanAttribute(value: true)
         let trueAttr2: any WHATWG_HTML.BooleanAttribute = TestBooleanAttribute(value: true)
         let falseAttr: any WHATWG_HTML.BooleanAttribute = TestBooleanAttribute(value: false)
@@ -162,8 +162,8 @@ struct BooleanAttributeTests {
         #expect(trueAttr1.rawValue != falseAttr.rawValue)
     }
 
-    @Test("Any WHATWG_HTML.BooleanAttribute CaseIterable")
-    func anyBooleanAttributeCaseIterable() {
+    @Test
+    func `Any WHATWG_HTML.BooleanAttribute CaseIterable`() {
         let allCases = TestBooleanAttribute.allCases
         let anyAllCases: [any WHATWG_HTML.BooleanAttribute] = allCases
 
@@ -172,8 +172,8 @@ struct BooleanAttributeTests {
         #expect(anyAllCases.map(\.rawValue).contains(false))
     }
 
-    @Test("Default value initialization pattern")
-    func defaultValuePattern() {
+    @Test
+    func `Default value initialization pattern`() {
         struct TestWithDefault: WHATWG_HTML.BooleanAttribute {
             static var attribute: String { "test-default" }
             var rawValue: Bool
@@ -193,8 +193,8 @@ struct BooleanAttributeTests {
         #expect(explicitFalse.rawValue == false)
     }
 
-    @Test("Boolean logic operations through dynamic member lookup")
-    func booleanLogicOperations() {
+    @Test
+    func `Boolean logic operations through dynamic member lookup`() {
         let trueAttr = TestBooleanAttribute(value: true)
         let falseAttr = TestBooleanAttribute(value: false)
 

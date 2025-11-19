@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Table Caption Test")
-struct TableCaptionTests {
+@Suite
+struct `Table Caption Test` {
 
 }

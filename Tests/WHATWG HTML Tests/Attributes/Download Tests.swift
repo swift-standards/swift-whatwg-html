@@ -13,37 +13,37 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Download Test")
-struct DownloadTests {
-    @Test("Download attribute should be download")
-    func attribute() {
+@Suite
+struct `Download Test` {
+    @Test
+    func `Download attribute should be download`() {
         #expect(Download.attribute == "download")
     }
 
-    @Test("Download boolean literal support")
-    func booleanLiteral() {
+    @Test
+    func `Download boolean literal support`() {
         let downloadTrue: Download = true
         let downloadFalse: Download = false
         #expect(downloadTrue.shouldInclude == true)
         #expect(downloadFalse.shouldInclude == false)
     }
 
-    @Test("Download string literal support")
-    func stringLiteral() {
+    @Test
+    func `Download string literal support`() {
         let download: Download = "document.pdf"
         #expect(download.description == "document.pdf")
         #expect(download.shouldInclude == true)
     }
 
-    @Test("Download with filename")
-    func withFilename() {
+    @Test
+    func `Download with filename`() {
         let download = Download("report.pdf")
         #expect(download.description == "report.pdf")
         #expect(download.shouldInclude == true)
     }
 
-    @Test("Download boolean form")
-    func booleanForm() {
+    @Test
+    func `Download boolean form`() {
         let downloadTrue = Download(true)
         let downloadFalse = Download(false)
         #expect(downloadTrue.shouldInclude == true)

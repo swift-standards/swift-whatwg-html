@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Input.Color Test")
-struct InputColorTests {
+@Suite
+struct `Input.Color Test` {
 
 }

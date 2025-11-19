@@ -13,15 +13,15 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Rows Test")
-struct RowsTests {
-    @Test("Rows attribute should be rows")
-    func attribute() {
+@Suite
+struct `Rows Test` {
+    @Test
+    func `Rows attribute should be rows`() {
         #expect(Rows.attribute == "rows")
     }
 
-    @Test("Rows should support integer literal")
-    func integerLiteral() {
+    @Test
+    func `Rows should support integer literal`() {
         let rows: Rows = 5
         #expect(rows.rawValue == "5")
     }

@@ -13,50 +13,50 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Block Quotation Tests")
-struct BlockQuotationTests {
+@Suite
+struct `Block Quotation Tests` {
 
-    @Test("Basic BlockQuote element creation")
-    func basicBlockQuoteElementCreation() {
+    @Test
+    func `Basic BlockQuote element creation`() {
         let blockquote = BlockQuote()
         #expect(BlockQuote.tag == "blockquote")
         #expect(blockquote.cite == nil)
     }
 
-    @Test("BlockQuote element conforms to HTMLElement")
-    func blockQuoteElementConformsToHTMLElement() {
+    @Test
+    func `BlockQuote element conforms to HTMLElement`() {
         let blockquote = BlockQuote()
         let element: any WHATWG_HTML.Element = blockquote
         #expect(type(of: element).tag == "blockquote")
     }
 
-    @Suite("Cite Attribute Tests")
-    struct CiteAttributeTests {
+    @Suite
+struct `Cite Attribute Tests` {
 
-        @Test("BlockQuote with cite URL")
-        func blockQuoteWithCiteURL() {
+        @Test
+    func `BlockQuote with cite URL`() {
             let cite = Cite(value: "https://example.com/source")
             let blockquote = BlockQuote(cite: cite)
             #expect(blockquote.cite?.rawValue == "https://example.com/source")
             #expect(BlockQuote.tag == "blockquote")
         }
 
-        @Test("BlockQuote without cite attribute")
-        func blockQuoteWithoutCiteAttribute() {
+        @Test
+    func `BlockQuote without cite attribute`() {
             let blockquote = BlockQuote()
             #expect(blockquote.cite == nil)
             #expect(BlockQuote.tag == "blockquote")
         }
 
-        @Test("Cite attribute as optional parameter")
-        func citeAttributeAsOptionalParameter() {
+        @Test
+    func `Cite attribute as optional parameter`() {
             let blockquote = BlockQuote(cite: nil)
             #expect(blockquote.cite == nil)
             #expect(BlockQuote.tag == "blockquote")
         }
 
-        @Test("Different cite URL formats")
-        func differentCiteURLFormats() {
+        @Test
+    func `Different cite URL formats`() {
             let httpsCite = Cite(value: "https://www.example.com/article")
             let httpCite = Cite(value: "http://example.org/source")
             let relativeCite = Cite(value: "/local/source")
@@ -71,178 +71,178 @@ struct BlockQuotationTests {
         }
     }
 
-    @Suite("Extended Quotations")
-    struct ExtendedQuotations {
+    @Suite
+struct `Extended Quotations` {
 
-        @Test("Long form quotations")
-        func longFormQuotations() {
+        @Test
+    func `Long form quotations`() {
             let cite = Cite(value: "https://example.com/book")
             let blockquote = BlockQuote(cite: cite)
             #expect(BlockQuote.tag == "blockquote")
             #expect(blockquote.cite?.rawValue == "https://example.com/book")
         }
 
-        @Test("Multi-paragraph quotations")
-        func multiParagraphQuotations() {
+        @Test
+    func `Multi-paragraph quotations`() {
             let blockquote = BlockQuote()
             #expect(BlockQuote.tag == "blockquote")
         }
 
-        @Test("Poetry and verse quotations")
-        func poetryAndVerseQuotations() {
+        @Test
+    func `Poetry and verse quotations`() {
             let cite = Cite(value: "https://example.com/poem")
             let blockquote = BlockQuote(cite: cite)
             #expect(BlockQuote.tag == "blockquote")
         }
 
-        @Test("Academic paper excerpts")
-        func academicPaperExcerpts() {
+        @Test
+    func `Academic paper excerpts`() {
             let cite = Cite(value: "https://journal.example.com/paper")
             let blockquote = BlockQuote(cite: cite)
             #expect(BlockQuote.tag == "blockquote")
         }
     }
 
-    @Suite("Common Use Cases")
-    struct CommonUseCases {
+    @Suite
+struct `Common Use Cases` {
 
-        @Test("Literary quotations")
-        func literaryQuotations() {
+        @Test
+    func `Literary quotations`() {
             let cite = Cite(value: "https://example.com/book")
             let blockquote = BlockQuote(cite: cite)
             #expect(BlockQuote.tag == "blockquote")
         }
 
-        @Test("News article excerpts")
-        func newsArticleExcerpts() {
+        @Test
+    func `News article excerpts`() {
             let cite = Cite(value: "https://news.example.com/article")
             let blockquote = BlockQuote(cite: cite)
             #expect(BlockQuote.tag == "blockquote")
         }
 
-        @Test("Speech transcriptions")
-        func speechTranscriptions() {
+        @Test
+    func `Speech transcriptions`() {
             let cite = Cite(value: "https://example.com/speech")
             let blockquote = BlockQuote(cite: cite)
             #expect(BlockQuote.tag == "blockquote")
         }
 
-        @Test("Interview excerpts")
-        func interviewExcerpts() {
+        @Test
+    func `Interview excerpts`() {
             let cite = Cite(value: "https://example.com/interview")
             let blockquote = BlockQuote(cite: cite)
             #expect(BlockQuote.tag == "blockquote")
         }
 
-        @Test("Research paper citations")
-        func researchPaperCitations() {
+        @Test
+    func `Research paper citations`() {
             let cite = Cite(value: "https://example.com/research")
             let blockquote = BlockQuote(cite: cite)
             #expect(BlockQuote.tag == "blockquote")
         }
 
-        @Test("Blog post excerpts")
-        func blogPostExcerpts() {
+        @Test
+    func `Blog post excerpts`() {
             let cite = Cite(value: "https://blog.example.com/post")
             let blockquote = BlockQuote(cite: cite)
             #expect(BlockQuote.tag == "blockquote")
         }
     }
 
-    @Suite("Content Attribution")
-    struct ContentAttribution {
+    @Suite
+struct `Content Attribution` {
 
-        @Test("Source document reference")
-        func sourceDocumentReference() {
+        @Test
+    func `Source document reference`() {
             let cite = Cite(value: "https://example.com/original")
             let blockquote = BlockQuote(cite: cite)
             #expect(blockquote.cite?.rawValue == "https://example.com/original")
         }
 
-        @Test("Author attribution separation")
-        func authorAttributionSeparation() {
+        @Test
+    func `Author attribution separation`() {
             // Attribution should be outside blockquote element
             let blockquote = BlockQuote(cite: Cite(value: "https://example.com/source"))
             #expect(BlockQuote.tag == "blockquote")
         }
 
-        @Test("Citation vs attribution distinction")
-        func citationVsAttributionDistinction() {
+        @Test
+    func `Citation vs attribution distinction`() {
             let cite = Cite(value: "https://example.com/message")
             let blockquote = BlockQuote(cite: cite)
             #expect(blockquote.cite?.rawValue == "https://example.com/message")
         }
 
-        @Test("Source URL validation context")
-        func sourceURLValidationContext() {
+        @Test
+    func `Source URL validation context`() {
             let cite = Cite(value: "https://valid.example.com/source")
             let blockquote = BlockQuote(cite: cite)
             #expect(blockquote.cite?.rawValue == "https://valid.example.com/source")
         }
     }
 
-    @Suite("Semantic Usage")
-    struct SemanticUsage {
+    @Suite
+struct `Semantic Usage` {
 
-        @Test("Extended quotation indication")
-        func extendedQuotationIndication() {
+        @Test
+    func `Extended quotation indication`() {
             let blockquote = BlockQuote()
             #expect(BlockQuote.tag == "blockquote")
         }
 
-        @Test("Block-level quotation context")
-        func blockLevelQuotationContext() {
+        @Test
+    func `Block-level quotation context`() {
             let blockquote = BlockQuote()
             #expect(BlockQuote.tag == "blockquote")
         }
 
-        @Test("Quotation vs inline quote distinction")
-        func quotationVsInlineQuoteDistinction() {
+        @Test
+    func `Quotation vs inline quote distinction`() {
             // Blockquote for extended quotes vs q for inline quotes
             let blockquote = BlockQuote()
             #expect(BlockQuote.tag == "blockquote")
         }
 
-        @Test("Sectioning content within quotations")
-        func sectioningContentWithinQuotations() {
+        @Test
+    func `Sectioning content within quotations`() {
             let blockquote = BlockQuote()
             #expect(BlockQuote.tag == "blockquote")
         }
     }
 
-    @Suite("Visual Presentation")
-    struct VisualPresentation {
+    @Suite
+struct `Visual Presentation` {
 
-        @Test("Indented quotation rendering")
-        func indentedQuotationRendering() {
+        @Test
+    func `Indented quotation rendering`() {
             let blockquote = BlockQuote()
             #expect(BlockQuote.tag == "blockquote")
         }
 
-        @Test("Quotation mark styling considerations")
-        func quotationMarkStylingConsiderations() {
+        @Test
+    func `Quotation mark styling considerations`() {
             let blockquote = BlockQuote()
             #expect(BlockQuote.tag == "blockquote")
         }
 
-        @Test("Typography and spacing")
-        func typographyAndSpacing() {
+        @Test
+    func `Typography and spacing`() {
             let blockquote = BlockQuote()
             #expect(BlockQuote.tag == "blockquote")
         }
 
-        @Test("Responsive quotation layout")
-        func responsiveQuotationLayout() {
+        @Test
+    func `Responsive quotation layout`() {
             let blockquote = BlockQuote()
             #expect(BlockQuote.tag == "blockquote")
         }
     }
 
-    @Suite("Integration Tests")
-    struct IntegrationTests {
+    @Suite
+struct `Integration Tests` {
 
-        @Test("Multiple BlockQuote elements")
-        func multipleBlockQuoteElements() {
+        @Test
+    func `Multiple BlockQuote elements`() {
             let cite1 = Cite(value: "https://example.com/source1")
             let cite2 = Cite(value: "https://example.com/source2")
 
@@ -262,8 +262,8 @@ struct BlockQuotationTests {
             }
         }
 
-        @Test("BlockQuote element within content flow")
-        func blockQuoteElementWithinContentFlow() {
+        @Test
+    func `BlockQuote element within content flow`() {
             let cite = Cite(value: "https://example.com/source")
             let blockquote = BlockQuote(cite: cite)
             let element: any WHATWG_HTML.Element = blockquote
@@ -271,14 +271,14 @@ struct BlockQuotationTests {
             #expect(type(of: element).tag == "blockquote")
         }
 
-        @Test("Nested content within BlockQuote")
-        func nestedContentWithinBlockQuote() {
+        @Test
+    func `Nested content within BlockQuote`() {
             let blockquote = BlockQuote()
             #expect(BlockQuote.tag == "blockquote")
         }
 
-        @Test("BlockQuote with complex cite URLs")
-        func blockQuoteWithComplexCiteURLs() {
+        @Test
+    func `BlockQuote with complex cite URLs`() {
             let complexCite = Cite(
                 value: "https://example.com/article?id=123&section=conclusion#paragraph-5"
             )
@@ -290,99 +290,99 @@ struct BlockQuotationTests {
         }
     }
 
-    @Suite("Accessibility Considerations")
-    struct AccessibilityConsiderations {
+    @Suite
+struct `Accessibility Considerations` {
 
-        @Test("Screen reader quotation announcement")
-        func screenReaderQuotationAnnouncement() {
+        @Test
+    func `Screen reader quotation announcement`() {
             let blockquote = BlockQuote()
             #expect(BlockQuote.tag == "blockquote")
         }
 
-        @Test("Citation accessibility")
-        func citationAccessibility() {
+        @Test
+    func `Citation accessibility`() {
             let cite = Cite(value: "https://example.com/source")
             let blockquote = BlockQuote(cite: cite)
             #expect(BlockQuote.tag == "blockquote")
         }
 
-        @Test("Quotation context clarity")
-        func quotationContextClarity() {
+        @Test
+    func `Quotation context clarity`() {
             let blockquote = BlockQuote()
             #expect(BlockQuote.tag == "blockquote")
         }
 
-        @Test("Navigation landmark support")
-        func navigationLandmarkSupport() {
+        @Test
+    func `Navigation landmark support`() {
             let blockquote = BlockQuote()
             #expect(BlockQuote.tag == "blockquote")
         }
     }
 
-    @Suite("Best Practices")
-    struct BestPractices {
+    @Suite
+struct `Best Practices` {
 
-        @Test("External attribution placement")
-        func externalAttributionPlacement() {
+        @Test
+    func `External attribution placement`() {
             // Attribution should be outside blockquote
             let blockquote = BlockQuote(cite: Cite(value: "https://example.com/source"))
             #expect(BlockQuote.tag == "blockquote")
         }
 
-        @Test("Appropriate use over q element")
-        func appropriateUseOverQElement() {
+        @Test
+    func `Appropriate use over q element`() {
             // Use blockquote for extended quotes, q for inline
             let blockquote = BlockQuote()
             #expect(BlockQuote.tag == "blockquote")
         }
 
-        @Test("Cite attribute best practices")
-        func citeAttributeBestPractices() {
+        @Test
+    func `Cite attribute best practices`() {
             let cite = Cite(value: "https://example.com/source")
             let blockquote = BlockQuote(cite: cite)
             #expect(blockquote.cite?.rawValue == "https://example.com/source")
         }
 
-        @Test("Content structure within quotations")
-        func contentStructureWithinQuotations() {
+        @Test
+    func `Content structure within quotations`() {
             let blockquote = BlockQuote()
             #expect(BlockQuote.tag == "blockquote")
         }
     }
 
-    @Suite("Real-World Applications")
-    struct RealWorldApplications {
+    @Suite
+struct `Real-World Applications` {
 
-        @Test("Academic writing quotations")
-        func academicWritingQuotations() {
+        @Test
+    func `Academic writing quotations`() {
             let cite = Cite(value: "https://journal.example.com/article")
             let blockquote = BlockQuote(cite: cite)
             #expect(BlockQuote.tag == "blockquote")
         }
 
-        @Test("News and journalism quotes")
-        func newsAndJournalismQuotes() {
+        @Test
+    func `News and journalism quotes`() {
             let cite = Cite(value: "https://news.example.com/interview")
             let blockquote = BlockQuote(cite: cite)
             #expect(BlockQuote.tag == "blockquote")
         }
 
-        @Test("Documentation and technical writing")
-        func documentationAndTechnicalWriting() {
+        @Test
+    func `Documentation and technical writing`() {
             let cite = Cite(value: "https://docs.example.com/specification")
             let blockquote = BlockQuote(cite: cite)
             #expect(BlockQuote.tag == "blockquote")
         }
 
-        @Test("Content aggregation platforms")
-        func contentAggregationPlatforms() {
+        @Test
+    func `Content aggregation platforms`() {
             let cite = Cite(value: "https://original.example.com/post")
             let blockquote = BlockQuote(cite: cite)
             #expect(BlockQuote.tag == "blockquote")
         }
 
-        @Test("Educational content and courseware")
-        func educationalContentAndCourseware() {
+        @Test
+    func `Educational content and courseware`() {
             let cite = Cite(value: "https://textbook.example.com/chapter-5")
             let blockquote = BlockQuote(cite: cite)
             #expect(BlockQuote.tag == "blockquote")

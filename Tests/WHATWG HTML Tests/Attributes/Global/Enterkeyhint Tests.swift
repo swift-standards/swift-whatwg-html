@@ -18,10 +18,10 @@ import Testing
 #elseif canImport(Foundation)
     #endif
 
-@Suite("Enterkeyhint Test")
-struct EnterkeyhintTests {
-    @Test("Enterkeyhint attribute should be enterkeyhint")
-    func attribute() {
+@Suite
+struct `Enterkeyhint Test` {
+    @Test
+    func `Enterkeyhint attribute should be enterkeyhint`() {
         #expect(Enterkeyhint.attribute == "enterkeyhint")
     }
 
@@ -42,8 +42,8 @@ struct EnterkeyhintTests {
         }
     }
 
-    @Test("Enterkeyhint should conform to CaseIterable")
-    func conformsToCaseIterable() {
+    @Test
+    func `Enterkeyhint should conform to CaseIterable`() {
         #expect(Enterkeyhint.allCases.count == 7)
         #expect(Enterkeyhint.allCases.contains(.enter))
         #expect(Enterkeyhint.allCases.contains(.done))

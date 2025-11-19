@@ -18,10 +18,10 @@ import Testing
 #elseif canImport(Foundation)
     #endif
 
-@Suite("Autocapitalize Test")
-struct AutocapitalizeTests {
-    @Test("Autocapitalize attribute should be autocapitalize")
-    func attribute() {
+@Suite
+struct `Autocapitalize Test` {
+    @Test
+    func `Autocapitalize attribute should be autocapitalize`() {
         #expect(Autocapitalize.attribute == "autocapitalize")
     }
 
@@ -41,8 +41,8 @@ struct AutocapitalizeTests {
         }
     }
 
-    @Test("Autocapitalize should conform to CaseIterable")
-    func conformsToCaseIterable() {
+    @Test
+    func `Autocapitalize should conform to CaseIterable`() {
         #expect(Autocapitalize.allCases.count == 6)
         #expect(Autocapitalize.allCases.contains(.none))
         #expect(Autocapitalize.allCases.contains(.off))

@@ -13,27 +13,27 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Nonce Test")
-struct NonceTests {
-    @Test("Nonce attribute should be nonce")
-    func attribute() {
+@Suite
+struct `Nonce Test` {
+    @Test
+    func `Nonce attribute should be nonce`() {
         #expect(Nonce.attribute == "nonce")
     }
 
-    @Test("Nonce should store and return its value")
-    func valueStorage() {
+    @Test
+    func `Nonce should store and return its value`() {
         let nonce = Nonce("abc123xyz789")
         #expect(nonce.rawValue == "abc123xyz789")
     }
 
-    @Test("Nonce description should return its value")
-    func description() {
+    @Test
+    func `Nonce description should return its value`() {
         let nonce = Nonce("xyz987abc321")
         #expect(nonce.description == "xyz987abc321")
     }
 
-    @Test("Nonce should be initializable with string literal")
-    func stringLiteralInitialization() {
+    @Test
+    func `Nonce should be initializable with string literal`() {
         let nonce: Nonce = "pqr456mno789"
         #expect(nonce.rawValue == "pqr456mno789")
     }

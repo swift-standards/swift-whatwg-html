@@ -13,43 +13,43 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Autocomplete Test")
-struct AutocompleteTests {
-    @Test("Autocomplete attribute should be autocomplete")
-    func attribute() {
+@Suite
+struct `Autocomplete Test` {
+    @Test
+    func `Autocomplete attribute should be autocomplete`() {
         #expect(Autocomplete.attribute == "autocomplete")
     }
 
-    @Test("Autocomplete convenience properties")
-    func convenienceProperties() {
+    @Test
+    func `Autocomplete convenience properties`() {
         #expect(Autocomplete.on.rawValue == "on")
         #expect(Autocomplete.off.rawValue == "off")
     }
 
-    @Test("Autocomplete boolean literal")
-    func booleanLiteral() {
+    @Test
+    func `Autocomplete boolean literal`() {
         let onValue: Autocomplete = true
         let offValue: Autocomplete = false
         #expect(onValue.rawValue == "on")
         #expect(offValue.rawValue == "off")
     }
 
-    @Test("Autocomplete array literal")
-    func arrayLiteral() {
+    @Test
+    func `Autocomplete array literal`() {
         let autocomplete: Autocomplete = ["email", "username"]
         #expect(autocomplete.rawValue == "email username")
     }
 
-    @Test("Autocomplete token support")
-    func tokenSupport() {
+    @Test
+    func `Autocomplete token support`() {
         let nameToken = Autocomplete.Token.name(.givenName)
         let addressToken = Autocomplete.Token.address(.streetAddress)
         let autocomplete = Autocomplete(nameToken, addressToken)
         #expect(autocomplete.rawValue == "given-name street-address")
     }
 
-    @Test("Autocomplete shipping and billing helpers")
-    func shippingBillingHelpers() {
+    @Test
+    func `Autocomplete shipping and billing helpers`() {
         let shipping = Autocomplete.shipping(.streetAddress)
         let billing = Autocomplete.billing(.postalCode)
         #expect(shipping.rawValue == "shipping street-address")

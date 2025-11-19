@@ -13,15 +13,15 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Capture Test")
-struct CaptureTests {
-    @Test("Capture attribute should be capture")
-    func attribute() {
+@Suite
+struct `Capture Test` {
+    @Test
+    func `Capture attribute should be capture`() {
         #expect(Capture.attribute == "capture")
     }
 
-    @Test("Capture convenience properties")
-    func convenienceProperties() {
+    @Test
+    func `Capture convenience properties`() {
         #expect(Capture.user.rawValue == "user")
         #expect(Capture.environment.rawValue == "environment")
     }

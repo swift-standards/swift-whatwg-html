@@ -18,10 +18,10 @@ import Testing
 #elseif canImport(Foundation)
     #endif
 
-@Suite("Dir Test")
-struct DirTests {
-    @Test("Dir attribute should be dir")
-    func attribute() {
+@Suite
+struct `Dir Test` {
+    @Test
+    func `Dir attribute should be dir`() {
         #expect(Dir.attribute == "dir")
     }
 
@@ -38,8 +38,8 @@ struct DirTests {
         }
     }
 
-    @Test("Dir should conform to CaseIterable")
-    func conformsToCaseIterable() {
+    @Test
+    func `Dir should conform to CaseIterable`() {
         #expect(Dir.allCases.count == 3)
         #expect(Dir.allCases.contains(.ltr))
         #expect(Dir.allCases.contains(.rtl))

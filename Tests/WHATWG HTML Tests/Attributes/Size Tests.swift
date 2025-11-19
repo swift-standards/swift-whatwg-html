@@ -13,29 +13,29 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Size Test")
-struct SizeTests {
-    @Test("Size attribute should be size")
-    func attribute() {
+@Suite
+struct `Size Test` {
+    @Test
+    func `Size attribute should be size`() {
         #expect(Size.attribute == "size")
     }
 
-    @Test("Size convenience properties")
-    func convenienceProperties() {
+    @Test
+    func `Size convenience properties`() {
         #expect(Size.standardTextField.rawValue == "30")
         #expect(Size.smallTextField.rawValue == "10")
         #expect(Size.largeTextField.rawValue == "50")
         #expect(Size.standardListbox.rawValue == "5")
     }
 
-    @Test("Size should support integer literal")
-    func integerLiteral() {
+    @Test
+    func `Size should support integer literal`() {
         let size: Size = 25
         #expect(size.rawValue == "25")
     }
 
-    @Test("Size should enforce minimum value of 1")
-    func minimumValue() {
+    @Test
+    func `Size should enforce minimum value of 1`() {
         let size: Size = 0
         #expect(size.rawValue == "1")
     }

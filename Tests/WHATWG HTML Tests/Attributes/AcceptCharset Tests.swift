@@ -13,15 +13,15 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("AcceptCharset Test")
-struct AcceptCharsetTests {
-    @Test("AcceptCharset attribute should be accept-charset")
-    func attribute() {
+@Suite
+struct `AcceptCharset Test` {
+    @Test
+    func `AcceptCharset attribute should be accept-charset`() {
         #expect(AcceptCharset.attribute == "accept-charset")
     }
 
-    @Test("AcceptCharset convenience properties")
-    func convenienceProperties() {
+    @Test
+    func `AcceptCharset convenience properties`() {
         #expect(AcceptCharset.utf8.rawValue == "UTF-8")
         #expect(AcceptCharset.latin1.rawValue == "ISO-8859-1")
         #expect(AcceptCharset.ascii.rawValue == "US-ASCII")

@@ -13,22 +13,22 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Method Test")
-struct MethodTests {
-    @Test("Method attribute should be method")
-    func attribute() {
+@Suite
+struct `Method Test` {
+    @Test
+    func `Method attribute should be method`() {
         #expect(Method.attribute == "method")
     }
 
-    @Test("Method convenience properties")
-    func convenienceProperties() {
+    @Test
+    func `Method convenience properties`() {
         #expect(Method.get.rawValue == "get")
         #expect(Method.post.rawValue == "post")
         #expect(Method.dialog.rawValue == "dialog")
     }
 
-    @Test("Method should lowercase input")
-    func lowercaseInput() {
+    @Test
+    func `Method should lowercase input`() {
         let method = Method(value: "POST")
         #expect(method.rawValue == "post")
     }

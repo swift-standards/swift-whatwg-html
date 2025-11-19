@@ -13,15 +13,15 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("EncType Test")
-struct EncTypeTests {
-    @Test("EncType attribute should be enctype")
-    func attribute() {
+@Suite
+struct `EncType Test` {
+    @Test
+    func `EncType attribute should be enctype`() {
         #expect(EncType.attribute == "enctype")
     }
 
-    @Test("EncType convenience properties")
-    func convenienceProperties() {
+    @Test
+    func `EncType convenience properties`() {
         #expect(EncType.urlEncoded.rawValue == "application/x-www-form-urlencoded")
         #expect(EncType.multipartFormData.rawValue == "multipart/form-data")
         #expect(EncType.textPlain.rawValue == "text/plain")

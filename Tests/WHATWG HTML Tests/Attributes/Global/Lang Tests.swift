@@ -18,27 +18,27 @@ import Testing
 #elseif canImport(Foundation)
     #endif
 
-@Suite("Lang Test")
-struct LangTests {
-    @Test("Lang attribute should be lang")
-    func attribute() {
+@Suite
+struct `Lang Test` {
+    @Test
+    func `Lang attribute should be lang`() {
         #expect(Lang.attribute == "lang")
     }
 
-    @Test("Lang should store and return its value")
-    func valueStorage() {
+    @Test
+    func `Lang should store and return its value`() {
         let lang = Lang("en-US")
         #expect(lang.rawValue == "en-US")
     }
 
-    @Test("Lang description should return its value")
-    func description() {
+    @Test
+    func `Lang description should return its value`() {
         let lang = Lang("es")
         #expect(lang.description == "es")
     }
 
-    @Test("Lang should be initializable with string literal")
-    func stringLiteralInitialization() {
+    @Test
+    func `Lang should be initializable with string literal`() {
         let lang: Lang = "fr-CA"
         #expect(lang.rawValue == "fr-CA")
     }

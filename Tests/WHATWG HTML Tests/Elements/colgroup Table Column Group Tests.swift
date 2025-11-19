@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Table Column Group Test")
-struct TableColumnGroupTests {
+@Suite
+struct `Table Column Group Test` {
 
 }

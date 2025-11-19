@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Image Map Test")
-struct ImageMapTests {
+@Suite
+struct `Image Map Test` {
 
 }

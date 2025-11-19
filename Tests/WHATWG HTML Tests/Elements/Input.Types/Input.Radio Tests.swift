@@ -13,7 +13,7 @@
 import WHATWG_HTML
 import Testing
 
-@Suite("Input.Radio Test")
-struct InputRadioTests {
+@Suite
+struct `Input.Radio Test` {
 
 }
