@@ -1111,7 +1111,7 @@ extension WHATWG_HTML.FormAttributes {
 **Proposed Package.swift structure**:
 
 ```swift
-// swift-tools-version: 6.0
+// swift-tools-version: 6.2
 import PackageDescription
 
 let package = Package(
