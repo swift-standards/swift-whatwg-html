@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML variable element (`<var>`), which represents the name of a variable in a mathematical
 /// expression or a programming context.

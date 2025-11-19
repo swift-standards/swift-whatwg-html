@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML summary element (`<summary>`), which specifies a summary, caption,
 /// or legend for a `<details>` element's disclosure box.

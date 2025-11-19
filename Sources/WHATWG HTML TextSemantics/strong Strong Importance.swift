@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML `<strong>` element, which indicates that its contents have strong importance, seriousness, or urgency.
 ///

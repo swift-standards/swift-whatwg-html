@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Button types that define how a button behaves
 @dynamicMemberLookup

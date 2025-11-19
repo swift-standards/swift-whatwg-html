@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Controls whether automatic correction of spelling and punctuation errors is enabled for editable text.
 ///

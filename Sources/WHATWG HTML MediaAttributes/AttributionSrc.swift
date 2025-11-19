@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents the HTML `attributionsrc` attribute, which is used in the Attribution Reporting API
 /// to send an Attribution-Reporting-Eligible header.

@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// The `shadowrootclonable` attribute specifies whether the shadow root of an element can be cloned,
 /// allowing it to be included when the element is cloned through methods like `cloneNode()`.

@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// The `compact` attribute is a boolean attribute that, if present, indicates that the list should be rendered in a compact style.
 ///

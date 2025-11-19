@@ -10,9 +10,9 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
-import WHATWG_HTML_MediaAttributes
-import WHATWG_HTML_ScriptAttributes
+public import WHATWG_HTML_Shared
+public import WHATWG_HTML_MediaAttributes
+public import WHATWG_HTML_ScriptAttributes
 
 /// Represents an HTML `<embed>` element, which embeds external content at the specified point in the document.
 ///

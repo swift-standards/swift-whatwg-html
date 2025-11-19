@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
-import WHATWG_HTML_FormAttributes
+public import WHATWG_HTML_Shared
+public import WHATWG_HTML_FormAttributes
 
 /// `<input type="number">` elements are used to let the user enter a number. They include built-in
 /// validation to reject non-numerical entries.

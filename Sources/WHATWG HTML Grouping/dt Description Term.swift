@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML description term element (`<dt>`), which specifies a term in a description or definition list.
 ///

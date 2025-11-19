@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML description details element (`<dd>`), which provides the description, definition,
 /// or value for the preceding term (`<dt>`) in a description list (`<dl>`).

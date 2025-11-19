@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// An attribute that specifies the URL that a hyperlink points to.
 ///
@@ -167,20 +167,7 @@ let facetimeLink = Link(href: Href.facetime("user@example.com"), rel: "nofollow"
 let facetimeVideoLink = Link(href: Href.facetimeVideo("+1-555-123-4567"), rel: "nofollow")
 */
 
-#if canImport(FoundationEssentials)
-    import FoundationEssentials
-#endif
-
 extension Href {
-    /// Initialize with a URL
-    public init(_ url: URL) {
-        self = .init(url.absoluteString)
-    }
-
-    public static func url(_ url: URL) -> Href {
-        .init(url)
-    }
-
     /// Creates a link with a fragment identifier (#section)
     public static func fragment(_ base: String, fragment: String) -> Href {
         let baseWithoutFragment = base.split(separator: "#")[0]
@@ -193,46 +180,81 @@ extension Href {
         let fragmentWithoutHash = fragmentId.hasPrefix("#") ? fragmentId : "#\(fragmentId)"
         return Href(fragmentWithoutHash)
     }
-}
 
-#if canImport(Foundation)
-    
-    extension Href {
-        /// Creates an email link (mailto:) with optional subject and body - Foundation only
-        public static func email(
-            _ address: String,
-            subject: String? = nil,
-            body: String? = nil
-        ) -> Href {
-            // Define a custom allowed character set that excludes ?, &, =, and other special chars
-            var allowedCharacters = CharacterSet.urlQueryAllowed
-            allowedCharacters.remove(charactersIn: "?&=+%")
+    /// Creates an email link (mailto:) with optional subject and body
+    ///
+    /// Properly encodes the subject and body parameters for use in mailto: URLs.
+    ///
+    /// ## Example
+    ///
+    /// ```swift
+    /// let mailtoLink = Href.email(
+    ///     "user@example.com",
+    ///     subject: "Hello",
+    ///     body: "This is a test message"
+    /// )
+    /// // Result: "mailto:user@example.com?subject=Hello&body=This%20is%20a%20test%20message"
+    /// ```
+    public static func email(
+        _ address: String,
+        subject: String? = nil,
+        body: String? = nil
+    ) -> Href {
+        var url = "mailto:\(address)"
 
-            var url = "mailto:\(address)"
+        if subject != nil || body != nil {
+            url += "?"
+            var queryParts: [String] = []
 
-            if subject != nil || body != nil {
-                url += "?"
-                var queryParts: [String] = []
-
-                if let subject = subject {
-                    // Properly encode the subject
-                    let encodedSubject =
-                        subject.addingPercentEncoding(withAllowedCharacters: allowedCharacters)
-                        ?? subject
-                    queryParts.append("subject=\(encodedSubject)")
-                }
-
-                if let body = body {
-                    // Properly encode the body
-                    let encodedBody =
-                        body.addingPercentEncoding(withAllowedCharacters: allowedCharacters) ?? body
-                    queryParts.append("body=\(encodedBody)")
-                }
-
-                url += queryParts.joined(separator: "&")
+            if let subject = subject {
+                let encoded = percentEncode(subject)
+                queryParts.append("subject=\(encoded)")
             }
 
-            return Href(url)
+            if let body = body {
+                let encoded = percentEncode(body)
+                queryParts.append("body=\(encoded)")
+            }
+
+            url += queryParts.joined(separator: "&")
         }
+
+        return Href(url)
     }
-#endif
+
+    /// Percent-encodes a string for use in URL query parameters
+    ///
+    /// Encodes all characters except:
+    /// - Unreserved characters: A-Z, a-z, 0-9, -, _, ., ~
+    ///
+    /// This follows RFC 3986 percent-encoding for query parameters.
+    private static func percentEncode(_ string: String) -> String {
+        var result = ""
+
+        for char in string.utf8 {
+            switch char {
+            // Unreserved characters (RFC 3986 Section 2.3)
+            case 0x41...0x5A,  // A-Z
+                 0x61...0x7A,  // a-z
+                 0x30...0x39,  // 0-9
+                 0x2D,         // -
+                 0x5F,         // _
+                 0x2E,         // .
+                 0x7E:         // ~
+                result.append(Character(UnicodeScalar(char)))
+
+            // Everything else: percent-encode
+            default:
+                // Convert to hex without Foundation
+                let hex = String(char, radix: 16, uppercase: true)
+                result.append("%")
+                if hex.count == 1 {
+                    result.append("0")
+                }
+                result.append(hex)
+            }
+        }
+
+        return result
+    }
+}

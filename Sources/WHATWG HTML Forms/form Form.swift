@@ -10,10 +10,10 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
-import WHATWG_HTML_FormAttributes
-import WHATWG_HTML_GlobalAttributes
-import WHATWG_HTML_LinkAttributes
+public import WHATWG_HTML_Shared
+public import WHATWG_HTML_FormAttributes
+public import WHATWG_HTML_GlobalAttributes
+public import WHATWG_HTML_LinkAttributes
 
 /// Represents an HTML form element (`<form>`), which is used to collect user input and submit it to a server.
 ///

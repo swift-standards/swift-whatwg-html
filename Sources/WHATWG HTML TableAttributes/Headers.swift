@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents the `headers` attribute, which identifies the header cell(s)
 /// that apply to a table data or header cell.

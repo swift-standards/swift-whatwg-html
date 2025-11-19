@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML `<noscript>` element, which defines content to be inserted if a script type on the page
 /// is unsupported or if scripting is currently turned off in the browser.

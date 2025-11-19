@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML legend element (`<legend>`), which represents a caption for the content of its parent `<fieldset>`.
 ///

@@ -10,9 +10,9 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
-import WHATWG_HTML_MediaAttributes
-import WHATWG_HTML_LinkAttributes
+public import WHATWG_HTML_Shared
+public import WHATWG_HTML_MediaAttributes
+public import WHATWG_HTML_LinkAttributes
 
 /// Represents an HTML video element (`<video>`), which embeds a media player that supports video playback into a document.
 ///

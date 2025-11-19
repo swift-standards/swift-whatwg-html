@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
-import WHATWG_HTML_TableAttributes
+public import WHATWG_HTML_Shared
+public import WHATWG_HTML_TableAttributes
 
 /// Represents an HTML table data cell element (`<td>`), which defines a cell of a table that contains data.
 ///

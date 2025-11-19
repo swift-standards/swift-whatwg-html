@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Deprecated attribute that sets the text color using either a named color or a color specified in the hexadecimal #RRGGBB format.
 ///

@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML article element (`<article>`), which defines a self-contained composition
 /// that is intended to be independently distributable or reusable.

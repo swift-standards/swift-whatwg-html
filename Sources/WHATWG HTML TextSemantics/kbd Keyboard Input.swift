@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML keyboard input element (`<kbd>`), which denotes textual user input from a keyboard,
 /// voice input, or any other text entry device.

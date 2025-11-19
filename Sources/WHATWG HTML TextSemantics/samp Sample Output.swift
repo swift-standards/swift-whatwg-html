@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML Sample Output element (`<samp>`), which is used to enclose inline text
 /// that represents sample (or quoted) output from a computer program.

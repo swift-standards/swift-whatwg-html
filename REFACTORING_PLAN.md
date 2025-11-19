@@ -1359,7 +1359,7 @@ let package = Package(
         // MARK: Test Targets
         // ============================================================
         .testTarget(
-            name: "WHATWG HTML Tests",
+            name: "WHATWG HTML".tests,
             dependencies: ["WHATWG HTML Elements", "WHATWG HTML Attributes"]
         ),
     ],

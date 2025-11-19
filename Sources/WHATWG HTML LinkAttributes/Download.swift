@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents the HTML "download" attribute, which causes the browser to treat
 /// a linked URL as a download rather than navigating to it.

@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML superscript element (`<sup>`), which specifies inline text
 /// to be displayed as superscript for typographical reasons.

@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents the `high` attribute, which specifies the range that is considered to be high for a given range on a meter element.
 ///

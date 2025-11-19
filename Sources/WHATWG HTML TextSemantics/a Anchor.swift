@@ -10,10 +10,10 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
-import WHATWG_HTML_LinkAttributes
-import WHATWG_HTML_MediaAttributes
-import WHATWG_HTML_FormAttributes
+public import WHATWG_HTML_Shared
+public import WHATWG_HTML_LinkAttributes
+public import WHATWG_HTML_MediaAttributes
+public import WHATWG_HTML_FormAttributes
 
 /// Represents an HTML anchor element (`<a>`), which creates a hyperlink to web pages, files, email
 /// addresses, locations in the same page, or anything else a URL can address.

@@ -65,7 +65,7 @@
 /// - `list-style-image`: Uses a custom image for bullets
 /// - `margin` and `padding`: Control list indentation and spacing
 ///
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 public struct UnorderedList: WHATWG_HTML.Element {
     /// The HTML tag name

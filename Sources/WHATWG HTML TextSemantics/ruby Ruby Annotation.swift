@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML Ruby Annotation element (`<ruby>`), which displays small annotations above, below, or next to text,
 /// commonly used for showing pronunciation of East Asian characters.

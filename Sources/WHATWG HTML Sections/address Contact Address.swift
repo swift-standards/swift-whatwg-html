@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML address element (`<address>`), which indicates that the enclosed HTML
 /// provides contact information for a person, people, or organization.

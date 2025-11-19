@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML `<i>` element, which represents a range of text that is set off from the normal text for some reason,
 /// such as idiomatic text, technical terms, taxonomical designations, among others.

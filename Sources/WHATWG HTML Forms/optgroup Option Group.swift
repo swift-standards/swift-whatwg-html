@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
-import WHATWG_HTML_FormAttributes
+public import WHATWG_HTML_Shared
+public import WHATWG_HTML_FormAttributes
 
 /// Represents an HTML option group element (`<optgroup>`), which creates a grouping of options within a `<select>` element.
 ///

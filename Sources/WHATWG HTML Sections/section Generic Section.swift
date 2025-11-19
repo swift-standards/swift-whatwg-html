@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML section element (`<section>`), which represents a generic standalone
 /// section of a document that doesn't have a more specific semantic element to represent it.

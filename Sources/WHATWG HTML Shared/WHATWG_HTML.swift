@@ -10,9 +10,6 @@
 //
 // ===----------------------------------------------------------------------===//
 
-#if canImport(Foundation)
-#endif
-
 /// WHATWG HTML Living Standard namespace
 ///
 /// This namespace contains types representing HTML elements and attributes

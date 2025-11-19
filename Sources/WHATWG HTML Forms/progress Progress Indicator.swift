@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
-import WHATWG_HTML_FormAttributes
+public import WHATWG_HTML_Shared
+public import WHATWG_HTML_FormAttributes
 
 /// Represents an HTML progress element (`<progress>`), which displays an indicator showing the completion progress of a task, typically displayed as a progress bar.
 ///

@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
-import WHATWG_HTML_FormAttributes
+public import WHATWG_HTML_Shared
+public import WHATWG_HTML_FormAttributes
 
 /// `<input type="radio">` elements are generally used in radio groups—collections of radio buttons
 /// describing a set of related options.

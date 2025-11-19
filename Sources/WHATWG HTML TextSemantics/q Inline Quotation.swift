@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
-import WHATWG_HTML_GlobalAttributes
+public import WHATWG_HTML_Shared
+public import WHATWG_HTML_GlobalAttributes
 
 /// Represents an HTML inline quotation element (`<q>`), which indicates that the enclosed text is a short inline quotation.
 ///

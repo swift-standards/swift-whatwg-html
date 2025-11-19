@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
-import WHATWG_HTML_FormAttributes
+public import WHATWG_HTML_Shared
+public import WHATWG_HTML_FormAttributes
 
 extension Input {
     /// `<input type="button">` elements are rendered as push buttons, which can be programmed to control

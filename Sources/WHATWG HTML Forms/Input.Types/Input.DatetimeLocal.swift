@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
-import WHATWG_HTML_FormAttributes
+public import WHATWG_HTML_Shared
+public import WHATWG_HTML_FormAttributes
 
 /// `<input type="datetime-local">` elements create input controls that let the user easily enter both a date
 /// and a time, including the year, month, and day as well as the time in hours and minutes.

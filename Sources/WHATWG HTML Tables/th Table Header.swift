@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
-import WHATWG_HTML_TableAttributes
+public import WHATWG_HTML_Shared
+public import WHATWG_HTML_TableAttributes
 
 /// Represents an HTML table header element (`<th>`), which defines a cell as the header of a group of table cells.
 ///

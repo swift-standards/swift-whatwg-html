@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML header element (`<header>`), which represents introductory content, typically
 /// a group of introductory or navigational aids.

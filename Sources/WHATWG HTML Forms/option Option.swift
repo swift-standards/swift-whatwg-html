@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
-import WHATWG_HTML_FormAttributes
+public import WHATWG_HTML_Shared
+public import WHATWG_HTML_FormAttributes
 
 /// Represents an HTML option element (`<option>`), which defines an item contained in a
 /// `<select>`, an `<optgroup>`, or a `<datalist>` element.

@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML unarticulated annotation element (`<u>`), which indicates text that should
 /// be rendered in a way that indicates it has a non-textual annotation.

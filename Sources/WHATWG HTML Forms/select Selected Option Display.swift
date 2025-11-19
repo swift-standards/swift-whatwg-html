@@ -10,9 +10,9 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
-import WHATWG_HTML_FormAttributes
-import WHATWG_HTML_GlobalAttributes
+public import WHATWG_HTML_Shared
+public import WHATWG_HTML_FormAttributes
+public import WHATWG_HTML_GlobalAttributes
 
 /// Represents an HTML `<select>` element, which creates a dropdown list of options.
 ///

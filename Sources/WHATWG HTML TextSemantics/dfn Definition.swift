@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
-import WHATWG_HTML_GlobalAttributes
+public import WHATWG_HTML_Shared
+public import WHATWG_HTML_GlobalAttributes
 
 /// Represents an HTML Definition element (`<dfn>`), which indicates a term being defined.
 ///

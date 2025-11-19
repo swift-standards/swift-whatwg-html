@@ -10,9 +10,9 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
-import WHATWG_HTML_FormAttributes
-import WHATWG_HTML_GlobalAttributes
+public import WHATWG_HTML_Shared
+public import WHATWG_HTML_FormAttributes
+public import WHATWG_HTML_GlobalAttributes
 
 /// `<input type="text">` elements create basic single-line text fields.
 extension Input {

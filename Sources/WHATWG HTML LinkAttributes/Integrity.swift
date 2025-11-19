@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents the HTML `integrity` attribute, which contains inline metadata
 /// for verifying subresource integrity (SRI).

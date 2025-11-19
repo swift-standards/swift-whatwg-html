@@ -10,9 +10,9 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
-import WHATWG_HTML_MediaAttributes
-import WHATWG_HTML_FormAttributes
+public import WHATWG_HTML_Shared
+public import WHATWG_HTML_MediaAttributes
+public import WHATWG_HTML_FormAttributes
 
 /// Represents an HTML `<map>` element, which defines an image map (clickable areas on an image).
 ///

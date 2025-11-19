@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents the HTML `fetchpriority` attribute, which provides a hint of the relative
 /// priority to use when fetching a resource of a particular type.

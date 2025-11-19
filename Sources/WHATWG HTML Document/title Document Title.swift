@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML title element (`<title>`), which defines the document's title
 /// that is shown in a browser's title bar or a page's tab.

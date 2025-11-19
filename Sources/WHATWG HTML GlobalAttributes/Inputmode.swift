@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Hints at the type of data that might be entered by the user, helping browsers display appropriate virtual keyboards.
 ///

@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// The `shadowrootdelegatesfocus` attribute determines whether a shadow root's focus delegation
 /// behavior is enabled, improving accessibility in Web Components.

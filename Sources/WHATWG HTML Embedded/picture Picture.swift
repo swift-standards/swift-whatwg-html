@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML `<picture>` element, which contains zero or more `<source>` elements and one `<img>` element to offer alternative versions of an image for different display/device scenarios.
 ///

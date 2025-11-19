@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Forms
+public import WHATWG_HTML_Forms
 
 extension Form {
     /// Form data representation namespace

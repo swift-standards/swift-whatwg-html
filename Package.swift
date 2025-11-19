@@ -285,7 +285,8 @@ let package = Package(
             name: .whatwgHTMLDocument,
             dependencies: [
                 .whatwgHTMLShared,
-                .whatwgHTMLGlobalAttributes
+                .whatwgHTMLGlobalAttributes,
+                .whatwgHTMLAttributes
             ]
         ),
 
@@ -356,7 +357,8 @@ let package = Package(
             dependencies: [
                 .whatwgHTMLShared,
                 .whatwgHTMLGlobalAttributes,
-                .whatwgHTMLMediaAttributes
+                .whatwgHTMLMediaAttributes,
+                .whatwgHTMLFormAttributes
             ]
         ),
 
@@ -488,8 +490,16 @@ let package = Package(
     swiftLanguageModes: [.v6]
 )
 
-// MARK: - Helper Extensions
-
 extension String {
-    var tests: Self { "\(self) Tests" }
+    var tests: Self { self + " Tests" }
+    var foundation: Self { self + " Foundation" }
+}
+
+for target in package.targets where ![.system, .binary, .plugin].contains(target.type) {
+    let existing = target.swiftSettings ?? []
+    target.swiftSettings = existing + [
+        .enableUpcomingFeature("ExistentialAny"),
+        .enableUpcomingFeature("InternalImportsByDefault"),
+        .enableUpcomingFeature("MemberImportVisibility")
+    ]
 }

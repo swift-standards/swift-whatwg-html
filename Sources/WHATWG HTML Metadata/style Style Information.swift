@@ -10,9 +10,9 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
-import WHATWG_HTML_GlobalAttributes
-import WHATWG_HTML_MediaAttributes
+public import WHATWG_HTML_Shared
+public import WHATWG_HTML_GlobalAttributes
+public import WHATWG_HTML_MediaAttributes
 
 /// Represents an HTML style element (`<style>`), which contains style information for a document or part of a document.
 ///

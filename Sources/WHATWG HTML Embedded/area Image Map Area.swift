@@ -10,10 +10,10 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
-import WHATWG_HTML_LinkAttributes
-import WHATWG_HTML_MediaAttributes
-import WHATWG_HTML_FormAttributes
+public import WHATWG_HTML_Shared
+public import WHATWG_HTML_LinkAttributes
+public import WHATWG_HTML_MediaAttributes
+public import WHATWG_HTML_FormAttributes
 import WHATWG_HTML_GlobalAttributes
 
 /// Represents an HTML area element (`<area>`), which defines a clickable area

@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
-import WHATWG_HTML_TableAttributes
+public import WHATWG_HTML_Shared
+public import WHATWG_HTML_TableAttributes
 
 /// Represents an HTML table column group element (`<colgroup>`), which defines a group of columns
 /// within a table.

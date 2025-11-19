@@ -10,9 +10,9 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
-import WHATWG_HTML_FormAttributes
-import WHATWG_HTML_GlobalAttributes
+public import WHATWG_HTML_Shared
+public import WHATWG_HTML_FormAttributes
+public import WHATWG_HTML_GlobalAttributes
 
 /// Represents an HTML output element (`<output>`), which is a container element into which a site or app can inject
 /// the results of a calculation or the outcome of a user action.

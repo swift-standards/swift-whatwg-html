@@ -10,11 +10,11 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
-import WHATWG_HTML_LinkAttributes
-import WHATWG_HTML_GlobalAttributes
-import WHATWG_HTML_MediaAttributes
-import WHATWG_HTML_FormAttributes
+public import WHATWG_HTML_Shared
+public import WHATWG_HTML_LinkAttributes
+public import WHATWG_HTML_GlobalAttributes
+public import WHATWG_HTML_MediaAttributes
+public import WHATWG_HTML_FormAttributes
 
 /// Represents an HTML link element (`<link>`), which specifies relationships between the current
 /// document and external resources such as stylesheets, icons, and other linked resources.

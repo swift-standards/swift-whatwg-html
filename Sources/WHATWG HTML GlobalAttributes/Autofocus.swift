@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Specifies that an element should be focused when the page loads or when a dialog containing
 /// the element is displayed.

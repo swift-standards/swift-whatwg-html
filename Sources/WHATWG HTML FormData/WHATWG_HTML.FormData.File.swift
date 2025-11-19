@@ -10,13 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-#if canImport(FoundationEssentials)
-import FoundationEssentials
-#elseif canImport(Foundation)
-#endif
-
-import WHATWG_HTML_Shared
-import WHATWG_HTML_Forms
+public import WHATWG_HTML_Shared
+public import WHATWG_HTML_Forms
 
 extension Form.Data {
     /// Represents a file value in form data.
@@ -66,7 +61,7 @@ extension Form.Data {
         /// The binary content of this file.
         ///
         /// Contains the complete file data as uploaded by the user.
-        public let body: Data
+        public let body: [UInt8]
 
         /// Creates a file value with the specified properties.
         ///
@@ -75,7 +70,7 @@ extension Form.Data {
         ///   - type: The MIME type of the file
         ///   - body: The binary content of the file
         @inlinable
-        public init(name: String, type: String, body: Data) {
+        public init(name: String, type: String, body: [UInt8]) {
             self.name = name
             self.type = type
             self.body = body

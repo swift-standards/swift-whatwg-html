@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents the HTML data attribute for the `<object>` element.
 ///
@@ -49,17 +49,5 @@ public struct ObjectData: WHATWG_HTML.StringAttribute {
     /// Initialize with a value for the data attribute
     public init(value: String) {
         self.rawValue = value
-    }
-}
-
-#if canImport(FoundationEssentials)
-    import FoundationEssentials
-#elseif canImport(Foundation)
-    #endif
-
-extension ObjectData {
-    /// Initialize with a URL object
-    public init(_ url: URL) {
-        self = .init(url.absoluteString)
     }
 }

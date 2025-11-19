@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML figure caption element (`<figcaption>`), which provides a caption or legend describing the contents of its
 /// parent `<figure>` element, giving the figure an accessible description.

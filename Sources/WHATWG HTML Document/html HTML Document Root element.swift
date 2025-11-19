@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
-import WHATWG_HTML_GlobalAttributes
+public import WHATWG_HTML_Shared
+public import WHATWG_HTML_GlobalAttributes
 
 /// Represents the HTML root element (`<html>`), which serves as the top-level element of an HTML document.
 ///

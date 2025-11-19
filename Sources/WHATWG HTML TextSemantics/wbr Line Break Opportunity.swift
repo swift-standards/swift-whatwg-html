@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML word break opportunity element (`<wbr>`), which indicates a position within text
 /// where the browser may optionally break a line, though its line-breaking rules would not otherwise

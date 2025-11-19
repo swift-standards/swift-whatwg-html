@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents the label attribute used in HTML elements like <optgroup>, <option>, and <track>.
 @dynamicMemberLookup

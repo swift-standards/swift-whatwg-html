@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML bidirectional isolate element (`<bdi>`), which isolates a span of text that might
 /// be formatted in a different direction from other text outside it.

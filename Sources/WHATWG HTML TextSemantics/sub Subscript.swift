@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML subscript element (`<sub>`), which specifies inline text that should
 /// be displayed as subscript for typographical reasons.

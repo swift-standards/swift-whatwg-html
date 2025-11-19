@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML footer element (`<footer>`), which represents a footer for its nearest
 /// ancestor sectioning content or sectioning root element.

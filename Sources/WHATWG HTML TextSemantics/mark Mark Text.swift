@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML mark element (`<mark>`), which represents text that is marked or highlighted
 /// for reference or notation purposes due to its relevance in the enclosing context.

@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML heading group element (`<hgroup>`), which groups a heading with
 /// related content such as subheadings, alternative titles, or taglines.

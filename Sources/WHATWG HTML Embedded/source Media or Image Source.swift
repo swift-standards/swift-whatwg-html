@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
-import WHATWG_HTML_MediaAttributes
+public import WHATWG_HTML_Shared
+public import WHATWG_HTML_MediaAttributes
 
 /// Represents an HTML `<source>` element, which specifies one or more media resources for
 /// `<picture>`, `<audio>`, and `<video>` elements.

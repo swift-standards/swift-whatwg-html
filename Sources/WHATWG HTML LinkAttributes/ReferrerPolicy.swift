@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents the HTML `referrerpolicy` attribute, which controls how much referrer information
 /// is included when following links, loading images, or submitting forms.

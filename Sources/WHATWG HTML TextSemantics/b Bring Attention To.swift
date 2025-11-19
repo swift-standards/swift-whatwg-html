@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML b element (`<b>`), which is used to draw attention to text without conveying
 /// extra importance or emphasis.

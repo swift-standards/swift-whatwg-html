@@ -12,7 +12,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Controls whether and how user input should be automatically capitalized as it is entered by the user.
 ///

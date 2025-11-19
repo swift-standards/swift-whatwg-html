@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// An attribute that specifies the maximum value allowed for an input element or other form controls.
 ///
@@ -108,49 +108,6 @@ extension Max: ExpressibleByFloatLiteral {
         self.rawValue = String(value)
     }
 }
-
-#if canImport(FoundationEssentials)
-    import FoundationEssentials
-#elseif canImport(Foundation)
-    
-    extension Max {
-        /// Initialize with a date (Foundation only)
-        public init(date: Date, format: DateFormat = .fullDate) {
-            let formatter: DateFormatter
-
-            switch format {
-            case .fullDate:
-                formatter = DateFormatter()
-                formatter.dateFormat = "yyyy-MM-dd"
-            case .month:
-                formatter = DateFormatter()
-                formatter.dateFormat = "yyyy-MM"
-            case .week:
-                // Week format requires custom handling for ISO week number
-                let calendar = Calendar(identifier: .iso8601)
-                let components = calendar.RFC_5322.Date.Components(
-                    [.yearForWeekOfYear, .weekOfYear],
-                    from: date
-                )
-                if let year = components.yearForWeekOfYear, let week = components.weekOfYear {
-                    self = .init(String.format(year: year, week: week))
-                    return
-                } else {
-                    formatter = DateFormatter()
-                    formatter.dateFormat = "yyyy-'W'ww"
-                }
-            case .time:
-                formatter = DateFormatter()
-                formatter.dateFormat = "HH:mm"
-            case .dateTimeLocal:
-                formatter = DateFormatter()
-                formatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
-            }
-
-            self = .init(formatter.string(from: date))
-        }
-    }
-#endif
 
 extension Max {
     /// Create a max value for a date input

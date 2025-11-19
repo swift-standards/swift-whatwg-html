@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML table element (`<table>`), which displays tabular data
 /// in a two-dimensional table comprised of rows and columns of cells containing data.

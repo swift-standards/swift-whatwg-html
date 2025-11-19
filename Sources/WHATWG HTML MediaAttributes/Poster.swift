@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 /// Represents the HTML `poster` attribute, which is used with the `<video>` element to
 /// specify an image to be shown while the video is downloading or until the user

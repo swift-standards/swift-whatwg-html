@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
-import WHATWG_HTML_Forms
+public import WHATWG_HTML_Shared
+public import WHATWG_HTML_Forms
 
 extension Form.Data.Entry {
     /// A collection of form data entries representing a "form data set".

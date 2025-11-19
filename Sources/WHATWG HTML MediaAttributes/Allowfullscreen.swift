@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
+public import WHATWG_HTML_Shared
 
 @dynamicMemberLookup
 public struct Allowfullscreen: WHATWG_HTML.BooleanAttribute {

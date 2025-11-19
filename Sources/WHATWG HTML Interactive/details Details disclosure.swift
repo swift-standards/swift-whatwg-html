@@ -10,9 +10,9 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
-import WHATWG_HTML_GlobalAttributes
-import WHATWG_HTML_FormAttributes
+public import WHATWG_HTML_Shared
+public import WHATWG_HTML_GlobalAttributes
+public import WHATWG_HTML_FormAttributes
 
 /// Represents an HTML details element (`<details>`), which creates a disclosure widget in which
 /// information is visible only when the widget is toggled into an open state.

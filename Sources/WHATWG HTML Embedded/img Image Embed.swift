@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML_Shared
-import WHATWG_HTML_MediaAttributes
+public import WHATWG_HTML_Shared
+public import WHATWG_HTML_MediaAttributes
 
 public struct Image: WHATWG_HTML.VoidElement {
     @inlinable public static var tag: String { "img" }
