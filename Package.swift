@@ -82,6 +82,7 @@ extension Target.Dependency {
 
     // External dependencies
     static var rfc2045: Self { .product(name: "RFC 2045", package: "swift-rfc-2045") }
+    static var iso8601: Self { .product(name: "ISO 8601", package: "swift-iso-8601") }
 }
 
 // MARK: - Package Definition
@@ -226,7 +227,8 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(path: "../swift-rfc-2045")
+        .package(path: "../swift-rfc-2045"),
+        .package(path: "../swift-iso-8601")
     ],
     targets: [
         // ============================================================
@@ -253,14 +255,18 @@ let package = Package(
         // ============================================================
         .target(
             name: .whatwgHTMLGlobalAttributes,
-            dependencies: [.whatwgHTMLShared]
+            dependencies: [
+                .whatwgHTMLShared,
+                .iso8601
+            ]
         ),
         .target(
             name: .whatwgHTMLFormAttributes,
             dependencies: [
                 .whatwgHTMLShared,
                 .whatwgHTMLGlobalAttributes,
-                .rfc2045
+                .rfc2045,
+                .iso8601
             ]
         ),
         .target(

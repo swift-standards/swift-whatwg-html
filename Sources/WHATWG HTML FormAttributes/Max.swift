@@ -11,12 +11,18 @@
 // ===----------------------------------------------------------------------===//
 
 public import WHATWG_HTML_Shared
+public import ISO_8601
 
 /// An attribute that specifies the maximum value allowed for an input element or other form controls.
 ///
 /// The `max` attribute defines the maximum value acceptable for the element. Values greater than
 /// this maximum will cause the element to fail constraint validation. The format of the max value
 /// depends on the element type.
+///
+/// ## Academic Correctness
+///
+/// Per WHATWG HTML specification, date/time max values must be valid ISO 8601 datetime strings.
+/// This implementation uses `ISO_8601.DateTime` to ensure academic correctness per ISO 8601:2019.
 ///
 /// ## Usage Notes
 ///
@@ -74,6 +80,11 @@ public struct Max: WHATWG_HTML.StringAttribute {
     /// Initialize with a value for the max attribute
     public init(value: String) {
         self.rawValue = value
+    }
+
+    /// Initialize with an ISO 8601 DateTime (for date/time inputs)
+    public init(dateTime: ISO_8601.DateTime) {
+        self.rawValue = ISO_8601.DateTime.Formatter.format(dateTime)
     }
 }
 
