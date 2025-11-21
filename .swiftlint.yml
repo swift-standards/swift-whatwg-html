@@ -9,6 +9,7 @@ disabled_rules:
   - function_parameter_count  # Allow 6+ parameters for DateTime and Area factory methods
   - type_body_length  # Comprehensive test suites can be longer than 250 lines
   - trailing_comma  # Conflicts with swift-format which prefers trailing commas
+  - opening_brace  # Conflicts with swift-format which breaks long lines before braces
   - redundant_discardable_let  # Preserve 'let _ =' in result builder contexts (required for Swift 6.0+)
 
 opt_in_rules:
