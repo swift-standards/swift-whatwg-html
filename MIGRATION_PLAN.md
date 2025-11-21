@@ -14,7 +14,7 @@ Sources/
 │   ├── Conveniences/
 │   └── Documentation.docc/
 │
-├── HTMLElementTypes/
+├── HTML_Standard_Elements/
 │   ├── HTMLElement.swift (protocols)
 │   └── Elements/ (126 files including Input.Types/)
 │
@@ -27,7 +27,7 @@ Sources/
 │       └── Global/ (32 global attribute files)
 │
 ├── HTMLTypesFoundation/
-├── HTMLElementTypesFoundation/
+├── HTML_Standard_ElementsFoundation/
 └── HTMLAttributeTypesFoundation/
 ```
 
@@ -77,7 +77,7 @@ Sources/
 Move protocols and namespace to `WHATWG HTML Shared/`:
 
 1. **Copy** `HTMLTypes/WHATWG_HTML.swift` → `WHATWG HTML Shared/WHATWG_HTML.swift`
-2. **Copy** `HTMLElementTypes/HTMLElement.swift` → `WHATWG HTML Shared/Element.swift`
+2. **Copy** `HTML_Standard_Elements/HTMLElement.swift` → `WHATWG HTML Shared/Element.swift`
    - Rename protocols to be inside WHATWG_HTML namespace
 3. **Copy** `HTMLAttributeTypes/HTMLAttribute.swift` → `WHATWG HTML Shared/Attribute.swift`
 4. **Copy** `HTMLAttributeTypes/HTMLBooleanAttribute.swift` → `WHATWG HTML Shared/BooleanAttribute.swift`
@@ -92,7 +92,7 @@ Move `HTMLAttributeTypes/Attributes/Global/*` → `WHATWG HTML GlobalAttributes/
 
 ### Phase 3: Element Modules (Spec-Aligned)
 
-Map and move elements from `HTMLElementTypes/Elements/` to appropriate modules:
+Map and move elements from `HTML_Standard_Elements/Elements/` to appropriate modules:
 
 #### 4.1 Document → `WHATWG HTML Document/`
 - `html Document.swift` → `HTML.swift`

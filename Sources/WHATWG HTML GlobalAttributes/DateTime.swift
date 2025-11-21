@@ -12,6 +12,7 @@
 
 public import WHATWG_HTML_Shared
 public import ISO_8601
+import Standards
 
 /// Represents the HTML `datetime` attribute used with the `<time>`, `<ins>`, and `<del>` elements.
 ///
@@ -124,20 +125,20 @@ extension DateTime {
 
     /// Create a year-month datetime
     public static func yearMonth(year: Int, month: Int) -> DateTime {
-        DateTime("\(String(format: "%04d", year))-\(String(format: "%02d", month))")
+        DateTime("\(year.zeroPaddedFourDigits())-\(month.zeroPaddedTwoDigits())")
     }
 
     /// Create a year-only datetime
     public static func year(_ year: Int) -> DateTime {
-        DateTime(String(format: "%04d", year))
+        DateTime(year.zeroPaddedFourDigits())
     }
 
     /// Create a time-only datetime
     public static func time(hour: Int, minute: Int, second: Int = 0) -> DateTime {
-        let h = String(format: "%02d", hour)
-        let m = String(format: "%02d", minute)
+        let h = hour.zeroPaddedTwoDigits()
+        let m = minute.zeroPaddedTwoDigits()
         if second > 0 {
-            let s = String(format: "%02d", second)
+            let s = second.zeroPaddedTwoDigits()
             return DateTime("\(h):\(m):\(s)")
         } else {
             return DateTime("\(h):\(m)")

@@ -12,8 +12,8 @@
 //
 //
 // // import Testing
-// import HTMLAttributeTypes
-// import HTMLElementTypes
+// import HTML_Standard_Attributes
+// import HTML_Standard_Elements
 //
 // @Suite("Input Test")
 // struct InputTests {

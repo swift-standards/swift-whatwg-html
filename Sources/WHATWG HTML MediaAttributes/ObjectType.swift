@@ -84,13 +84,3 @@ extension ObjectType {
     /// text/html
     public static let html = ObjectType(contentType: .textHTML)
 }
-
-// MARK: - RFC 2045 ContentType Extensions
-
-extension RFC_2045.ContentType {
-    /// video/mp4
-    public static let videoMP4 = RFC_2045.ContentType(type: "video", subtype: "mp4")
-
-    /// audio/mpeg (MP3)
-    public static let audioMPEG = RFC_2045.ContentType(type: "audio", subtype: "mpeg")
-}

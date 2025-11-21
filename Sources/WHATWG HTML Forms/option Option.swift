@@ -12,6 +12,7 @@
 
 public import WHATWG_HTML_Shared
 public import WHATWG_HTML_FormAttributes
+public import WHATWG_HTML_MediaAttributes
 
 /// Represents an HTML option element (`<option>`), which defines an item contained in a
 /// `<select>`, an `<optgroup>`, or a `<datalist>` element.
@@ -52,7 +53,7 @@ public struct Option: WHATWG_HTML.Element {
 
     /// Text for the label indicating the meaning of the option.
     /// If not defined, the element's text content is used.
-    public var label: Label?
+    public var label: WHATWG_HTML_MediaAttributes.Label?
 
     /// If present, indicates that the option is initially selected.
     /// In a single-select control, only one option can be selected at a time.
@@ -71,7 +72,7 @@ public struct Option: WHATWG_HTML.Element {
     ///   - value: The value to be submitted if this option is selected
     public init(
         disabled: Disabled? = nil,
-        label: Label? = nil,
+        label: WHATWG_HTML_MediaAttributes.Label? = nil,
         selected: Selected? = nil,
         value: Value<String>
     ) {

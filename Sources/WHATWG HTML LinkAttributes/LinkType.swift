@@ -12,6 +12,7 @@
 
 public import WHATWG_HTML_Shared
 public import RFC_2045
+import WHATWG_HTML_MediaAttributes
 
 /// Represents the HTML type attribute for the `<link>` element.
 ///

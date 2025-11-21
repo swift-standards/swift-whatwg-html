@@ -103,11 +103,6 @@ extension Accept {
 
     /// Accept any audio file
     @inlinable public static var audio: Self { "audio/*" }
-
-    /// Accept common document files (PDF, Word, Excel, PowerPoint)
-    @inlinable public static var documents: Self {
-        Accept([.pdf, .doc, .docx, .xls, .xlsx, .ppt, .pptx])
-    }
 }
 
 extension Accept {

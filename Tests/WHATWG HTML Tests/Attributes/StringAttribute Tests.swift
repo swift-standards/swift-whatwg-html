@@ -136,7 +136,7 @@ struct `WHATWG_HTML.StringAttribute Test` {
 
     @Test
     func `Long string value`() {
-        let longValue = String(repeating: "test ", count: 100).trimming(.whitespaces)
+        let longValue = String(repeating: "test ", count: 100).trimming(.ascii.whitespaces)
         let attr = TestStringAttribute(value: longValue)
         #expect(attr.rawValue == longValue)
     }

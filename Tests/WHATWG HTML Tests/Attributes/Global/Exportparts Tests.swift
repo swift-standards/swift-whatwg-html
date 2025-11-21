@@ -11,7 +11,7 @@
 //// ===----------------------------------------------------------------------===//
 //
 // // import Testing
-// import HTMLAttributeTypes
+// import HTML_Standard_Attributes
 //
 // @Suite("Exportparts Test")
 // struct ExportpartsTests {

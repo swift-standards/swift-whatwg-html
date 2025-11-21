@@ -42,7 +42,7 @@ The package consists of **6 library products** organized into 3 main functional 
 #### Core Modules
 
 **1. HTMLTypes** (umbrella module)
-- **Dependencies**: HTMLAttributeTypes, HTMLElementTypes
+- **Dependencies**: HTMLAttributeTypes, HTML_Standard_Elements
 - **Contents**: Convenience functions, documentation
 - **Key file**: `WHATWG_HTML.swift` - namespace type for parser implementations
 
@@ -56,7 +56,7 @@ The package consists of **6 library products** organized into 3 main functional 
   - `HTMLBooleanAttribute`
   - `HTMLStringAttribute`
 
-**3. HTMLElementTypes** (core elements)
+**3. HTML_Standard_Elements** (core elements)
 - **Dependencies**: HTMLAttributeTypes
 - **Structure**:
   - 125 element files in `/Elements/`
@@ -68,15 +68,15 @@ The package consists of **6 library products** organized into 3 main functional 
 #### Foundation Integration Modules
 
 **4. HTMLTypesFoundation** (umbrella)
-- **Dependencies**: HTMLElementTypesFoundation, HTMLAttributeTypesFoundation
+- **Dependencies**: HTML_Standard_ElementsFoundation, HTMLAttributeTypesFoundation
 - **Purpose**: Foundation.URL safety for URL-based attributes
 
 **5. HTMLAttributeTypesFoundation**
 - **Dependencies**: HTMLAttributeTypes
 - **Purpose**: Foundation.URL integration for URL attributes
 
-**6. HTMLElementTypesFoundation**
-- **Dependencies**: HTMLElementTypes
+**6. HTML_Standard_ElementsFoundation**
+- **Dependencies**: HTML_Standard_Elements
 - **Purpose**: Foundation.URL integration for elements
 
 ### Current Organization Philosophy
@@ -100,7 +100,7 @@ Sources/
 │       ├── Autocapitalize.swift
 │       └── ... (33 global attributes)
 │
-└── HTMLElementTypes/
+└── HTML_Standard_Elements/
     ├── Elements/
     │   ├── A.swift
     │   ├── Abbr.swift
@@ -124,7 +124,7 @@ Sources/
 #### Element Structure Example
 
 ```swift
-// Sources/HTMLElementTypes/Elements/Form.swift (184 lines)
+// Sources/HTML_Standard_Elements/Elements/Form.swift (184 lines)
 public struct Form: HTMLElement {
     @inlinable public static var tag: String { "form" }
 
@@ -722,7 +722,7 @@ This section outlines a phased approach to refactoring the package.
 
 **Before**:
 ```swift
-// Sources/HTMLElementTypes/Elements/Form.swift
+// Sources/HTML_Standard_Elements/Elements/Form.swift
 public struct Form: HTMLElement {
     @inlinable public static var tag: String { "form" }
     // ...
@@ -1668,7 +1668,7 @@ let input = WHATWG_HTML.Forms.Input.email(name: "email", required: true)
 
 **Changes in 2.0**:
 - Remove compatibility layer (typealiases)
-- Remove `HTMLTypes`, `HTMLElementTypes`, `HTMLAttributeTypes` modules
+- Remove `HTMLTypes`, `HTML_Standard_Elements`, `HTMLAttributeTypes` modules
 - Require explicit namespace or specific module imports
 
 **Migration path**:
@@ -2074,7 +2074,7 @@ The end result will be a **state-of-the-art Swift implementation of the WHATWG H
 ### Current Pattern (No Namespace)
 
 ```swift
-import HTMLElementTypes
+import HTML_Standard_Elements
 
 let form = Form(action: .relative("/submit"))
 let input = Input.email(name: "email")
@@ -2158,7 +2158,7 @@ This appendix shows exactly where each existing file should move in the new stru
 
 ### Elements Migration Map
 
-**From**: `Sources/HTMLElementTypes/Elements/`
+**From**: `Sources/HTML_Standard_Elements/Elements/`
 **To**: Various section modules
 
 | Current File | New Location | Module |
@@ -2278,7 +2278,7 @@ This appendix shows exactly where each existing file should move in the new stru
 
 ### Input Types Migration Map
 
-**From**: `Sources/HTMLElementTypes/Elements/Input.Types/`
+**From**: `Sources/HTML_Standard_Elements/Elements/Input.Types/`
 **To**: `Sources/WHATWG HTML Forms/Input/`
 
 All input type files stay in the Forms module but in an Input subdirectory.

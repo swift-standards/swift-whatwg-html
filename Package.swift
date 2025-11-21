@@ -83,6 +83,7 @@ extension Target.Dependency {
     // External dependencies
     static var rfc2045: Self { .product(name: "RFC 2045", package: "swift-rfc-2045") }
     static var iso8601: Self { .product(name: "ISO 8601", package: "swift-iso-8601") }
+    static var standards: Self { .product(name: "Standards", package: "swift-standards") }
 }
 
 // MARK: - Package Definition
@@ -227,8 +228,9 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(path: "../swift-rfc-2045"),
-        .package(path: "../swift-iso-8601")
+        .package(url: "https://github.com/swift-standards/swift-rfc-2045.git", from: "0.1.0"),
+        .package(url: "https://github.com/swift-standards/swift-iso-8601.git", from: "0.1.0"),
+        .package(url: "https://github.com/swift-standards/swift-standards.git", from: "0.1.0")
     ],
     targets: [
         // ============================================================
@@ -257,7 +259,8 @@ let package = Package(
             name: .whatwgHTMLGlobalAttributes,
             dependencies: [
                 .whatwgHTMLShared,
-                .iso8601
+                .iso8601,
+                .standards
             ]
         ),
         .target(
@@ -273,7 +276,8 @@ let package = Package(
             name: .whatwgHTMLLinkAttributes,
             dependencies: [
                 .whatwgHTMLShared,
-                .rfc2045
+                .rfc2045,
+                .whatwgHTMLMediaAttributes
             ]
         ),
         .target(
@@ -377,7 +381,9 @@ let package = Package(
                 .whatwgHTMLShared,
                 .whatwgHTMLGlobalAttributes,
                 .whatwgHTMLMediaAttributes,
-                .whatwgHTMLFormAttributes
+                .whatwgHTMLFormAttributes,
+                .whatwgHTMLLinkAttributes,
+                .whatwgHTMLScriptAttributes
             ]
         ),
 
@@ -387,7 +393,8 @@ let package = Package(
             dependencies: [
                 .whatwgHTMLShared,
                 .whatwgHTMLGlobalAttributes,
-                .whatwgHTMLTableAttributes
+                .whatwgHTMLTableAttributes,
+                .whatwgHTMLMediaAttributes
             ]
         ),
 
@@ -441,7 +448,10 @@ let package = Package(
             name: .whatwgHTMLObsolete,
             dependencies: [
                 .whatwgHTMLShared,
-                .whatwgHTMLGlobalAttributes
+                .whatwgHTMLGlobalAttributes,
+                .whatwgHTMLTableAttributes,  // For Frameset (Cols, Rows)
+                .whatwgHTMLFormAttributes,   // For Frame (Name)
+                .whatwgHTMLMediaAttributes   // For Frame (Src, MarginHeight, MarginWidth)
             ]
         ),
 

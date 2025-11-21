@@ -12,6 +12,7 @@
 
 public import WHATWG_HTML_Shared
 public import WHATWG_HTML_FormAttributes
+public import WHATWG_HTML_MediaAttributes
 
 /// Represents an HTML option group element (`<optgroup>`), which creates a grouping of options within a `<select>` element.
 ///
@@ -51,7 +52,7 @@ public struct OptionGroup: WHATWG_HTML.Element {
 
     /// The name of the group of options, which the browser can use when labeling
     /// the options in the user interface. This attribute is mandatory if this element is used.
-    public var label: Label?
+    public var label: WHATWG_HTML_MediaAttributes.Label?
 
     /// Creates a new OptionGroup element with the specified attributes.
     ///
@@ -60,7 +61,7 @@ public struct OptionGroup: WHATWG_HTML.Element {
     ///   - label: The name of the group of options (mandatory) (typically `<option>` elements)
     public init(
         disabled: Disabled? = nil,
-        label: Label? = nil
+        label: WHATWG_HTML_MediaAttributes.Label? = nil
     ) {
         self.disabled = disabled
         self.label = label

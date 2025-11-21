@@ -46,7 +46,7 @@ extension Input {
 
         public var required: Required?
 
-        public var form: Form
+        public var form: WHATWG_HTML_FormAttributes.Form
 
         public init(
             src: Src,
@@ -54,7 +54,7 @@ extension Input {
             height: Height? = nil,
             width: Width? = nil,
             required: Required? = nil,
-            form: Form = .init()
+            form: WHATWG_HTML_FormAttributes.Form = .init()
         ) {
             self.src = src
             self.alt = alt
@@ -76,7 +76,7 @@ extension Input {
         height: Height? = nil,
         width: Width? = nil,
         formId: WHATWG_HTML_FormAttributes.Form.ID? = nil,
-        form: Form,
+        form: WHATWG_HTML_FormAttributes.Form,
         disabled: Disabled? = nil,
         required: Required? = nil
     ) -> Self {
