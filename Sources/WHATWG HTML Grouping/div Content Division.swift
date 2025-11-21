@@ -45,8 +45,7 @@ public struct ContentDivision: WHATWG_HTML.Element {
     /// Creates a new ContentDivision element.
     public init(
 
-        )
-    {
+        ) {
 
     }
 }

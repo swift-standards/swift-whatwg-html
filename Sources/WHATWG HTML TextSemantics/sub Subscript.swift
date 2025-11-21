@@ -41,8 +41,7 @@ public struct Subscript: WHATWG_HTML.Element {
     /// Creates a new subscript element.
     public init(
 
-        )
-    {
+        ) {
 
     }
 }

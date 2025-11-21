@@ -46,8 +46,7 @@ public struct Ruby: WHATWG_HTML.Element {
     /// Creates a new Ruby element with the specified attributes.
     public init(
 
-        )
-    {
+        ) {
 
     }
 }

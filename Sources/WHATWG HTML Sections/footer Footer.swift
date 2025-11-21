@@ -46,8 +46,7 @@ public struct Footer: WHATWG_HTML.Element {
     /// Creates a new Footer element.
     public init(
 
-        )
-    {
+        ) {
 
     }
 }

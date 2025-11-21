@@ -67,8 +67,7 @@ public import WHATWG_HTML_Shared
 /// ```
 @dynamicMemberLookup
 public enum Step: WHATWG_HTML.StringAttribute, ExpressibleByFloatLiteral,
-    ExpressibleByIntegerLiteral
-{
+    ExpressibleByIntegerLiteral {
     @inlinable public static var attribute: String { "step" }
 
     /// A specific numeric step value.

@@ -43,8 +43,7 @@ public struct DescriptionDetails: WHATWG_HTML.Element {
     /// Creates a new DescriptionDetails element.
     public init(
 
-        )
-    {
+        ) {
 
     }
 }

@@ -41,8 +41,7 @@ public struct Legend: WHATWG_HTML.Element {
     /// Creates a new Legend element.
     public init(
 
-        )
-    {
+        ) {
 
     }
 }

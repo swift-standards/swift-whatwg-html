@@ -43,8 +43,7 @@ public struct Code: WHATWG_HTML.Element {
     /// Creates a new Code element.
     public init(
 
-        )
-    {
+        ) {
 
     }
 }

@@ -45,8 +45,7 @@ public struct Superscript: WHATWG_HTML.Element {
     /// Creates a new superscript element.
     public init(
 
-        )
-    {
+        ) {
 
     }
 }

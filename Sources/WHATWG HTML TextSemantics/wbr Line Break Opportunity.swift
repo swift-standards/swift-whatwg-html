@@ -65,8 +65,7 @@ public struct LineBreakOpportunity: WHATWG_HTML.VoidElement {
     /// Creates a new LineBreakOpportunity element.
     public init(
 
-        )
-    {
+        ) {
 
     }
 }

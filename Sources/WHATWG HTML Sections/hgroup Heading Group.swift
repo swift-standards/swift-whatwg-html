@@ -45,8 +45,7 @@ public struct HeadingGroup: WHATWG_HTML.Element {
     /// Creates a new HeadingGroup element.
     public init(
 
-        )
-    {
+        ) {
 
     }
 }

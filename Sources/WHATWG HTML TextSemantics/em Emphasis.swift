@@ -45,8 +45,7 @@ public struct Emphasis: WHATWG_HTML.Element {
     /// Creates a new Emphasis element.
     public init(
 
-        )
-    {
+        ) {
 
     }
 }
