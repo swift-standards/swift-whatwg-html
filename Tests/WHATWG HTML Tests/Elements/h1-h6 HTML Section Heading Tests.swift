@@ -10,38 +10,38 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML
 import Testing
+import WHATWG_HTML
 
 @Suite
 struct `Section Heading Test` {
     @Suite
-struct `H1` {
+    struct `H1` {
 
     }
 
     @Suite
-struct `H2` {
+    struct `H2` {
 
     }
 
     @Suite
-struct `H3` {
+    struct `H3` {
 
     }
 
     @Suite
-struct `H4` {
+    struct `H4` {
 
     }
 
     @Suite
-struct `H5` {
+    struct `H5` {
 
     }
 
     @Suite
-struct `H6` {
+    struct `H6` {
 
     }
 }

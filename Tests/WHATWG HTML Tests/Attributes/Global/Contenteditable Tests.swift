@@ -10,13 +10,13 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML
 import Testing
+import WHATWG_HTML
 
 #if canImport(FoundationEssentials)
     import FoundationEssentials
 #elseif canImport(Foundation)
-    #endif
+#endif
 
 @Suite
 struct `Contenteditable Test` {
@@ -34,7 +34,7 @@ struct `Contenteditable Test` {
         case .true: #expect(contenteditable.description == "true")
         case .false: #expect(contenteditable.description == "false")
         case .plaintextOnly: #expect(contenteditable.description == "plaintext-only")
-        case .empty: #expect(contenteditable.description == "")
+        case .empty: #expect(contenteditable.description.isEmpty)
         default: ()
         }
     }

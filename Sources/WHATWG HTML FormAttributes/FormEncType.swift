@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-public import WHATWG_HTML_Shared
 public import RFC_2045
+public import WHATWG_HTML_Shared
 
 /// An attribute that specifies how form data should be encoded when submitted via a specific button.
 ///

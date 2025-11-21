@@ -3,9 +3,9 @@
 //
 // Defines the marquee element (<marquee>)
 
-public import WHATWG_HTML_Shared
 public import WHATWG_HTML_GlobalAttributes
 public import WHATWG_HTML_MediaAttributes
+public import WHATWG_HTML_Shared
 
 /// Represents the obsolete `<marquee>` element that created scrolling text.
 ///

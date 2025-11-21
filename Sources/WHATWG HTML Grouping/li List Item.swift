@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-public import WHATWG_HTML_Shared
 public import WHATWG_HTML_FormAttributes
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML list item element (`<li>`), which is used to represent an item in a list.
 ///

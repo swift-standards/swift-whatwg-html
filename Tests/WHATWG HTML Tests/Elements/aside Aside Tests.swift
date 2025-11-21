@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML
 import Testing
+import WHATWG_HTML
 
 @Suite
 struct `Aside Tests` {
@@ -30,142 +30,142 @@ struct `Aside Tests` {
     }
 
     @Suite
-struct `Common Use Cases` {
+    struct `Common Use Cases` {
 
         @Test
-    func `Sidebar aside`() {
+        func `Sidebar aside`() {
             let aside = Aside()
             #expect(Aside.tag == "aside")
         }
 
         @Test
-    func `Pull quote aside`() {
+        func `Pull quote aside`() {
             let aside = Aside()
             #expect(Aside.tag == "aside")
         }
 
         @Test
-    func `Advertisement aside`() {
+        func `Advertisement aside`() {
             let aside = Aside()
             #expect(Aside.tag == "aside")
         }
 
         @Test
-    func `Related links aside`() {
+        func `Related links aside`() {
             let aside = Aside()
             #expect(Aside.tag == "aside")
         }
 
         @Test
-    func `Author bio aside`() {
+        func `Author bio aside`() {
             let aside = Aside()
             #expect(Aside.tag == "aside")
         }
 
         @Test
-    func `Quick facts aside`() {
+        func `Quick facts aside`() {
             let aside = Aside()
             #expect(Aside.tag == "aside")
         }
 
         @Test
-    func `Call-out box aside`() {
-            let aside = Aside()
-            #expect(Aside.tag == "aside")
-        }
-    }
-
-    @Suite
-struct `Content Types` {
-
-        @Test
-    func `Navigation aside`() {
-            let aside = Aside()
-            #expect(Aside.tag == "aside")
-        }
-
-        @Test
-    func `Supplementary information aside`() {
-            let aside = Aside()
-            #expect(Aside.tag == "aside")
-        }
-
-        @Test
-    func `Glossary aside`() {
-            let aside = Aside()
-            #expect(Aside.tag == "aside")
-        }
-
-        @Test
-    func `Tag cloud aside`() {
-            let aside = Aside()
-            #expect(Aside.tag == "aside")
-        }
-
-        @Test
-    func `Related products aside`() {
-            let aside = Aside()
-            #expect(Aside.tag == "aside")
-        }
-
-        @Test
-    func `Social media aside`() {
+        func `Call-out box aside`() {
             let aside = Aside()
             #expect(Aside.tag == "aside")
         }
     }
 
     @Suite
-struct `Semantic Usage` {
+    struct `Content Types` {
 
         @Test
-    func `Complementary content aside`() {
+        func `Navigation aside`() {
             let aside = Aside()
             #expect(Aside.tag == "aside")
         }
 
         @Test
-    func `Tangentially related aside`() {
+        func `Supplementary information aside`() {
             let aside = Aside()
             #expect(Aside.tag == "aside")
         }
 
         @Test
-    func `Supporting information aside`() {
+        func `Glossary aside`() {
             let aside = Aside()
             #expect(Aside.tag == "aside")
         }
 
         @Test
-    func `Non-essential content aside`() {
+        func `Tag cloud aside`() {
+            let aside = Aside()
+            #expect(Aside.tag == "aside")
+        }
+
+        @Test
+        func `Related products aside`() {
+            let aside = Aside()
+            #expect(Aside.tag == "aside")
+        }
+
+        @Test
+        func `Social media aside`() {
             let aside = Aside()
             #expect(Aside.tag == "aside")
         }
     }
 
     @Suite
-struct `Layout Contexts` {
+    struct `Semantic Usage` {
 
         @Test
-    func `Article sidebar aside`() {
+        func `Complementary content aside`() {
             let aside = Aside()
             #expect(Aside.tag == "aside")
         }
 
         @Test
-    func `Page-level aside`() {
+        func `Tangentially related aside`() {
             let aside = Aside()
             #expect(Aside.tag == "aside")
         }
 
         @Test
-    func `Section-level aside`() {
+        func `Supporting information aside`() {
             let aside = Aside()
             #expect(Aside.tag == "aside")
         }
 
         @Test
-    func `Multiple asides`() {
+        func `Non-essential content aside`() {
+            let aside = Aside()
+            #expect(Aside.tag == "aside")
+        }
+    }
+
+    @Suite
+    struct `Layout Contexts` {
+
+        @Test
+        func `Article sidebar aside`() {
+            let aside = Aside()
+            #expect(Aside.tag == "aside")
+        }
+
+        @Test
+        func `Page-level aside`() {
+            let aside = Aside()
+            #expect(Aside.tag == "aside")
+        }
+
+        @Test
+        func `Section-level aside`() {
+            let aside = Aside()
+            #expect(Aside.tag == "aside")
+        }
+
+        @Test
+        func `Multiple asides`() {
             let primaryAside = Aside()
             let secondaryAside = Aside()
 
@@ -176,10 +176,10 @@ struct `Layout Contexts` {
     }
 
     @Suite
-struct `Integration Tests` {
+    struct `Integration Tests` {
 
         @Test
-    func `Aside within article`() {
+        func `Aside within article`() {
             let aside = Aside()
             let element: any WHATWG_HTML.Element = aside
 
@@ -187,7 +187,7 @@ struct `Integration Tests` {
         }
 
         @Test
-    func `Nested aside elements`() {
+        func `Nested aside elements`() {
             let parentAside = Aside()
             let nestedAside = Aside()
 
@@ -197,7 +197,7 @@ struct `Integration Tests` {
         }
 
         @Test
-    func `Aside collection`() {
+        func `Aside collection`() {
             let asides = [
                 Aside(),
                 Aside(),
@@ -212,44 +212,44 @@ struct `Integration Tests` {
     }
 
     @Suite
-struct `Accessibility and ARIA` {
+    struct `Accessibility and ARIA` {
 
         @Test
-    func `Implicit complementary role`() {
+        func `Implicit complementary role`() {
             let aside = Aside()
             #expect(Aside.tag == "aside")
         }
 
         @Test
-    func `Landmark element aside`() {
+        func `Landmark element aside`() {
             let aside = Aside()
             #expect(Aside.tag == "aside")
         }
 
         @Test
-    func `Screen reader friendly aside`() {
+        func `Screen reader friendly aside`() {
             let aside = Aside()
             #expect(Aside.tag == "aside")
         }
     }
 
     @Suite
-struct `Content Guidelines` {
+    struct `Content Guidelines` {
 
         @Test
-    func `Removable content aside`() {
+        func `Removable content aside`() {
             let aside = Aside()
             #expect(Aside.tag == "aside")
         }
 
         @Test
-    func `Non-parenthetical aside`() {
+        func `Non-parenthetical aside`() {
             let aside = Aside()
             #expect(Aside.tag == "aside")
         }
 
         @Test
-    func `Indirectly related aside`() {
+        func `Indirectly related aside`() {
             let aside = Aside()
             #expect(Aside.tag == "aside")
         }

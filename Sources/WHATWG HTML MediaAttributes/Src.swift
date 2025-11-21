@@ -33,7 +33,8 @@ public import WHATWG_HTML_Shared
 /// <video src="movie.mp4" controls></video>
 /// ```
 @dynamicMemberLookup
-public struct Src: WHATWG_HTML.StringAttribute, ExpressibleByStringInterpolation, CustomStringConvertible {
+public struct Src: WHATWG_HTML.StringAttribute, ExpressibleByStringInterpolation,
+    CustomStringConvertible {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "src" }
 

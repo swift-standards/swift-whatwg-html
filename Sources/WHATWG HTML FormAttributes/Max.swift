@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-public import WHATWG_HTML_Shared
 public import ISO_8601
+public import WHATWG_HTML_Shared
 
 /// An attribute that specifies the maximum value allowed for an input element or other form controls.
 ///

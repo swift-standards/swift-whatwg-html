@@ -53,8 +53,7 @@ public struct DisclosureSummary: WHATWG_HTML.Element {
     /// Creates a new DisclosureSummary element.
     public init(
 
-        )
-    {
+        ) {
 
     }
 }

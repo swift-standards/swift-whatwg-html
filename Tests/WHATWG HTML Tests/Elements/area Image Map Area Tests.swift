@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML
 import Testing
+import WHATWG_HTML
 
 @Suite
 struct `Image Map Area Tests` {
@@ -117,34 +117,34 @@ struct `Image Map Area Tests` {
     }
 
     @Suite
-struct `Shape Tests` {
+    struct `Shape Tests` {
 
         @Test
-    func `Rectangle shape label`() {
+        func `Rectangle shape label`() {
             let shape = Shape.rect(coords: "0,0,100,100")
             #expect(shape.label == "rect")
         }
 
         @Test
-    func `Circle shape label`() {
+        func `Circle shape label`() {
             let shape = Shape.circle(coords: "50,50,25")
             #expect(shape.label == "circle")
         }
 
         @Test
-    func `Polygon shape label`() {
+        func `Polygon shape label`() {
             let shape = Shape.poly(coords: "0,0,50,0,25,43")
             #expect(shape.label == "poly")
         }
 
         @Test
-    func `Default shape label`() {
+        func `Default shape label`() {
             let shape = Shape.default
             #expect(shape.label == "default")
         }
 
         @Test
-    func `Shape equality`() {
+        func `Shape equality`() {
             let rect1 = Shape.rect(coords: "0,0,100,100")
             let rect2 = Shape.rect(coords: "0,0,100,100")
             let rect3 = Shape.rect(coords: "10,10,90,90")
@@ -154,7 +154,7 @@ struct `Shape Tests` {
         }
 
         @Test
-    func `Shape is hashable`() {
+        func `Shape is hashable`() {
             let shapes: Set<Shape> = [
                 .rect(coords: "0,0,100,100"),
                 .circle(coords: "50,50,25"),
@@ -167,10 +167,10 @@ struct `Shape Tests` {
     }
 
     @Suite
-struct `Convenience Creators` {
+    struct `Convenience Creators` {
 
         @Test
-    func `Rectangle creator`() {
+        func `Rectangle creator`() {
             let href = Href("rect.html")
             let alt = Alt("Rectangle link")
             let target = Target.blank
@@ -198,7 +198,7 @@ struct `Convenience Creators` {
         }
 
         @Test
-    func `Circle creator`() {
+        func `Circle creator`() {
             let href = Href("circle.html")
             let alt = Alt("Circle link")
 
@@ -222,7 +222,7 @@ struct `Convenience Creators` {
         }
 
         @Test
-    func `Polygon creator`() {
+        func `Polygon creator`() {
             let href = Href("poly.html")
             let alt = Alt("Polygon link")
             let points = [(0, 0), (50, 0), (25, 43)]
@@ -245,7 +245,7 @@ struct `Convenience Creators` {
         }
 
         @Test
-    func `Default area creator`() {
+        func `Default area creator`() {
             let href = Href("default.html")
             let alt = Alt("Default link")
             let target = Target.`self`
@@ -265,10 +265,10 @@ struct `Convenience Creators` {
     }
 
     @Suite
-struct `Common Use Cases` {
+    struct `Common Use Cases` {
 
         @Test
-    func `Image map navigation`() {
+        func `Image map navigation`() {
             let area1 = Area.rectangle(
                 x1: 0,
                 y1: 0,
@@ -292,7 +292,7 @@ struct `Common Use Cases` {
         }
 
         @Test
-    func `Interactive diagram`() {
+        func `Interactive diagram`() {
             let buttonArea = Area.circle(
                 x: 50,
                 y: 30,
@@ -306,7 +306,7 @@ struct `Common Use Cases` {
         }
 
         @Test
-    func `Geographic map`() {
+        func `Geographic map`() {
             let region = Area.polygon(
                 points: [(100, 50), (150, 75), (125, 125), (75, 100)],
                 href: Href("region-details.html"),
@@ -318,10 +318,10 @@ struct `Common Use Cases` {
     }
 
     @Suite
-struct `Accessibility Tests` {
+    struct `Accessibility Tests` {
 
         @Test
-    func `Alt text is required for links`() {
+        func `Alt text is required for links`() {
             let href = Href("link.html")
             let alt = Alt("Accessible link")
             let area = Area(
@@ -335,7 +335,7 @@ struct `Accessibility Tests` {
         }
 
         @Test
-    func `Descriptive alt text`() {
+        func `Descriptive alt text`() {
             let alt = Alt("Navigate to product details page")
             let area = Area(
                 shape: .circle(coords: "50,50,25"),
@@ -348,10 +348,10 @@ struct `Accessibility Tests` {
     }
 
     @Suite
-struct `Integration Tests` {
+    struct `Integration Tests` {
 
         @Test
-    func `Multiple areas in image map`() {
+        func `Multiple areas in image map`() {
             let areas = [
                 Area.rectangle(
                     x1: 0,
@@ -378,7 +378,7 @@ struct `Integration Tests` {
         }
 
         @Test
-    func `Area with security attributes`() {
+        func `Area with security attributes`() {
             let area = Area(
                 shape: .rect(coords: "0,0,100,100"),
                 alt: Alt("External link"),

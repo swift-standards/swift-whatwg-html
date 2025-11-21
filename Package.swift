@@ -219,7 +219,7 @@ let package = Package(
         .library(
             name: .whatwgHTML,
             targets: [.whatwgHTML]
-        ),
+        )
     ],
     traits: [
         .trait(
@@ -514,7 +514,7 @@ let package = Package(
             dependencies: [
                 .whatwgHTML
             ]
-        ),
+        )
     ],
     swiftLanguageModes: [.v6]
 )

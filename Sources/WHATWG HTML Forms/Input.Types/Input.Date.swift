@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-public import WHATWG_HTML_Shared
 public import WHATWG_HTML_FormAttributes
+public import WHATWG_HTML_Shared
 
 /// `<input type="date">` elements create input fields that let the user enter a date.
 /// The appearance of the date picker input UI varies based on the browser and operating system.

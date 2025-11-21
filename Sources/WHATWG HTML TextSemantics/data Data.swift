@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-public import WHATWG_HTML_Shared
 public import WHATWG_HTML_FormAttributes
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML data element (`<data>`), which links a given piece of content
 /// with a machine-readable translation.

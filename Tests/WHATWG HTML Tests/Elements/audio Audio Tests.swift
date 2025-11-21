@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML
 import Testing
+import WHATWG_HTML
 
 @Suite
 struct `Audio Tests` {
@@ -123,10 +123,10 @@ struct `Audio Tests` {
     }
 
     @Suite
-struct `Preload Options` {
+    struct `Preload Options` {
 
         @Test
-    func `Preload none`() {
+        func `Preload none`() {
             let preload = Audio.Preload.none
             let audio = Audio(preload: preload)
             #expect(audio.preload == preload)
@@ -134,7 +134,7 @@ struct `Preload Options` {
         }
 
         @Test
-    func `Preload metadata`() {
+        func `Preload metadata`() {
             let preload = Audio.Preload.metadata
             let audio = Audio(preload: preload)
             #expect(audio.preload == preload)
@@ -142,7 +142,7 @@ struct `Preload Options` {
         }
 
         @Test
-    func `Preload auto`() {
+        func `Preload auto`() {
             let preload = Audio.Preload.auto
             let audio = Audio(preload: preload)
             #expect(audio.preload == preload)
@@ -151,40 +151,40 @@ struct `Preload Options` {
     }
 
     @Suite
-struct `Controls List` {
+    struct `Controls List` {
 
         @Test
-    func `Default controls list`() {
+        func `Default controls list`() {
             let controlslist = Audio.ControlsList()
             #expect(controlslist.nodownload == false)
             #expect(controlslist.nofullscreen == false)
             #expect(controlslist.noremoteplayback == false)
-            #expect(controlslist.description == "")
+            #expect(controlslist.description.isEmpty)
         }
 
         @Test
-    func `Controls list with nodownload`() {
+        func `Controls list with nodownload`() {
             let controlslist = Audio.ControlsList(nodownload: true)
             #expect(controlslist.nodownload == true)
             #expect(controlslist.description == "nodownload")
         }
 
         @Test
-    func `Controls list with nofullscreen`() {
+        func `Controls list with nofullscreen`() {
             let controlslist = Audio.ControlsList(nofullscreen: true)
             #expect(controlslist.nofullscreen == true)
             #expect(controlslist.description == "nofullscreen")
         }
 
         @Test
-    func `Controls list with noremoteplayback`() {
+        func `Controls list with noremoteplayback`() {
             let controlslist = Audio.ControlsList(noremoteplayback: true)
             #expect(controlslist.noremoteplayback == true)
             #expect(controlslist.description == "noremoteplayback")
         }
 
         @Test
-    func `Controls list with multiple options`() {
+        func `Controls list with multiple options`() {
             let controlslist = Audio.ControlsList(
                 nodownload: true,
                 nofullscreen: true,
@@ -197,7 +197,7 @@ struct `Controls List` {
         }
 
         @Test
-    func `Controls list is hashable`() {
+        func `Controls list is hashable`() {
             let controlslist1 = Audio.ControlsList(nodownload: true)
             let controlslist2 = Audio.ControlsList(nodownload: true)
             let controlslist3 = Audio.ControlsList(nofullscreen: true)
@@ -211,10 +211,10 @@ struct `Controls List` {
     }
 
     @Suite
-struct `Common Use Cases` {
+    struct `Common Use Cases` {
 
         @Test
-    func `Simple audio with controls`() {
+        func `Simple audio with controls`() {
             let src = Src("podcast.mp3")
             let controls = Controls()
             let audio = Audio(src: src, controls: controls)
@@ -224,7 +224,7 @@ struct `Common Use Cases` {
         }
 
         @Test
-    func `Background music with autoplay and loop`() {
+        func `Background music with autoplay and loop`() {
             let src = Src("background-music.mp3")
             let autoplay = Autoplay()
             let loop = Loop()
@@ -244,7 +244,7 @@ struct `Common Use Cases` {
         }
 
         @Test
-    func `Podcast player`() {
+        func `Podcast player`() {
             let src = Src("episode-001.mp3")
             let controls = Controls()
             let preload = Audio.Preload.metadata
@@ -261,7 +261,7 @@ struct `Common Use Cases` {
         }
 
         @Test
-    func `Audio with multiple sources (no src attribute)`() {
+        func `Audio with multiple sources (no src attribute)`() {
             let controls = Controls()
             let preload = Audio.Preload.none
 
@@ -276,7 +276,7 @@ struct `Common Use Cases` {
         }
 
         @Test
-    func `Audio with CORS enabled`() {
+        func `Audio with CORS enabled`() {
             let src = Src("https://example.com/audio.mp3")
             let controls = Controls()
             let crossorigin = Crossorigin.anonymous
@@ -293,7 +293,7 @@ struct `Common Use Cases` {
         }
 
         @Test
-    func `Audio with restricted controls`() {
+        func `Audio with restricted controls`() {
             let src = Src("restricted-audio.mp3")
             let controls = Controls()
             let controlslist = Audio.ControlsList(
@@ -314,10 +314,10 @@ struct `Common Use Cases` {
     }
 
     @Suite
-struct `Accessibility and User Experience` {
+    struct `Accessibility and User Experience` {
 
         @Test
-    func `Audio with considerate autoplay`() {
+        func `Audio with considerate autoplay`() {
             let src = Src("notification.mp3")
             let autoplay = Autoplay()
             let muted = Muted()
@@ -335,7 +335,7 @@ struct `Accessibility and User Experience` {
         }
 
         @Test
-    func `Audio with user-friendly preloading`() {
+        func `Audio with user-friendly preloading`() {
             let src = Src("large-audio.mp3")
             let controls = Controls()
             let preload = Audio.Preload.metadata
@@ -350,7 +350,7 @@ struct `Accessibility and User Experience` {
         }
 
         @Test
-    func `Audio without autoplay for better UX`() {
+        func `Audio without autoplay for better UX`() {
             let src = Src("music.mp3")
             let controls = Controls()
 
@@ -362,10 +362,10 @@ struct `Accessibility and User Experience` {
     }
 
     @Suite
-struct `Integration Tests` {
+    struct `Integration Tests` {
 
         @Test
-    func `Multiple audio elements`() {
+        func `Multiple audio elements`() {
             let audio1 = Audio(src: Src("track1.mp3"), controls: Controls())
             let audio2 = Audio(src: Src("track2.mp3"), controls: Controls())
             let audio3 = Audio(src: Src("track3.mp3"), controls: Controls())
@@ -381,7 +381,7 @@ struct `Integration Tests` {
         }
 
         @Test
-    func `Audio playlist simulation`() {
+        func `Audio playlist simulation`() {
             let playlist = [
                 Audio(src: Src("song1.mp3"), controls: Controls(), preload: Audio.Preload.metadata),
                 Audio(src: Src("song2.mp3"), controls: Controls(), preload: Audio.Preload.metadata),
@@ -396,7 +396,7 @@ struct `Integration Tests` {
         }
 
         @Test
-    func `Audio as HTMLElement`() {
+        func `Audio as HTMLElement`() {
             let audio = Audio(src: Src("test.mp3"))
             let element: any WHATWG_HTML.Element = audio
 
@@ -405,10 +405,10 @@ struct `Integration Tests` {
     }
 
     @Suite
-struct `Performance and Optimization` {
+    struct `Performance and Optimization` {
 
         @Test
-    func `Audio with no preload for bandwidth conservation`() {
+        func `Audio with no preload for bandwidth conservation`() {
             let src = Src("large-file.mp3")
             let controls = Controls()
             let preload = Audio.Preload.none
@@ -423,7 +423,7 @@ struct `Performance and Optimization` {
         }
 
         @Test
-    func `Audio with metadata preload for quick info`() {
+        func `Audio with metadata preload for quick info`() {
             let src = Src("podcast.mp3")
             let controls = Controls()
             let preload = Audio.Preload.metadata
@@ -438,7 +438,7 @@ struct `Performance and Optimization` {
         }
 
         @Test
-    func `Audio with auto preload for immediate playback`() {
+        func `Audio with auto preload for immediate playback`() {
             let src = Src("short-clip.mp3")
             let controls = Controls()
             let preload = Audio.Preload.auto

@@ -235,12 +235,12 @@ extension Href {
             switch char {
             // Unreserved characters (RFC 3986 Section 2.3)
             case 0x41...0x5A,  // A-Z
-                 0x61...0x7A,  // a-z
-                 0x30...0x39,  // 0-9
-                 0x2D,         // -
-                 0x5F,         // _
-                 0x2E,         // .
-                 0x7E:         // ~
+                0x61...0x7A,  // a-z
+                0x30...0x39,  // 0-9
+                0x2D,  // -
+                0x5F,  // _
+                0x2E,  // .
+                0x7E:  // ~
                 result.append(Character(UnicodeScalar(char)))
 
             // Everything else: percent-encode

@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-public import WHATWG_HTML_Shared
 public import WHATWG_HTML_Forms
+public import WHATWG_HTML_Shared
 
 extension Form.Data.Entry {
     /// A collection of form data entries representing a "form data set".
@@ -181,10 +181,8 @@ extension Form.Data.Entry {
         public var names: [String] {
             var seen = Set<String>()
             var result: [String] = []
-            for entry in entries {
-                if seen.insert(entry.name).inserted {
-                    result.append(entry.name)
-                }
+            for entry in entries where seen.insert(entry.name).inserted {
+                result.append(entry.name)
             }
             return result
         }

@@ -3,10 +3,10 @@
 //
 // Defines the frame element (<frame>)
 
-public import WHATWG_HTML_Shared
+public import WHATWG_HTML_FormAttributes
 public import WHATWG_HTML_GlobalAttributes
 public import WHATWG_HTML_MediaAttributes
-public import WHATWG_HTML_FormAttributes
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML frame element (`<frame>`), which defines a particular area in which another HTML document can be displayed.
 ///

@@ -10,13 +10,13 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML
 import Testing
+import WHATWG_HTML
 
 #if canImport(FoundationEssentials)
     import FoundationEssentials
 #elseif canImport(Foundation)
-    #endif
+#endif
 
 @Suite
 struct `Hidden Test` {
@@ -33,7 +33,7 @@ struct `Hidden Test` {
         switch hidden {
         case .hidden: #expect(hidden.description == "hidden")
         case .untilFound: #expect(hidden.description == "until-found")
-        case .empty: #expect(hidden.description == "")
+        case .empty: #expect(hidden.description.isEmpty)
         default: ()
         }
     }

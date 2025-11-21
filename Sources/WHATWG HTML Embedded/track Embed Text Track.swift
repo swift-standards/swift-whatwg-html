@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-public import WHATWG_HTML_Shared
 public import WHATWG_HTML_MediaAttributes
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML track element (`<track>`), which is used as a child of the media elements
 /// `<audio>` and `<video>` to specify timed text tracks.

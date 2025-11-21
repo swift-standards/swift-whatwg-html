@@ -10,10 +10,10 @@
 //
 // ===----------------------------------------------------------------------===//
 
-public import WHATWG_HTML_Shared
-public import WHATWG_HTML_ScriptAttributes
 public import WHATWG_HTML_GlobalAttributes
 public import WHATWG_HTML_MediaAttributes
+public import WHATWG_HTML_ScriptAttributes
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML meta element (`<meta>`), which provides metadata about the document
 /// that cannot be expressed by other HTML meta-related elements.

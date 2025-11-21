@@ -10,13 +10,13 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML
 import Testing
+import WHATWG_HTML
 
 #if canImport(FoundationEssentials)
     import FoundationEssentials
 #elseif canImport(Foundation)
-    #endif
+#endif
 
 @dynamicMemberLookup
 private struct TestStringAttribute: WHATWG_HTML.StringAttribute {
@@ -96,8 +96,8 @@ struct `WHATWG_HTML.StringAttribute Test` {
     @Test
     func `Empty string value`() {
         let attr = TestStringAttribute(value: "")
-        #expect(attr.rawValue == "")
-        #expect(attr.description == "")
+        #expect(attr.rawValue.isEmpty)
+        #expect(attr.description.isEmpty)
     }
 
     @Test

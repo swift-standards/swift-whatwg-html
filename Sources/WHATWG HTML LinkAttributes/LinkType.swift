@@ -10,9 +10,9 @@
 //
 // ===----------------------------------------------------------------------===//
 
-public import WHATWG_HTML_Shared
 public import RFC_2045
 import WHATWG_HTML_MediaAttributes
+public import WHATWG_HTML_Shared
 
 /// Represents the HTML type attribute for the `<link>` element.
 ///

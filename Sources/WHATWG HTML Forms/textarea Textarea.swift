@@ -10,9 +10,9 @@
 //
 // ===----------------------------------------------------------------------===//
 
-public import WHATWG_HTML_Shared
 public import WHATWG_HTML_FormAttributes
 public import WHATWG_HTML_GlobalAttributes
+public import WHATWG_HTML_Shared
 public import WHATWG_HTML_TableAttributes
 
 /// Represents an HTML textarea element (`<textarea>`), which is a multi-line plain-text editing control.

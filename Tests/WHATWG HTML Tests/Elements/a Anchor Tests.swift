@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML
 import Testing
+import WHATWG_HTML
 
 @Suite
 struct `Anchor Tests` {
@@ -114,31 +114,31 @@ struct `Anchor Tests` {
     }
 
     @Suite
-struct `Common Use Cases` {
+    struct `Common Use Cases` {
 
         @Test
-    func `Email link`() {
+        func `Email link`() {
             let href = Href("mailto:contact@example.com")
             let anchor = Anchor(href: href)
             #expect(anchor.href == href)
         }
 
         @Test
-    func `Telephone link`() {
+        func `Telephone link`() {
             let href = Href("tel:+15555555555")
             let anchor = Anchor(href: href)
             #expect(anchor.href == href)
         }
 
         @Test
-    func `In-page navigation`() {
+        func `In-page navigation`() {
             let href = Href("#section-id")
             let anchor = Anchor(href: href)
             #expect(anchor.href == href)
         }
 
         @Test
-    func `External link with security`() {
+        func `External link with security`() {
             let href = Href("https://external-site.com")
             let target = Target.blank
             let rel = Rel("noopener noreferrer")
@@ -155,7 +155,7 @@ struct `Common Use Cases` {
         }
 
         @Test
-    func `Download link`() {
+        func `Download link`() {
             let href = Href("/files/document.pdf")
             let download = Download("important-document.pdf")
 
@@ -169,7 +169,7 @@ struct `Common Use Cases` {
         }
 
         @Test
-    func `Multilingual link`() {
+        func `Multilingual link`() {
             let href = Href("https://example.fr")
             let hreflang = Hreflang("fr")
 
@@ -183,7 +183,7 @@ struct `Common Use Cases` {
         }
 
         @Test
-    func `Tracked link`() {
+        func `Tracked link`() {
             let href = Href("https://example.com")
             let ping = Ping(
                 "https://analytics.example.com/ping https://tracking.example.com/click"
@@ -200,38 +200,38 @@ struct `Common Use Cases` {
     }
 
     @Suite
-struct `Target Attribute Tests` {
+    struct `Target Attribute Tests` {
 
         @Test
-    func `Target self`() {
+        func `Target self`() {
             let target = Target.`self`
             let anchor = Anchor(target: target)
             #expect(anchor.target == target)
         }
 
         @Test
-    func `Target blank`() {
+        func `Target blank`() {
             let target = Target.blank
             let anchor = Anchor(target: target)
             #expect(anchor.target == target)
         }
 
         @Test
-    func `Target parent`() {
+        func `Target parent`() {
             let target = Target.parent
             let anchor = Anchor(target: target)
             #expect(anchor.target == target)
         }
 
         @Test
-    func `Target top`() {
+        func `Target top`() {
             let target = Target.top
             let anchor = Anchor(target: target)
             #expect(anchor.target == target)
         }
 
         @Test
-    func `Custom target`() {
+        func `Custom target`() {
             let target = Target("myframe")
             let anchor = Anchor(target: target)
             #expect(anchor.target == target)
@@ -239,31 +239,31 @@ struct `Target Attribute Tests` {
     }
 
     @Suite
-struct `Referrer Policy Tests` {
+    struct `Referrer Policy Tests` {
 
         @Test
-    func `No referrer`() {
+        func `No referrer`() {
             let policy = ReferrerPolicy.noReferrer
             let anchor = Anchor(referrerpolicy: policy)
             #expect(anchor.referrerpolicy == policy)
         }
 
         @Test
-    func `Origin`() {
+        func `Origin`() {
             let policy = ReferrerPolicy.origin
             let anchor = Anchor(referrerpolicy: policy)
             #expect(anchor.referrerpolicy == policy)
         }
 
         @Test
-    func `Same origin`() {
+        func `Same origin`() {
             let policy = ReferrerPolicy.sameOrigin
             let anchor = Anchor(referrerpolicy: policy)
             #expect(anchor.referrerpolicy == policy)
         }
 
         @Test
-    func `Strict origin`() {
+        func `Strict origin`() {
             let policy = ReferrerPolicy.strictOrigin
             let anchor = Anchor(referrerpolicy: policy)
             #expect(anchor.referrerpolicy == policy)

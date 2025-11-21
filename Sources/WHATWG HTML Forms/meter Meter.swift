@@ -10,9 +10,9 @@
 //
 // ===----------------------------------------------------------------------===//
 
-public import WHATWG_HTML_Shared
 public import WHATWG_HTML_FormAttributes
 public import WHATWG_HTML_GlobalAttributes
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML meter element (`<meter>`), which displays a scalar value within a known range or a fractional value.
 ///

@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-public import WHATWG_HTML_Shared
 public import WHATWG_HTML_MediaAttributes
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML canvas element (`<canvas>`), which is used to draw graphics via scripting
 /// (usually JavaScript) with either the Canvas API or WebGL API.

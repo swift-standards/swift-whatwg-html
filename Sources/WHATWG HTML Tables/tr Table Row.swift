@@ -54,8 +54,7 @@ public struct TableRow: WHATWG_HTML.Element {
     /// Creates a new TableRow element.
     public init(
 
-        )
-    {
+        ) {
 
     }
 }

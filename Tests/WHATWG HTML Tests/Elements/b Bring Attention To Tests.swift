@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML
 import Testing
+import WHATWG_HTML
 
 @Suite
 struct `Bring Attention To Tests` {
@@ -30,174 +30,174 @@ struct `Bring Attention To Tests` {
     }
 
     @Suite
-struct `Common Use Cases` {
+    struct `Common Use Cases` {
 
         @Test
-    func `Keywords in document`() {
+        func `Keywords in document`() {
             let b = B()
             #expect(B.tag == "b")
         }
 
         @Test
-    func `Product names in review`() {
+        func `Product names in review`() {
             let b = B()
             #expect(B.tag == "b")
         }
 
         @Test
-    func `Actionable words in interactive software`() {
+        func `Actionable words in interactive software`() {
             let b = B()
             #expect(B.tag == "b")
         }
 
         @Test
-    func `Article leads or summaries`() {
+        func `Article leads or summaries`() {
             let b = B()
             #expect(B.tag == "b")
         }
 
         @Test
-    func `Important terms without semantic importance`() {
+        func `Important terms without semantic importance`() {
             let b = B()
             #expect(B.tag == "b")
         }
 
         @Test
-    func `Navigation or UI element labels`() {
-            let b = B()
-            #expect(B.tag == "b")
-        }
-    }
-
-    @Suite
-struct `Semantic Distinction` {
-
-        @Test
-    func `Stylistic bold without importance`() {
-            let b = B()
-            #expect(B.tag == "b")
-        }
-
-        @Test
-    func `Visual attention without emphasis`() {
-            let b = B()
-            #expect(B.tag == "b")
-        }
-
-        @Test
-    func `Bold text for readability`() {
-            let b = B()
-            #expect(B.tag == "b")
-        }
-
-        @Test
-    func `Non-semantic bold formatting`() {
+        func `Navigation or UI element labels`() {
             let b = B()
             #expect(B.tag == "b")
         }
     }
 
     @Suite
-struct `Typography and Design` {
+    struct `Semantic Distinction` {
 
         @Test
-    func `Bold text in body content`() {
+        func `Stylistic bold without importance`() {
             let b = B()
             #expect(B.tag == "b")
         }
 
         @Test
-    func `Highlighted terms`() {
+        func `Visual attention without emphasis`() {
             let b = B()
             #expect(B.tag == "b")
         }
 
         @Test
-    func `Interface element styling`() {
+        func `Bold text for readability`() {
             let b = B()
             #expect(B.tag == "b")
         }
 
         @Test
-    func `Text differentiation`() {
-            let b = B()
-            #expect(B.tag == "b")
-        }
-    }
-
-    @Suite
-struct `Content Types` {
-
-        @Test
-    func `Technical documentation keywords`() {
-            let b = B()
-            #expect(B.tag == "b")
-        }
-
-        @Test
-    func `Menu item names`() {
-            let b = B()
-            #expect(B.tag == "b")
-        }
-
-        @Test
-    func `Button labels`() {
-            let b = B()
-            #expect(B.tag == "b")
-        }
-
-        @Test
-    func `Brand names in content`() {
-            let b = B()
-            #expect(B.tag == "b")
-        }
-
-        @Test
-    func `File names or paths`() {
-            let b = B()
-            #expect(B.tag == "b")
-        }
-
-        @Test
-    func `Command names`() {
+        func `Non-semantic bold formatting`() {
             let b = B()
             #expect(B.tag == "b")
         }
     }
 
     @Suite
-struct `Inline Context` {
+    struct `Typography and Design` {
 
         @Test
-    func `Bold span within paragraph`() {
+        func `Bold text in body content`() {
             let b = B()
             #expect(B.tag == "b")
         }
 
         @Test
-    func `Bold text in lists`() {
+        func `Highlighted terms`() {
             let b = B()
             #expect(B.tag == "b")
         }
 
         @Test
-    func `Bold text in table cells`() {
+        func `Interface element styling`() {
             let b = B()
             #expect(B.tag == "b")
         }
 
         @Test
-    func `Bold text in headers`() {
+        func `Text differentiation`() {
             let b = B()
             #expect(B.tag == "b")
         }
     }
 
     @Suite
-struct `Integration Tests` {
+    struct `Content Types` {
 
         @Test
-    func `Multiple B elements`() {
+        func `Technical documentation keywords`() {
+            let b = B()
+            #expect(B.tag == "b")
+        }
+
+        @Test
+        func `Menu item names`() {
+            let b = B()
+            #expect(B.tag == "b")
+        }
+
+        @Test
+        func `Button labels`() {
+            let b = B()
+            #expect(B.tag == "b")
+        }
+
+        @Test
+        func `Brand names in content`() {
+            let b = B()
+            #expect(B.tag == "b")
+        }
+
+        @Test
+        func `File names or paths`() {
+            let b = B()
+            #expect(B.tag == "b")
+        }
+
+        @Test
+        func `Command names`() {
+            let b = B()
+            #expect(B.tag == "b")
+        }
+    }
+
+    @Suite
+    struct `Inline Context` {
+
+        @Test
+        func `Bold span within paragraph`() {
+            let b = B()
+            #expect(B.tag == "b")
+        }
+
+        @Test
+        func `Bold text in lists`() {
+            let b = B()
+            #expect(B.tag == "b")
+        }
+
+        @Test
+        func `Bold text in table cells`() {
+            let b = B()
+            #expect(B.tag == "b")
+        }
+
+        @Test
+        func `Bold text in headers`() {
+            let b = B()
+            #expect(B.tag == "b")
+        }
+    }
+
+    @Suite
+    struct `Integration Tests` {
+
+        @Test
+        func `Multiple B elements`() {
             let b1 = B()
             let b2 = B()
             let b3 = B()
@@ -211,7 +211,7 @@ struct `Integration Tests` {
         }
 
         @Test
-    func `B element within content flow`() {
+        func `B element within content flow`() {
             let b = B()
             let element: any WHATWG_HTML.Element = b
 
@@ -219,7 +219,7 @@ struct `Integration Tests` {
         }
 
         @Test
-    func `Nested B elements`() {
+        func `Nested B elements`() {
             let outerB = B()
             let innerB = B()
 
@@ -230,78 +230,78 @@ struct `Integration Tests` {
     }
 
     @Suite
-struct `Accessibility Considerations` {
+    struct `Accessibility Considerations` {
 
         @Test
-    func `Screen reader neutral bold`() {
+        func `Screen reader neutral bold`() {
             let b = B()
             #expect(B.tag == "b")
         }
 
         @Test
-    func `Visual-only formatting`() {
+        func `Visual-only formatting`() {
             let b = B()
             #expect(B.tag == "b")
         }
 
         @Test
-    func `Non-semantic styling`() {
-            let b = B()
-            #expect(B.tag == "b")
-        }
-    }
-
-    @Suite
-struct `Best Practices` {
-
-        @Test
-    func `Appropriate use over strong`() {
-            let b = B()
-            #expect(B.tag == "b")
-        }
-
-        @Test
-    func `Appropriate use over em`() {
-            let b = B()
-            #expect(B.tag == "b")
-        }
-
-        @Test
-    func `Appropriate use over mark`() {
-            let b = B()
-            #expect(B.tag == "b")
-        }
-
-        @Test
-    func `Appropriate use over span`() {
+        func `Non-semantic styling`() {
             let b = B()
             #expect(B.tag == "b")
         }
     }
 
     @Suite
-struct `Usage Examples` {
+    struct `Best Practices` {
 
         @Test
-    func `Product review with product names`() {
+        func `Appropriate use over strong`() {
             let b = B()
             #expect(B.tag == "b")
         }
 
         @Test
-    func `Software documentation with commands`() {
+        func `Appropriate use over em`() {
             let b = B()
             #expect(B.tag == "b")
         }
 
         @Test
-    func `Article summary with key points`() {
+        func `Appropriate use over mark`() {
             let b = B()
             #expect(B.tag == "b")
         }
 
         @Test
-    func `UI instructions with element names`() {
+        func `Appropriate use over span`() {
+            let b = B()
+            #expect(B.tag == "b")
+        }
+    }
+
+    @Suite
+    struct `Usage Examples` {
+
+        @Test
+        func `Product review with product names`() {
+            let b = B()
+            #expect(B.tag == "b")
+        }
+
+        @Test
+        func `Software documentation with commands`() {
+            let b = B()
+            #expect(B.tag == "b")
+        }
+
+        @Test
+        func `Article summary with key points`() {
+            let b = B()
+            #expect(B.tag == "b")
+        }
+
+        @Test
+        func `UI instructions with element names`() {
             let b = B()
             #expect(B.tag == "b")
         }

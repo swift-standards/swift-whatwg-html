@@ -43,8 +43,7 @@ public struct Section: WHATWG_HTML.Element {
     /// Creates a new Section element with the specified attributes.
     public init(
 
-        )
-    {
+        ) {
 
     }
 }

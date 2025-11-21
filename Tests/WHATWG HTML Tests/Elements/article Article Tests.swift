@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML
 import Testing
+import WHATWG_HTML
 
 @Suite
 struct `Article Tests` {
@@ -30,50 +30,50 @@ struct `Article Tests` {
     }
 
     @Suite
-struct `Common Use Cases` {
+    struct `Common Use Cases` {
 
         @Test
-    func `Blog post article`() {
+        func `Blog post article`() {
             let article = Article()
             #expect(Article.tag == "article")
         }
 
         @Test
-    func `News article`() {
+        func `News article`() {
             let article = Article()
             #expect(Article.tag == "article")
         }
 
         @Test
-    func `Forum post`() {
+        func `Forum post`() {
             let article = Article()
             #expect(Article.tag == "article")
         }
 
         @Test
-    func `Comment article`() {
+        func `Comment article`() {
             let article = Article()
             #expect(Article.tag == "article")
         }
 
         @Test
-    func `Product review`() {
+        func `Product review`() {
             let article = Article()
             #expect(Article.tag == "article")
         }
 
         @Test
-    func `Social media post`() {
+        func `Social media post`() {
             let article = Article()
             #expect(Article.tag == "article")
         }
     }
 
     @Suite
-struct `Nested Articles` {
+    struct `Nested Articles` {
 
         @Test
-    func `Article with nested comments`() {
+        func `Article with nested comments`() {
             let mainArticle = Article()
             let commentArticle = Article()
 
@@ -83,7 +83,7 @@ struct `Nested Articles` {
         }
 
         @Test
-    func `Multi-part article series`() {
+        func `Multi-part article series`() {
             let containerArticle = Article()
             let part1 = Article()
             let part2 = Article()
@@ -95,7 +95,7 @@ struct `Nested Articles` {
         }
 
         @Test
-    func `Article with related content`() {
+        func `Article with related content`() {
             let mainArticle = Article()
             let relatedArticle = Article()
 
@@ -106,72 +106,72 @@ struct `Nested Articles` {
     }
 
     @Suite
-struct `Content Structure` {
+    struct `Content Structure` {
 
         @Test
-    func `Article with heading structure`() {
+        func `Article with heading structure`() {
             let article = Article()
             #expect(Article.tag == "article")
         }
 
         @Test
-    func `Article with sections`() {
+        func `Article with sections`() {
             let article = Article()
             #expect(Article.tag == "article")
         }
 
         @Test
-    func `Article with metadata`() {
+        func `Article with metadata`() {
             let article = Article()
             #expect(Article.tag == "article")
         }
 
         @Test
-    func `Article with author information`() {
+        func `Article with author information`() {
             let article = Article()
             #expect(Article.tag == "article")
         }
 
         @Test
-    func `Article with publication date`() {
-            let article = Article()
-            #expect(Article.tag == "article")
-        }
-    }
-
-    @Suite
-struct `Semantic Usage` {
-
-        @Test
-    func `Standalone content article`() {
-            let article = Article()
-            #expect(Article.tag == "article")
-        }
-
-        @Test
-    func `Syndicated content article`() {
-            let article = Article()
-            #expect(Article.tag == "article")
-        }
-
-        @Test
-    func `User-generated content article`() {
-            let article = Article()
-            #expect(Article.tag == "article")
-        }
-
-        @Test
-    func `Widget-like article`() {
+        func `Article with publication date`() {
             let article = Article()
             #expect(Article.tag == "article")
         }
     }
 
     @Suite
-struct `Integration Tests` {
+    struct `Semantic Usage` {
 
         @Test
-    func `Multiple articles in feed`() {
+        func `Standalone content article`() {
+            let article = Article()
+            #expect(Article.tag == "article")
+        }
+
+        @Test
+        func `Syndicated content article`() {
+            let article = Article()
+            #expect(Article.tag == "article")
+        }
+
+        @Test
+        func `User-generated content article`() {
+            let article = Article()
+            #expect(Article.tag == "article")
+        }
+
+        @Test
+        func `Widget-like article`() {
+            let article = Article()
+            #expect(Article.tag == "article")
+        }
+    }
+
+    @Suite
+    struct `Integration Tests` {
+
+        @Test
+        func `Multiple articles in feed`() {
             let articles = [
                 Article(),
                 Article(),
@@ -185,7 +185,7 @@ struct `Integration Tests` {
         }
 
         @Test
-    func `Article collection rendering`() {
+        func `Article collection rendering`() {
             let newsArticle = Article()
             let blogPost = Article()
             let review = Article()
@@ -200,7 +200,7 @@ struct `Integration Tests` {
         }
 
         @Test
-    func `Article as independent component`() {
+        func `Article as independent component`() {
             let article = Article()
             let element: any WHATWG_HTML.Element = article
 
@@ -209,22 +209,22 @@ struct `Integration Tests` {
     }
 
     @Suite
-struct `Accessibility and SEO` {
+    struct `Accessibility and SEO` {
 
         @Test
-    func `Article with proper heading hierarchy`() {
+        func `Article with proper heading hierarchy`() {
             let article = Article()
             #expect(Article.tag == "article")
         }
 
         @Test
-    func `Article with descriptive content`() {
+        func `Article with descriptive content`() {
             let article = Article()
             #expect(Article.tag == "article")
         }
 
         @Test
-    func `Article with structured data compatibility`() {
+        func `Article with structured data compatibility`() {
             let article = Article()
             #expect(Article.tag == "article")
         }

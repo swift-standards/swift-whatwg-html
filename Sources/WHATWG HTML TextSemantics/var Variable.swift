@@ -75,8 +75,7 @@ public struct Variable: WHATWG_HTML.Element {
     /// Creates a new Variable element.
     public init(
 
-        )
-    {
+        ) {
 
     }
 }

@@ -47,8 +47,7 @@ public struct UnarticulatedAnnotation: WHATWG_HTML.Element {
     /// Creates a new UnarticulatedAnnotation element.
     public init(
 
-        )
-    {
+        ) {
 
     }
 }

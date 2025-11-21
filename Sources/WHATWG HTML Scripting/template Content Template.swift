@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-public import WHATWG_HTML_Shared
 public import WHATWG_HTML_GlobalAttributes
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML template element (`<template>`), which serves as a mechanism for holding
 /// HTML fragments that are not rendered but can be used later via JavaScript or for creating shadow DOM.

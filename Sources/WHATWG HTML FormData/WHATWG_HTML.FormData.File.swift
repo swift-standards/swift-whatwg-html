@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-public import WHATWG_HTML_Shared
 public import WHATWG_HTML_Forms
+public import WHATWG_HTML_Shared
 
 extension Form.Data {
     /// Represents a file value in form data.

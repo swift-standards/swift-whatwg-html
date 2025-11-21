@@ -99,7 +99,7 @@ extension Contenteditable: CaseIterable {
         .true,
         .empty,
         .false,
-        .plaintextOnly,
+        .plaintextOnly
     ]
 }
 

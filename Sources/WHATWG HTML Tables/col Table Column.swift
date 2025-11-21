@@ -10,9 +10,9 @@
 //
 // ===----------------------------------------------------------------------===//
 
+public import WHATWG_HTML_MediaAttributes
 public import WHATWG_HTML_Shared
 public import WHATWG_HTML_TableAttributes
-public import WHATWG_HTML_MediaAttributes
 
 /// Represents an HTML table column element (`<col>`), which defines properties for one or more columns
 /// in a table.

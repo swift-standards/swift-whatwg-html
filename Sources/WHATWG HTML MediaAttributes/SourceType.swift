@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-public import WHATWG_HTML_Shared
 public import RFC_2045
+public import WHATWG_HTML_Shared
 
 /// Represents the HTML type attribute for the `<source>` element.
 ///

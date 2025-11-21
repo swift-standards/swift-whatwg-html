@@ -12,14 +12,15 @@
 
 public import WHATWG_HTML_Shared
 
-/// <h1>–<h6>: The HTML Section Heading elements
-///
-/// The <h1> to <h6> HTML elements represent six levels of section headings.
-/// <h1> is the highest section level and <h6> is the lowest.
-/// By default, all heading elements create a block-level box in the layout,
-/// starting on a new line and taking up the full width available in their containing block.
-///
-/// These elements only include the global attributes.
+// MARK: - HTML Section Heading Elements
+// <h1>–<h6>: The HTML Section Heading elements
+//
+// The <h1> to <h6> HTML elements represent six levels of section headings.
+// <h1> is the highest section level and <h6> is the lowest.
+// By default, all heading elements create a block-level box in the layout,
+// starting on a new line and taking up the full width available in their containing block.
+//
+// These elements only include the global attributes.
 
 // MARK: - H1 Element
 public struct H1: WHATWG_HTML.Element {

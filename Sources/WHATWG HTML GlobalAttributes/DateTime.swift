@@ -10,9 +10,9 @@
 //
 // ===----------------------------------------------------------------------===//
 
-public import WHATWG_HTML_Shared
 public import ISO_8601
 import Standards
+public import WHATWG_HTML_Shared
 
 /// Represents the HTML `datetime` attribute used with the `<time>`, `<ins>`, and `<del>` elements.
 ///
@@ -90,8 +90,22 @@ extension DateTime {
     }
 
     /// Create a datetime for a specific date and time (local)
-    public static func dateTime(year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int = 0) throws -> DateTime {
-        let dt = try ISO_8601.DateTime(year: year, month: month, day: day, hour: hour, minute: minute, second: second)
+    public static func dateTime(
+        year: Int,
+        month: Int,
+        day: Int,
+        hour: Int,
+        minute: Int,
+        second: Int = 0
+    ) throws -> DateTime {
+        let dt = try ISO_8601.DateTime(
+            year: year,
+            month: month,
+            day: day,
+            hour: hour,
+            minute: minute,
+            second: second
+        )
         return DateTime(dateTime: dt)
     }
 
@@ -118,8 +132,22 @@ extension DateTime {
     }
 
     /// Create a datetime for UTC (Z timezone)
-    public static func utc(year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int = 0) throws -> DateTime {
-        let dt = try ISO_8601.DateTime(year: year, month: month, day: day, hour: hour, minute: minute, second: second)
+    public static func utc(
+        year: Int,
+        month: Int,
+        day: Int,
+        hour: Int,
+        minute: Int,
+        second: Int = 0
+    ) throws -> DateTime {
+        let dt = try ISO_8601.DateTime(
+            year: year,
+            month: month,
+            day: day,
+            hour: hour,
+            minute: minute,
+            second: second
+        )
         return DateTime(dateTime: dt)
     }
 

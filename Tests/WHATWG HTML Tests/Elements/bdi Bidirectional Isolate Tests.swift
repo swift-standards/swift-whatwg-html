@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML
 import Testing
+import WHATWG_HTML
 
 @Suite
 struct `Bidirectional Isolate Tests` {
@@ -30,162 +30,162 @@ struct `Bidirectional Isolate Tests` {
     }
 
     @Suite
-struct `Bidirectional Text Isolation` {
+    struct `Bidirectional Text Isolation` {
 
         @Test
-    func `Isolating user-generated content`() {
+        func `Isolating user-generated content`() {
             let bdi = BidirectionalIsolate()
             #expect(BidirectionalIsolate.tag == "bdi")
         }
 
         @Test
-    func `Preventing text direction interference`() {
+        func `Preventing text direction interference`() {
             let bdi = BidirectionalIsolate()
             #expect(BidirectionalIsolate.tag == "bdi")
         }
 
         @Test
-    func `Protecting surrounding text from direction changes`() {
+        func `Protecting surrounding text from direction changes`() {
             let bdi = BidirectionalIsolate()
             #expect(BidirectionalIsolate.tag == "bdi")
         }
 
         @Test
-    func `Isolating unknown directionality content`() {
-            let bdi = BidirectionalIsolate()
-            #expect(BidirectionalIsolate.tag == "bdi")
-        }
-    }
-
-    @Suite
-struct `Common Use Cases` {
-
-        @Test
-    func `User names in mixed-script environments`() {
-            let bdi = BidirectionalIsolate()
-            #expect(BidirectionalIsolate.tag == "bdi")
-        }
-
-        @Test
-    func `Dynamic content from external sources`() {
-            let bdi = BidirectionalIsolate()
-            #expect(BidirectionalIsolate.tag == "bdi")
-        }
-
-        @Test
-    func `Comments and user-generated text`() {
-            let bdi = BidirectionalIsolate()
-            #expect(BidirectionalIsolate.tag == "bdi")
-        }
-
-        @Test
-    func `Search results with mixed directionality`() {
-            let bdi = BidirectionalIsolate()
-            #expect(BidirectionalIsolate.tag == "bdi")
-        }
-
-        @Test
-    func `List items with unknown text direction`() {
-            let bdi = BidirectionalIsolate()
-            #expect(BidirectionalIsolate.tag == "bdi")
-        }
-
-        @Test
-    func `Social media posts and messages`() {
+        func `Isolating unknown directionality content`() {
             let bdi = BidirectionalIsolate()
             #expect(BidirectionalIsolate.tag == "bdi")
         }
     }
 
     @Suite
-struct `Multilingual Content` {
+    struct `Common Use Cases` {
 
         @Test
-    func `Arabic and Hebrew text isolation`() {
+        func `User names in mixed-script environments`() {
             let bdi = BidirectionalIsolate()
             #expect(BidirectionalIsolate.tag == "bdi")
         }
 
         @Test
-    func `Mixed Latin and RTL scripts`() {
+        func `Dynamic content from external sources`() {
             let bdi = BidirectionalIsolate()
             #expect(BidirectionalIsolate.tag == "bdi")
         }
 
         @Test
-    func `Persian and Urdu text handling`() {
+        func `Comments and user-generated text`() {
             let bdi = BidirectionalIsolate()
             #expect(BidirectionalIsolate.tag == "bdi")
         }
 
         @Test
-    func `Numbers and punctuation in RTL context`() {
-            let bdi = BidirectionalIsolate()
-            #expect(BidirectionalIsolate.tag == "bdi")
-        }
-    }
-
-    @Suite
-struct `Layout Protection` {
-
-        @Test
-    func `Protecting website layout integrity`() {
+        func `Search results with mixed directionality`() {
             let bdi = BidirectionalIsolate()
             #expect(BidirectionalIsolate.tag == "bdi")
         }
 
         @Test
-    func `Preventing direction spillover`() {
+        func `List items with unknown text direction`() {
             let bdi = BidirectionalIsolate()
             #expect(BidirectionalIsolate.tag == "bdi")
         }
 
         @Test
-    func `Maintaining reading order`() {
-            let bdi = BidirectionalIsolate()
-            #expect(BidirectionalIsolate.tag == "bdi")
-        }
-
-        @Test
-    func `Preserving UI component structure`() {
+        func `Social media posts and messages`() {
             let bdi = BidirectionalIsolate()
             #expect(BidirectionalIsolate.tag == "bdi")
         }
     }
 
     @Suite
-struct `Accessibility Considerations` {
+    struct `Multilingual Content` {
 
         @Test
-    func `Screen reader navigation support`() {
+        func `Arabic and Hebrew text isolation`() {
             let bdi = BidirectionalIsolate()
             #expect(BidirectionalIsolate.tag == "bdi")
         }
 
         @Test
-    func `Proper text direction announcement`() {
+        func `Mixed Latin and RTL scripts`() {
             let bdi = BidirectionalIsolate()
             #expect(BidirectionalIsolate.tag == "bdi")
         }
 
         @Test
-    func `Bidirectional text reading support`() {
+        func `Persian and Urdu text handling`() {
             let bdi = BidirectionalIsolate()
             #expect(BidirectionalIsolate.tag == "bdi")
         }
 
         @Test
-    func `Generic ARIA role compliance`() {
+        func `Numbers and punctuation in RTL context`() {
             let bdi = BidirectionalIsolate()
             #expect(BidirectionalIsolate.tag == "bdi")
         }
     }
 
     @Suite
-struct `Integration Tests` {
+    struct `Layout Protection` {
 
         @Test
-    func `Multiple BDI elements`() {
+        func `Protecting website layout integrity`() {
+            let bdi = BidirectionalIsolate()
+            #expect(BidirectionalIsolate.tag == "bdi")
+        }
+
+        @Test
+        func `Preventing direction spillover`() {
+            let bdi = BidirectionalIsolate()
+            #expect(BidirectionalIsolate.tag == "bdi")
+        }
+
+        @Test
+        func `Maintaining reading order`() {
+            let bdi = BidirectionalIsolate()
+            #expect(BidirectionalIsolate.tag == "bdi")
+        }
+
+        @Test
+        func `Preserving UI component structure`() {
+            let bdi = BidirectionalIsolate()
+            #expect(BidirectionalIsolate.tag == "bdi")
+        }
+    }
+
+    @Suite
+    struct `Accessibility Considerations` {
+
+        @Test
+        func `Screen reader navigation support`() {
+            let bdi = BidirectionalIsolate()
+            #expect(BidirectionalIsolate.tag == "bdi")
+        }
+
+        @Test
+        func `Proper text direction announcement`() {
+            let bdi = BidirectionalIsolate()
+            #expect(BidirectionalIsolate.tag == "bdi")
+        }
+
+        @Test
+        func `Bidirectional text reading support`() {
+            let bdi = BidirectionalIsolate()
+            #expect(BidirectionalIsolate.tag == "bdi")
+        }
+
+        @Test
+        func `Generic ARIA role compliance`() {
+            let bdi = BidirectionalIsolate()
+            #expect(BidirectionalIsolate.tag == "bdi")
+        }
+    }
+
+    @Suite
+    struct `Integration Tests` {
+
+        @Test
+        func `Multiple BDI elements`() {
             let bdi1 = BidirectionalIsolate()
             let bdi2 = BidirectionalIsolate()
             let bdi3 = BidirectionalIsolate()
@@ -199,7 +199,7 @@ struct `Integration Tests` {
         }
 
         @Test
-    func `BDI element within content flow`() {
+        func `BDI element within content flow`() {
             let bdi = BidirectionalIsolate()
             let element: any WHATWG_HTML.Element = bdi
 
@@ -207,7 +207,7 @@ struct `Integration Tests` {
         }
 
         @Test
-    func `Nested text direction contexts`() {
+        func `Nested text direction contexts`() {
             let outerBdi = BidirectionalIsolate()
             let innerBdi = BidirectionalIsolate()
 
@@ -217,69 +217,69 @@ struct `Integration Tests` {
         }
 
         @Test
-    func `BDI within lists and tables`() {
+        func `BDI within lists and tables`() {
             let bdi = BidirectionalIsolate()
             #expect(BidirectionalIsolate.tag == "bdi")
         }
     }
 
     @Suite
-struct `Best Practices` {
+    struct `Best Practices` {
 
         @Test
-    func `Prefer BDI over span with dir=auto`() {
+        func `Prefer BDI over span with dir=auto`() {
             let bdi = BidirectionalIsolate()
             #expect(BidirectionalIsolate.tag == "bdi")
         }
 
         @Test
-    func `Use for unknown content directionality`() {
+        func `Use for unknown content directionality`() {
             let bdi = BidirectionalIsolate()
             #expect(BidirectionalIsolate.tag == "bdi")
         }
 
         @Test
-    func `Semantic clarity over CSS unicode-bidi`() {
+        func `Semantic clarity over CSS unicode-bidi`() {
             let bdi = BidirectionalIsolate()
             #expect(BidirectionalIsolate.tag == "bdi")
         }
 
         @Test
-    func `Automatic direction detection advantage`() {
+        func `Automatic direction detection advantage`() {
             let bdi = BidirectionalIsolate()
             #expect(BidirectionalIsolate.tag == "bdi")
         }
     }
 
     @Suite
-struct `Real-World Applications` {
+    struct `Real-World Applications` {
 
         @Test
-    func `E-commerce product reviews`() {
+        func `E-commerce product reviews`() {
             let bdi = BidirectionalIsolate()
             #expect(BidirectionalIsolate.tag == "bdi")
         }
 
         @Test
-    func `International forums and discussions`() {
+        func `International forums and discussions`() {
             let bdi = BidirectionalIsolate()
             #expect(BidirectionalIsolate.tag == "bdi")
         }
 
         @Test
-    func `Multilingual customer support`() {
+        func `Multilingual customer support`() {
             let bdi = BidirectionalIsolate()
             #expect(BidirectionalIsolate.tag == "bdi")
         }
 
         @Test
-    func `Global social media platforms`() {
+        func `Global social media platforms`() {
             let bdi = BidirectionalIsolate()
             #expect(BidirectionalIsolate.tag == "bdi")
         }
 
         @Test
-    func `Educational content platforms`() {
+        func `Educational content platforms`() {
             let bdi = BidirectionalIsolate()
             #expect(BidirectionalIsolate.tag == "bdi")
         }

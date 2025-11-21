@@ -10,13 +10,13 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML
 import Testing
+import WHATWG_HTML
 
 #if canImport(FoundationEssentials)
     import FoundationEssentials
 #elseif canImport(Foundation)
-    #endif
+#endif
 
 private struct TestAttribute: WHATWG_HTML.Attribute {
     static var attribute: String { "test-attribute" }

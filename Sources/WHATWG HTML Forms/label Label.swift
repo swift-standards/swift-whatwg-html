@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-public import WHATWG_HTML_Shared
 public import WHATWG_HTML_FormAttributes
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML label element, which provides a caption for an item in a user interface.
 ///

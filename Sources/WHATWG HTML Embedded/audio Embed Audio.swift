@@ -10,9 +10,9 @@
 //
 // ===----------------------------------------------------------------------===//
 
-public import WHATWG_HTML_Shared
-public import WHATWG_HTML_MediaAttributes
 public import WHATWG_HTML_LinkAttributes
+public import WHATWG_HTML_MediaAttributes
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML audio element (`<audio>`), which is used to embed sound content in documents.
 ///

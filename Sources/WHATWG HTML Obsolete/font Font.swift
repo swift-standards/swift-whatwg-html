@@ -3,8 +3,8 @@
 //
 // Defines the font element (<font>)
 
-public import WHATWG_HTML_Shared
 public import WHATWG_HTML_GlobalAttributes
+public import WHATWG_HTML_Shared
 
 /// Represents the obsolete `<font>` element that specified font properties.
 ///

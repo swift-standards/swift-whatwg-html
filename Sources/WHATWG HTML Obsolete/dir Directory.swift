@@ -3,8 +3,8 @@
 //
 // Defines the directory element (<dir>)
 
-public import WHATWG_HTML_Shared
 public import WHATWG_HTML_GlobalAttributes
+public import WHATWG_HTML_Shared
 
 /// Represents the obsolete `<dir>` element that was used for directory listings.
 ///

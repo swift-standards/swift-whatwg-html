@@ -66,7 +66,8 @@ public import WHATWG_HTML_Shared
 /// <input type="number" step="any">
 /// ```
 @dynamicMemberLookup
-public enum Step: WHATWG_HTML.StringAttribute, ExpressibleByFloatLiteral, ExpressibleByIntegerLiteral {
+public enum Step: WHATWG_HTML.StringAttribute, ExpressibleByFloatLiteral,
+    ExpressibleByIntegerLiteral {
     @inlinable public static var attribute: String { "step" }
 
     /// A specific numeric step value.

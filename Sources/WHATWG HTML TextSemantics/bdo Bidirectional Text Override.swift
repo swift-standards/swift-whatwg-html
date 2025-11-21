@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-public import WHATWG_HTML_Shared
 public import WHATWG_HTML_GlobalAttributes
+public import WHATWG_HTML_Shared
 
 /// Represents an HTML bidirectional text override element (`<bdo>`), which explicitly overrides
 /// the bidirectional algorithm to set the direction of text rendering.

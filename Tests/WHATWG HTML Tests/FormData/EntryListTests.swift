@@ -12,6 +12,7 @@
 
 import Testing
 import WHATWG_HTML_Forms
+
 @testable import WHATWG_HTML_FormData
 
 @Suite
@@ -21,7 +22,7 @@ struct `EntryList Tests` {
     func `EntryList empty initialization`() {
         let list = Form.Data.Entry.List()
 
-        #expect(list.count == 0)
+        #expect(list.isEmpty)
         #expect(list.isEmpty == true)
     }
 
@@ -29,7 +30,7 @@ struct `EntryList Tests` {
     func `EntryList initialization with entries`() {
         let entries = [
             Form.Data.Entry(name: "field1", stringValue: "value1"),
-            Form.Data.Entry(name: "field2", stringValue: "value2")
+            Form.Data.Entry(name: "field2", stringValue: "value2"),
         ]
         let list = Form.Data.Entry.List(entries: entries)
 
@@ -214,7 +215,7 @@ struct `EntryList Tests` {
     func `EntryList array literal initialization`() {
         let list: Form.Data.Entry.List = [
             Form.Data.Entry(name: "field1", stringValue: "value1"),
-            Form.Data.Entry(name: "field2", stringValue: "value2")
+            Form.Data.Entry(name: "field2", stringValue: "value2"),
         ]
 
         #expect(list.count == 2)
@@ -226,11 +227,11 @@ struct `EntryList Tests` {
     func `EntryList conforms to Equatable`() {
         let list1: Form.Data.Entry.List = [
             Form.Data.Entry(name: "a", stringValue: "1"),
-            Form.Data.Entry(name: "b", stringValue: "2")
+            Form.Data.Entry(name: "b", stringValue: "2"),
         ]
         let list2: Form.Data.Entry.List = [
             Form.Data.Entry(name: "a", stringValue: "1"),
-            Form.Data.Entry(name: "b", stringValue: "2")
+            Form.Data.Entry(name: "b", stringValue: "2"),
         ]
 
         #expect(list1 == list2)

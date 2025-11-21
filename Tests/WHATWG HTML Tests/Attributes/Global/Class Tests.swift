@@ -10,13 +10,13 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML
 import Testing
+import WHATWG_HTML
 
 #if canImport(FoundationEssentials)
     import FoundationEssentials
 #elseif canImport(Foundation)
-    #endif
+#endif
 
 @Suite
 struct `Class Test` {
@@ -34,7 +34,7 @@ struct `Class Test` {
         #expect(multipleClasses.description == "header large primary")
 
         let emptyClass = Class("")
-        #expect(emptyClass.description == "")
+        #expect(emptyClass.description.isEmpty)
     }
 
     @Test

@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import WHATWG_HTML
 import Testing
+import WHATWG_HTML
 
 @Suite
 struct `Download Test` {
@@ -48,7 +48,7 @@ struct `Download Test` {
         let downloadFalse = Download(false)
         #expect(downloadTrue.shouldInclude == true)
         #expect(downloadFalse.shouldInclude == false)
-        #expect(downloadTrue.description == "")
-        #expect(downloadFalse.description == "")
+        #expect(downloadTrue.description.isEmpty)
+        #expect(downloadFalse.description.isEmpty)
     }
 }
