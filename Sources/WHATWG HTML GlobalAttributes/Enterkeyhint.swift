@@ -148,6 +148,6 @@ extension Enterkeyhint: CaseIterable {
         .next,
         .previous,
         .search,
-        .send
+        .send,
     ]
 }

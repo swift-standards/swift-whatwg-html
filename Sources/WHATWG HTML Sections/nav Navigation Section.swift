@@ -43,7 +43,8 @@ public struct NavigationSection: WHATWG_HTML.Element {
     /// Creates a new NavigationSection element.
     public init(
 
-        ) {
+        )
+    {
 
     }
 }

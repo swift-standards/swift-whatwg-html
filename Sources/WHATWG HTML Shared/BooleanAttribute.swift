@@ -28,7 +28,8 @@ extension WHATWG_HTML {
     /// }
     /// ```
     public protocol BooleanAttribute: Attribute, CustomStringConvertible,
-        ExpressibleByBooleanLiteral, CaseIterable, RawRepresentable {
+        ExpressibleByBooleanLiteral, CaseIterable, RawRepresentable
+    {
         var rawValue: Bool { get }
         init(value: Bool)
     }

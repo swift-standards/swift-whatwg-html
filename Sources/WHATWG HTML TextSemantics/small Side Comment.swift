@@ -47,7 +47,8 @@ public struct Small: WHATWG_HTML.Element {
     /// Creates a new Small element with the specified content.
     public init(
 
-        ) {
+        )
+    {
 
     }
 }

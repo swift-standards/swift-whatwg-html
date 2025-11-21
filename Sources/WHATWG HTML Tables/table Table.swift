@@ -70,7 +70,8 @@ public struct Table: WHATWG_HTML.Element {
     /// Creates a new Table element.
     public init(
 
-        ) {
+        )
+    {
 
     }
 }

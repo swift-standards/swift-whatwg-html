@@ -50,7 +50,8 @@ public struct Figure: WHATWG_HTML.Element {
     /// Creates a new Figure element with the specified content.
     public init(
 
-        ) {
+        )
+    {
 
     }
 }

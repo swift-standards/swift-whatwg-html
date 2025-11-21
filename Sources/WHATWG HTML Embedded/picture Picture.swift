@@ -48,7 +48,8 @@ public struct Picture: WHATWG_HTML.Element {
     /// Creates a new Picture element.
     public init(
 
-        ) {
+        )
+    {
 
     }
 }

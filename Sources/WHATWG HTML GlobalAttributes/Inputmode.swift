@@ -162,6 +162,6 @@ extension Inputmode: CaseIterable {
         .tel,
         .search,
         .email,
-        .url
+        .url,
     ]
 }

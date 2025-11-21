@@ -52,7 +52,8 @@ public struct PreformattedText: WHATWG_HTML.Element {
     /// Creates a new PreformattedText element.
     public init(
 
-        ) {
+        )
+    {
 
     }
 }

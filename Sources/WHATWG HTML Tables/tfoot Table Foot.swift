@@ -70,7 +70,8 @@ public struct TableFoot: WHATWG_HTML.Element {
     /// Creates a new TableFoot element.
     public init(
 
-        ) {
+        )
+    {
 
     }
 }

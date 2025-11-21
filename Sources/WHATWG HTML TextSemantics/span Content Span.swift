@@ -48,7 +48,8 @@ public struct ContentSpan: WHATWG_HTML.Element {
     /// Creates a new span element with the specified attributes.
     public init(
 
-        ) {
+        )
+    {
 
     }
 }

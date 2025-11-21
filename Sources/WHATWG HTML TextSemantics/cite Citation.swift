@@ -58,7 +58,8 @@ public struct Cite: WHATWG_HTML.Element {
     /// Creates a new Cite element.
     public init(
 
-        ) {
+        )
+    {
 
     }
 }

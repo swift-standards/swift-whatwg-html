@@ -44,7 +44,8 @@ public struct Strikethrough: WHATWG_HTML.Element {
     /// Creates a new Strikethrough element.
     public init(
 
-        ) {
+        )
+    {
 
     }
 }

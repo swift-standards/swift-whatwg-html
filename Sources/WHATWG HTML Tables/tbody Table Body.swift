@@ -62,7 +62,8 @@ public struct TableBody: WHATWG_HTML.Element {
     /// Creates a new TableBody element.
     public init(
 
-        ) {
+        )
+    {
 
     }
 }

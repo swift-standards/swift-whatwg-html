@@ -55,7 +55,8 @@ public struct Main: WHATWG_HTML.Element {
     /// Creates a new Main element.
     public init(
 
-        ) {
+        )
+    {
 
     }
 }

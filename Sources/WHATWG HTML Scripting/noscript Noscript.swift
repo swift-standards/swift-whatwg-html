@@ -41,7 +41,8 @@ public struct Noscript: WHATWG_HTML.Element {
     /// Creates a new Noscript element with the specified content.
     public init(
 
-        ) {
+        )
+    {
 
     }
 }

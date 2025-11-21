@@ -47,7 +47,8 @@ public struct Header: WHATWG_HTML.Element {
     /// Creates a new Header element.
     public init(
 
-        ) {
+        )
+    {
 
     }
 }

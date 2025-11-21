@@ -51,7 +51,8 @@ public struct KeyboardInput: WHATWG_HTML.Element {
     /// Creates a new keyboard input element.
     public init(
 
-        ) {
+        )
+    {
 
     }
 }
