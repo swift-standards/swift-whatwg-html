@@ -11,7 +11,7 @@
 // ===----------------------------------------------------------------------===//
 
 public import WHATWG_HTML_FormAttributes
-public import WHATWG_HTML_Shared
+import WHATWG_HTML_Shared
 
 /// `<input type="submit">` elements are rendered as buttons. When the click event occurs (typically because the user clicked the button),
 /// the user agent attempts to submit the form to the server.

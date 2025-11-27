@@ -11,7 +11,7 @@
 // ===----------------------------------------------------------------------===//
 
 public import WHATWG_HTML_FormAttributes
-public import WHATWG_HTML_Shared
+import WHATWG_HTML_Shared
 
 /// `<input type="month">` elements create input fields that let the user enter a month and year.
 /// The value is a string in the format YYYY-MM, where YYYY is the four-digit year and MM is the month number.

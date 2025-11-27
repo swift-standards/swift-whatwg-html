@@ -11,7 +11,7 @@
 // ===----------------------------------------------------------------------===//
 
 public import WHATWG_HTML_Forms
-public import WHATWG_HTML_Shared
+import WHATWG_HTML_Shared
 
 extension Form.Data {
     /// The value of a form data entry.

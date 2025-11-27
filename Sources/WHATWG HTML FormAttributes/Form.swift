@@ -11,7 +11,7 @@
 // ===----------------------------------------------------------------------===//
 
 public import WHATWG_HTML_GlobalAttributes
-public import WHATWG_HTML_Shared
+import WHATWG_HTML_Shared
 
 public struct Form: Sendable, Hashable {
     /// A string specifying the character encodings that are to be used for the form submission.

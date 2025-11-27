@@ -11,7 +11,7 @@
 // ===----------------------------------------------------------------------===//
 
 public import WHATWG_HTML_FormAttributes
-public import WHATWG_HTML_Shared
+import WHATWG_HTML_Shared
 
 /// `<input type="reset">` elements are rendered as buttons, with a default click event
 /// handler that resets all inputs in the form to their initial values.

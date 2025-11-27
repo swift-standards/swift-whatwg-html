@@ -11,7 +11,7 @@
 // ===----------------------------------------------------------------------===//
 
 public import WHATWG_HTML_FormAttributes
-public import WHATWG_HTML_Shared
+import WHATWG_HTML_Shared
 
 /// `<input type="week">` elements create input fields allowing easy entry of a year plus
 /// the ISO 8601 week number during that year (i.e., week 1 to 52 or 53).

@@ -33,7 +33,7 @@ struct `FormData Value Tests` {
         let file = Form.Data.File(
             name: "test.txt",
             type: "text/plain",
-            body: Data([1, 2, 3])
+            body: [UInt8]([1, 2, 3])
         )
         let value = Form.Data.Value.file(file)
 
@@ -62,7 +62,7 @@ struct `FormData Value Tests` {
         let file = Form.Data.File(
             name: "image.png",
             type: "image/png",
-            body: Data([1, 2, 3])
+            body: [UInt8]([1, 2, 3])
         )
         let value = Form.Data.Value.file(file)
 
@@ -96,7 +96,7 @@ struct `FormData Value Tests` {
             Form.Data.File(
                 name: "test.txt",
                 type: "text/plain",
-                body: Data()
+                body: [UInt8]()
             )
         )
 

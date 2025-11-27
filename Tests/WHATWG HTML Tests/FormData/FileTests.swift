@@ -11,6 +11,7 @@
 // ===----------------------------------------------------------------------===//
 
 import Testing
+import Standards
 import WHATWG_HTML_Forms
 
 @testable import WHATWG_HTML_FormData
@@ -20,7 +21,7 @@ struct `File Tests` {
 
     @Test
     func `File initialization stores properties correctly`() {
-        let data = Data([1, 2, 3, 4, 5])
+        let data = [UInt8]([1, 2, 3, 4, 5])
         let file = Form.Data.File(
             name: "test.txt",
             type: "text/plain",
@@ -34,7 +35,7 @@ struct `File Tests` {
 
     @Test
     func `File size property returns correct byte count`() {
-        let data = Data([1, 2, 3, 4, 5])
+        let data = [UInt8]([1, 2, 3, 4, 5])
         let file = Form.Data.File(
             name: "test.bin",
             type: "application/octet-stream",
@@ -49,7 +50,7 @@ struct `File Tests` {
         let file = Form.Data.File(
             name: "empty.txt",
             type: "text/plain",
-            body: Data()
+            body: []
         )
 
         #expect(file.isEmpty == true)
@@ -60,7 +61,7 @@ struct `File Tests` {
         let file = Form.Data.File(
             name: "data.txt",
             type: "text/plain",
-            body: Data([1])
+            body: [UInt8](1)
         )
 
         #expect(file.isEmpty == false)
@@ -68,7 +69,7 @@ struct `File Tests` {
 
     @Test
     func `File description includes name, type, and size`() {
-        let data = Data([1, 2, 3])
+        let data = [UInt8]([1, 2, 3])
         let file = Form.Data.File(
             name: "image.png",
             type: "image/png",
@@ -83,7 +84,7 @@ struct `File Tests` {
 
     @Test
     func `File conforms to Hashable`() {
-        let data = Data([1, 2, 3])
+        let data = [UInt8]([1, 2, 3])
         let file1 = Form.Data.File(
             name: "test.txt",
             type: "text/plain",
@@ -104,12 +105,12 @@ struct `File Tests` {
         let file1 = Form.Data.File(
             name: "test.txt",
             type: "text/plain",
-            body: Data([1, 2, 3])
+            body: [UInt8]([1, 2, 3])
         )
         let file2 = Form.Data.File(
             name: "test.txt",
             type: "text/plain",
-            body: Data([4, 5, 6])
+            body: [UInt8]([4, 5, 6])
         )
 
         #expect(file1 != file2)
@@ -133,7 +134,7 @@ struct `File Tests` {
         let file = Form.Data.File(
             name: "test.txt",
             type: "text/plain",
-            body: Data()
+            body: []
         )
         acceptSendable(file)
     }

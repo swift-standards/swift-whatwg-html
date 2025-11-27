@@ -12,7 +12,7 @@
 
 public import WHATWG_HTML_FormAttributes
 public import WHATWG_HTML_GlobalAttributes
-public import WHATWG_HTML_Shared
+import WHATWG_HTML_Shared
 
 /// `<input type="search">` elements are text fields designed for the user to enter search queries into.
 /// These are functionally identical to text inputs, but may be styled differently by the user agent.

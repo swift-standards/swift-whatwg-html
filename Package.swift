@@ -84,6 +84,10 @@ extension Target.Dependency {
     static var rfc2045: Self { .product(name: "RFC 2045", package: "swift-rfc-2045") }
     static var iso8601: Self { .product(name: "ISO 8601", package: "swift-iso-8601") }
     static var standards: Self { .product(name: "Standards", package: "swift-standards") }
+    static var incits41986: Self { .product(name: "INCITS 4 1986", package: "swift-incits-4-1986") }
+
+    // Test dependencies
+    static var standardsTestSupport: Self { .product(name: "StandardsTestSupport", package: "swift-standards") }
 }
 
 // MARK: - Package Definition
@@ -230,7 +234,8 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/swift-standards/swift-rfc-2045.git", from: "0.1.0"),
         .package(url: "https://github.com/swift-standards/swift-iso-8601.git", from: "0.1.0"),
-        .package(url: "https://github.com/swift-standards/swift-standards.git", from: "0.1.0")
+        .package(url: "https://github.com/swift-standards/swift-standards.git", from: "0.1.0"),
+        .package(url: "https://github.com/swift-standards/swift-incits-4-1986.git", from: "0.1.0")
     ],
     targets: [
         // ============================================================
@@ -238,7 +243,10 @@ let package = Package(
         // ============================================================
         .target(
             name: .whatwgHTMLShared,
-            dependencies: []
+            dependencies: [
+                .standards,
+                .incits41986
+            ]
         ),
 
         // ============================================================
@@ -259,8 +267,7 @@ let package = Package(
             name: .whatwgHTMLGlobalAttributes,
             dependencies: [
                 .whatwgHTMLShared,
-                .iso8601,
-                .standards
+                .iso8601
             ]
         ),
         .target(
@@ -512,7 +519,8 @@ let package = Package(
         .testTarget(
             name: .whatwgHTML.tests,
             dependencies: [
-                .whatwgHTML
+                .whatwgHTML,
+                .standardsTestSupport
             ]
         )
     ],

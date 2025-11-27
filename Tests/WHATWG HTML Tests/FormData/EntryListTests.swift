@@ -74,7 +74,7 @@ struct `EntryList Tests` {
         let file = Form.Data.File(
             name: "photo.jpg",
             type: "image/jpeg",
-            body: Data([1, 2, 3])
+            body: [UInt8]([1, 2, 3])
         )
         list.append(name: "photo", file: file)
 

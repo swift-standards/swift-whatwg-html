@@ -52,6 +52,11 @@ extension WHATWG_HTML.StringAttribute {
 }
 
 extension WHATWG_HTML.StringAttribute {
+    /// String representation of the string attribute
+    ///
+    /// For attributes implementing byte serialization (Id, etc.),
+    /// use the RFC pattern: String(attribute)
+    /// For others, returns the raw value
     public var description: String {
         rawValue
     }

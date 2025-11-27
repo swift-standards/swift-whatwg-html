@@ -11,7 +11,7 @@
 // ===----------------------------------------------------------------------===//
 
 public import WHATWG_HTML_FormAttributes
-public import WHATWG_HTML_Shared
+import WHATWG_HTML_Shared
 
 /// `<input type="hidden">` elements let web developers include data that cannot be seen or modified
 /// by users when a form is submitted. For example, the ID of the content that is currently being

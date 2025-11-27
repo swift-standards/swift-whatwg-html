@@ -11,7 +11,7 @@
 // ===----------------------------------------------------------------------===//
 
 public import WHATWG_HTML_FormAttributes
-public import WHATWG_HTML_Shared
+import WHATWG_HTML_Shared
 
 /// `<input type="checkbox">` elements are rendered by default as boxes that are checked (ticked) when activated.
 /// A checkbox allows you to select single values for submission in a form (or not).

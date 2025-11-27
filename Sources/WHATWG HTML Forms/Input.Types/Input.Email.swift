@@ -11,7 +11,7 @@
 // ===----------------------------------------------------------------------===//
 
 public import WHATWG_HTML_FormAttributes
-public import WHATWG_HTML_Shared
+import WHATWG_HTML_Shared
 
 /// `<input type="email">` elements are used to let the user enter and edit an email address, or,
 /// if the multiple attribute is specified, a list of email addresses.

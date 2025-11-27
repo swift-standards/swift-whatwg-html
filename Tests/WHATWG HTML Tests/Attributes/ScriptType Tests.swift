@@ -26,6 +26,6 @@ struct `ScriptType Test` {
         #expect(ScriptType.importmap.rawValue == "importmap")
         #expect(ScriptType.speculationrules.rawValue == "speculationrules")
         #expect(ScriptType.json.rawValue == "application/json")
-        #expect(ScriptType.text.rawValue == "text/plain")
+        #expect(ScriptType.textPlain.rawValue == "text/plain")
     }
 }

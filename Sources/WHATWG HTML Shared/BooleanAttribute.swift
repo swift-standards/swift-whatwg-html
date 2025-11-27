@@ -47,6 +47,11 @@ extension WHATWG_HTML.BooleanAttribute {
 }
 
 extension WHATWG_HTML.BooleanAttribute {
+    /// String representation of the boolean attribute
+    ///
+    /// For attributes implementing byte serialization (Autofocus, etc.),
+    /// use the RFC pattern: String(attribute)
+    /// For others, returns "true" or "false"
     public var description: String {
         rawValue ? "true" : "false"
     }

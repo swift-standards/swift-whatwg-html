@@ -11,7 +11,7 @@
 // ===----------------------------------------------------------------------===//
 
 public import WHATWG_HTML_FormAttributes
-public import WHATWG_HTML_Shared
+import WHATWG_HTML_Shared
 
 /// `<input type="range">` elements let the user specify a numeric value which must be no less than a given value,
 /// and no more than another given value. The precise value, however, is not considered important.

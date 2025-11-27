@@ -11,7 +11,7 @@
 // ===----------------------------------------------------------------------===//
 
 public import WHATWG_HTML_FormAttributes
-public import WHATWG_HTML_Shared
+import WHATWG_HTML_Shared
 
 /// `<input type="color">` elements provide a user interface element that lets a user specify a color,
 /// either by using a visual color picker interface or by entering the color into a text field in #rrggbb

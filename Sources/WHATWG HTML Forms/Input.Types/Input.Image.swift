@@ -12,7 +12,7 @@
 
 public import WHATWG_HTML_FormAttributes
 public import WHATWG_HTML_MediaAttributes
-public import WHATWG_HTML_Shared
+import WHATWG_HTML_Shared
 
 /// `<input type="image">` elements are used to create graphical submit buttons, i.e. submit buttons
 /// that take the form of an image rather than text.

@@ -12,7 +12,7 @@
 
 public import WHATWG_HTML_FormAttributes
 public import WHATWG_HTML_GlobalAttributes
-public import WHATWG_HTML_Shared
+import WHATWG_HTML_Shared
 
 /// `<input type="text">` elements create basic single-line text fields.
 extension Input {

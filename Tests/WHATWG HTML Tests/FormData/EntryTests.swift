@@ -47,7 +47,7 @@ struct `Entry Tests` {
         let file = Form.Data.File(
             name: "avatar.png",
             type: "image/png",
-            body: Data([1, 2, 3])
+            body: [UInt8]([1, 2, 3])
         )
         let entry = Form.Data.Entry(
             name: "avatar",

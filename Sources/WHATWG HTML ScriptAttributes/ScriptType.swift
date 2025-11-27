@@ -102,5 +102,9 @@ extension ScriptType {
 
 extension RFC_2045.ContentType {
     /// application/json
-    public static let applicationJSON = RFC_2045.ContentType(type: "application", subtype: "json")
+    public static let applicationJSON = RFC_2045.ContentType(
+        __unchecked: (),
+        type: "application",
+        subtype: "json"
+    )
 }

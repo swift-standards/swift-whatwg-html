@@ -11,7 +11,7 @@
 // ===----------------------------------------------------------------------===//
 
 public import WHATWG_HTML_FormAttributes
-public import WHATWG_HTML_Shared
+import WHATWG_HTML_Shared
 
 /// `<input type="file">` elements let the user choose one or more files from their device storage.
 /// Once chosen, the files can be uploaded to a server using form submission, or manipulated

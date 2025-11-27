@@ -12,7 +12,7 @@
 
 public import WHATWG_HTML_FormAttributes
 public import WHATWG_HTML_GlobalAttributes
-public import WHATWG_HTML_Shared
+import WHATWG_HTML_Shared
 
 /// `<input type="url">` elements are used to let the user enter and edit a URL.
 /// The input value is automatically validated to ensure that it's either empty or a properly-formatted URL.

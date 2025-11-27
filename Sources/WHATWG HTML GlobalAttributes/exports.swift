@@ -5,4 +5,4 @@
 //  Created by Coen ten Thije Boonkkamp on 21/11/2025.
 //
 
-import Foundation
+@_exported import WHATWG_HTML_Shared

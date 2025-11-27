@@ -11,7 +11,7 @@
 // ===----------------------------------------------------------------------===//
 
 public import WHATWG_HTML_FormAttributes
-public import WHATWG_HTML_Shared
+import WHATWG_HTML_Shared
 
 /// `<input type="tel">` elements are used to let the user enter and edit a telephone number.
 /// Unlike `<input type="email">` and `<input type="url">`, the input value is not automatically

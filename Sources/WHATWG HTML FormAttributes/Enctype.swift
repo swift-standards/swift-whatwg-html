@@ -112,6 +112,7 @@ extension EncType {
 extension RFC_2045.ContentType {
     /// application/x-www-form-urlencoded - Standard HTML form encoding
     public static let applicationXWWWFormURLEncoded = RFC_2045.ContentType(
+        __unchecked: (),
         type: "application",
         subtype: "x-www-form-urlencoded"
     )
@@ -123,13 +124,18 @@ extension RFC_2045.ContentType {
     public static func multipartFormData(boundary: String? = nil) -> RFC_2045.ContentType {
         if let boundary = boundary {
             return RFC_2045.ContentType(
+                __unchecked: (),
                 type: "multipart",
                 subtype: "form-data",
-                parameters: ["boundary": boundary]
+                parameters: [try! .init("boundary"): boundary]
             )
         } else {
             // No boundary specified - browser will add it
-            return RFC_2045.ContentType(type: "multipart", subtype: "form-data")
+            return RFC_2045.ContentType(
+                __unchecked: (),
+                type: "multipart",
+                subtype: "form-data"
+            )
         }
     }
 }

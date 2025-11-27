@@ -238,7 +238,7 @@ swift-whatwg-html/
 ## Related Packages
 
 ### Umbrella Package
-- [swift-html-standard](https://github.com/swift-standards/swift-html-standard): Compatibility wrapper providing the old swift-html-types API structure
+- [swift-html-standard](https://github.com/swift-standards/swift-html-standard): Compatibility wrapper providing the old swift-html-standard API structure
 
 ### Used By
 - [swift-html-css-pointfree](https://github.com/coenttb/swift-html-css-pointfree): Integration with pointfree-html for HTML generation

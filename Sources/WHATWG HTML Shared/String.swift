@@ -18,8 +18,6 @@
 //
 // ===----------------------------------------------------------------------===//
 
-public import WHATWG_HTML_Shared
-
 // MARK: - Boolean Attributes
 
 extension String {

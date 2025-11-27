@@ -10,6 +10,10 @@
 //
 // ===----------------------------------------------------------------------===//
 
+// Re-export shared dependencies
+@_exported import Standards
+@_exported import INCITS_4_1986
+
 /// WHATWG HTML Living Standard namespace
 ///
 /// This namespace contains types representing HTML elements and attributes
