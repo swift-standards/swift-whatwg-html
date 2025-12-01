@@ -123,7 +123,7 @@ extension `Performance Tests` {
                 html.append(UInt8.ascii.space)
             }
             
-            let _ = String(decoding: HTML.View, as: UTF8.self)
+            let _ = String(decoding: html, as: UTF8.self)
         }
         
         @Test("HTML generation String: 10 attributes", .timed(threshold: .milliseconds(1), maxAllocations: 50_000))

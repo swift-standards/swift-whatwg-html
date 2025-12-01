@@ -23,7 +23,7 @@ struct ByteSerializationTests {
         let attr: Autofocus = true
         let bytes = [UInt8](attr)
 
-        #expect(bytes == [UInt8].ascii(unchecked: "autofocus"))
+        #expect(bytes == [UInt8].ascii.unchecked("autofocus"))
         #expect(String(attr) == "autofocus")
     }
 
@@ -42,7 +42,7 @@ struct ByteSerializationTests {
     func idASCII() {
         let attr = Id(value: "main")
         let bytes = [UInt8](attr)
-        let expected = [UInt8].ascii(unchecked: "id=\"main\"")
+        let expected = [UInt8].ascii.unchecked("id=\"main\"")
 
         #expect(bytes == expected)
         #expect(String(attr) == "id=\"main\"")
@@ -66,7 +66,7 @@ struct ByteSerializationTests {
     func idComplex() {
         let attr = Id(value: "my-complex-id_123")
         let bytes = [UInt8](attr)
-        let expected = [UInt8].ascii(unchecked: "id=\"my-complex-id_123\"")
+        let expected = [UInt8].ascii.unchecked("id=\"my-complex-id_123\"")
 
         #expect(bytes == expected)
         #expect(String(attr) == "id=\"my-complex-id_123\"")
