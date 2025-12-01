@@ -232,10 +232,10 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/swift-standards/swift-rfc-2045.git", from: "0.1.0"),
-        .package(url: "https://github.com/swift-standards/swift-iso-8601.git", from: "0.1.0"),
-        .package(url: "https://github.com/swift-standards/swift-standards.git", from: "0.1.0"),
-        .package(url: "https://github.com/swift-standards/swift-incits-4-1986.git", from: "0.1.0")
+        .package(url: "https://github.com/swift-standards/swift-rfc-2045.git", from: "0.3.0"),
+        .package(url: "https://github.com/swift-standards/swift-iso-8601.git", from: "0.2.0"),
+        .package(url: "https://github.com/swift-standards/swift-standards.git", from: "0.8.0"),
+        .package(url: "https://github.com/swift-standards/swift-incits-4-1986.git", from: "0.6.0")
     ],
     targets: [
         // ============================================================

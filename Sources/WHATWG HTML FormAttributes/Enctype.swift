@@ -127,6 +127,7 @@ extension RFC_2045.ContentType {
                 __unchecked: (),
                 type: "multipart",
                 subtype: "form-data",
+                // swiftlint:disable:next force_try
                 parameters: [try! .init("boundary"): boundary]
             )
         } else {

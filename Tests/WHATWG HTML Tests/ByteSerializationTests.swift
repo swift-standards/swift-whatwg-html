@@ -33,7 +33,7 @@ struct ByteSerializationTests {
         let bytes = [UInt8](attr)
 
         #expect(bytes.isEmpty)
-        #expect(String(attr) == "")
+        #expect(String(attr).isEmpty)
     }
 
     // MARK: - String Attributes
