@@ -56,7 +56,7 @@ public import WHATWG_HTML_Shared
 ///
 /// - Note: When rendered, this generates an HTML `<abbr>` element with the appropriate
 ///   attributes based on the configuration.
-public struct Abbreviation: WHATWG_HTML.Element {
+public struct Abbreviation: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "abbr" }
 
     /// Creates a new Abbreviation element with the specified content.

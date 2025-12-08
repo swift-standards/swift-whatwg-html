@@ -37,7 +37,7 @@ public import WHATWG_HTML_Shared
 /// - Include both `<head>` and `<body>` elements as children
 /// - The `<html>` element should be the root of your document, preceded only by the DOCTYPE declaration
 ///
-public struct HtmlRoot: WHATWG_HTML.Element {
+public struct HtmlRoot: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "html" }
 

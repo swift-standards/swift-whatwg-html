@@ -36,7 +36,7 @@ public import WHATWG_HTML_Shared
 /// - If content represents the main content area, use `<main>` instead
 /// - If you only need a styling wrapper, use `<div>` instead
 ///
-public struct Section: WHATWG_HTML.Element {
+public struct Section: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "section" }
 

@@ -49,7 +49,7 @@ public import WHATWG_HTML_Shared
 /// - Modal dialogs automatically make content outside inert, but care should be taken with non-modal dialogs
 /// - When the dialog is opened with `showModal()`, it automatically gets `aria-modal="true"`
 ///
-public struct Dialog: WHATWG_HTML.Element {
+public struct Dialog: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "dialog" }
 

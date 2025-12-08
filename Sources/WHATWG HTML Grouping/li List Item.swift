@@ -50,7 +50,7 @@ public import WHATWG_HTML_Shared
 /// - The `value` attribute only has meaning within ordered lists
 /// - Use CSS for styling rather than deprecated attributes like `type`
 ///
-public struct ListItem: WHATWG_HTML.Element {
+public struct ListItem: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "li" }
 

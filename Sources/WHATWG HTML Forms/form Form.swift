@@ -57,7 +57,7 @@ public import WHATWG_HTML_Shared
 ///
 /// - Note: When rendered, this generates an HTML `<form>` element with the appropriate
 ///   attributes based on the form configuration.
-public struct Form: WHATWG_HTML.Element {
+public struct Form: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "form" }
 
     /// DEPRECATED: A comma-separated list of content types the server accepts.

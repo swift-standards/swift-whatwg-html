@@ -15,7 +15,7 @@ public import WHATWG_HTML_Shared
     deprecated,
     message: "Plugin-based content is deprecated. Use modern web standards instead."
 )
-public struct Param: WHATWG_HTML.VoidElement {
+public struct Param: WHATWG_HTML.Element.`Protocol` {
     @inlinable
     public static var tag: String { "param" }
 

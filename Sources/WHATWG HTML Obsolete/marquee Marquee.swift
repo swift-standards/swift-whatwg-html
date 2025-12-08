@@ -11,13 +11,13 @@ public import WHATWG_HTML_Shared
 ///
 /// **Deprecated**: Use CSS animations instead.
 @available(*, deprecated, message: "Use CSS animations instead.")
-public struct Marquee: WHATWG_HTML.Element {
+public struct Marquee: WHATWG_HTML.Element.`Protocol` {
     @inlinable
     public static var tag: String { "marquee" }
 
     public var behavior: Behavior?
     public var bgcolor: String?
-    public var direction: Direction?
+    public var direction: WHATWG_HTML_GlobalAttributes.Direction?
     public var height: Height?
     public var hspace: String?
     public var loop: Loop?
@@ -30,7 +30,7 @@ public struct Marquee: WHATWG_HTML.Element {
     public init(
         behavior: Behavior? = nil,
         bgcolor: String? = nil,
-        direction: Direction? = nil,
+        direction: WHATWG_HTML_GlobalAttributes.Direction? = nil,
         height: Height? = nil,
         hspace: String? = nil,
         loop: Loop? = nil,

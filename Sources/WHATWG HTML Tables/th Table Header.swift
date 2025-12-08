@@ -49,7 +49,7 @@ public import WHATWG_HTML_TableAttributes
 /// - Use semantic table structure with `<thead>`, `<tbody>`, and `<tfoot>` elements for better accessibility
 /// - Avoid deprecated presentational attributes; use CSS for styling instead
 ///
-public struct TableHeader: WHATWG_HTML.Element {
+public struct TableHeader: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "th" }
 

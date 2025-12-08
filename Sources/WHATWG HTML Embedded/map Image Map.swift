@@ -35,7 +35,7 @@ public import WHATWG_HTML_Shared
 /// - Ensure the `name` attribute matches the corresponding `usemap` attribute on the `<img>` element
 /// - Include `alt` attributes on all `<area>` elements for accessibility
 ///
-public struct Map: WHATWG_HTML.Element {
+public struct Map: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "map" }
 

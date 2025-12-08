@@ -62,7 +62,7 @@ public import WHATWG_HTML_Shared
 /// - Some screen reader/browser combinations may not announce the dropdown contents
 ///
 /// - Note: When rendered, this generates an HTML `<datalist>` element containing option elements.
-public struct DataList: WHATWG_HTML.Element {
+public struct DataList: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "datalist" }
 

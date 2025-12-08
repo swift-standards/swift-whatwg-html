@@ -39,7 +39,7 @@ public import WHATWG_HTML_Shared
 /// - Keep annotations concise and directly related to the base text
 /// - For complex ruby annotations, consider using `<rb>` (Ruby Base) and `<rtc>` (Ruby Text Container) elements
 ///
-public struct Ruby: WHATWG_HTML.Element {
+public struct Ruby: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "ruby" }
 

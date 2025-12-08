@@ -60,7 +60,7 @@ public import WHATWG_HTML_Shared
 ///
 /// - Note: When rendered, this generates an HTML `<audio>` element with the appropriate
 ///   attributes and content based on the configuration.
-public struct Audio: WHATWG_HTML.Element {
+public struct Audio: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "audio" }
 
     /// The URL of the audio file to embed.

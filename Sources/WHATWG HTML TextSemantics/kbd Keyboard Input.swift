@@ -44,7 +44,7 @@ public import WHATWG_HTML_Shared
 ///   that the user inputs (like menu names).
 /// - By default, browsers typically render `<kbd>` content in a monospace font.
 ///
-public struct KeyboardInput: WHATWG_HTML.Element {
+public struct KeyboardInput: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "kbd" }
 

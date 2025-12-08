@@ -55,7 +55,7 @@ public import WHATWG_HTML_Shared
 ///
 /// - Note: When rendered, this generates an HTML `<bdi>` element that isolates its content from
 ///   the bidirectional algorithm's influence.
-public struct BidirectionalIsolate: WHATWG_HTML.Element {
+public struct BidirectionalIsolate: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "bdi" }
 

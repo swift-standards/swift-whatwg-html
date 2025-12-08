@@ -43,7 +43,7 @@ public import WHATWG_HTML_Shared
 ///
 /// - Note: When rendered, this generates an HTML `<aside>` element with the appropriate
 ///   attributes based on the configuration.
-public struct Aside: WHATWG_HTML.Element {
+public struct Aside: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "aside" }
 
     /// Creates a new Aside element with the specified content.

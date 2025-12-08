@@ -31,7 +31,7 @@ public import WHATWG_HTML_Shared
 /// - Use `<iframe>` instead for embedding content within a document
 /// - Always provide descriptive names for frames to improve navigation
 ///
-public struct Frame: WHATWG_HTML.VoidElement {
+public struct Frame: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "frame" }
 

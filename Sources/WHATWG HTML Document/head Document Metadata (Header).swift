@@ -44,7 +44,7 @@ public import WHATWG_HTML_Shared
 /// - `<noscript>`: Provides fallback content for browsers with JavaScript disabled
 /// - `<template>`: Holds client-side template content
 ///
-public struct Head: WHATWG_HTML.Element {
+public struct Head: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "head" }
 

@@ -40,7 +40,7 @@ public import WHATWG_HTML_Shared
 /// - Remember that CSS styles inside a template are not applied until the template is cloned and inserted into the document
 /// - Consider using declarative shadow DOM by specifying `shadowrootmode` attribute when appropriate
 ///
-public struct ContentTemplate: WHATWG_HTML.Element {
+public struct ContentTemplate: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "template" }
 

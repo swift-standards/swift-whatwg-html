@@ -40,7 +40,7 @@ public import WHATWG_HTML_Shared
 /// - Keep the dropdown list reasonably sized for usability
 /// - Consider using `<optgroup>` to organize long lists of options
 ///
-public struct Select: WHATWG_HTML.Element {
+public struct Select: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "select" }
 

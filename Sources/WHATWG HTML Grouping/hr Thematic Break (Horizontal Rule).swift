@@ -31,7 +31,7 @@ public import WHATWG_HTML_Shared
 /// - Use CSS for styling rather than deprecated HTML attributes
 /// - For purely decorative horizontal lines, consider using CSS on other elements instead
 ///
-public struct ThematicBreak: WHATWG_HTML.VoidElement {
+public struct ThematicBreak: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "hr" }
 

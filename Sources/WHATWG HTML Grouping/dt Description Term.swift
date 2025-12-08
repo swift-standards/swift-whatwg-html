@@ -46,7 +46,7 @@ public import WHATWG_HTML_Shared
 /// - The `<dt>` element should be followed by a `<dd>` element or another `<dt>` element.
 /// - Multiple `<dt>` elements in a row indicate multiple terms defined by the next `<dd>` element.
 ///
-public struct DescriptionTerm: WHATWG_HTML.Element {
+public struct DescriptionTerm: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "dt" }
 

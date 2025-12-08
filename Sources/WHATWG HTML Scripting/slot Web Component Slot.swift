@@ -33,7 +33,7 @@ public import WHATWG_HTML_Shared
 /// - Ensure slot names are unique within a shadow root
 /// - Remember that unnamed slots (without a name attribute) will capture all unassigned content
 ///
-public struct WebComponentSlot: WHATWG_HTML.Element {
+public struct WebComponentSlot: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "slot" }
 

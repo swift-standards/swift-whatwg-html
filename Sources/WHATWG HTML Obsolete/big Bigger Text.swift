@@ -31,7 +31,7 @@ public import WHATWG_HTML_Shared
 /// - For modern development, prefer using semantic elements with appropriate CSS styling
 ///
 @available(*, deprecated, message: "Use CSS for styling instead")
-public struct Big: WHATWG_HTML.Element {
+public struct Big: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "big" }
 

@@ -10,9 +10,10 @@
 //
 // ===----------------------------------------------------------------------===//
 
+@_exported public import Geometry
 public import WHATWG_HTML_Shared
 
-/// An attribute that specifies the width of an element.
+/// Extends `Geometry<Int>.Width` to serve as an HTML width attribute.
 ///
 /// The `width` attribute defines the width of an element in pixels (for images, videos, and similar)
 /// or in other units when combined with CSS. It is primarily used with media elements to ensure proper
@@ -23,55 +24,71 @@ public import WHATWG_HTML_Shared
 /// - Common on `<img>`, `<input type="image">`, `<video>`, `<canvas>`, and `<iframe>` elements
 /// - For images, specifies the intrinsic width in CSS pixels
 /// - For canvas, specifies the width in CSS pixels for the coordinate system
-/// - Can be a number (interpreted as pixels) or a string with units
 /// - Using both height and width helps prevent layout shifts during page load
-///
-/// ## Best Practices
-///
-/// - Always specify both height and width to maintain aspect ratio
-/// - For responsive design, consider using CSS instead of the width attribute
-/// - For images, use the intrinsic dimensions or an appropriately scaled value
-/// - If you're only specifying one dimension, ensure the aspect ratio is preserved
 ///
 /// ## Examples
 ///
-/// Image with height and width attributes:
-/// ```html
-/// <img src="example.jpg" height="300" width="400" alt="Example image">
-/// ```
+/// ```swift
+/// let width: Geometry<Int>.Width = 400
+/// img.width(width)
 ///
-/// Canvas with height and width:
-/// ```html
-/// <canvas height="200" width="300"></canvas>
+/// // Or directly with integer literal
+/// img.width(400)
 /// ```
-///
-/// Video with height and width:
-/// ```html
-/// <video height="480" width="640" controls>
-///   <source src="video.mp4" type="video/mp4">
-/// </video>
-/// ```
-@dynamicMemberLookup
-public struct Width: WHATWG_HTML.StringAttribute {
+
+// Required protocol conformances for StringAttribute
+extension Geometry<Int>.Width: @retroactive ExpressibleByUnicodeScalarLiteral {
+    @inlinable
+    public init(unicodeScalarLiteral value: String) {
+        self.init(Int(value) ?? 0)
+    }
+}
+
+extension Geometry<Int>.Width: @retroactive ExpressibleByExtendedGraphemeClusterLiteral {
+    @inlinable
+    public init(extendedGraphemeClusterLiteral value: String) {
+        self.init(Int(value) ?? 0)
+    }
+}
+
+extension Geometry<Int>.Width: @retroactive ExpressibleByStringLiteral {
+    @inlinable
+    public init(stringLiteral value: String) {
+        self.init(Int(value) ?? 0)
+    }
+}
+
+extension Geometry<Int>.Width: @retroactive ExpressibleByStringInterpolation {}
+
+extension Geometry<Int>.Width: @retroactive CustomStringConvertible {
+    @inlinable
+    public var description: String { String(value) }
+}
+
+extension Geometry<Int>.Width: @retroactive RawRepresentable {
+    @inlinable
+    public var rawValue: String { String(value) }
+
+    @inlinable
+    public init?(rawValue: String) {
+        guard let intValue = Int(rawValue) else { return nil }
+        self.init(intValue)
+    }
+}
+
+extension Geometry<Int>.Width: WHATWG_HTML.Attribute {
     /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "width" }
+    @inlinable
+    public static var attribute: String { "width" }
+}
 
-    /// The width value as a string
-    public var rawValue: String
-
+extension Geometry<Int>.Width: WHATWG_HTML.StringAttribute {
     /// Initialize with a string value
+    @inlinable
     public init(value: String) {
-        self.rawValue = value
-    }
-
-    /// Initialize with a width value in pixels
-    public init(_ value: Int) {
-        self.rawValue = String(value)
+        self.init(Int(value) ?? 0)
     }
 }
 
-extension Width: ExpressibleByIntegerLiteral {
-    public init(integerLiteral value: IntegerLiteralType) {
-        self.init(value)
-    }
-}
+/// Typealias for convenience - use `Width` as shorthand for `Geometry<Int>.Width`
+public typealias Width = Geometry<Int>.Width

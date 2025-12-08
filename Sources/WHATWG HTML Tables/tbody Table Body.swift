@@ -55,7 +55,7 @@ public import WHATWG_HTML_Shared
 /// - Use CSS for styling rather than deprecated presentational attributes
 /// - Remember that even if you don't explicitly use `<tbody>`, browsers will implicitly create one
 ///
-public struct TableBody: WHATWG_HTML.Element {
+public struct TableBody: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "tbody" }
 

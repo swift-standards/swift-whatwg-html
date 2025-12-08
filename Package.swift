@@ -1,4 +1,4 @@
-// swift-tools-version:6.2
+// swift-tools-version: 6.2
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -95,10 +95,11 @@ extension Target.Dependency {
 let package = Package(
     name: "swift-whatwg-html",
     platforms: [
-        .macOS(.v15),
-        .iOS(.v18),
-        .tvOS(.v18),
-        .watchOS(.v11)
+        .macOS(.v26),
+        .iOS(.v26),
+        .tvOS(.v26),
+        .watchOS(.v26),
+        .visionOS(.v26),
     ],
     products: [
         // ============================================================
@@ -232,10 +233,10 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/swift-standards/swift-rfc-2045.git", from: "0.3.0"),
-        .package(url: "https://github.com/swift-standards/swift-iso-8601.git", from: "0.2.0"),
-        .package(url: "https://github.com/swift-standards/swift-standards.git", from: "0.8.0"),
-        .package(url: "https://github.com/swift-standards/swift-incits-4-1986.git", from: "0.6.0")
+        .package(path: "../swift-rfc-2045"),
+        .package(path: "../swift-iso-8601"),
+        .package(path: "../swift-standards"),
+        .package(path: "../swift-incits-4-1986"),
     ],
     targets: [
         // ============================================================

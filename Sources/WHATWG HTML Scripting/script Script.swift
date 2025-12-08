@@ -64,7 +64,7 @@ public import WHATWG_HTML_Shared
 /// - Use the `integrity` attribute for subresource integrity when loading external scripts
 /// - Specify `type="module"` for ES modules
 ///
-public struct Script: WHATWG_HTML.Element {
+public struct Script: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "script" }
 

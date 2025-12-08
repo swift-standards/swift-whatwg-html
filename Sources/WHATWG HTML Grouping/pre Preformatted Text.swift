@@ -45,7 +45,7 @@ public import WHATWG_HTML_Shared
 /// - Often combined with elements like `<code>`, `<samp>`, or `<kbd>`
 /// - Remember that < characters may need to be escaped as &lt; in the content
 ///
-public struct PreformattedText: WHATWG_HTML.Element {
+public struct PreformattedText: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "pre" }
 

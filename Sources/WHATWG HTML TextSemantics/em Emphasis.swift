@@ -38,7 +38,7 @@ public import WHATWG_HTML_Shared
 /// - Screen readers may use verbal stress or a different tone when reading `<em>` content
 /// - The element has an implicit ARIA role of "emphasis"
 ///
-public struct Emphasis: WHATWG_HTML.Element {
+public struct Emphasis: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "em" }
 

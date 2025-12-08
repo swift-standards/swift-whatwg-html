@@ -34,7 +34,7 @@ public import WHATWG_HTML_Shared
 ///   - Chemical formulas (e.g., H₂O)
 /// - For presentational subscripts, use CSS (e.g., `vertical-align: sub`)
 ///
-public struct Subscript: WHATWG_HTML.Element {
+public struct Subscript: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "sub" }
 

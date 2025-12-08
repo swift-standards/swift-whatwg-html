@@ -41,7 +41,7 @@ public import WHATWG_HTML_Shared
 /// - For high-DPI (Retina) display versions, consider using `srcset` on the `<img>` element directly instead of `<picture>`.
 /// - Apply `object-position` and `object-fit` CSS properties on the child `<img>` element, not on the `<picture>` element.
 ///
-public struct Picture: WHATWG_HTML.Element {
+public struct Picture: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "picture" }
 

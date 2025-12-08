@@ -37,7 +37,7 @@ public import WHATWG_HTML_Shared
 /// - If there is no value attribute, the progress bar is indeterminate, indicating an ongoing activity with no indication of expected duration
 /// - To change a progress bar to indeterminate after giving it a value, the value attribute must be removed
 ///
-public struct ProgressIndicator: WHATWG_HTML.Element {
+public struct ProgressIndicator: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "progress" }
 

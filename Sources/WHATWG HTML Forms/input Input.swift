@@ -35,7 +35,7 @@ public import WHATWG_HTML_Shared
 ///
 /// - Note: When rendered, this generates an HTML `<input>` element with the appropriate
 ///   attributes based on the input type.
-public struct Input: WHATWG_HTML.VoidElement {
+public struct Input: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "input" }
 
     /// Name of the form control. Submitted with the form as part of a name/value pair.

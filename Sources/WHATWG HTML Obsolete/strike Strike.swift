@@ -9,7 +9,7 @@ public import WHATWG_HTML_Shared
 ///
 /// **Deprecated**: Use `<s>` for generic strikethrough or `<del>` for deleted text.
 @available(*, deprecated, message: "Use <s> for generic strikethrough or <del> for deleted text.")
-public struct Strike: WHATWG_HTML.Element {
+public struct Strike: WHATWG_HTML.Element.`Protocol` {
     @inlinable
     public static var tag: String { "strike" }
 

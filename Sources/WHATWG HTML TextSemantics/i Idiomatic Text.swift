@@ -47,7 +47,7 @@ public import WHATWG_HTML_Shared
 ///   - Use `<mark>` for relevance
 ///   - Use `<cite>` for names of works
 ///   - Use `<dfn>` for defining terms
-public struct IdiomaticText: WHATWG_HTML.Element {
+public struct IdiomaticText: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "i" }
 

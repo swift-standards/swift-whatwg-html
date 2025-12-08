@@ -40,7 +40,7 @@ public import WHATWG_HTML_Shared
 /// presentation (like `<b>` and `<i>`), it is valid in HTML when used for its semantic purpose rather than
 /// just visual styling.
 ///
-public struct Small: WHATWG_HTML.Element {
+public struct Small: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "small" }
 

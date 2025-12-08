@@ -49,7 +49,7 @@ public import WHATWG_HTML_Shared
 /// - For images, audio, or video, prefer the specialized elements (<img>, <audio>, <video>)
 /// - For modern web applications, avoid using object for Flash content
 ///
-public struct ExternalObject: WHATWG_HTML.Element {
+public struct ExternalObject: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "object" }
 

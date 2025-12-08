@@ -50,7 +50,7 @@ public import WHATWG_HTML_Shared
 ///   `<meter>`, `<output>`, `<progress>`, `<select>`, and `<textarea>`
 ///
 /// - Note: When rendered, this generates an HTML `<label>` element that improves form accessibility.
-public struct Label: WHATWG_HTML.Element {
+public struct Label: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "label" }
 
     /// Associates the label with a form control using its ID.

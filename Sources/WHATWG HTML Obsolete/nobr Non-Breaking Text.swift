@@ -9,7 +9,7 @@ public import WHATWG_HTML_Shared
 ///
 /// **Deprecated**: Use CSS property `white-space: nowrap` instead.
 @available(*, deprecated, message: "Use CSS property 'white-space: nowrap' instead.")
-public struct NoBr: WHATWG_HTML.Element {
+public struct NoBr: WHATWG_HTML.Element.`Protocol` {
     @inlinable
     public static var tag: String { "nobr" }
 

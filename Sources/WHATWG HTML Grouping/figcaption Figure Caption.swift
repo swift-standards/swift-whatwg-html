@@ -34,7 +34,7 @@ public import WHATWG_HTML_Shared
 /// - Use `<figcaption>` to provide an accessible description for the figure content
 /// - Only include one `<figcaption>` per `<figure>` element
 ///
-public struct FigureCaption: WHATWG_HTML.Element {
+public struct FigureCaption: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "figcaption" }
 

@@ -10,7 +10,7 @@ public import WHATWG_HTML_Shared
 ///
 /// **Deprecated**: Use CSS instead.
 @available(*, deprecated, message: "Use CSS for font styling instead.")
-public struct Font: WHATWG_HTML.Element {
+public struct Font: WHATWG_HTML.Element.`Protocol` {
     @inlinable
     public static var tag: String { "font" }
 

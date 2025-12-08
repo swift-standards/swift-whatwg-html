@@ -63,7 +63,7 @@ public import WHATWG_HTML_Shared
 /// - Consider responsive design techniques for tables on small screens
 /// - Keep table structure simple when possible for better accessibility
 ///
-public struct Table: WHATWG_HTML.Element {
+public struct Table: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "table" }
 

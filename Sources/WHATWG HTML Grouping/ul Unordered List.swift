@@ -67,7 +67,7 @@
 ///
 public import WHATWG_HTML_Shared
 
-public struct UnorderedList: WHATWG_HTML.Element {
+public struct UnorderedList: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "ul" }
 

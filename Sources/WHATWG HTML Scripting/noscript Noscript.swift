@@ -34,7 +34,7 @@ public import WHATWG_HTML_Shared
 /// - When outside the `<head>` element, `<noscript>` can contain any content that would be valid in its parent element
 /// - A `<noscript>` element cannot contain another `<noscript>` element
 ///
-public struct Noscript: WHATWG_HTML.Element {
+public struct Noscript: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "noscript" }
 

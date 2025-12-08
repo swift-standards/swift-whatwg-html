@@ -36,7 +36,7 @@ public import WHATWG_HTML_Shared
 /// - For shorter inline quotes, use the `q` element instead
 /// - The content is typically rendered visually by indentation
 ///
-public struct BlockQuote: WHATWG_HTML.Element {
+public struct BlockQuote: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "blockquote" }
 

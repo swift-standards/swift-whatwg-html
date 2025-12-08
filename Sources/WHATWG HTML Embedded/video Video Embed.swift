@@ -60,7 +60,7 @@ public import WHATWG_HTML_Shared
 /// - Make sure video controls are accessible via keyboard
 /// - Videos with important visual information should include audio descriptions
 ///
-public struct Video: WHATWG_HTML.Element {
+public struct Video: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name for the video element
     @inlinable public static var tag: String { "video" }
 

@@ -49,7 +49,7 @@ public import WHATWG_HTML_Shared
 /// - Any `background-color` applied to a table will not be applied to its caption. Add a
 ///   `background-color` to the `<caption>` element as well if you want the same color to be behind both
 
-public struct Caption: WHATWG_HTML.Element {
+public struct Caption: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "caption" }
 

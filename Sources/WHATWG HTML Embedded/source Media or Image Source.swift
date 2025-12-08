@@ -46,7 +46,7 @@ public import WHATWG_HTML_Shared
 /// - For responsive images, use media queries with the `media` attribute
 /// - For `<picture>`, use the `srcset` attribute; for `<audio>` and `<video>`, use the `src` attribute
 ///
-public struct Source: WHATWG_HTML.VoidElement {
+public struct Source: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "source" }
 

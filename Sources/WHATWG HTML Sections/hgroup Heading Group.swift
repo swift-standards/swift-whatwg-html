@@ -38,7 +38,7 @@ public import WHATWG_HTML_Shared
 /// - Note that only the heading element contributes to the document outline
 /// - The `<hgroup>` has an implicit ARIA role of "group"
 ///
-public struct HeadingGroup: WHATWG_HTML.Element {
+public struct HeadingGroup: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "hgroup" }
 

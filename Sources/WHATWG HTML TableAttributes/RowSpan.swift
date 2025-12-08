@@ -10,11 +10,12 @@
 //
 // ===----------------------------------------------------------------------===//
 
+public import Geometry
 public import WHATWG_HTML_Shared
 
 /// Represents the HTML `rowspan` attribute, which specifies the number of rows a cell should span.
 ///
-/// The `rowspan` attribute defines the number of rows a table cell should span vertically.
+/// Uses `Geometry<Int>.Height` as the underlying type since rowspan represents a vertical span.
 ///
 /// ## Usage Notes
 ///
@@ -24,25 +25,66 @@ public import WHATWG_HTML_Shared
 ///
 /// ## Examples
 ///
+/// ```swift
+/// let rowSpan: RowSpan = 2
+/// td.rowspan(rowSpan)
+/// ```
+///
 /// ```html
 /// <td rowspan="2">This cell spans two rows</td>
 /// ```
-@dynamicMemberLookup
-public struct RowSpan: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "rowspan" }
 
-    /// The attribute value
-    public var rawValue: String
+extension Geometry<Int>.Height {
+    /// A wrapper to use Geometry<Int>.Height as an HTML rowspan attribute.
+    ///
+    /// Since rowspan represents vertical spanning across rows,
+    /// it semantically aligns with height.
+    public struct Span: WHATWG_HTML.StringAttribute {
+        /// The underlying height value representing row span count
+        public var height: Geometry<Int>.Height
 
-    /// Initialize with a string value
-    public init(value: String) {
-        self.rawValue = value
+        /// The name of the HTML attribute
+        @inlinable public static var attribute: String { "rowspan" }
+
+        /// The raw string value
+        @inlinable
+        public var rawValue: String { String(height.value) }
+
+        /// Initialize with a height value
+        @inlinable
+        public init(_ height: Geometry<Int>.Height) {
+            self.height = height
+        }
+
+        /// Initialize with a string value
+        @inlinable
+        public init(value: String) {
+            self.height = Geometry<Int>.Height(Int(value) ?? 1)
+        }
+
+        /// Initialize with an integer value
+        @inlinable
+        public init(_ value: Int) {
+            self.height = Geometry<Int>.Height(value)
+        }
     }
 }
 
-extension RowSpan: ExpressibleByIntegerLiteral {
+extension Geometry<Int>.Height.Span: ExpressibleByIntegerLiteral {
+    @inlinable
     public init(integerLiteral value: IntegerLiteralType) {
-        self.init(value: String(value))
+        self.init(value)
     }
 }
+
+extension Geometry<Int>.Height.Span: CustomStringConvertible {
+    @inlinable
+    public var description: String { rawValue }
+}
+
+extension Geometry<Int>.Height.Span: Sendable {}
+extension Geometry<Int>.Height.Span: Equatable {}
+extension Geometry<Int>.Height.Span: Hashable {}
+
+/// Typealias for convenience - use `RowSpan` as shorthand for `Geometry<Int>.Height.Span`
+public typealias RowSpan = Geometry<Int>.Height.Span

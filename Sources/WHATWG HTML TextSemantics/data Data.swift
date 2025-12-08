@@ -34,7 +34,7 @@ public import WHATWG_HTML_Shared
 /// - Use the `value` attribute to provide the machine-readable translation of the content.
 /// - This element can be used to associate additional data with content that is displayed to users.
 ///
-public struct Data: WHATWG_HTML.Element {
+public struct Data: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "data" }
 

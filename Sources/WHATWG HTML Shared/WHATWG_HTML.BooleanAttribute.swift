@@ -10,6 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
+import INCITS_4_1986
+
 extension WHATWG_HTML {
     /// Protocol for HTML boolean attributes
     ///
@@ -28,7 +30,7 @@ extension WHATWG_HTML {
     /// }
     /// ```
     public protocol BooleanAttribute: Attribute, CustomStringConvertible,
-        ExpressibleByBooleanLiteral, CaseIterable, RawRepresentable {
+                                      ExpressibleByBooleanLiteral, CaseIterable, RawRepresentable {
         var rawValue: Bool { get }
         init(value: Bool)
     }

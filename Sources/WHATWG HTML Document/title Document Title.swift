@@ -51,7 +51,7 @@ public import WHATWG_HTML_Shared
 ///
 /// - Note: When rendered, this generates the HTML `<title>` element, which must be
 ///   placed within the `<head>` element of an HTML document.
-public struct Title: WHATWG_HTML.Element {
+public struct Title: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "title" }
 

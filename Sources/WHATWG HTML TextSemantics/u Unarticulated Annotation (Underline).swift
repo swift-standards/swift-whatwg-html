@@ -40,7 +40,7 @@ public import WHATWG_HTML_Shared
 ///   - `<i>` for technical terms, transliterations, thoughts, or vessel names
 /// - For non-semantic underlining, use CSS `text-decoration: underline` with a `<span>` element instead
 ///
-public struct UnarticulatedAnnotation: WHATWG_HTML.Element {
+public struct UnarticulatedAnnotation: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "u" }
 

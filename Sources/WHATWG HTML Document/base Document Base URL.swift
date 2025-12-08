@@ -36,7 +36,7 @@ public import WHATWG_HTML_Shared
 ///
 /// - Note: When rendered, this generates an HTML `<base>` element with the specified attributes.
 ///   It is a void element and does not have a closing tag.
-public struct Base: WHATWG_HTML.VoidElement {
+public struct Base: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "base" }
 
     /// The configuration for the base element, which must include an href, a target, or both.

@@ -36,7 +36,7 @@ public import WHATWG_HTML_Shared
 /// - Nest lists as needed to show hierarchical information
 /// - For styling, prefer CSS over the `type` attribute when possible
 ///
-public struct OrderedList: WHATWG_HTML.Element {
+public struct OrderedList: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "ol" }
 

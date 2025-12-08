@@ -47,7 +47,7 @@ public import WHATWG_HTML_Shared
 ///
 /// - Note: When rendered, this generates an HTML `<bdo>` element that overrides the default
 ///   text direction for its content.
-public struct BidirectionalTextOverride: WHATWG_HTML.Element {
+public struct BidirectionalTextOverride: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "bdo" }
 

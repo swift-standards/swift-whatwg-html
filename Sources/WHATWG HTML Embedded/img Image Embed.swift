@@ -13,7 +13,7 @@
 public import WHATWG_HTML_MediaAttributes
 public import WHATWG_HTML_Shared
 
-public struct Image: WHATWG_HTML.VoidElement {
+public struct Image: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "img" }
 
     public var src: Src?

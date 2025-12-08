@@ -13,7 +13,7 @@ public import WHATWG_HTML_Shared
     deprecated,
     message: "The <plaintext> element is deprecated. Use <pre> or <code> instead."
 )
-public struct PlainText: WHATWG_HTML.Element {
+public struct PlainText: WHATWG_HTML.Element.`Protocol` {
     @inlinable
     public static var tag: String { "plaintext" }
 

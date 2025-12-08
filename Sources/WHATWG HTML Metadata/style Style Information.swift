@@ -40,7 +40,7 @@ public import WHATWG_HTML_Shared
 /// - When using multiple `<style>` and `<link>` elements, they are applied in the order they appear in the document.
 /// - You can use the `media` attribute to apply styles conditionally based on media queries.
 ///
-public struct Style: WHATWG_HTML.Element {
+public struct Style: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "style" }
 

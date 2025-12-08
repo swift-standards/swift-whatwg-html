@@ -43,7 +43,7 @@ public import WHATWG_HTML_TableAttributes
 /// - Use CSS properties instead of deprecated attributes for styling
 /// - Ensure tables have a clear structure with `<thead>`, `<tbody>`, and `<tfoot>` when appropriate
 ///
-public struct TableDataCell: WHATWG_HTML.Element {
+public struct TableDataCell: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "td" }
 

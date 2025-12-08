@@ -48,14 +48,11 @@ public import WHATWG_HTML_Shared
 /// - Browser reader mode functionality looks for the presence of the `<main>` element when converting
 ///   content into a specialized reader view.
 ///
-public struct Main: WHATWG_HTML.Element {
+public struct Main: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "main" }
 
-    /// Creates a new Main element.
-    public init(
-
-        ) {
-
+    public init() {
     }
 }
+

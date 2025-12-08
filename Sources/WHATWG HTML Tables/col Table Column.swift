@@ -56,7 +56,7 @@ public import WHATWG_HTML_TableAttributes
 /// - Use CSS to style column properties rather than deprecated HTML attributes
 ///
 /// - Note: When rendered, this generates an HTML `<col>` element with no closing tag.
-public struct TableColumn: WHATWG_HTML.VoidElement {
+public struct TableColumn: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "col" }
 

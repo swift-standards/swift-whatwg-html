@@ -44,7 +44,7 @@ public import WHATWG_HTML_Shared
 /// - Consider using the `disabled` attribute to disable all form controls within the fieldset at once
 /// - Form controls inside the `<legend>` element won't be disabled when the fieldset is disabled
 ///
-public struct FieldSet: WHATWG_HTML.Element {
+public struct FieldSet: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "fieldset" }
 

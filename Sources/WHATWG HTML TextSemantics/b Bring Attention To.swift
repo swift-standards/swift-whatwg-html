@@ -45,7 +45,7 @@ public import WHATWG_HTML_Shared
 ///
 /// - Note: When rendered, this generates an HTML `<b>` element with bold styling but no
 ///   additional semantic weight beyond bringing attention to the text.
-public struct B: WHATWG_HTML.Element {
+public struct B: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "b" }
 
     /// Creates a new B element with the specified content.

@@ -41,7 +41,7 @@ public import WHATWG_HTML_Shared
 /// - Use `low` and `high` to indicate thresholds for acceptable ranges
 /// - Use `optimum` to indicate the ideal value within the range
 ///
-public struct Meter: WHATWG_HTML.Element {
+public struct Meter: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "meter" }
 

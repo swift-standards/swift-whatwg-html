@@ -10,7 +10,7 @@ public import WHATWG_HTML_TableAttributes
 ///
 /// **Deprecated**: Use `<iframe>` and modern CSS layout instead.
 @available(*, deprecated, message: "Use <iframe> and modern CSS layout instead.")
-public struct Frameset: WHATWG_HTML.Element {
+public struct Frameset: WHATWG_HTML.Element.`Protocol` {
     @inlinable
     public static var tag: String { "frameset" }
 

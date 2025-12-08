@@ -46,7 +46,7 @@ public import WHATWG_HTML_Shared
 /// - While you can include HTML elements inside a `<summary>`, be aware that the default role of "button"
 ///   will strip roles from child elements, which may impact screen reader users.
 ///
-public struct DisclosureSummary: WHATWG_HTML.Element {
+public struct DisclosureSummary: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "summary" }
 

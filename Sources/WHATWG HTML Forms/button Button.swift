@@ -52,7 +52,7 @@ public import WHATWG_HTML_Shared
 /// For toggle buttons, use the `aria-pressed` attribute to indicate state.
 ///
 /// - Note: When rendered, this generates an HTML `<button>` element that is interactive and clickable.
-public struct Button: WHATWG_HTML.Element {
+public struct Button: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "button" }
 

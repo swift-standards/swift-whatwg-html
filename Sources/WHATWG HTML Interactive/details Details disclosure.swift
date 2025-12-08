@@ -61,7 +61,7 @@ public import WHATWG_HTML_Shared
 /// - The `name` attribute allows multiple details elements to be connected in an accordion-like pattern
 /// - Use CSS to style the disclosure widget for better visual appearance
 ///
-public struct Details: WHATWG_HTML.Element {
+public struct Details: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "details" }
 

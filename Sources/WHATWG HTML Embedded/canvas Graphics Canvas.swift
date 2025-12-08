@@ -51,7 +51,7 @@ public import WHATWG_HTML_Shared
 ///
 /// - Note: When rendered, this generates an HTML `<canvas>` element that can be used
 ///   for drawing graphics with JavaScript.
-public struct Canvas: WHATWG_HTML.Element {
+public struct Canvas: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "canvas" }
 

@@ -10,9 +10,10 @@
 //
 // ===----------------------------------------------------------------------===//
 
+@_exported public import Geometry
 public import WHATWG_HTML_Shared
 
-/// An attribute that specifies the height of an element.
+/// Extends `Geometry<Int>.Height` to serve as an HTML height attribute.
 ///
 /// The `height` attribute defines the height of an element in pixels (for images, videos, and similar)
 /// or in other units when combined with CSS. It is primarily used with media elements to ensure proper
@@ -23,50 +24,71 @@ public import WHATWG_HTML_Shared
 /// - Common on `<img>`, `<input type="image">`, `<video>`, `<canvas>`, and `<iframe>` elements
 /// - For images, specifies the intrinsic height in CSS pixels
 /// - For canvas, specifies the height in CSS pixels for the coordinate system
-/// - Can be a number (interpreted as pixels) or a string with units
 /// - Using both height and width helps prevent layout shifts during page load
-///
-/// ## Best Practices
-///
-/// - Always specify both height and width to maintain aspect ratio
-/// - For responsive design, consider using CSS instead of the height attribute
-/// - For images, use the intrinsic dimensions or an appropriately scaled value
-/// - If you're only specifying one dimension, ensure the aspect ratio is preserved
 ///
 /// ## Examples
 ///
-/// Image with height and width attributes:
-/// ```html
-/// <img src="example.jpg" height="300" width="400" alt="Example image">
-/// ```
+/// ```swift
+/// let height: Geometry<Int>.Height = 300
+/// img.height(height)
 ///
-/// Canvas with height and width:
-/// ```html
-/// <canvas height="200" width="300"></canvas>
+/// // Or directly with integer literal
+/// img.height(300)
 /// ```
-///
-/// Video with height and width:
-/// ```html
-/// <video height="480" width="640" controls>
-///   <source src="video.mp4" type="video/mp4">
-/// </video>
-/// ```
-@dynamicMemberLookup
-public struct Height: WHATWG_HTML.StringAttribute {
+
+// Required protocol conformances for StringAttribute
+extension Geometry<Int>.Height: @retroactive ExpressibleByUnicodeScalarLiteral {
+    @inlinable
+    public init(unicodeScalarLiteral value: String) {
+        self.init(Int(value) ?? 0)
+    }
+}
+
+extension Geometry<Int>.Height: @retroactive ExpressibleByExtendedGraphemeClusterLiteral {
+    @inlinable
+    public init(extendedGraphemeClusterLiteral value: String) {
+        self.init(Int(value) ?? 0)
+    }
+}
+
+extension Geometry<Int>.Height: @retroactive ExpressibleByStringLiteral {
+    @inlinable
+    public init(stringLiteral value: String) {
+        self.init(Int(value) ?? 0)
+    }
+}
+
+extension Geometry<Int>.Height: @retroactive ExpressibleByStringInterpolation {}
+
+extension Geometry<Int>.Height: @retroactive CustomStringConvertible {
+    @inlinable
+    public var description: String { String(value) }
+}
+
+extension Geometry<Int>.Height: @retroactive RawRepresentable {
+    @inlinable
+    public var rawValue: String { String(value) }
+
+    @inlinable
+    public init?(rawValue: String) {
+        guard let intValue = Int(rawValue) else { return nil }
+        self.init(intValue)
+    }
+}
+
+extension Geometry<Int>.Height: WHATWG_HTML.Attribute {
     /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "height" }
+    @inlinable
+    public static var attribute: String { "height" }
+}
 
-    /// The attribute value
-    public let rawValue: String
-
-    /// Initialize with a value for the height attribute
+extension Geometry<Int>.Height: WHATWG_HTML.StringAttribute {
+    /// Initialize with a string value
+    @inlinable
     public init(value: String) {
-        self.rawValue = value
+        self.init(Int(value) ?? 0)
     }
 }
 
-extension Height: ExpressibleByIntegerLiteral {
-    public init(integerLiteral value: IntegerLiteralType) {
-        self.rawValue = String(value)
-    }
-}
+/// Typealias for convenience - use `Height` as shorthand for `Geometry<Int>.Height`
+public typealias Height = Geometry<Int>.Height

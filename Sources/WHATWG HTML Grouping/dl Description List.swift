@@ -48,7 +48,7 @@ public import WHATWG_HTML_Shared
 /// - Use for meaningful relationships between terms and their descriptions
 /// - Consider using for metadata display where a clear key-value relationship exists
 /// - In HTML5, each term-description group can also be wrapped in a `<div>` for styling or microdata purposes
-public struct DescriptionList: WHATWG_HTML.Element {
+public struct DescriptionList: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "dl" }
 

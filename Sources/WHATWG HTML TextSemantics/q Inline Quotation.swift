@@ -34,7 +34,7 @@ public import WHATWG_HTML_Shared
 /// - Use the `cite` attribute to specify the source URL of the quotation
 /// - Consider using the `<cite>` element in conjunction with `<q>` to attribute the source
 ///
-public struct InlineQuotation: WHATWG_HTML.Element {
+public struct InlineQuotation: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "q" }
 

@@ -40,7 +40,7 @@ public import WHATWG_HTML_Shared
 /// - Set the `default` attribute on one track if you want it enabled by default
 /// - A media element cannot have more than one track with the same `kind`, `srclang`, and `label`
 ///
-public struct Track: WHATWG_HTML.VoidElement {
+public struct Track: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "track" }
 

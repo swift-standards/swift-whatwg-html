@@ -34,7 +34,7 @@ public import WHATWG_HTML_Shared
 /// - Keep legend text concise and informative
 /// - Consider accessibility by using clear, descriptive text
 ///
-public struct Legend: WHATWG_HTML.Element {
+public struct Legend: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "legend" }
 

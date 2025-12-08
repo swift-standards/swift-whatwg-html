@@ -41,7 +41,7 @@ public import WHATWG_HTML_Shared
 /// - Unlike `div` (which is block-level), span is an inline-level element
 /// - Commonly used with CSS classes to apply styling to portions of text
 ///
-public struct ContentSpan: WHATWG_HTML.Element {
+public struct ContentSpan: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "span" }
 

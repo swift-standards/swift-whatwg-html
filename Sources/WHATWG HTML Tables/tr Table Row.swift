@@ -47,7 +47,7 @@ public import WHATWG_HTML_Shared
 /// - Use CSS selectors like `:nth-of-type`, `:first-of-type`, and `:last-of-type` to style rows
 /// - Avoid deprecated attributes like `align`, `bgcolor`, `char`, `charoff`, and `valign`; use CSS instead
 ///
-public struct TableRow: WHATWG_HTML.Element {
+public struct TableRow: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "tr" }
 

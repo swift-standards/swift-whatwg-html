@@ -37,7 +37,7 @@ public import WHATWG_HTML_Shared
 ///   so relying upon `<embed>` is generally not wise for broad browser compatibility.
 /// - Consider using more modern elements like `<video>`, `<audio>`, or `<iframe>` when possible.
 ///
-public struct Embed: WHATWG_HTML.VoidElement {
+public struct Embed: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "embed" }
 

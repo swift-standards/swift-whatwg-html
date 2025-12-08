@@ -23,42 +23,42 @@ public import WHATWG_HTML_Shared
 // These elements only include the global attributes.
 
 // MARK: - H1 Element
-public struct H1: WHATWG_HTML.Element {
+public struct H1: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "h1" }
 
     public init() {}
 }
 
 // MARK: - H2 Element
-public struct H2: WHATWG_HTML.Element {
+public struct H2: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "h2" }
 
     public init() {}
 }
 
 // MARK: - H3 Element
-public struct H3: WHATWG_HTML.Element {
+public struct H3: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "h3" }
 
     public init() {}
 }
 
 // MARK: - H4 Element
-public struct H4: WHATWG_HTML.Element {
+public struct H4: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "h4" }
 
     public init() {}
 }
 
 // MARK: - H5 Element
-public struct H5: WHATWG_HTML.Element {
+public struct H5: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "h5" }
 
     public init() {}
 }
 
 // MARK: - H6 Element
-public struct H6: WHATWG_HTML.Element {
+public struct H6: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "h6" }
 
     public init() {}

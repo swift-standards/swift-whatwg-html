@@ -36,7 +36,7 @@ public import WHATWG_HTML_Shared
 /// - Consider combining with other semantic text elements like `<var>` for variables or `<kbd>` for keyboard input.
 /// - The element can be styled with CSS to enhance readability (background color, padding, etc.).
 ///
-public struct Code: WHATWG_HTML.Element {
+public struct Code: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "code" }
 

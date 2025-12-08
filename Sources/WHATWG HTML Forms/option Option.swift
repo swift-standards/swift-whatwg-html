@@ -43,7 +43,7 @@ public import WHATWG_HTML_Shared
 /// - Use the `disabled` attribute to make an option unselectable when appropriate
 /// - Consider using `optgroup` to organize options into logical groups for better usability
 ///
-public struct Option: WHATWG_HTML.Element {
+public struct Option: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "option" }
 

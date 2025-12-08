@@ -46,7 +46,7 @@ public import WHATWG_HTML_Shared
 /// - The `<search>` element defines a "search" landmark, removing the need to add `role="search"` to a `<form>` element.
 /// - When multiple search elements exist on a page, consider using the `title` attribute to distinguish between them.
 ///
-public struct Search: WHATWG_HTML.Element {
+public struct Search: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "search" }
 

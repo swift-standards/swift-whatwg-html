@@ -62,7 +62,7 @@ public import WHATWG_HTML_TableAttributes
 ///   of individual columns
 ///
 /// - Note: When rendered, this generates an HTML `<colgroup>` element containing column definitions.
-public struct TableColumnGroup: WHATWG_HTML.Element {
+public struct TableColumnGroup: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "colgroup" }
 

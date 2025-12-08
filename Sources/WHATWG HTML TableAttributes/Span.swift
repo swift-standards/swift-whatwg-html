@@ -10,9 +10,12 @@
 //
 // ===----------------------------------------------------------------------===//
 
+public import Geometry
 public import WHATWG_HTML_Shared
 
 /// An attribute that specifies the number of columns a `<col>` or `<colgroup>` element should span.
+///
+/// Uses `Geometry<Int>.Width` as the underlying type since span represents horizontal column count.
 ///
 /// The `span` attribute defines the number of consecutive columns the element spans.
 /// This attribute is primarily used with `<col>` and `<colgroup>` elements to define
@@ -34,37 +37,71 @@ public import WHATWG_HTML_Shared
 ///
 /// ## Examples
 ///
-/// A single column with specific properties:
-/// ```html
-/// <col span="1" style="background-color: #ddd;" />
+/// ```swift
+/// let span: Span = 3
+/// col.span(span)
 /// ```
 ///
-/// Three consecutive columns with the same properties:
 /// ```html
 /// <col span="3" style="background-color: yellow;" />
 /// ```
-///
-/// Column group containing two columns:
-/// ```html
-/// <colgroup span="2" style="background-color: pink;">
-/// ```
-@dynamicMemberLookup
-public struct Span: WHATWG_HTML.StringAttribute {
-    /// The name of the HTML attribute
-    @inlinable public static var attribute: String { "span" }
 
-    /// The span value
-    public var rawValue: String
+extension Geometry<Int>.Width {
+    /// A wrapper to use Geometry<Int>.Width as an HTML span attribute for col/colgroup elements.
+    ///
+    /// Since span on col/colgroup represents the number of columns (horizontal),
+    /// it semantically aligns with width.
+    public struct ColumnSpan: WHATWG_HTML.StringAttribute {
+        /// The underlying width value representing column count
+        public var width: Geometry<Int>.Width
 
-    /// Initialize with a string value
-    public init(value: String) {
-        self.rawValue = value
+        /// The name of the HTML attribute
+        @inlinable public static var attribute: String { "span" }
+
+        /// The raw string value
+        @inlinable
+        public var rawValue: String { String(width.value) }
+
+        /// Initialize with a width value
+        @inlinable
+        public init(_ width: Geometry<Int>.Width) {
+            precondition(width.value > 0, "Span value must be a positive integer")
+            self.width = width
+        }
+
+        /// Initialize with a string value
+        @inlinable
+        public init(value: String) {
+            let intValue = Int(value) ?? 1
+            precondition(intValue > 0, "Span value must be a positive integer")
+            self.width = Geometry<Int>.Width(intValue)
+        }
+
+        /// Initialize with an integer value
+        @inlinable
+        public init(_ value: Int) {
+            precondition(value > 0, "Span value must be a positive integer")
+            self.width = Geometry<Int>.Width(value)
+        }
     }
 }
 
-extension Span: ExpressibleByIntegerLiteral {
+extension Geometry<Int>.Width.ColumnSpan: ExpressibleByIntegerLiteral {
+    @inlinable
     public init(integerLiteral value: IntegerLiteralType) {
         precondition(value > 0, "Span value must be a positive integer")
-        self.init(value: String(value))
+        self.init(value)
     }
 }
+
+extension Geometry<Int>.Width.ColumnSpan: CustomStringConvertible {
+    @inlinable
+    public var description: String { rawValue }
+}
+
+extension Geometry<Int>.Width.ColumnSpan: Sendable {}
+extension Geometry<Int>.Width.ColumnSpan: Equatable {}
+extension Geometry<Int>.Width.ColumnSpan: Hashable {}
+
+/// Typealias for convenience - use `Span` as shorthand for `Geometry<Int>.Width.ColumnSpan`
+public typealias Span = Geometry<Int>.Width.ColumnSpan

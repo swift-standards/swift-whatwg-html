@@ -38,7 +38,7 @@ public import WHATWG_HTML_Shared
 ///
 /// The `<strong>` element has an implicit ARIA role of "strong" which communicates the importance to assistive technologies.
 ///
-public struct StrongImportance: WHATWG_HTML.Element {
+public struct StrongImportance: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "strong" }
 

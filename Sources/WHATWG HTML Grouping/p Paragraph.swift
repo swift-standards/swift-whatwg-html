@@ -41,7 +41,7 @@ public import WHATWG_HTML_Shared
 /// - Never use empty paragraphs for spacing, as screen readers may announce them without any content, causing confusion
 /// - Use CSS properties like `margin` to create spacing between paragraphs
 ///
-public struct Paragraph: WHATWG_HTML.Element {
+public struct Paragraph: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "p" }
 

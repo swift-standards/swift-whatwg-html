@@ -49,7 +49,7 @@ public import WHATWG_HTML_Shared
 /// - Use CSS for styling rather than deprecated presentational attributes
 /// - For complex tables, consider using multiple header rows within a single `<thead>` element
 ///
-public struct TableHead: WHATWG_HTML.Element {
+public struct TableHead: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "thead" }
 

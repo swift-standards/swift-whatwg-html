@@ -51,7 +51,7 @@ public import WHATWG_HTML_Shared
 /// In some cases, you may wish to use an abbreviation for a term when defining it. This can be done by
 /// using the `<dfn>` and `<abbr>` elements together.
 ///
-public struct Definition: WHATWG_HTML.Element {
+public struct Definition: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "dfn" }
 

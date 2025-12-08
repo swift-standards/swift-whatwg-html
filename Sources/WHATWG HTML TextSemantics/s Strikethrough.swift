@@ -37,7 +37,7 @@ public import WHATWG_HTML_Shared
 /// You can use CSS `::before` and `::after` pseudo-elements with the `content` property
 /// to make it announced by screen readers when necessary.
 ///
-public struct Strikethrough: WHATWG_HTML.Element {
+public struct Strikethrough: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "s" }
 

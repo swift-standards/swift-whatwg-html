@@ -39,7 +39,7 @@ public import WHATWG_HTML_Shared
 /// - The footer element has an implicit ARIA role of `contentinfo` (when at the page level)
 ///   or `generic` (when nested within article, aside, main, nav, or section)
 /// - For legacy browser support, consider adding `role="contentinfo"` explicitly
-public struct Footer: WHATWG_HTML.Element {
+public struct Footer: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "footer" }
 

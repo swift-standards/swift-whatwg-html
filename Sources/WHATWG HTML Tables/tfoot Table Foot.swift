@@ -63,7 +63,7 @@ public import WHATWG_HTML_Shared
 /// - Use `colspan` attributes when a footer cell needs to span multiple columns
 /// - Consider accessibility by using `<th>` elements with appropriate `scope` attributes for footer headers
 ///
-public struct TableFoot: WHATWG_HTML.Element {
+public struct TableFoot: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "tfoot" }
 

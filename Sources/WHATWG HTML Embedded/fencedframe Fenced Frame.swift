@@ -31,7 +31,7 @@ public import WHATWG_HTML_Shared
 /// Use the `title` global attribute to provide a description of the embedded content for assistive technologies.
 /// Without this label, users of screen readers would need to navigate into the fencedframe to understand its content.
 ///
-public struct FencedFrame: WHATWG_HTML.Element {
+public struct FencedFrame: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "fencedframe" }
 

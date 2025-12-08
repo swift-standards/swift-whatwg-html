@@ -43,7 +43,7 @@ public import WHATWG_HTML_Shared
 /// - This element should not be used for dates prior to the introduction of the Gregorian calendar
 /// - If the element doesn't have a `datetime` attribute, the content must be in a valid datetime format
 ///
-public struct Time: WHATWG_HTML.Element {
+public struct Time: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "time" }
 

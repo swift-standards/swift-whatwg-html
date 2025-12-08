@@ -36,7 +36,7 @@ public import WHATWG_HTML_Shared
 /// The presence of the mark element is not announced by most screen reading technology by default.
 /// Consider using CSS ::before and ::after pseudo-elements to make it more accessible if necessary.
 ///
-public struct Mark: WHATWG_HTML.Element {
+public struct Mark: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "mark" }
 

@@ -51,7 +51,7 @@ public import WHATWG_HTML_Shared
 ///
 /// - Note: When rendered, this generates an HTML `<address>` element with the appropriate
 ///   attributes based on the configuration.
-public struct Address: WHATWG_HTML.Element {
+public struct Address: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "address" }
 
     /// Creates a new Address element with the specified content.

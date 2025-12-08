@@ -49,7 +49,7 @@ public import WHATWG_HTML_Shared
 /// - Don't set margins on `<br>` elements; use the `line-height` property instead
 ///
 /// - Note: The `<br>` element is a void element and does not have a closing tag.
-public struct BR: WHATWG_HTML.VoidElement {
+public struct BR: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "br" }
 

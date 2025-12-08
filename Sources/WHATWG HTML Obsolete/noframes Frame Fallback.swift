@@ -13,7 +13,7 @@ public import WHATWG_HTML_Shared
     deprecated,
     message: "The noframes element is obsolete. Use modern layout techniques instead."
 )
-public struct FrameFallback: WHATWG_HTML.Element {
+public struct FrameFallback: WHATWG_HTML.Element.`Protocol` {
     @inlinable
     public static var tag: String { "noframes" }
 

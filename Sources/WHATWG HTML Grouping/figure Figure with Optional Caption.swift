@@ -43,7 +43,7 @@ public import WHATWG_HTML_Shared
 /// - Typically used for images, illustrations, diagrams, code snippets, etc.
 /// - Can be moved to another part of the document without affecting the main flow
 ///
-public struct Figure: WHATWG_HTML.Element {
+public struct Figure: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "figure" }
 

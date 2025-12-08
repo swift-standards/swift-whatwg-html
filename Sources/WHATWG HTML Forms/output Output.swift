@@ -33,7 +33,7 @@ public import WHATWG_HTML_Shared
 /// - Use the `form` attribute to associate the output with a form outside its hierarchy
 /// - Many browsers implement this element as an `aria-live` region, making it useful for accessibility
 ///
-public struct Output: WHATWG_HTML.Element {
+public struct Output: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "output" }
 

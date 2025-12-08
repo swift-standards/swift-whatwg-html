@@ -58,7 +58,7 @@ public import WHATWG_HTML_Shared
 ///
 /// - Note: When rendered, this generates an HTML `<area>` element with the
 ///   appropriate attributes based on the configuration.
-public struct Area: WHATWG_HTML.VoidElement {
+public struct Area: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "area" }
 
     /// The shape of the associated hot spot.
@@ -270,6 +270,7 @@ extension Area {
     ///   - alt: Alternative text description
     ///   - target: Where to display the linked resource
     /// - Returns: An Area with polygon shape
+    @_disfavoredOverload
     public static func polygon(
         points: [(Int, Int)],
         href: Href,

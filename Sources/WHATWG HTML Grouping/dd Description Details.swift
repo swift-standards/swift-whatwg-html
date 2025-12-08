@@ -36,7 +36,7 @@ public import WHATWG_HTML_Shared
 /// - The end tag may be omitted if this element is immediately followed by another
 ///   `<dd>` element, a `<dt>` element, or if there is no more content in the parent element
 ///
-public struct DescriptionDetails: WHATWG_HTML.Element {
+public struct DescriptionDetails: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "dd" }
 

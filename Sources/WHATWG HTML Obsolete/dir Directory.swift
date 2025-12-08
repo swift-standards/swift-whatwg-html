@@ -10,7 +10,7 @@ public import WHATWG_HTML_Shared
 ///
 /// **Deprecated**: Use `<ul>` instead.
 @available(*, deprecated, message: "Use <ul> instead.")
-public struct Directory: WHATWG_HTML.Element {
+public struct Directory: WHATWG_HTML.Element.`Protocol` {
     @inlinable
     public static var tag: String { "dir" }
 

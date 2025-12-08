@@ -68,7 +68,7 @@ public import WHATWG_HTML_Shared
 /// Most browsers render the `<var>` element in an italicized font style, although this can vary
 /// across browsers and can be overridden with CSS.
 ///
-public struct Variable: WHATWG_HTML.Element {
+public struct Variable: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "var" }
 

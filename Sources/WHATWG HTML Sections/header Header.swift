@@ -40,7 +40,7 @@ public import WHATWG_HTML_Shared
 /// - Do not nest a `<header>` inside an `<address>`, `<footer>` or another `<header>` element
 /// - The `<header>` element should not contain another `<header>` or a `<footer>` element
 ///
-public struct Header: WHATWG_HTML.Element {
+public struct Header: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "header" }
 

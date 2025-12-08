@@ -39,7 +39,7 @@ public import WHATWG_HTML_Shared
 /// - Avoid using too many iframes on a single page as they consume additional memory and computing resources
 /// - Use the `loading="lazy"` attribute for iframes that are not immediately visible on page load
 /// - Specify both `width` and `height` attributes to prevent layout shifts as the page loads
-public struct InlineFrame: WHATWG_HTML.Element {
+public struct InlineFrame: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "iframe" }
 

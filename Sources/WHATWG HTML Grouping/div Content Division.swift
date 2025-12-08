@@ -38,7 +38,7 @@ public import WHATWG_HTML_Shared
 /// The `<div>` element has an implicit ARIA role of "generic", not "none". This may affect certain
 /// ARIA combination declarations that expect a direct descendant element with a certain role to function properly.
 ///
-public struct ContentDivision: WHATWG_HTML.Element {
+public struct ContentDivision: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "div" }
 
