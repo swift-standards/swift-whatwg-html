@@ -58,9 +58,5 @@ public struct BidirectionalTextOverride: WHATWG_HTML.Element.`Protocol` {
     ///
     /// - Parameters:
     ///   - dir: The text direction to apply to the content (required)
-    public init(
-        dir: WHATWG_HTML_GlobalAttributes.Dir
-    ) {
-        self.dir = dir
-    }
+    public init(dir: WHATWG_HTML_GlobalAttributes.Dir) { self.dir = dir }
 }

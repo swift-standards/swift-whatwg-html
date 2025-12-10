@@ -13,7 +13,6 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `Table Data Cell Test` {
+@Suite struct `Table Data Cell Test` {
 
 }

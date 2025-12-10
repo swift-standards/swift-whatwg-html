@@ -81,9 +81,7 @@ public struct Exportparts: WHATWG_HTML.Attribute {
     }
 
     /// Initialize with explicit part name mappings
-    public init(_ mappings: [PartMapping]) {
-        self.partMappings = mappings
-    }
+    public init(_ mappings: [PartMapping]) { self.partMappings = mappings }
 
     /// A mapping from original part name to exposed part name
     public struct PartMapping: Sendable, Hashable {

@@ -47,9 +47,7 @@ public struct Map: WHATWG_HTML.Element.`Protocol` {
     ///
     /// - Parameters:
     ///   - name: A unique identifier for the map, used to reference it from an image's `usemap` attribute, typically containing `<area>` elements
-    public init(
-        name: Name? = nil
-    ) {
+    public init(name: Name? = nil) {
         self.name = name
 
     }

@@ -27,8 +27,7 @@ public import WHATWG_HTML_Shared
 /// ```html
 /// <frame noresize></frame>
 /// ```
-@dynamicMemberLookup
-public struct NoResize: WHATWG_HTML.BooleanAttribute {
+@dynamicMemberLookup public struct NoResize: WHATWG_HTML.BooleanAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "noresize" }
 
@@ -36,7 +35,5 @@ public struct NoResize: WHATWG_HTML.BooleanAttribute {
     public var rawValue: Bool
 
     /// Creates a new NoResize attribute.
-    public init(value: Bool = true) {
-        self.rawValue = value
-    }
+    public init(value: Bool = true) { self.rawValue = value }
 }

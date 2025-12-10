@@ -15,11 +15,9 @@ import WHATWG_HTML_Forms
 
 @testable import WHATWG_HTML_FormData
 
-@Suite
-struct `FormData Value Tests` {
+@Suite struct `FormData Value Tests` {
 
-    @Test
-    func `Value string case stores value`() {
+    @Test func `Value string case stores value`() {
         let value = Form.Data.Value.string("hello")
 
         #expect(value.stringValue == "hello")
@@ -28,13 +26,8 @@ struct `FormData Value Tests` {
         #expect(value.isFile == false)
     }
 
-    @Test
-    func `Value file case stores file`() {
-        let file = Form.Data.File(
-            name: "test.txt",
-            type: "text/plain",
-            body: [UInt8]([1, 2, 3])
-        )
+    @Test func `Value file case stores file`() {
+        let file = Form.Data.File(name: "test.txt", type: "text/plain", body: [UInt8]([1, 2, 3]))
         let value = Form.Data.Value.file(file)
 
         #expect(value.stringValue == nil)
@@ -43,27 +36,20 @@ struct `FormData Value Tests` {
         #expect(value.isFile == true)
     }
 
-    @Test
-    func `Value ExpressibleByStringLiteral creates string value`() {
+    @Test func `Value ExpressibleByStringLiteral creates string value`() {
         let value: Form.Data.Value = "test string"
 
         #expect(value.stringValue == "test string")
         #expect(value.isString == true)
     }
 
-    @Test
-    func `Value description for string returns the string`() {
+    @Test func `Value description for string returns the string`() {
         let value = Form.Data.Value.string("hello world")
         #expect(value.description == "hello world")
     }
 
-    @Test
-    func `Value description for file includes file info`() {
-        let file = Form.Data.File(
-            name: "image.png",
-            type: "image/png",
-            body: [UInt8]([1, 2, 3])
-        )
+    @Test func `Value description for file includes file info`() {
+        let file = Form.Data.File(name: "image.png", type: "image/png", body: [UInt8]([1, 2, 3]))
         let value = Form.Data.Value.file(file)
 
         let description = value.description
@@ -72,8 +58,7 @@ struct `FormData Value Tests` {
         #expect(description.contains("3"))
     }
 
-    @Test
-    func `Value conforms to Hashable`() {
+    @Test func `Value conforms to Hashable`() {
         let value1 = Form.Data.Value.string("test")
         let value2 = Form.Data.Value.string("test")
 
@@ -81,30 +66,23 @@ struct `FormData Value Tests` {
         #expect(value1.hashValue == value2.hashValue)
     }
 
-    @Test
-    func `Different string values are not equal`() {
+    @Test func `Different string values are not equal`() {
         let value1 = Form.Data.Value.string("hello")
         let value2 = Form.Data.Value.string("world")
 
         #expect(value1 != value2)
     }
 
-    @Test
-    func `String and file values are not equal`() {
+    @Test func `String and file values are not equal`() {
         let stringValue = Form.Data.Value.string("test")
         let fileValue = Form.Data.Value.file(
-            Form.Data.File(
-                name: "test.txt",
-                type: "text/plain",
-                body: [UInt8]()
-            )
+            Form.Data.File(name: "test.txt", type: "text/plain", body: [UInt8]())
         )
 
         #expect(stringValue != fileValue)
     }
 
-    @Test
-    func `Value conforms to Sendable`() {
+    @Test func `Value conforms to Sendable`() {
         // Compile-time check that Value is Sendable
         func acceptSendable<T: Sendable>(_: T) {}
         let value = Form.Data.Value.string("test")

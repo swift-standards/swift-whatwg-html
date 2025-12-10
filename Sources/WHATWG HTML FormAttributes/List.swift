@@ -66,8 +66,7 @@ public import WHATWG_HTML_Shared
 ///   <option value="#0000ff">
 /// </datalist>
 /// ```
-@dynamicMemberLookup
-public struct List: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct List: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "list" }
 
@@ -75,7 +74,5 @@ public struct List: WHATWG_HTML.StringAttribute {
     public let rawValue: String
 
     /// Initialize with a value for the list attribute
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }

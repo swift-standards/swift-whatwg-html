@@ -71,16 +71,16 @@ public struct Body: WHATWG_HTML.Element.`Protocol` {
     public var onBeforeUnload: String?
 
     /// Function to call when the document loses focus.
-    @available(*, deprecated, message: "Use JavaScript addEventListener('blur') instead")
-    public var onBlur: String?
+    @available(*, deprecated, message: "Use JavaScript addEventListener('blur') instead") public
+        var onBlur: String?
 
     /// Function to call when the document fails to load properly.
-    @available(*, deprecated, message: "Use JavaScript addEventListener('error') instead")
-    public var onError: String?
+    @available(*, deprecated, message: "Use JavaScript addEventListener('error') instead") public
+        var onError: String?
 
     /// Function to call when the document receives focus.
-    @available(*, deprecated, message: "Use JavaScript addEventListener('focus') instead")
-    public var onFocus: String?
+    @available(*, deprecated, message: "Use JavaScript addEventListener('focus') instead") public
+        var onFocus: String?
 
     /// Function to call when the fragment identifier part of the document's current address has changed.
     @available(*, deprecated, message: "Use JavaScript addEventListener('hashchange') instead")
@@ -91,72 +91,70 @@ public struct Body: WHATWG_HTML.Element.`Protocol` {
     public var onLanguageChange: String?
 
     /// Function to call when the document has finished loading.
-    @available(*, deprecated, message: "Use JavaScript addEventListener('load') instead")
-    public var onLoad: String?
+    @available(*, deprecated, message: "Use JavaScript addEventListener('load') instead") public
+        var onLoad: String?
 
     /// Function to call when the document has received a message.
-    @available(*, deprecated, message: "Use JavaScript addEventListener('message') instead")
-    public var onMessage: String?
+    @available(*, deprecated, message: "Use JavaScript addEventListener('message') instead") public
+        var onMessage: String?
 
     /// Function to call when the document has received a message that cannot be deserialized.
     @available(*, deprecated, message: "Use JavaScript addEventListener('messageerror') instead")
     public var onMessageError: String?
 
     /// Function to call when network communication has failed.
-    @available(*, deprecated, message: "Use JavaScript addEventListener('offline') instead")
-    public var onOffline: String?
+    @available(*, deprecated, message: "Use JavaScript addEventListener('offline') instead") public
+        var onOffline: String?
 
     /// Function to call when network communication has been restored.
-    @available(*, deprecated, message: "Use JavaScript addEventListener('online') instead")
-    public var onOnline: String?
+    @available(*, deprecated, message: "Use JavaScript addEventListener('online') instead") public
+        var onOnline: String?
 
     /// Function to call when navigating across documents, when the previous document is about to unload.
-    @available(*, deprecated, message: "Use JavaScript addEventListener('pageswap') instead")
-    public var onPageSwap: String?
+    @available(*, deprecated, message: "Use JavaScript addEventListener('pageswap') instead") public
+        var onPageSwap: String?
 
     /// Function to call when the browser hides the current page in the process of presenting a different page from the session's history.
-    @available(*, deprecated, message: "Use JavaScript addEventListener('pagehide') instead")
-    public var onPageHide: String?
+    @available(*, deprecated, message: "Use JavaScript addEventListener('pagehide') instead") public
+        var onPageHide: String?
 
     /// Function to call when a document is first rendered, either when loading a fresh document from the network or activating a document.
     @available(*, deprecated, message: "Use JavaScript addEventListener('pagereveal') instead")
     public var onPageReveal: String?
 
     /// Function to call when the browser displays the window's document due to navigation.
-    @available(*, deprecated, message: "Use JavaScript addEventListener('pageshow') instead")
-    public var onPageShow: String?
+    @available(*, deprecated, message: "Use JavaScript addEventListener('pageshow') instead") public
+        var onPageShow: String?
 
     /// Function to call when the user has navigated session history.
-    @available(*, deprecated, message: "Use JavaScript addEventListener('popstate') instead")
-    public var onPopState: String?
+    @available(*, deprecated, message: "Use JavaScript addEventListener('popstate') instead") public
+        var onPopState: String?
 
     /// Function to call when the document has been resized.
-    @available(*, deprecated, message: "Use JavaScript addEventListener('resize') instead")
-    public var onResize: String?
+    @available(*, deprecated, message: "Use JavaScript addEventListener('resize') instead") public
+        var onResize: String?
 
     /// Function to call when a JavaScript Promise is handled late.
     @available(
         *,
         deprecated,
         message: "Use JavaScript addEventListener('rejectionhandled') instead"
-    )
-    public var onRejectionHandled: String?
+    ) public var onRejectionHandled: String?
 
     /// Function to call when the storage area has changed.
-    @available(*, deprecated, message: "Use JavaScript addEventListener('storage') instead")
-    public var onStorage: String?
+    @available(*, deprecated, message: "Use JavaScript addEventListener('storage') instead") public
+        var onStorage: String?
 
     /// Function to call when a JavaScript Promise that has no rejection handler is rejected.
     @available(
         *,
         deprecated,
         message: "Use JavaScript addEventListener('unhandledrejection') instead"
-    )
-    public var onUnhandledRejection: String?
+    ) public var onUnhandledRejection: String?
 
     /// Function to call when the document is going away.
-    @available(*, deprecated, message: "Use JavaScript addEventListener('unload') instead")
-    public var onUnload: String?
+    @available(*, deprecated, message: "Use JavaScript addEventListener('unload') instead") public
+        var onUnload: String?
 
     /// Creates a new Body element with the specified content and event handlers.
     ///
@@ -198,8 +196,7 @@ public struct Body: WHATWG_HTML.Element.`Protocol` {
         *,
         deprecated,
         message: "Use JavaScript event listeners instead of HTML event handler attributes"
-    )
-    public init(
+    ) public init(
         onAfterPrint: String? = nil,
         onBeforePrint: String? = nil,
         onBeforeUnload: String? = nil,

@@ -35,26 +35,18 @@ public struct High: WHATWG_HTML.Attribute, CustomStringConvertible {
     public let value: Double
 
     /// Initialize with a value
-    public init(_ value: Double) {
-        self.value = value
-    }
+    public init(_ value: Double) { self.value = value }
 }
 
 extension High: ExpressibleByFloatLiteral {
-    public init(floatLiteral value: Double) {
-        self.value = value
-    }
+    public init(floatLiteral value: Double) { self.value = value }
 }
 
 extension High: ExpressibleByIntegerLiteral {
-    public init(integerLiteral value: Int) {
-        self.value = Double(value)
-    }
+    public init(integerLiteral value: Int) { self.value = Double(value) }
 }
 
 extension High {
     /// Returns the string representation of the attribute value
-    public var description: String {
-        return String(self.value)
-    }
+    public var description: String { return String(self.value) }
 }

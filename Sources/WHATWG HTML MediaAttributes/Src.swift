@@ -43,7 +43,5 @@ public struct Src: WHATWG_HTML.StringAttribute, ExpressibleByStringInterpolation
     public var rawValue: String
 
     /// Initialize with a string value
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }

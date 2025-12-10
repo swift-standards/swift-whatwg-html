@@ -18,15 +18,12 @@ import WHATWG_HTML
 #elseif canImport(Foundation)
 #endif
 
-@Suite
-struct `Virtualkeyboardpolicy Test` {
-    @Test
-    func `Virtualkeyboardpolicy attribute should be virtualkeyboardpolicy`() {
+@Suite struct `Virtualkeyboardpolicy Test` {
+    @Test func `Virtualkeyboardpolicy attribute should be virtualkeyboardpolicy`() {
         #expect(Virtualkeyboardpolicy.attribute == "virtualkeyboardpolicy")
     }
 
-    @Test
-    func `Virtualkeyboardpolicy description should match the spec`() {
+    @Test func `Virtualkeyboardpolicy description should match the spec`() {
         #expect(Virtualkeyboardpolicy.auto.description == "auto")
         #expect(Virtualkeyboardpolicy.manual.description == "manual")
     }

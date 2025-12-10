@@ -18,15 +18,12 @@ import WHATWG_HTML
 #elseif canImport(Foundation)
 #endif
 
-@Suite
-struct `Writingsuggestions Test` {
-    @Test
-    func `Writingsuggestions attribute should be writingsuggestions`() {
+@Suite struct `Writingsuggestions Test` {
+    @Test func `Writingsuggestions attribute should be writingsuggestions`() {
         #expect(Writingsuggestions.attribute == "writingsuggestions")
     }
 
-    @Test
-    func `Writingsuggestions description should match the spec`() {
+    @Test func `Writingsuggestions description should match the spec`() {
         #expect(Writingsuggestions.true.description == "true")
         #expect(Writingsuggestions.false.description == "false")
     }

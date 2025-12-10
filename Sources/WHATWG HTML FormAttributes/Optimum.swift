@@ -38,26 +38,18 @@ public struct Optimum: WHATWG_HTML.Attribute, CustomStringConvertible {
     public var value: Double
 
     /// Initialize with a value
-    public init(_ value: Double) {
-        self.value = value
-    }
+    public init(_ value: Double) { self.value = value }
 }
 
 extension Optimum: ExpressibleByFloatLiteral {
-    public init(floatLiteral value: FloatLiteralType) {
-        self.value = value
-    }
+    public init(floatLiteral value: FloatLiteralType) { self.value = value }
 }
 
 extension Optimum: ExpressibleByIntegerLiteral {
-    public init(integerLiteral value: IntegerLiteralType) {
-        self.value = Double(value)
-    }
+    public init(integerLiteral value: IntegerLiteralType) { self.value = Double(value) }
 }
 
 extension Optimum {
     /// Returns the string representation of the attribute value
-    public var description: String {
-        return String(self.value)
-    }
+    public var description: String { return String(self.value) }
 }

@@ -77,9 +77,7 @@ public enum Step: WHATWG_HTML.StringAttribute, ExpressibleByFloatLiteral,
     /// No stepping is implied, and any value is allowed in the specified range.
     case any
 
-    public var rawValue: String {
-        description
-    }
+    public var rawValue: String { description }
 
     public init(value: String) {
         if value == "any" {
@@ -92,20 +90,14 @@ public enum Step: WHATWG_HTML.StringAttribute, ExpressibleByFloatLiteral,
         }
     }
 
-    public init(floatLiteral value: Double) {
-        self = .value(value)
-    }
+    public init(floatLiteral value: Double) { self = .value(value) }
 
-    public init(integerLiteral value: IntegerLiteralType) {
-        self = .value(Double(value))
-    }
+    public init(integerLiteral value: IntegerLiteralType) { self = .value(Double(value)) }
 
     public var description: String {
         switch self {
-        case .value(let value):
-            return value.description
-        case .any:
-            return "any"
+        case .value(let value): return value.description
+        case .any: return "any"
         }
     }
 

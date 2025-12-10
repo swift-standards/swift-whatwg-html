@@ -13,7 +13,6 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `Inline Frame Test` {
+@Suite struct `Inline Frame Test` {
 
 }

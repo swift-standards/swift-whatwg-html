@@ -53,8 +53,7 @@ public import WHATWG_HTML_Shared
 /// - Ensures resource integrity even when served from untrusted sources
 /// - Provides defense against compromised third-party resources
 ///
-@dynamicMemberLookup
-public struct Integrity: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct Integrity: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "integrity" }
 
@@ -62,24 +61,16 @@ public struct Integrity: WHATWG_HTML.StringAttribute {
     public let rawValue: String
 
     /// Initialize with a value for the integrity attribute
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }
 
 extension Integrity {
     /// Creates an integrity hash using the SHA-256 algorithm
-    public static func sha256(_ hash: String) -> Integrity {
-        return Integrity("sha256-\(hash)")
-    }
+    public static func sha256(_ hash: String) -> Integrity { return Integrity("sha256-\(hash)") }
 
     /// Creates an integrity hash using the SHA-384 algorithm
-    public static func sha384(_ hash: String) -> Integrity {
-        return Integrity("sha384-\(hash)")
-    }
+    public static func sha384(_ hash: String) -> Integrity { return Integrity("sha384-\(hash)") }
 
     /// Creates an integrity hash using the SHA-512 algorithm
-    public static func sha512(_ hash: String) -> Integrity {
-        return Integrity("sha512-\(hash)")
-    }
+    public static func sha512(_ hash: String) -> Integrity { return Integrity("sha512-\(hash)") }
 }

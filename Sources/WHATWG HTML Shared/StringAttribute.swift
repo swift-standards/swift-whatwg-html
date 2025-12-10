@@ -26,8 +26,8 @@ extension WHATWG_HTML {
     ///     }
     /// }
     /// ```
-    public protocol StringAttribute: Attribute, CustomStringConvertible,
-        ExpressibleByStringLiteral, ExpressibleByStringInterpolation, RawRepresentable
+    public protocol StringAttribute: Attribute, CustomStringConvertible, ExpressibleByStringLiteral,
+        ExpressibleByStringInterpolation, RawRepresentable
     {
         var rawValue: String { get }
         init(value: String)
@@ -35,21 +35,15 @@ extension WHATWG_HTML {
 }
 
 extension WHATWG_HTML.StringAttribute {
-    public init?(rawValue value: String) {
-        self = .init(value: value)
-    }
+    public init?(rawValue value: String) { self = .init(value: value) }
 }
 
 extension WHATWG_HTML.StringAttribute {
-    public init(_ value: String) {
-        self = .init(value: value)
-    }
+    public init(_ value: String) { self = .init(value: value) }
 }
 
 extension WHATWG_HTML.StringAttribute {
-    public init(stringLiteral value: String) {
-        self = .init(value: value)
-    }
+    public init(stringLiteral value: String) { self = .init(value: value) }
 }
 
 extension WHATWG_HTML.StringAttribute {
@@ -58,9 +52,7 @@ extension WHATWG_HTML.StringAttribute {
     /// For attributes implementing byte serialization (Id, etc.),
     /// use the RFC pattern: String(attribute)
     /// For others, returns the raw value
-    public var description: String {
-        rawValue
-    }
+    public var description: String { rawValue }
 }
 
 extension WHATWG_HTML.StringAttribute {

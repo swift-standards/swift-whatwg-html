@@ -36,8 +36,7 @@ public import WHATWG_HTML_Shared
 ///   <p>Your browser doesn't support SVG</p>
 /// </object>
 /// ```
-@dynamicMemberLookup
-public struct ObjectForm: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct ObjectForm: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "form" }
 
@@ -45,7 +44,5 @@ public struct ObjectForm: WHATWG_HTML.StringAttribute {
     public let rawValue: String
 
     /// Initialize with a value for the form attribute
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }

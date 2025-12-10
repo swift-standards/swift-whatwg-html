@@ -82,42 +82,32 @@ public struct Download: WHATWG_HTML.Attribute, CustomStringConvertible {
     public var value: Value
 
     /// Create a boolean download attribute (browser chooses filename)
-    public init() {
-        self.value = .boolean(true)
-    }
+    public init() { self.value = .boolean(true) }
 
     /// Create a download attribute with a specific boolean value
     ///
     /// - Parameter include: Whether to include the attribute
-    public init(_ include: Bool) {
-        self.value = .boolean(include)
-    }
+    public init(_ include: Bool) { self.value = .boolean(include) }
 
     /// Create a download attribute with a suggested filename
     ///
     /// - Parameter filename: The suggested filename for the downloaded file.
     ///   Characters like `/` and `\` will be converted to underscores by browsers.
-    public init(_ filename: String) {
-        self.value = .withFilename(filename)
-    }
+    public init(_ filename: String) { self.value = .withFilename(filename) }
 
     /// String representation of the download attribute
     public var description: String {
         switch value {
-        case .boolean:
-            return ""  // Empty string for boolean attribute
-        case .withFilename(let filename):
-            return filename
+        case .boolean: return ""  // Empty string for boolean attribute
+        case .withFilename(let filename): return filename
         }
     }
 
     /// Whether the attribute should be included in HTML rendering
     public var shouldInclude: Bool {
         switch value {
-        case .boolean(let include):
-            return include
-        case .withFilename:
-            return true
+        case .boolean(let include): return include
+        case .withFilename: return true
         }
     }
 }
@@ -128,9 +118,7 @@ extension Download: ExpressibleByBooleanLiteral {
     ///
     /// - Parameter value: When true, creates a boolean download attribute
     ///   When false, the attribute will not be included
-    public init(booleanLiteral value: BooleanLiteralType) {
-        self.init(value)
-    }
+    public init(booleanLiteral value: BooleanLiteralType) { self.init(value) }
 }
 
 /// Extension to allow creating a Download attribute with a string literal
@@ -138,7 +126,5 @@ extension Download: ExpressibleByStringLiteral {
     /// Initialize with a string literal
     ///
     /// - Parameter value: The suggested filename for the downloaded file
-    public init(stringLiteral value: StringLiteralType) {
-        self.init(value)
-    }
+    public init(stringLiteral value: StringLiteralType) { self.init(value) }
 }

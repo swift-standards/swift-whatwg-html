@@ -31,8 +31,7 @@ public import WHATWG_HTML_Shared
 /// <!-- Row header -->
 /// <th scope="row">Widget X</th>
 /// ```
-@dynamicMemberLookup
-public struct Scope: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct Scope: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "scope" }
 
@@ -40,9 +39,7 @@ public struct Scope: WHATWG_HTML.StringAttribute {
     public var rawValue: String
 
     /// Initialize with a scope value string
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }
 
 extension Scope {

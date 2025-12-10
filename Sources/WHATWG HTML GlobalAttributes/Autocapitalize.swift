@@ -63,16 +63,13 @@ public import WHATWG_HTML_Shared
 /// </p>
 /// ```
 ///
-@dynamicMemberLookup
-public struct Autocapitalize: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct Autocapitalize: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "autocapitalize" }
 
     public let rawValue: String
 
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }
 
 extension Autocapitalize {

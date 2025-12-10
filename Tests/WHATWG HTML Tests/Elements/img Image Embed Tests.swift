@@ -13,7 +13,6 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `Image Embed Test` {
+@Suite struct `Image Embed Test` {
 
 }

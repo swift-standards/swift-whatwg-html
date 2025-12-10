@@ -50,8 +50,7 @@ public import WHATWG_HTML_Shared
 /// <input type="number" id="b" value="20">
 /// <output for="a b">30</output>
 /// ```
-@dynamicMemberLookup
-public struct For: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct For: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "for" }
 
@@ -59,14 +58,10 @@ public struct For: WHATWG_HTML.StringAttribute {
     public let rawValue: String
 
     /// Initialize with a value for the for attribute
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 
     /// Initialize with an ID or space-separated list of IDs
-    public init(_ value: String) {
-        self.rawValue = value
-    }
+    public init(_ value: String) { self.rawValue = value }
 }
 
 extension For: ExpressibleByArrayLiteral {

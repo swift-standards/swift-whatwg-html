@@ -52,10 +52,7 @@ public struct InsertedText: WHATWG_HTML.Element.`Protocol` {
     /// - Parameters:
     ///   - cite: The URI of a resource that explains the change.
     ///   - datetime: The time and date of the change..
-    public init(
-        cite: Cite? = nil,
-        datetime: DateTime? = nil
-    ) {
+    public init(cite: Cite? = nil, datetime: DateTime? = nil) {
         self.cite = cite
         self.datetime = datetime
 

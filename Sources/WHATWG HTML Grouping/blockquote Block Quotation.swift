@@ -47,9 +47,5 @@ public struct BlockQuote: WHATWG_HTML.Element.`Protocol` {
     ///
     /// - Parameters:
     ///   - cite: A URL that designates the source document for the quotation
-    public init(
-        cite: Cite? = nil
-    ) {
-        self.cite = cite
-    }
+    public init(cite: Cite? = nil) { self.cite = cite }
 }

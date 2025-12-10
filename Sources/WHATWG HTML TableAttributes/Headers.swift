@@ -32,8 +32,7 @@ public import WHATWG_HTML_Shared
 /// <th id="header1">Header 1</th>
 /// <td headers="header1">Data cell</td>
 /// ```
-@dynamicMemberLookup
-public struct Headers: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct Headers: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "headers" }
 
@@ -41,9 +40,7 @@ public struct Headers: WHATWG_HTML.StringAttribute {
     public let rawValue: String
 
     /// Initialize with a value for the headers attribute
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }
 
 extension Headers: ExpressibleByArrayLiteral {

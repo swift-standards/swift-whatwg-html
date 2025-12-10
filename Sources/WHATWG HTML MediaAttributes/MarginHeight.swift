@@ -41,34 +41,23 @@ extension Geometry<Int>.Height {
         @inlinable public static var attribute: String { "marginheight" }
 
         /// The raw string value
-        @inlinable
-        public var rawValue: String { String(height.value) }
+        @inlinable public var rawValue: String { String(height.value) }
 
         /// Initialize with a height value
-        @inlinable
-        public init(_ height: Geometry<Int>.Height) {
-            self.height = height
-        }
+        @inlinable public init(_ height: Geometry<Int>.Height) { self.height = height }
 
         /// Initialize with a string value
-        @inlinable
-        public init(value: String) {
+        @inlinable public init(value: String) {
             self.height = Geometry<Int>.Height(Int(value) ?? 0)
         }
 
         /// Initialize with an integer value
-        @inlinable
-        public init(_ value: Int) {
-            self.height = Geometry<Int>.Height(value)
-        }
+        @inlinable public init(_ value: Int) { self.height = Geometry<Int>.Height(value) }
     }
 }
 
 extension Geometry<Int>.Height.Margin: ExpressibleByIntegerLiteral {
-    @inlinable
-    public init(integerLiteral value: IntegerLiteralType) {
-        self.init(value)
-    }
+    @inlinable public init(integerLiteral value: IntegerLiteralType) { self.init(value) }
 }
 
 extension Geometry<Int>.Height.Margin: Sendable {}

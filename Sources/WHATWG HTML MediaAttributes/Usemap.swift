@@ -45,8 +45,7 @@ public import WHATWG_HTML_Shared
 ///   <area shape="circle" coords="124,58,8" href="venus.html" alt="Venus">
 /// </map>
 /// ```
-@dynamicMemberLookup
-public struct Usemap: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct Usemap: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "usemap" }
 
@@ -56,22 +55,14 @@ public struct Usemap: WHATWG_HTML.StringAttribute {
     /// Initialize with a string value
     public init(value: String) {
         // Ensure the value starts with '#'
-        if value.hasPrefix("#") {
-            self.rawValue = value
-        } else {
-            self.rawValue = "#" + value
-        }
+        if value.hasPrefix("#") { self.rawValue = value } else { self.rawValue = "#" + value }
     }
 
     /// Initialize with a map name
     /// - Parameter value: The map name (with or without '#')
-    public init(_ value: String) {
-        self.init(value: value)
-    }
+    public init(_ value: String) { self.init(value: value) }
 }
 
 extension Usemap: ExpressibleByStringLiteral {
-    public init(stringLiteral value: StringLiteralType) {
-        self.init(value)
-    }
+    public init(stringLiteral value: StringLiteralType) { self.init(value) }
 }

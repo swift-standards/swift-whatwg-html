@@ -13,15 +13,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `As Test` {
-    @Test
-    func `As attribute should be as`() {
-        #expect(As.attribute == "as")
-    }
+@Suite struct `As Test` {
+    @Test func `As attribute should be as`() { #expect(As.attribute == "as") }
 
-    @Test
-    func `As convenience properties`() {
+    @Test func `As convenience properties`() {
         #expect(As.audio.rawValue == "audio")
         #expect(As.document.rawValue == "document")
         #expect(As.embed.rawValue == "embed")

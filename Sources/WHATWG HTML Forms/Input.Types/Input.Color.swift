@@ -36,11 +36,7 @@ extension Input {
         public var value: Value<String>?
 
         /// Creates a new color input configuration
-        public init(
-            value: Value<String>? = nil
-        ) {
-            self.value = value
-        }
+        public init(value: Value<String>? = nil) { self.value = value }
     }
 }
 
@@ -55,15 +51,6 @@ extension Input {
         disabled: Disabled? = nil,
         form: WHATWG_HTML_FormAttributes.Form.ID? = nil
     ) -> Self {
-        .init(
-            name: name,
-            disabled: disabled,
-            form: form,
-            type: .color(
-                .init(
-                    value: value
-                )
-            )
-        )
+        .init(name: name, disabled: disabled, form: form, type: .color(.init(value: value)))
     }
 }

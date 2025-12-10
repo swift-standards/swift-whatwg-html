@@ -23,8 +23,7 @@ public import WHATWG_HTML_Shared
 ///   /* CSS rules for screens with width of at least 900px */
 /// </style>
 /// ```
-@dynamicMemberLookup
-public struct Media: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct Media: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "media" }
 
@@ -32,7 +31,5 @@ public struct Media: WHATWG_HTML.StringAttribute {
     public let rawValue: String
 
     /// Initialize with a value for the media attribute
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }

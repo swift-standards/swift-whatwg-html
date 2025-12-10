@@ -47,8 +47,7 @@ public import WHATWG_HTML_Shared
 /// // Using string literal
 /// HTML.link.type("text/css")
 /// ```
-@dynamicMemberLookup
-public struct LinkType: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct LinkType: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "type" }
 
@@ -56,14 +55,10 @@ public struct LinkType: WHATWG_HTML.StringAttribute {
     public let rawValue: String
 
     /// Initialize with a value for the type attribute
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 
     /// Initialize with an RFC 2045 Content-Type
-    public init(contentType: RFC_2045.ContentType) {
-        self.rawValue = contentType.headerValue
-    }
+    public init(contentType: RFC_2045.ContentType) { self.rawValue = contentType.headerValue }
 }
 
 // MARK: - Common Link MIME Types

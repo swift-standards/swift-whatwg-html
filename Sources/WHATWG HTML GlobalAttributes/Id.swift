@@ -64,15 +64,12 @@ public import WHATWG_HTML_Shared
 /// const element = document.querySelector('#intro');
 /// const element = window.intro;
 /// ```
-@dynamicMemberLookup
-public struct Id: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct Id: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "id" }
 
     /// The ID value
     public let rawValue: String
 
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }

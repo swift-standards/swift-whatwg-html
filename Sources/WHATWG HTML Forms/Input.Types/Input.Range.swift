@@ -100,15 +100,7 @@ extension Input {
             name: name,
             disabled: disabled,
             form: form,
-            type: .range(
-                .init(
-                    value: value,
-                    min: min,
-                    max: max,
-                    step: step,
-                    list: list
-                )
-            )
+            type: .range(.init(value: value, min: min, max: max, step: step, list: list))
         )
     }
 }

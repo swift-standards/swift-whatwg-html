@@ -46,16 +46,13 @@ public import WHATWG_HTML_Shared
 ///   <p class="content">Content paragraph</p>
 /// </div>
 /// ```
-@dynamicMemberLookup
-public struct Class: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct Class: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "class" }
 
     public let rawValue: String
 
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }
 
 extension Class: ExpressibleByArrayLiteral {

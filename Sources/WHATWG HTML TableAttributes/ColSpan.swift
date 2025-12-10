@@ -47,39 +47,25 @@ extension Geometry<Int>.Width {
         @inlinable public static var attribute: String { "colspan" }
 
         /// The raw string value
-        @inlinable
-        public var rawValue: String { String(width.value) }
+        @inlinable public var rawValue: String { String(width.value) }
 
         /// Initialize with a width value
-        @inlinable
-        public init(_ width: Geometry<Int>.Width) {
-            self.width = width
-        }
+        @inlinable public init(_ width: Geometry<Int>.Width) { self.width = width }
 
         /// Initialize with a string value
-        @inlinable
-        public init(value: String) {
-            self.width = Geometry<Int>.Width(Int(value) ?? 1)
-        }
+        @inlinable public init(value: String) { self.width = Geometry<Int>.Width(Int(value) ?? 1) }
 
         /// Initialize with an integer value
-        @inlinable
-        public init(_ value: Int) {
-            self.width = Geometry<Int>.Width(value)
-        }
+        @inlinable public init(_ value: Int) { self.width = Geometry<Int>.Width(value) }
     }
 }
 
 extension Geometry<Int>.Width.Span: ExpressibleByIntegerLiteral {
-    @inlinable
-    public init(integerLiteral value: IntegerLiteralType) {
-        self.init(value)
-    }
+    @inlinable public init(integerLiteral value: IntegerLiteralType) { self.init(value) }
 }
 
 extension Geometry<Int>.Width.Span: CustomStringConvertible {
-    @inlinable
-    public var description: String { rawValue }
+    @inlinable public var description: String { rawValue }
 }
 
 extension Geometry<Int>.Width.Span: Sendable {}

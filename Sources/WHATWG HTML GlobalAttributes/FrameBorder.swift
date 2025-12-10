@@ -13,8 +13,7 @@
 public import WHATWG_HTML_Shared
 
 /// Represents the frameborder attribute for frame elements.
-@dynamicMemberLookup
-public struct FrameBorder: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct FrameBorder: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "frameborder" }
 
@@ -22,13 +21,9 @@ public struct FrameBorder: WHATWG_HTML.StringAttribute {
     public let rawValue: String
 
     /// Initialize with a value for the frameborder attribute
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }
 
 extension FrameBorder: ExpressibleByIntegerLiteral {
-    public init(integerLiteral value: IntegerLiteralType) {
-        self.rawValue = String(value)
-    }
+    public init(integerLiteral value: IntegerLiteralType) { self.rawValue = String(value) }
 }

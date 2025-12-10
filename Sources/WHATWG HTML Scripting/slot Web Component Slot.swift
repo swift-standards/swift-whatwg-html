@@ -46,9 +46,7 @@ public struct WebComponentSlot: WHATWG_HTML.Element.`Protocol` {
     ///
     /// - Parameters:
     ///   - name: The slot's name. Elements with a matching slot attribute will be inserted here.
-    public init(
-        name: Name? = nil
-    ) {
+    public init(name: Name? = nil) {
         self.name = name
 
     }

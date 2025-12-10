@@ -32,7 +32,5 @@ public struct ShadowRootClonable: WHATWG_HTML.BooleanAttribute, CustomStringConv
 
     public var rawValue: Bool
 
-    public init(value: Bool = true) {
-        self.rawValue = value
-    }
+    public init(value: Bool = true) { self.rawValue = value }
 }

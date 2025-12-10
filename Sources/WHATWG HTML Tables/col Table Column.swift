@@ -74,10 +74,7 @@ public struct TableColumn: WHATWG_HTML.Element.`Protocol` {
     /// - Parameters:
     ///   - span: The number of consecutive columns this `<col>` element spans
     ///   - width: The width for the column(s)
-    public init(
-        span: Span? = nil,
-        width: Width? = nil
-    ) {
+    public init(span: Span? = nil, width: Width? = nil) {
         self.span = span
         self.width = width
     }

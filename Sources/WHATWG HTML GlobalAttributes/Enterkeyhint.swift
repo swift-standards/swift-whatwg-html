@@ -43,16 +43,13 @@ public import WHATWG_HTML_Shared
 /// <!-- Editable content with go action -->
 /// <p contenteditable enterkeyhint="go">https://example.org</p>
 /// ```
-@dynamicMemberLookup
-public struct Enterkeyhint: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct Enterkeyhint: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "enterkeyhint" }
 
     public let rawValue: String
 
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }
 
 extension Enterkeyhint {
@@ -142,12 +139,6 @@ extension Enterkeyhint {
 
 extension Enterkeyhint: CaseIterable {
     public static let allCases: [Enterkeyhint] = [
-        .enter,
-        .done,
-        .go,
-        .next,
-        .previous,
-        .search,
-        .send,
+        .enter, .done, .go, .next, .previous, .search, .send,
     ]
 }

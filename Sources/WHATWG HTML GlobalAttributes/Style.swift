@@ -63,33 +63,28 @@ public import WHATWG_HTML_Shared
 /// - Reserve inline styles for truly unique, one-off styling needs
 /// - Consider using CSS-in-JS or styled components for component libraries
 /// - Remember that inline styles override external styles due to CSS specificity rules
-@dynamicMemberLookup
-public struct Style: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct Style: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "style" }
 
     /// The CSS declarations
     public let rawValue: String
 
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }
 
 extension Style {
     /// Initialize with CSS declarations as key-value pairs
     public init(_ declarations: [String: String]) {
-        let formattedDeclarations = declarations.map { key, value in
-            "\(key): \(value)"
-        }.joined(separator: "; ")
+        let formattedDeclarations = declarations.map { key, value in "\(key): \(value)" }.joined(
+            separator: "; "
+        )
 
         self = .init(formattedDeclarations)
     }
 
     /// Initialize with a dictionary of CSS properties and values
-    public init(properties: [String: String]) {
-        self.init(properties)
-    }
+    public init(properties: [String: String]) { self.init(properties) }
 }
 
 extension Style: ExpressibleByDictionaryLiteral {

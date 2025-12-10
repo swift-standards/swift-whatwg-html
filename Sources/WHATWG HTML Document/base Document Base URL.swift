@@ -66,12 +66,9 @@ public struct Base: WHATWG_HTML.Element.`Protocol` {
     /// - Note: If multiple base elements exist, only the first href is used.
     public var href: Href? {
         switch configuration {
-        case .href(let href):
-            return href
-        case .both(let href, _):
-            return href
-        case .target:
-            return nil
+        case .href(let href): return href
+        case .both(let href, _): return href
+        case .target: return nil
         }
     }
 
@@ -90,12 +87,9 @@ public struct Base: WHATWG_HTML.Element.`Protocol` {
     /// - Note: If multiple base elements exist, only the first target is used.
     public var target: Target? {
         switch configuration {
-        case .target(let target):
-            return target
-        case .both(_, let target):
-            return target
-        case .href:
-            return nil
+        case .target(let target): return target
+        case .both(_, let target): return target
+        case .href: return nil
         }
     }
 
@@ -103,23 +97,17 @@ public struct Base: WHATWG_HTML.Element.`Protocol` {
     ///
     /// - Parameter configuration: The configuration for the base element, which must include
     ///   an href, a target, or both.
-    public init(configuration: Configuration) {
-        self.configuration = configuration
-    }
+    public init(configuration: Configuration) { self.configuration = configuration }
 
     /// Creates a new Base element with an href attribute.
     ///
     /// - Parameter href: The base URL to be used for all relative URLs in the document.
-    public init(href: Href) {
-        self.configuration = .href(href)
-    }
+    public init(href: Href) { self.configuration = .href(href) }
 
     /// Creates a new Base element with a target attribute.
     ///
     /// - Parameter target: The default browsing context for navigation.
-    public init(target: Target) {
-        self.configuration = .target(target)
-    }
+    public init(target: Target) { self.configuration = .target(target) }
 
     /// Creates a new Base element with both href and target attributes.
     ///

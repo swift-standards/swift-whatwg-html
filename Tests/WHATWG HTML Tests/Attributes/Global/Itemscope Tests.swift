@@ -18,10 +18,8 @@ import WHATWG_HTML
 #elseif canImport(Foundation)
 #endif
 
-@Suite
-struct `Itemscope Test` {
-    @Test
-    func `Itemscope attribute should be itemscope`() {
+@Suite struct `Itemscope Test` {
+    @Test func `Itemscope attribute should be itemscope`() {
         #expect(Itemscope.attribute == "itemscope")
     }
 }

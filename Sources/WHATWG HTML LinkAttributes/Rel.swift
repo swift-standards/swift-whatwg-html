@@ -66,8 +66,7 @@ public import WHATWG_HTML_Shared
 /// <link rel="icon" type="image/svg+xml" href="icon.svg">
 /// <link rel="apple-touch-icon" href="apple-touch-icon.png">
 /// ```
-@dynamicMemberLookup
-public struct Rel: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct Rel: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "rel" }
 
@@ -75,9 +74,7 @@ public struct Rel: WHATWG_HTML.StringAttribute {
     public var rawValue: String
 
     /// Initialize with a single link relation value
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }
 
 extension Rel: ExpressibleByArrayLiteral {
@@ -94,9 +91,7 @@ extension Rel {
 }
 
 extension Rel {
-    public init(_ rels: [Rel]) {
-        self = .init(rels.map(\.description).joined(separator: " "))
-    }
+    public init(_ rels: [Rel]) { self = .init(rels.map(\.description).joined(separator: " ")) }
 }
 
 extension Rel {

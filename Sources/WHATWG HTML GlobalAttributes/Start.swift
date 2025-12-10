@@ -36,8 +36,7 @@ public import WHATWG_HTML_Shared
 ///   <li>This will be item F</li>
 /// </ol>
 /// ```
-@dynamicMemberLookup
-public struct Start: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct Start: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "start" }
 
@@ -45,18 +44,12 @@ public struct Start: WHATWG_HTML.StringAttribute {
     public var rawValue: String
 
     /// Initialize with a string value
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 
     /// Initialize with an integer value
-    public init(_ value: Int) {
-        self.init(value: String(value))
-    }
+    public init(_ value: Int) { self.init(value: String(value)) }
 }
 
 extension Start: ExpressibleByIntegerLiteral {
-    public init(integerLiteral value: IntegerLiteralType) {
-        self.init(value)
-    }
+    public init(integerLiteral value: IntegerLiteralType) { self.init(value) }
 }

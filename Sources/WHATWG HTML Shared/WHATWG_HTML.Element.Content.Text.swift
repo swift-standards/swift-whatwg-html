@@ -33,10 +33,6 @@ extension WHATWG_HTML.Element.Content {
     ///
     /// These are: U+0009 TAB, U+000A LF, U+000C FF, U+000D CR, U+0020 SPACE
     public static let whitespaces: Set<UInt8> = [
-        UInt8.ascii.htab,
-        UInt8.ascii.lf,
-        UInt8.ascii.ff,
-        UInt8.ascii.cr,
-        UInt8.ascii.sp,
+        UInt8.ascii.htab, UInt8.ascii.lf, UInt8.ascii.ff, UInt8.ascii.cr, UInt8.ascii.sp,
     ]
 }

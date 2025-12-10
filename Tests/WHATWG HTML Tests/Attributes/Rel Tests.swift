@@ -13,15 +13,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `Rel Test` {
-    @Test
-    func `Rel attribute should be rel`() {
-        #expect(Rel.attribute == "rel")
-    }
+@Suite struct `Rel Test` {
+    @Test func `Rel attribute should be rel`() { #expect(Rel.attribute == "rel") }
 
-    @Test
-    func `Rel convenience properties`() {
+    @Test func `Rel convenience properties`() {
         #expect(Rel.stylesheet.rawValue == "stylesheet")
         #expect(Rel.icon.rawValue == "icon")
         #expect(Rel.canonical.rawValue == "canonical")
@@ -31,14 +26,12 @@ struct `Rel Test` {
         #expect(Rel.preload.rawValue == "preload")
     }
 
-    @Test
-    func `Rel array literal support`() {
+    @Test func `Rel array literal support`() {
         let rel: Rel = ["external", "noopener", "noreferrer"]
         #expect(rel.rawValue == "external noopener noreferrer")
     }
 
-    @Test
-    func `Rel secure external convenience`() {
+    @Test func `Rel secure external convenience`() {
         #expect(Rel.secureExternal.rawValue.contains("external"))
         #expect(Rel.secureExternal.rawValue.contains("noopener"))
         #expect(Rel.secureExternal.rawValue.contains("noreferrer"))

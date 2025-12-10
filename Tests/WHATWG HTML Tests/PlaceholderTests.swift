@@ -1,5 +1,3 @@
 import Testing
 
-@Test func placeholder() {
-    #expect(true)
-}
+@Test func placeholder() { #expect(true) }

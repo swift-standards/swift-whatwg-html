@@ -54,9 +54,7 @@ public struct Time: WHATWG_HTML.Element.`Protocol` {
     ///
     /// - Parameters:
     ///   - datetime: A machine-readable representation of the date or time, typically a human-readable date or time
-    public init(
-        datetime: DateTime? = nil
-    ) {
+    public init(datetime: DateTime? = nil) {
         self.datetime = datetime
 
     }

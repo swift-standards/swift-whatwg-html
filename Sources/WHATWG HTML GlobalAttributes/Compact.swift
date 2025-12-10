@@ -24,15 +24,12 @@ public import WHATWG_HTML_Shared
 /// ```html
 /// <ul compact></ul>
 /// ```
-@available(*, deprecated)
-@dynamicMemberLookup
+@available(*, deprecated) @dynamicMemberLookup
 public struct Compact: WHATWG_HTML.BooleanAttribute, CustomStringConvertible {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "compact" }
 
     public var rawValue: Bool
 
-    public init(value: Bool = true) {
-        self.rawValue = value
-    }
+    public init(value: Bool = true) { self.rawValue = value }
 }

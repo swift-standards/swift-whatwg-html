@@ -13,7 +13,6 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `Input.File Test` {
+@Suite struct `Input.File Test` {
 
 }

@@ -13,7 +13,6 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `Ruby Text Test` {
+@Suite struct `Ruby Text Test` {
 
 }

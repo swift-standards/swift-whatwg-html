@@ -13,21 +13,15 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `Value Test` {
-    @Test
-    func `Value attribute should be value`() {
-        #expect(Value<String>.attribute == "value")
-    }
+@Suite struct `Value Test` {
+    @Test func `Value attribute should be value`() { #expect(Value<String>.attribute == "value") }
 
-    @Test
-    func `Value should support string literals`() {
+    @Test func `Value should support string literals`() {
         let stringValue: Value<String> = "test"
         #expect(stringValue.value == "test")
     }
 
-    @Test
-    func `Value should support integer literals`() {
+    @Test func `Value should support integer literals`() {
         let intValue: Value<Int> = 42
         #expect(intValue.value == 42)
     }

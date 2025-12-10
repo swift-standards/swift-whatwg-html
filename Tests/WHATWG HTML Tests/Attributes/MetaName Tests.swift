@@ -13,15 +13,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `MetaName Test` {
-    @Test
-    func `MetaName attribute should be name`() {
-        #expect(MetaName.attribute == "name")
-    }
+@Suite struct `MetaName Test` {
+    @Test func `MetaName attribute should be name`() { #expect(MetaName.attribute == "name") }
 
-    @Test
-    func `MetaName should have predefined values`() {
+    @Test func `MetaName should have predefined values`() {
         #expect(MetaName.application.rawValue == "application-name")
         #expect(MetaName.author.rawValue == "author")
         #expect(MetaName.description.rawValue == "description")

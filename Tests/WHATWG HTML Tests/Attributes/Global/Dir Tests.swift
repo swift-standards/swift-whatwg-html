@@ -18,18 +18,12 @@ import WHATWG_HTML
 #elseif canImport(Foundation)
 #endif
 
-@Suite
-struct `Dir Test` {
-    @Test
-    func `Dir attribute should be dir`() {
-        #expect(Dir.attribute == "dir")
-    }
+@Suite struct `Dir Test` {
+    @Test func `Dir attribute should be dir`() { #expect(Dir.attribute == "dir") }
 
-    @Test(
-        "Dir cases description should match the spec",
-        arguments: Dir.allCases
-    )
-    func cases(dir: Dir) {
+    @Test("Dir cases description should match the spec", arguments: Dir.allCases) func cases(
+        dir: Dir
+    ) {
         switch dir {
         case .ltr: #expect(dir.description == "ltr")
         case .rtl: #expect(dir.description == "rtl")
@@ -38,31 +32,20 @@ struct `Dir Test` {
         }
     }
 
-    @Test
-    func `Dir should conform to CaseIterable`() {
+    @Test func `Dir should conform to CaseIterable`() {
         #expect(Dir.allCases.count == 3)
         #expect(Dir.allCases.contains(.ltr))
         #expect(Dir.allCases.contains(.rtl))
         #expect(Dir.allCases.contains(.auto))
     }
 
-    @Test(
-        "Dir rawValue should match description",
-        arguments: Dir.allCases
-    )
-    func rawValueMatchesDescription(dir: Dir) {
-        #expect(dir.rawValue == dir.description)
-    }
+    @Test("Dir rawValue should match description", arguments: Dir.allCases)
+    func rawValueMatchesDescription(dir: Dir) { #expect(dir.rawValue == dir.description) }
 
     @Test(
         "Dir should be initializable from rawValue",
-        arguments: [
-            ("ltr", Dir.ltr),
-            ("rtl", Dir.rtl),
-            ("auto", Dir.auto),
-        ]
-    )
-    func initializableFromRawValue(input: String, expected: Dir?) {
+        arguments: [("ltr", Dir.ltr), ("rtl", Dir.rtl), ("auto", Dir.auto)]
+    ) func initializableFromRawValue(input: String, expected: Dir?) {
         #expect(Dir(rawValue: input) == expected)
     }
 }

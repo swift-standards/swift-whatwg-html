@@ -52,16 +52,13 @@ public import WHATWG_HTML_Shared
 ///   </p>
 /// </div>
 /// ```
-@dynamicMemberLookup
-public struct Dir: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct Dir: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "dir" }
 
     public let rawValue: String
 
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }
 
 extension Dir {
@@ -99,6 +96,4 @@ extension Dir {
     @inlinable public static var auto: Self { "auto" }
 }
 
-extension Dir: CaseIterable {
-    public static let allCases: [Dir] = [ltr, rtl, auto]
-}
+extension Dir: CaseIterable { public static let allCases: [Dir] = [ltr, rtl, auto] }

@@ -13,10 +13,8 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `Playsinline Test` {
-    @Test
-    func `Playsinline attribute should be playsinline`() {
+@Suite struct `Playsinline Test` {
+    @Test func `Playsinline attribute should be playsinline`() {
         #expect(Playsinline.attribute == "playsinline")
     }
 }

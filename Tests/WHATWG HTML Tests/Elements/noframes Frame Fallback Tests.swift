@@ -13,7 +13,6 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `Frame Fallback Test` {
+@Suite struct `Frame Fallback Test` {
 
 }

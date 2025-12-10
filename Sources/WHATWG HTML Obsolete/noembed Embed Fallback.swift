@@ -12,10 +12,8 @@ public import WHATWG_HTML_Shared
     *,
     deprecated,
     message: "The <noembed> element is deprecated. Modern browsers support <embed>."
-)
-public struct EmbedFallback: WHATWG_HTML.Element.`Protocol` {
-    @inlinable
-    public static var tag: String { "noembed" }
+) public struct EmbedFallback: WHATWG_HTML.Element.`Protocol` {
+    @inlinable public static var tag: String { "noembed" }
 
     public init() {}
 }

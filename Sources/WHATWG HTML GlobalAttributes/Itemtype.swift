@@ -73,30 +73,23 @@ public import WHATWG_HTML_Shared
 ///   </div>
 /// </div>
 /// ```
-@dynamicMemberLookup
-public struct Itemtype: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct Itemtype: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "itemtype" }
 
     /// The URL or space-separated list of URLs defining the vocabulary
     public let rawValue: String
 
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }
 
 extension Itemtype {
     /// Initialize with a schema.org type
-    public init(schemaOrg type: String) {
-        self = .init("https://schema.org/\(type)")
-    }
+    public init(schemaOrg type: String) { self = .init("https://schema.org/\(type)") }
 }
 
 extension Itemtype: ExpressibleByArrayLiteral {
     public typealias ArrayLiteralElement = String
 
-    public init(arrayLiteral elements: String...) {
-        self = .init(elements.joined(separator: " "))
-    }
+    public init(arrayLiteral elements: String...) { self = .init(elements.joined(separator: " ")) }
 }

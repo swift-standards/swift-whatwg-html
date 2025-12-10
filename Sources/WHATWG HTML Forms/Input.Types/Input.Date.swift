@@ -87,15 +87,7 @@ extension Input {
             name: name,
             disabled: disabled,
             form: form,
-            type: .date(
-                .init(
-                    value: value,
-                    min: min,
-                    max: max,
-                    step: step,
-                    required: required
-                )
-            )
+            type: .date(.init(value: value, min: min, max: max, step: step, required: required))
         )
     }
 }

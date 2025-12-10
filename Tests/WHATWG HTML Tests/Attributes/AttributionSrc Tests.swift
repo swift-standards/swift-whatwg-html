@@ -13,15 +13,12 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `AttributionSrc Test` {
-    @Test
-    func `AttributionSrc attribute should be attributionsrc`() {
+@Suite struct `AttributionSrc Test` {
+    @Test func `AttributionSrc attribute should be attributionsrc`() {
         #expect(AttributionSrc.attribute == "attributionsrc")
     }
 
-    @Test
-    func `AttributionSrc should support boolean initialization`() {
+    @Test func `AttributionSrc should support boolean initialization`() {
         let attrTrue = AttributionSrc(true)
         #expect(attrTrue.shouldInclude == true)
 
@@ -29,15 +26,13 @@ struct `AttributionSrc Test` {
         #expect(attrFalse.shouldInclude == false)
     }
 
-    @Test
-    func `AttributionSrc should support URL initialization`() {
+    @Test func `AttributionSrc should support URL initialization`() {
         let attr = AttributionSrc("https://example.com/register")
         #expect(attr.shouldInclude == true)
         #expect(attr.description == "https://example.com/register")
     }
 
-    @Test
-    func `AttributionSrc should support boolean literal`() {
+    @Test func `AttributionSrc should support boolean literal`() {
         let attrTrue: AttributionSrc = true
         #expect(attrTrue.shouldInclude == true)
 
@@ -45,8 +40,7 @@ struct `AttributionSrc Test` {
         #expect(attrFalse.shouldInclude == false)
     }
 
-    @Test
-    func `AttributionSrc should support string literal`() {
+    @Test func `AttributionSrc should support string literal`() {
         let attr: AttributionSrc = "https://analytics.example.com"
         #expect(attr.description == "https://analytics.example.com")
     }

@@ -57,17 +57,14 @@ public import WHATWG_HTML_Shared
 /// // Form with no explicit action (submits to current URL)
 /// HTML.form.method("post")
 /// ```
-@dynamicMemberLookup
-public struct Action: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct Action: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "action" }
 
     /// The URL for form submission
     public let rawValue: String
 
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }
 
 extension Action {
@@ -79,9 +76,7 @@ extension Action {
     }
 
     /// Creates an absolute URL action to an external service
-    public static func absolute(_ url: String) -> Action {
-        return Action(url)
-    }
+    public static func absolute(_ url: String) -> Action { return Action(url) }
 
     /// Creates an action pointing to the current page
     public static let current: Action = Action(".")

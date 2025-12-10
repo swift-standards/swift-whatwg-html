@@ -62,8 +62,7 @@ public import WHATWG_HTML_Shared
 /// ```html
 /// <div class="banner" style="background-image:url(banner.jpg)" elementtiming="main-banner"></div>
 /// ```
-@dynamicMemberLookup
-public struct Elementtiming: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct Elementtiming: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "elementtiming" }
 
@@ -71,9 +70,7 @@ public struct Elementtiming: WHATWG_HTML.StringAttribute {
     public let rawValue: String
 
     /// Initialize with a value for the elementtiming attribute
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }
 
 extension Elementtiming {
@@ -87,13 +84,9 @@ extension Elementtiming {
     {
         public var value: String
 
-        public init(_ value: String) {
-            self.value = value
-        }
+        public init(_ value: String) { self.value = value }
 
-        public init(stringLiteral value: StringLiteralType) {
-            self.value = value
-        }
+        public init(stringLiteral value: StringLiteralType) { self.value = value }
         /// Main page hero or feature element
         @inlinable public static var hero: Self { "hero" }
 

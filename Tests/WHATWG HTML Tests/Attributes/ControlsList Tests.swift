@@ -13,22 +13,18 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `ControlsList Test` {
-    @Test
-    func `ControlsList attribute should be controlslist`() {
+@Suite struct `ControlsList Test` {
+    @Test func `ControlsList attribute should be controlslist`() {
         #expect(ControlsList.attribute == "controlslist")
     }
 
-    @Test
-    func `ControlsList should have predefined values`() {
+    @Test func `ControlsList should have predefined values`() {
         #expect(ControlsList.nodownload.rawValue == "nodownload")
         #expect(ControlsList.nofullscreen.rawValue == "nofullscreen")
         #expect(ControlsList.noremoteplayback.rawValue == "noremoteplayback")
     }
 
-    @Test
-    func `ControlsList should support combining values`() {
+    @Test func `ControlsList should support combining values`() {
         let combined = ControlsList.combine([.nodownload, .nofullscreen])
         #expect(combined.rawValue == "nodownload nofullscreen")
     }

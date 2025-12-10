@@ -18,17 +18,12 @@ import WHATWG_HTML
 #elseif canImport(Foundation)
 #endif
 
-@Suite
-struct `Spellcheck Test` {
-    @Test
-    func `Spellcheck attribute should be spellcheck`() {
+@Suite struct `Spellcheck Test` {
+    @Test func `Spellcheck attribute should be spellcheck`() {
         #expect(Spellcheck.attribute == "spellcheck")
     }
 
-    @Test(
-        "Spellcheck cases description should match the spec",
-        arguments: Spellcheck.allCases
-    )
+    @Test("Spellcheck cases description should match the spec", arguments: Spellcheck.allCases)
     func cases(spellcheck: Spellcheck) {
         switch spellcheck.rawValue {
         case true: #expect(spellcheck.description == "true")
@@ -36,8 +31,7 @@ struct `Spellcheck Test` {
         }
     }
 
-    @Test
-    func `Spellcheck should conform to CaseIterable`() {
+    @Test func `Spellcheck should conform to CaseIterable`() {
         #expect(Spellcheck.allCases.count == 2)
         #expect(Spellcheck.allCases.contains(true))
         #expect(Spellcheck.allCases.contains(false))

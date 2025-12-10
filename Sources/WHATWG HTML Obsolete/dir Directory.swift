@@ -11,13 +11,10 @@ public import WHATWG_HTML_Shared
 /// **Deprecated**: Use `<ul>` instead.
 @available(*, deprecated, message: "Use <ul> instead.")
 public struct Directory: WHATWG_HTML.Element.`Protocol` {
-    @inlinable
-    public static var tag: String { "dir" }
+    @inlinable public static var tag: String { "dir" }
 
     /// Boolean attribute that hints the list should be rendered in a compact style
     public var compact: Compact?
 
-    public init(compact: Compact? = nil) {
-        self.compact = compact
-    }
+    public init(compact: Compact? = nil) { self.compact = compact }
 }

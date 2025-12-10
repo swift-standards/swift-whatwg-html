@@ -51,17 +51,14 @@ public import WHATWG_HTML_Shared
 ///   but it's included in this library for completeness when working with HTML elements.
 ///
 /// - SeeAlso: [MDN Web Docs: loading attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-loading)
-@dynamicMemberLookup
-public struct Loading: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct Loading: WHATWG_HTML.StringAttribute {
     @inlinable public static var attribute: String { "loading" }
 
     /// The attribute value
     public let rawValue: String
 
     /// Initialize with a value for the marginheight attribute
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }
 
 extension Loading {
@@ -69,6 +66,4 @@ extension Loading {
     @inlinable public static var eager: Self { "eager" }
 }
 
-extension Loading: CaseIterable {
-    public static let allCases: [Loading] = [.lazy, .eager]
-}
+extension Loading: CaseIterable { public static let allCases: [Loading] = [.lazy, .eager] }

@@ -75,8 +75,7 @@ public import WHATWG_HTML_Shared
 /// // Using string value
 /// HTML.form.enctype("multipart/form-data")
 /// ```
-@dynamicMemberLookup
-public struct EncType: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct EncType: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "enctype" }
 
@@ -84,14 +83,10 @@ public struct EncType: WHATWG_HTML.StringAttribute {
     public let rawValue: String
 
     /// Initialize with a value for the encoding type
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 
     /// Initialize with an RFC 2045 Content-Type
-    public init(contentType: RFC_2045.ContentType) {
-        self.rawValue = contentType.headerValue
-    }
+    public init(contentType: RFC_2045.ContentType) { self.rawValue = contentType.headerValue }
 }
 
 // MARK: - Form Encoding Types
@@ -132,11 +127,7 @@ extension RFC_2045.ContentType {
             )
         } else {
             // No boundary specified - browser will add it
-            return RFC_2045.ContentType(
-                __unchecked: (),
-                type: "multipart",
-                subtype: "form-data"
-            )
+            return RFC_2045.ContentType(__unchecked: (), type: "multipart", subtype: "form-data")
         }
     }
 }

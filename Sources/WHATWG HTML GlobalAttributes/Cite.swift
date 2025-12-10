@@ -26,15 +26,12 @@ public import WHATWG_HTML_Shared
 /// ```html
 /// <blockquote cite="https://example.com/source">Quoted text</blockquote>
 /// ```
-@dynamicMemberLookup
-public struct Cite: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct Cite: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "cite" }
 
     /// The attribute value (URL to the source document)
     public let rawValue: String
 
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }

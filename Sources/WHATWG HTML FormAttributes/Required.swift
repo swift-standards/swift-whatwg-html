@@ -65,14 +65,11 @@ public import WHATWG_HTML_Shared
 /// ```html
 /// <input type="checkbox" required> I agree to the terms
 /// ```
-@dynamicMemberLookup
-public struct Required: WHATWG_HTML.BooleanAttribute {
+@dynamicMemberLookup public struct Required: WHATWG_HTML.BooleanAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "required" }
 
     public var rawValue: Bool
 
-    public init(value: Bool = true) {
-        self.rawValue = value
-    }
+    public init(value: Bool = true) { self.rawValue = value }
 }

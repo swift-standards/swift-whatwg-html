@@ -47,8 +47,7 @@ public import WHATWG_HTML_Shared
 /// // Using string literal
 /// HTML.source.type("video/mp4")
 /// ```
-@dynamicMemberLookup
-public struct SourceType: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct SourceType: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "type" }
 
@@ -56,14 +55,10 @@ public struct SourceType: WHATWG_HTML.StringAttribute {
     public var rawValue: String
 
     /// Initialize with a string value
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 
     /// Initialize with an RFC 2045 Content-Type
-    public init(contentType: RFC_2045.ContentType) {
-        self.rawValue = contentType.headerValue
-    }
+    public init(contentType: RFC_2045.ContentType) { self.rawValue = contentType.headerValue }
 }
 
 // MARK: - Common Media MIME Types

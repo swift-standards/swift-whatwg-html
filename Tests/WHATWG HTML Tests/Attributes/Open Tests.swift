@@ -13,10 +13,6 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `Open Test` {
-    @Test
-    func `Open attribute should be open`() {
-        #expect(Open.attribute == "open")
-    }
+@Suite struct `Open Test` {
+    @Test func `Open attribute should be open`() { #expect(Open.attribute == "open") }
 }

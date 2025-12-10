@@ -12,14 +12,11 @@
 
 public import WHATWG_HTML_Shared
 
-@dynamicMemberLookup
-public struct Default: WHATWG_HTML.BooleanAttribute {
+@dynamicMemberLookup public struct Default: WHATWG_HTML.BooleanAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "default" }
 
     public var rawValue: Bool
 
-    public init(value: Bool = true) {
-        self.rawValue = value
-    }
+    public init(value: Bool = true) { self.rawValue = value }
 }

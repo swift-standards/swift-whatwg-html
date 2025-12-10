@@ -13,22 +13,18 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `FetchPriority Test` {
-    @Test
-    func `FetchPriority attribute should be fetchpriority`() {
+@Suite struct `FetchPriority Test` {
+    @Test func `FetchPriority attribute should be fetchpriority`() {
         #expect(FetchPriority.attribute == "fetchpriority")
     }
 
-    @Test
-    func `FetchPriority convenience properties`() {
+    @Test func `FetchPriority convenience properties`() {
         #expect(FetchPriority.high.rawValue == "high")
         #expect(FetchPriority.low.rawValue == "low")
         #expect(FetchPriority.auto.rawValue == "auto")
     }
 
-    @Test
-    func `FetchPriority should conform to CaseIterable`() {
+    @Test func `FetchPriority should conform to CaseIterable`() {
         #expect(FetchPriority.allCases.count == 3)
         #expect(FetchPriority.allCases.contains(.high))
         #expect(FetchPriority.allCases.contains(.low))

@@ -52,6 +52,5 @@ public struct Main: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "main" }
 
-    public init() {
-    }
+    public init() {}
 }

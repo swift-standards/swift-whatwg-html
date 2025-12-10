@@ -54,29 +54,25 @@ extension Form.Data {
         case file(File)
 
         /// Returns the value as a string if it is a string value.
-        @inlinable
-        public var stringValue: String? {
+        @inlinable public var stringValue: String? {
             guard case .string(let value) = self else { return nil }
             return value
         }
 
         /// Returns the value as a file if it is a file value.
-        @inlinable
-        public var fileValue: File? {
+        @inlinable public var fileValue: File? {
             guard case .file(let file) = self else { return nil }
             return file
         }
 
         /// Returns whether this is a string value.
-        @inlinable
-        public var isString: Bool {
+        @inlinable public var isString: Bool {
             if case .string = self { return true }
             return false
         }
 
         /// Returns whether this is a file value.
-        @inlinable
-        public var isFile: Bool {
+        @inlinable public var isFile: Bool {
             if case .file = self { return true }
             return false
         }
@@ -86,10 +82,7 @@ extension Form.Data {
 // MARK: - ExpressibleByStringLiteral
 
 extension Form.Data.Value: ExpressibleByStringLiteral {
-    @inlinable
-    public init(stringLiteral value: String) {
-        self = .string(value)
-    }
+    @inlinable public init(stringLiteral value: String) { self = .string(value) }
 }
 
 // MARK: - CustomStringConvertible
@@ -97,8 +90,7 @@ extension Form.Data.Value: ExpressibleByStringLiteral {
 extension Form.Data.Value: CustomStringConvertible {
     public var description: String {
         switch self {
-        case .string(let value):
-            return value
+        case .string(let value): return value
         case .file(let file):
             return "<File: \(file.name), type: \(file.type), size: \(file.body.count) bytes>"
         }

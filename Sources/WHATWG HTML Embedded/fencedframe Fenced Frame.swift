@@ -50,11 +50,7 @@ public struct FencedFrame: WHATWG_HTML.Element.`Protocol` {
     ///   - allow: Permissions Policy for the fencedframe
     ///   - height: Height in CSS pixels
     ///   - width: Width in CSS pixels
-    public init(
-        allow: Allow? = nil,
-        height: Height? = nil,
-        width: Width? = nil
-    ) {
+    public init(allow: Allow? = nil, height: Height? = nil, width: Width? = nil) {
         self.allow = allow
         self.height = height
         self.width = width

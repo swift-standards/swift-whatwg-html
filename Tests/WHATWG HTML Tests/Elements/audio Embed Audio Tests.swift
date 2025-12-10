@@ -13,7 +13,6 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `Embed Audio Test` {
+@Suite struct `Embed Audio Test` {
 
 }

@@ -25,17 +25,14 @@ public import WHATWG_HTML_Shared
 /// ```html
 /// <marquee direction="up">Text scrolls upward</marquee>
 /// ```
-@dynamicMemberLookup
-public struct Direction: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct Direction: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "direction" }
 
     /// The attribute value
     public let rawValue: String
 
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }
 
 extension Direction {

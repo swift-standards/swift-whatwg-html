@@ -66,10 +66,7 @@ public struct Canvas: WHATWG_HTML.Element.`Protocol` {
     /// - Parameters:
     ///   - width: The width of the canvas in CSS pixels
     ///   - height: The height of the canvas in CSS pixels
-    public init(
-        width: Width? = nil,
-        height: Height? = nil
-    ) {
+    public init(width: Width? = nil, height: Height? = nil) {
         self.width = width
         self.height = height
     }

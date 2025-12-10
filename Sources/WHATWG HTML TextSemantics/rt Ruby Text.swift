@@ -9,8 +9,7 @@ public import WHATWG_HTML_Shared
 ///
 /// The `<rt>` element contains pronunciation or translation information for the base text.
 public struct RubyText: WHATWG_HTML.Element.`Protocol` {
-    @inlinable
-    public static var tag: String { "rt" }
+    @inlinable public static var tag: String { "rt" }
 
     public init() {}
 }

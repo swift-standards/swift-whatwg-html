@@ -11,8 +11,7 @@ public import WHATWG_HTML_Shared
 /// **Deprecated**: Use CSS instead.
 @available(*, deprecated, message: "Use CSS for font styling instead.")
 public struct Font: WHATWG_HTML.Element.`Protocol` {
-    @inlinable
-    public static var tag: String { "font" }
+    @inlinable public static var tag: String { "font" }
 
     /// The color of the text
     public var color: Color?
@@ -23,11 +22,7 @@ public struct Font: WHATWG_HTML.Element.`Protocol` {
     /// The font size
     public var size: FontSize?
 
-    public init(
-        color: Color? = nil,
-        face: Face? = nil,
-        size: FontSize? = nil
-    ) {
+    public init(color: Color? = nil, face: Face? = nil, size: FontSize? = nil) {
         self.color = color
         self.face = face
         self.size = size

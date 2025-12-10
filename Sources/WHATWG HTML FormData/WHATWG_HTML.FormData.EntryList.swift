@@ -58,38 +58,27 @@ extension Form.Data.Entry {
         /// The ordered list of entries.
         ///
         /// Order is preserved as entries are added, which is important for form submission.
-        @usableFromInline
-        internal private(set) var entries: [Form.Data.Entry]
+        @usableFromInline internal private(set) var entries: [Form.Data.Entry]
 
         /// Creates an empty entry list.
-        @inlinable
-        public init() {
-            self.entries = []
-        }
+        @inlinable public init() { self.entries = [] }
 
         /// Creates an entry list with the specified entries.
         ///
         /// - Parameter entries: The initial entries
-        @inlinable
-        public init(entries: [Form.Data.Entry]) {
-            self.entries = entries
-        }
+        @inlinable public init(entries: [Form.Data.Entry]) { self.entries = entries }
 
         /// Appends an entry to the list.
         ///
         /// - Parameter entry: The entry to append
-        @inlinable
-        public mutating func append(_ entry: Form.Data.Entry) {
-            entries.append(entry)
-        }
+        @inlinable public mutating func append(_ entry: Form.Data.Entry) { entries.append(entry) }
 
         /// Appends an entry with the specified name and value.
         ///
         /// - Parameters:
         ///   - name: The entry name
         ///   - value: The entry value
-        @inlinable
-        public mutating func append(name: String, value: Form.Data.Value) {
+        @inlinable public mutating func append(name: String, value: Form.Data.Value) {
             append(Form.Data.Entry(name: name, value: value))
         }
 
@@ -98,8 +87,7 @@ extension Form.Data.Entry {
         /// - Parameters:
         ///   - name: The entry name
         ///   - value: The string value
-        @inlinable
-        public mutating func append(name: String, value: String) {
+        @inlinable public mutating func append(name: String, value: String) {
             append(Form.Data.Entry(name: name, value: .string(value)))
         }
 
@@ -108,8 +96,7 @@ extension Form.Data.Entry {
         /// - Parameters:
         ///   - name: The entry name
         ///   - file: The file value
-        @inlinable
-        public mutating func append(name: String, file: Form.Data.File) {
+        @inlinable public mutating func append(name: String, file: Form.Data.File) {
             append(Form.Data.Entry(name: name, value: .file(file)))
         }
 
@@ -117,8 +104,7 @@ extension Form.Data.Entry {
         ///
         /// - Parameter name: The entry name to look up
         /// - Returns: An array of values, or `nil` if no entries exist with that name
-        @inlinable
-        public subscript(name: String) -> [Form.Data.Value]? {
+        @inlinable public subscript(name: String) -> [Form.Data.Value]? {
             let values = entries.filter { $0.name == name }.map(\.value)
             return values.isEmpty ? nil : values
         }
@@ -129,8 +115,7 @@ extension Form.Data.Entry {
         ///
         /// - Parameter name: The entry name to look up
         /// - Returns: The first value, or `nil` if no entries exist with that name
-        @inlinable
-        public func first(named name: String) -> Form.Data.Value? {
+        @inlinable public func first(named name: String) -> Form.Data.Value? {
             entries.first { $0.name == name }?.value
         }
 
@@ -138,8 +123,7 @@ extension Form.Data.Entry {
         ///
         /// - Parameter name: The entry name to look up
         /// - Returns: An array of all values for that name (empty if none exist)
-        @inlinable
-        public func all(named name: String) -> [Form.Data.Value] {
+        @inlinable public func all(named name: String) -> [Form.Data.Value] {
             entries.filter { $0.name == name }.map(\.value)
         }
 
@@ -147,8 +131,7 @@ extension Form.Data.Entry {
         ///
         /// - Parameter name: The entry name to check
         /// - Returns: `true` if at least one entry exists with that name
-        @inlinable
-        public func contains(name: String) -> Bool {
+        @inlinable public func contains(name: String) -> Bool {
             entries.contains { $0.name == name }
         }
 
@@ -156,29 +139,20 @@ extension Form.Data.Entry {
         ///
         /// - Parameter name: The entry name to remove
         /// - Returns: The number of entries removed
-        @inlinable
-        @discardableResult
-        public mutating func remove(name: String) -> Int {
+        @inlinable @discardableResult public mutating func remove(name: String) -> Int {
             let initialCount = entries.count
             entries.removeAll { $0.name == name }
             return initialCount - entries.count
         }
 
         /// Returns the number of entries in the list.
-        @inlinable
-        public var count: Int {
-            entries.count
-        }
+        @inlinable public var count: Int { entries.count }
 
         /// Returns whether the entry list is empty.
-        @inlinable
-        public var isEmpty: Bool {
-            entries.isEmpty
-        }
+        @inlinable public var isEmpty: Bool { entries.isEmpty }
 
         /// Returns all unique entry names in the list, preserving order of first appearance.
-        @inlinable
-        public var names: [String] {
+        @inlinable public var names: [String] {
             var seen = Set<String>()
             var result: [String] = []
             for entry in entries where seen.insert(entry.name).inserted {
@@ -195,32 +169,19 @@ extension Form.Data.Entry.List: Collection {
     public typealias Index = Array<Form.Data.Entry>.Index
     public typealias Element = Form.Data.Entry
 
-    @inlinable
-    public var startIndex: Index {
-        entries.startIndex
-    }
+    @inlinable public var startIndex: Index { entries.startIndex }
 
-    @inlinable
-    public var endIndex: Index {
-        entries.endIndex
-    }
+    @inlinable public var endIndex: Index { entries.endIndex }
 
-    @inlinable
-    public subscript(position: Index) -> Form.Data.Entry {
-        entries[position]
-    }
+    @inlinable public subscript(position: Index) -> Form.Data.Entry { entries[position] }
 
-    @inlinable
-    public func index(after i: Index) -> Index {
-        entries.index(after: i)
-    }
+    @inlinable public func index(after i: Index) -> Index { entries.index(after: i) }
 }
 
 // MARK: - Sequence Protocol
 
 extension Form.Data.Entry.List: Sequence {
-    @inlinable
-    public func makeIterator() -> Array<Form.Data.Entry>.Iterator {
+    @inlinable public func makeIterator() -> Array<Form.Data.Entry>.Iterator {
         entries.makeIterator()
     }
 }
@@ -228,35 +189,24 @@ extension Form.Data.Entry.List: Sequence {
 // MARK: - ExpressibleByArrayLiteral
 
 extension Form.Data.Entry.List: ExpressibleByArrayLiteral {
-    @inlinable
-    public init(arrayLiteral elements: Form.Data.Entry...) {
-        self.entries = elements
-    }
+    @inlinable public init(arrayLiteral elements: Form.Data.Entry...) { self.entries = elements }
 }
 
 // MARK: - Equatable & Hashable
 
 extension Form.Data.Entry.List: Equatable {
-    @inlinable
-    public static func == (lhs: Self, rhs: Self) -> Bool {
-        lhs.entries == rhs.entries
-    }
+    @inlinable public static func == (lhs: Self, rhs: Self) -> Bool { lhs.entries == rhs.entries }
 }
 
 extension Form.Data.Entry.List: Hashable {
-    @inlinable
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(entries)
-    }
+    @inlinable public func hash(into hasher: inout Hasher) { hasher.combine(entries) }
 }
 
 // MARK: - CustomStringConvertible
 
 extension Form.Data.Entry.List: CustomStringConvertible {
     public var description: String {
-        let entryDescriptions = entries.map { entry in
-            "\(entry.name): \(entry.value)"
-        }
+        let entryDescriptions = entries.map { entry in "\(entry.name): \(entry.value)" }
         return "EntryList(\(entryDescriptions.joined(separator: ", ")))"
     }
 }

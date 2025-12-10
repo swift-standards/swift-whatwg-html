@@ -64,9 +64,7 @@ public struct Dialog: WHATWG_HTML.Element.`Protocol` {
     ///
     /// - Parameters:
     ///   - open: Indicates if the dialog is initially open
-    public init(
-        open: Open? = nil
-    ) {
+    public init(open: Open? = nil) {
         self.open = open
 
     }

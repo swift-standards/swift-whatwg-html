@@ -13,7 +13,6 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `Teletype Text Test` {
+@Suite struct `Teletype Text Test` {
 
 }

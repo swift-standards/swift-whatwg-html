@@ -41,6 +41,5 @@ public struct Mark: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "mark" }
 
     /// Creates a new Mark element with the specified content.
-    public init() {
-    }
+    public init() {}
 }

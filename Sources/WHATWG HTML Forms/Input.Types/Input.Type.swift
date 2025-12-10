@@ -98,8 +98,7 @@ extension Input {
         case week(Input.Week)
 
         /// A control for entering a date and time (hour, minute, second, and fraction of a second) based on UTC time zone.
-        @available(*, deprecated)
-        case datetime
+        @available(*, deprecated) case datetime
     }
 }
 
@@ -112,52 +111,29 @@ extension Input.Variant {
     /// - Returns: A string representation of the input type for use in HTML
     public var label: String {
         switch self {
-        case .button:
-            "button"
-        case .checkbox:
-            "checkbox"
-        case .color:
-            "color"
-        case .date:
-            "date"
-        case .datetimeLocal:
-            "datetime-local"
-        case .email:
-            "email"
-        case .file:
-            "file"
-        case .hidden:
-            "hidden"
-        case .image:
-            "image"
-        case .month:
-            "month"
-        case .number:
-            "number"
-        case .password:
-            "password"
-        case .radio:
-            "radio"
-        case .range:
-            "range"
-        case .reset:
-            "reset"
-        case .search:
-            "search"
-        case .submit:
-            "submit"
-        case .tel:
-            "tel"
-        case .text:
-            "text"
-        case .time:
-            "time"
-        case .url:
-            "url"
-        case .week:
-            "week"
-        case .datetime:
-            "datetime"
+        case .button: "button"
+        case .checkbox: "checkbox"
+        case .color: "color"
+        case .date: "date"
+        case .datetimeLocal: "datetime-local"
+        case .email: "email"
+        case .file: "file"
+        case .hidden: "hidden"
+        case .image: "image"
+        case .month: "month"
+        case .number: "number"
+        case .password: "password"
+        case .radio: "radio"
+        case .range: "range"
+        case .reset: "reset"
+        case .search: "search"
+        case .submit: "submit"
+        case .tel: "tel"
+        case .text: "text"
+        case .time: "time"
+        case .url: "url"
+        case .week: "week"
+        case .datetime: "datetime"
         }
     }
 }
@@ -242,8 +218,7 @@ extension Input {
         case week
 
         /// A control for entering a date and time (hour, minute, second, and fraction of a second) based on UTC time zone.
-        @available(*, deprecated)
-        case datetime
+        @available(*, deprecated) case datetime
     }
 }
 

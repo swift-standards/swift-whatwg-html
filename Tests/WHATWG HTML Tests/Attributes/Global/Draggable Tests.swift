@@ -18,17 +18,12 @@ import WHATWG_HTML
 #elseif canImport(Foundation)
 #endif
 
-@Suite
-struct `Draggable Test` {
-    @Test
-    func `Draggable attribute should be draggable`() {
+@Suite struct `Draggable Test` {
+    @Test func `Draggable attribute should be draggable`() {
         #expect(Draggable.attribute == "draggable")
     }
 
-    @Test(
-        "Draggable cases description should match the spec",
-        arguments: Draggable.allCases
-    )
+    @Test("Draggable cases description should match the spec", arguments: Draggable.allCases)
     func cases(draggable: Draggable) {
         switch draggable {
         case .true: #expect(draggable.description == "true")
@@ -38,31 +33,22 @@ struct `Draggable Test` {
         }
     }
 
-    @Test
-    func `Draggable should conform to CaseIterable`() {
+    @Test func `Draggable should conform to CaseIterable`() {
         #expect(Draggable.allCases.count == 3)
         #expect(Draggable.allCases.contains(.true))
         #expect(Draggable.allCases.contains(.false))
         #expect(Draggable.allCases.contains(.auto))
     }
 
-    @Test(
-        "Draggable rawValue should match description",
-        arguments: Draggable.allCases
-    )
+    @Test("Draggable rawValue should match description", arguments: Draggable.allCases)
     func rawValueMatchesDescription(draggable: Draggable) {
         #expect(draggable.rawValue == draggable.description)
     }
 
     @Test(
         "Draggable should be initializable from rawValue",
-        arguments: [
-            ("true", Draggable.true),
-            ("false", Draggable.false),
-            ("auto", Draggable.auto),
-        ]
-    )
-    func initializableFromRawValue(input: String, expected: Draggable?) {
+        arguments: [("true", Draggable.true), ("false", Draggable.false), ("auto", Draggable.auto)]
+    ) func initializableFromRawValue(input: String, expected: Draggable?) {
         #expect(Draggable(rawValue: input) == expected)
     }
 }

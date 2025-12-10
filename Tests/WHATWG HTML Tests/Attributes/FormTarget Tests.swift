@@ -13,15 +13,12 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `FormTarget Test` {
-    @Test
-    func `FormTarget attribute should be formtarget`() {
+@Suite struct `FormTarget Test` {
+    @Test func `FormTarget attribute should be formtarget`() {
         #expect(FormTarget.attribute == "formtarget")
     }
 
-    @Test
-    func `FormTarget should have predefined values`() {
+    @Test func `FormTarget should have predefined values`() {
         #expect(FormTarget.`self`.rawValue == "_self")
         #expect(FormTarget.blank.rawValue == "_blank")
         #expect(FormTarget.parent.rawValue == "_parent")

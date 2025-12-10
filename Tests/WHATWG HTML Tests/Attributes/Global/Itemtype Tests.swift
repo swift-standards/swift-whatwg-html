@@ -18,39 +18,32 @@ import WHATWG_HTML
 #elseif canImport(Foundation)
 #endif
 
-@Suite
-struct `Itemtype Test` {
-    @Test
-    func `Itemtype attribute should be itemtype`() {
+@Suite struct `Itemtype Test` {
+    @Test func `Itemtype attribute should be itemtype`() {
         #expect(Itemtype.attribute == "itemtype")
     }
 
-    @Test
-    func `Itemtype should store and return its value`() {
+    @Test func `Itemtype should store and return its value`() {
         let itemtype = Itemtype("https://schema.org/Person")
         #expect(itemtype.rawValue == "https://schema.org/Person")
     }
 
-    @Test
-    func `Itemtype description should return its value`() {
+    @Test func `Itemtype description should return its value`() {
         let itemtype = Itemtype("https://schema.org/Product")
         #expect(itemtype.description == "https://schema.org/Product")
     }
 
-    @Test
-    func `Itemtype should be initializable with string literal`() {
+    @Test func `Itemtype should be initializable with string literal`() {
         let itemtype: Itemtype = "https://schema.org/Movie"
         #expect(itemtype.rawValue == "https://schema.org/Movie")
     }
 
-    @Test
-    func `Itemtype should be initializable with array literal`() {
+    @Test func `Itemtype should be initializable with array literal`() {
         let itemtype: Itemtype = ["https://schema.org/Person", "https://schema.org/Teacher"]
         #expect(itemtype.rawValue == "https://schema.org/Person https://schema.org/Teacher")
     }
 
-    @Test
-    func `Itemtype should support SchemaOrg initialization`() {
+    @Test func `Itemtype should support SchemaOrg initialization`() {
         let itemtype = Itemtype(schemaOrg: "Person")
         #expect(itemtype.rawValue == "https://schema.org/Person")
     }

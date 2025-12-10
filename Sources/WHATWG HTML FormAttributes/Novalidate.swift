@@ -68,14 +68,11 @@ public import WHATWG_HTML_Shared
 ///     input().type(.submit).value("Save as Draft").formnovalidate
 /// }
 /// ```
-@dynamicMemberLookup
-public struct Novalidate: WHATWG_HTML.BooleanAttribute {
+@dynamicMemberLookup public struct Novalidate: WHATWG_HTML.BooleanAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "novalidate" }
 
     public var rawValue: Bool
 
-    public init(value: Bool = true) {
-        self.rawValue = value
-    }
+    public init(value: Bool = true) { self.rawValue = value }
 }

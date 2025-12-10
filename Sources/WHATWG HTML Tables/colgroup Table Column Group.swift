@@ -78,9 +78,7 @@ public struct TableColumnGroup: WHATWG_HTML.Element.`Protocol` {
     /// - Note: Either use the span attribute OR include col elements as content, not both.
     ///   According to the HTML specification, if the span attribute is present,
     ///   the colgroup element cannot contain any col elements.
-    public init(
-        span: Span? = nil
-    ) {
+    public init(span: Span? = nil) {
         self.span = span
 
     }

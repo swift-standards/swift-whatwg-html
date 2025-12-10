@@ -18,27 +18,20 @@ import WHATWG_HTML
 #elseif canImport(Foundation)
 #endif
 
-@Suite
-struct `Slot Test` {
-    @Test
-    func `Slot attribute should be slot`() {
-        #expect(Slot.attribute == "slot")
-    }
+@Suite struct `Slot Test` {
+    @Test func `Slot attribute should be slot`() { #expect(Slot.attribute == "slot") }
 
-    @Test
-    func `Slot should store and return its value`() {
+    @Test func `Slot should store and return its value`() {
         let slot = Slot("header")
         #expect(slot.rawValue == "header")
     }
 
-    @Test
-    func `Slot description should return its value`() {
+    @Test func `Slot description should return its value`() {
         let slot = Slot("footer")
         #expect(slot.description == "footer")
     }
 
-    @Test
-    func `Slot should be initializable with string literal`() {
+    @Test func `Slot should be initializable with string literal`() {
         let slot: Slot = "sidebar"
         #expect(slot.rawValue == "sidebar")
     }

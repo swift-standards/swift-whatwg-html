@@ -65,9 +65,7 @@ public struct Label: WHATWG_HTML.Element.`Protocol` {
     ///
     /// - Parameters:
     ///   - htmlFor: ID of the form control this label is associated with (optional)
-    public init(
-        for: For? = nil
-    ) {
+    public init(for: For? = nil) {
         self.for = `for`
 
     }

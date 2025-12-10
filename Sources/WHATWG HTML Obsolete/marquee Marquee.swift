@@ -12,8 +12,7 @@ public import WHATWG_HTML_Shared
 /// **Deprecated**: Use CSS animations instead.
 @available(*, deprecated, message: "Use CSS animations instead.")
 public struct Marquee: WHATWG_HTML.Element.`Protocol` {
-    @inlinable
-    public static var tag: String { "marquee" }
+    @inlinable public static var tag: String { "marquee" }
 
     public var behavior: Behavior?
     public var bgcolor: String?

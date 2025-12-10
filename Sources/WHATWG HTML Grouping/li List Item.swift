@@ -63,9 +63,7 @@ public struct ListItem: WHATWG_HTML.Element.`Protocol` {
     ///
     /// - Parameters:
     ///   - value: The ordinal value of the list item (only meaningful within `<ol>` elements)
-    public init(
-        value: Value<Int>? = nil
-    ) {
+    public init(value: Value<Int>? = nil) {
         self.value = value
 
     }

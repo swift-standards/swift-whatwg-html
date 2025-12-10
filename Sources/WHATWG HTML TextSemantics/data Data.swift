@@ -45,9 +45,7 @@ public struct Data: WHATWG_HTML.Element.`Protocol` {
     ///
     /// - Parameters:
     ///   - value: The machine-readable translation of the content
-    public init(
-        value: Value<String>
-    ) {
+    public init(value: Value<String>) {
         self.value = value
 
     }

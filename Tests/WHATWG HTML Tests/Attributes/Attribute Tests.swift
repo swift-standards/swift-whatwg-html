@@ -23,9 +23,7 @@ private struct TestAttribute: WHATWG_HTML.Attribute {
 
     let value: String
 
-    init(_ value: String) {
-        self.value = value
-    }
+    init(_ value: String) { self.value = value }
 }
 
 private struct NumericTestAttribute: WHATWG_HTML.Attribute {
@@ -33,31 +31,23 @@ private struct NumericTestAttribute: WHATWG_HTML.Attribute {
 
     let value: Int
 
-    init(_ value: Int) {
-        self.value = value
-    }
+    init(_ value: Int) { self.value = value }
 }
 
-@Suite
-struct `Attribute Protocol Tests` {
+@Suite struct `Attribute Protocol Tests` {
 
-    @Test
-    func `Attribute has correct static attribute name`() {
+    @Test func `Attribute has correct static attribute name`() {
         #expect(TestAttribute.attribute == "test-attribute")
         #expect(NumericTestAttribute.attribute == "numeric-test")
     }
 
-    @Test
-    func `Attribute is Sendable`() {
+    @Test func `Attribute is Sendable`() {
         let attr = TestAttribute("test")
 
-        Task {
-            _ = attr
-        }
+        Task { _ = attr }
     }
 
-    @Test
-    func `Attribute supports equality comparison`() {
+    @Test func `Attribute supports equality comparison`() {
         let attr1 = TestAttribute("same")
         let attr2 = TestAttribute("same")
         let attr3 = TestAttribute("different")

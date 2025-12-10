@@ -61,8 +61,7 @@ public import WHATWG_HTML_Shared
 /// // Duration
 /// HTML.time.datetime("PT2H30M").text("2 hours 30 minutes")
 /// ```
-@dynamicMemberLookup
-public struct DateTime: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct DateTime: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "datetime" }
 
@@ -70,9 +69,7 @@ public struct DateTime: WHATWG_HTML.StringAttribute {
     public let rawValue: String
 
     /// Initialize with a string value
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 
     /// Initialize with an ISO 8601 DateTime
     public init(dateTime: ISO_8601.DateTime) {
@@ -176,7 +173,5 @@ extension DateTime {
     }
 
     /// Create a duration (e.g., "PT2H30M" for 2 hours 30 minutes)
-    public static func duration(_ iso8601Duration: String) -> DateTime {
-        DateTime(iso8601Duration)
-    }
+    public static func duration(_ iso8601Duration: String) -> DateTime { DateTime(iso8601Duration) }
 }

@@ -13,10 +13,8 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `Reversed Test` {
-    @Test
-    func `Reversed attribute should be reversed`() {
+@Suite struct `Reversed Test` {
+    @Test func `Reversed attribute should be reversed`() {
         #expect(Reversed.attribute == "reversed")
     }
 }

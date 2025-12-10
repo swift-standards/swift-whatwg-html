@@ -13,15 +13,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `Preload Test` {
-    @Test
-    func `Preload attribute should be preload`() {
-        #expect(Preload.attribute == "preload")
-    }
+@Suite struct `Preload Test` {
+    @Test func `Preload attribute should be preload`() { #expect(Preload.attribute == "preload") }
 
-    @Test
-    func `Preload convenience properties`() {
+    @Test func `Preload convenience properties`() {
         #expect(Preload.none.rawValue == "none")
         #expect(Preload.metadata.rawValue == "metadata")
         #expect(Preload.auto.rawValue == "auto")

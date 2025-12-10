@@ -12,7 +12,6 @@
 
 import Testing
 
-@Suite
-struct `Input.Button Test` {
+@Suite struct `Input.Button Test` {
 
 }

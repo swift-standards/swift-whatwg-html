@@ -18,18 +18,15 @@ import WHATWG_HTML
 #elseif canImport(Foundation)
 #endif
 
-@Suite
-struct `Contenteditable Test` {
-    @Test
-    func `Contenteditable attribute should be contenteditable`() {
+@Suite struct `Contenteditable Test` {
+    @Test func `Contenteditable attribute should be contenteditable`() {
         #expect(Contenteditable.attribute == "contenteditable")
     }
 
     @Test(
         "Contenteditable cases description should match the spec",
         arguments: Contenteditable.allCases
-    )
-    func cases(contenteditable: Contenteditable) {
+    ) func cases(contenteditable: Contenteditable) {
         switch contenteditable {
         case .true: #expect(contenteditable.description == "true")
         case .false: #expect(contenteditable.description == "false")
@@ -39,8 +36,7 @@ struct `Contenteditable Test` {
         }
     }
 
-    @Test
-    func `Contenteditable should conform to CaseIterable`() {
+    @Test func `Contenteditable should conform to CaseIterable`() {
         #expect(Contenteditable.allCases.count == 4)
         #expect(Contenteditable.allCases.contains(.true))
         #expect(Contenteditable.allCases.contains(.false))
@@ -48,10 +44,7 @@ struct `Contenteditable Test` {
         #expect(Contenteditable.allCases.contains(.empty))
     }
 
-    @Test(
-        "Contenteditable rawValue should match description",
-        arguments: Contenteditable.allCases
-    )
+    @Test("Contenteditable rawValue should match description", arguments: Contenteditable.allCases)
     func rawValueMatchesDescription(contenteditable: Contenteditable) {
         #expect(contenteditable.rawValue == contenteditable.description)
     }
@@ -59,12 +52,10 @@ struct `Contenteditable Test` {
     @Test(
         "Contenteditable should be initializable from rawValue",
         arguments: [
-            ("true", Contenteditable.true),
-            ("false", Contenteditable.false),
+            ("true", Contenteditable.true), ("false", Contenteditable.false),
             ("plaintext-only", Contenteditable.plaintextOnly),
         ]
-    )
-    func initializableFromRawValue(input: String, expected: Contenteditable?) {
+    ) func initializableFromRawValue(input: String, expected: Contenteditable?) {
         #expect(Contenteditable(rawValue: input) == expected)
     }
 }

@@ -119,11 +119,7 @@ public struct Meta: WHATWG_HTML.Element.`Protocol` {
     ///   - name: The metadata name (from standard set)
     ///   - content: The metadata value
     ///   - media: Optional media query (only for theme-color)
-    public init(
-        name: MetaName,
-        content: Content,
-        media: Media? = nil
-    ) {
+    public init(name: MetaName, content: Content, media: Media? = nil) {
         self.name = name
         self.content = content
         self.media = media
@@ -137,10 +133,7 @@ public struct Meta: WHATWG_HTML.Element.`Protocol` {
     ///   - name: The custom metadata name
     ///   - content: The metadata value
     ///   - media: Optional media query
-    public init(
-        content: Content,
-        media: Media? = nil
-    ) {
+    public init(content: Content, media: Media? = nil) {
         self.content = content
         self.media = media
     }
@@ -152,10 +145,7 @@ public struct Meta: WHATWG_HTML.Element.`Protocol` {
     /// - Parameters:
     ///   - httpEquiv: The pragma directive name
     ///   - content: The directive value
-    public init(
-        httpEquiv: HttpEquiv,
-        content: Content
-    ) {
+    public init(httpEquiv: HttpEquiv, content: Content) {
         self.httpEquiv = httpEquiv
         self.content = content
     }

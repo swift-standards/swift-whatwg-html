@@ -18,18 +18,15 @@ import WHATWG_HTML
 #elseif canImport(Foundation)
 #endif
 
-@Suite
-struct `Autocapitalize Test` {
-    @Test
-    func `Autocapitalize attribute should be autocapitalize`() {
+@Suite struct `Autocapitalize Test` {
+    @Test func `Autocapitalize attribute should be autocapitalize`() {
         #expect(Autocapitalize.attribute == "autocapitalize")
     }
 
     @Test(
         "Autocapitalize cases description should match the spec",
         arguments: Autocapitalize.allCases
-    )
-    func cases(autocapitalize: Autocapitalize) {
+    ) func cases(autocapitalize: Autocapitalize) {
         switch autocapitalize {
         case .none: #expect(autocapitalize.description == "none")
         case .off: #expect(autocapitalize.description == "off")
@@ -41,8 +38,7 @@ struct `Autocapitalize Test` {
         }
     }
 
-    @Test
-    func `Autocapitalize should conform to CaseIterable`() {
+    @Test func `Autocapitalize should conform to CaseIterable`() {
         #expect(Autocapitalize.allCases.count == 6)
         #expect(Autocapitalize.allCases.contains(.none))
         #expect(Autocapitalize.allCases.contains(.off))
@@ -52,10 +48,7 @@ struct `Autocapitalize Test` {
         #expect(Autocapitalize.allCases.contains(.characters))
     }
 
-    @Test(
-        "Autocapitalize rawValue should match description",
-        arguments: Autocapitalize.allCases
-    )
+    @Test("Autocapitalize rawValue should match description", arguments: Autocapitalize.allCases)
     func rawValueMatchesDescription(autocapitalize: Autocapitalize) {
         #expect(autocapitalize.rawValue == autocapitalize.description)
     }
@@ -63,15 +56,10 @@ struct `Autocapitalize Test` {
     @Test(
         "Autocapitalize should be initializable from rawValue",
         arguments: [
-            ("none", Autocapitalize.none),
-            ("off", .off),
-            ("sentences", .sentences),
-            ("on", .on),
-            ("words", .words),
-            ("characters", .characters),
+            ("none", Autocapitalize.none), ("off", .off), ("sentences", .sentences), ("on", .on),
+            ("words", .words), ("characters", .characters),
         ]
-    )
-    func initializableFromRawValue(input: String, expected: Autocapitalize?) {
+    ) func initializableFromRawValue(input: String, expected: Autocapitalize?) {
         #expect(Autocapitalize(rawValue: input) == expected)
     }
 }

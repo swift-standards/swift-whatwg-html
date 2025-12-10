@@ -13,10 +13,6 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `Ismap Test` {
-    @Test
-    func `Ismap attribute should be ismap`() {
-        #expect(Ismap.attribute == "ismap")
-    }
+@Suite struct `Ismap Test` {
+    @Test func `Ismap attribute should be ismap`() { #expect(Ismap.attribute == "ismap") }
 }

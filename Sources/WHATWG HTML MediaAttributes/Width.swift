@@ -37,39 +37,29 @@ public import WHATWG_HTML_Shared
 /// img.width(400)
 /// ```
 extension Geometry<Int>.Width: @retroactive ExpressibleByUnicodeScalarLiteral {
-    @inlinable
-    public init(unicodeScalarLiteral value: String) {
-        self.init(Int(value) ?? 0)
-    }
+    @inlinable public init(unicodeScalarLiteral value: String) { self.init(Int(value) ?? 0) }
 }
 
 extension Geometry<Int>.Width: @retroactive ExpressibleByExtendedGraphemeClusterLiteral {
-    @inlinable
-    public init(extendedGraphemeClusterLiteral value: String) {
+    @inlinable public init(extendedGraphemeClusterLiteral value: String) {
         self.init(Int(value) ?? 0)
     }
 }
 
 extension Geometry<Int>.Width: @retroactive ExpressibleByStringLiteral {
-    @inlinable
-    public init(stringLiteral value: String) {
-        self.init(Int(value) ?? 0)
-    }
+    @inlinable public init(stringLiteral value: String) { self.init(Int(value) ?? 0) }
 }
 
 extension Geometry<Int>.Width: @retroactive ExpressibleByStringInterpolation {}
 
 extension Geometry<Int>.Width: @retroactive CustomStringConvertible {
-    @inlinable
-    public var description: String { String(value) }
+    @inlinable public var description: String { String(value) }
 }
 
 extension Geometry<Int>.Width: @retroactive RawRepresentable {
-    @inlinable
-    public var rawValue: String { String(value) }
+    @inlinable public var rawValue: String { String(value) }
 
-    @inlinable
-    public init?(rawValue: String) {
+    @inlinable public init?(rawValue: String) {
         guard let intValue = Int(rawValue) else { return nil }
         self.init(intValue)
     }
@@ -77,16 +67,12 @@ extension Geometry<Int>.Width: @retroactive RawRepresentable {
 
 extension Geometry<Int>.Width: WHATWG_HTML.Attribute {
     /// The name of the HTML attribute
-    @inlinable
-    public static var attribute: String { "width" }
+    @inlinable public static var attribute: String { "width" }
 }
 
 extension Geometry<Int>.Width: WHATWG_HTML.StringAttribute {
     /// Initialize with a string value
-    @inlinable
-    public init(value: String) {
-        self.init(Int(value) ?? 0)
-    }
+    @inlinable public init(value: String) { self.init(Int(value) ?? 0) }
 }
 
 /// Typealias for convenience - use `Width` as shorthand for `Geometry<Int>.Width`

@@ -79,42 +79,32 @@ public struct AttributionSrc: WHATWG_HTML.Attribute, CustomStringConvertible {
     public var value: Value
 
     /// Create a boolean attributionsrc attribute
-    public init() {
-        self.value = .boolean(true)
-    }
+    public init() { self.value = .boolean(true) }
 
     /// Create an attributionsrc attribute with a specific boolean value
     ///
     /// - Parameter include: Whether to include the attribute
-    public init(_ include: Bool) {
-        self.value = .boolean(include)
-    }
+    public init(_ include: Bool) { self.value = .boolean(include) }
 
     /// Create an attributionsrc attribute with one or more URLs
     ///
     /// - Parameter urls: A single URL or space-separated list of URLs where
     ///   the Attribution-Reporting-Eligible header should be sent
-    public init(_ urls: String) {
-        self.value = .urls(urls)
-    }
+    public init(_ urls: String) { self.value = .urls(urls) }
 
     /// String representation of the attributionsrc attribute
     public var description: String {
         switch value {
-        case .boolean:
-            return ""  // Empty string for boolean attribute
-        case .urls(let urls):
-            return urls
+        case .boolean: return ""  // Empty string for boolean attribute
+        case .urls(let urls): return urls
         }
     }
 
     /// Whether the attribute should be included in HTML rendering
     public var shouldInclude: Bool {
         switch value {
-        case .boolean(let include):
-            return include
-        case .urls:
-            return true
+        case .boolean(let include): return include
+        case .urls: return true
         }
     }
 }
@@ -125,9 +115,7 @@ extension AttributionSrc: ExpressibleByBooleanLiteral {
     ///
     /// - Parameter value: When true, creates a boolean attributionsrc attribute
     ///   When false, the attribute will not be included
-    public init(booleanLiteral value: BooleanLiteralType) {
-        self.init(value)
-    }
+    public init(booleanLiteral value: BooleanLiteralType) { self.init(value) }
 }
 
 /// Extension to allow creating an AttributionSrc attribute with a string literal
@@ -136,7 +124,5 @@ extension AttributionSrc: ExpressibleByStringLiteral {
     ///
     /// - Parameter value: URL or space-separated list of URLs where the
     ///   Attribution-Reporting-Eligible header should be sent
-    public init(stringLiteral value: StringLiteralType) {
-        self.init(value)
-    }
+    public init(stringLiteral value: StringLiteralType) { self.init(value) }
 }

@@ -17,8 +17,7 @@ import Testing
 
 extension `Performance Tests` {
 
-    @Suite("Byte Serialization Performance Tests", .serialized)
-    struct ByteSerialization {
+    @Suite("Byte Serialization Performance Tests", .serialized) struct ByteSerialization {
 
         // MARK: - Boolean Attributes
 
@@ -29,14 +28,12 @@ extension `Performance Tests` {
         }
 
         @Test("Autofocus: UTF-8 direct", .timed(threshold: .milliseconds(1)))
-        func autofocusUTF8Direct() {
-            let _ = Array(Autofocus.attribute.utf8)
-        }
+        func autofocusUTF8Direct() { let _ = Array(Autofocus.attribute.utf8) }
 
         // MARK: - String Attributes (ASCII)
 
-        @Test("Id ASCII: RFC pattern", .timed(threshold: .milliseconds(1)))
-        func idASCIIRFCPattern() {
+        @Test("Id ASCII: RFC pattern", .timed(threshold: .milliseconds(1))) func idASCIIRFCPattern()
+        {
             let attr = Id(value: "main-content")
             let _ = [UInt8].init(attr)
         }
@@ -50,8 +47,8 @@ extension `Performance Tests` {
 
         // MARK: - String Attributes (UTF-8)
 
-        @Test("Id UTF-8: RFC pattern", .timed(threshold: .milliseconds(1)))
-        func idUTF8RFCPattern() {
+        @Test("Id UTF-8: RFC pattern", .timed(threshold: .milliseconds(1))) func idUTF8RFCPattern()
+        {
             let attr = Id(value: "日本語-コンテンツ")
             let _ = [UInt8](attr)
         }
@@ -68,8 +65,7 @@ extension `Performance Tests` {
         @Test(
             "Batch RFC: 100 attributes",
             .timed(threshold: .milliseconds(5), maxAllocations: 100_000)
-        )
-        func batchRFCPattern() {
+        ) func batchRFCPattern() {
             let attributes = (0..<100).map { Id(value: "element-\($0)") }
 
             var total: [UInt8] = []
@@ -84,22 +80,18 @@ extension `Performance Tests` {
         @Test(
             "Batch String: 100 attributes",
             .timed(threshold: .milliseconds(5), maxAllocations: 100_000)
-        )
-        func batchStringPattern() {
+        ) func batchStringPattern() {
             let attributes = (0..<100).map { Id(value: "element-\($0)") }
 
             var str = ""
             str.reserveCapacity(2000)
-            for attr in attributes {
-                str += "id=\"\(attr.rawValue)\" "
-            }
+            for attr in attributes { str += "id=\"\(attr.rawValue)\" " }
             let _ = Array(str.utf8)
         }
 
         // MARK: - String Composition
 
-        @Test("Direct bytes only", .timed(threshold: .milliseconds(1)))
-        func directBytesOnly() {
+        @Test("Direct bytes only", .timed(threshold: .milliseconds(1))) func directBytesOnly() {
             let attr = Id(value: "test")
             let _ = [UInt8](attr)
         }
@@ -115,8 +107,7 @@ extension `Performance Tests` {
         @Test(
             "HTML generation RFC: 10 attributes",
             .timed(threshold: .milliseconds(1), maxAllocations: 50_000)
-        )
-        func htmlGenerationRFC() {
+        ) func htmlGenerationRFC() {
             let ids = (0..<5).map { Id(value: "element-\($0)") }
             let autofocus = (0..<5).map { Autofocus(value: $0 % 2 == 0) }
 
@@ -139,23 +130,16 @@ extension `Performance Tests` {
         @Test(
             "HTML generation String: 10 attributes",
             .timed(threshold: .milliseconds(1), maxAllocations: 50_000)
-        )
-        func htmlGenerationString() {
+        ) func htmlGenerationString() {
             let ids = (0..<5).map { Id(value: "element-\($0)") }
             let autofocus = (0..<5).map { Autofocus(value: $0 % 2 == 0) }
 
             var html = ""
             html.reserveCapacity(500)
 
-            for id in ids {
-                html += "id=\"\(id.rawValue)\" "
-            }
+            for id in ids { html += "id=\"\(id.rawValue)\" " }
 
-            for focus in autofocus {
-                if focus.rawValue {
-                    html += "autofocus "
-                }
-            }
+            for focus in autofocus { if focus.rawValue { html += "autofocus " } }
 
             let _ = html
         }

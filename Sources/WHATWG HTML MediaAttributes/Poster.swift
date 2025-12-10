@@ -40,8 +40,7 @@ public import WHATWG_HTML_Shared
 /// - Provide a poster image to improve user experience on slow connections
 /// - For accessibility, ensure the poster image conveys appropriate context about the video content
 ///
-@dynamicMemberLookup
-public struct Poster: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct Poster: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "poster" }
 
@@ -51,7 +50,5 @@ public struct Poster: WHATWG_HTML.StringAttribute {
     /// Initialize with a poster image URL
     ///
     /// - Parameter value: The URL pointing to the poster image
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }

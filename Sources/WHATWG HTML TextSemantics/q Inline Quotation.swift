@@ -46,9 +46,7 @@ public struct InlineQuotation: WHATWG_HTML.Element.`Protocol` {
     ///
     /// - Parameters:
     ///   - cite: The URL that designates a source document or message for the information quoted
-    public init(
-        cite: WHATWG_HTML_GlobalAttributes.Cite? = nil
-    ) {
+    public init(cite: WHATWG_HTML_GlobalAttributes.Cite? = nil) {
         self.cite = cite
 
     }

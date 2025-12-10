@@ -74,9 +74,7 @@ public struct Tabindex: WHATWG_HTML.Attribute {
     public var value: Int
 
     /// Initialize with a tabindex value
-    public init(_ value: Int) {
-        self.value = value
-    }
+    public init(_ value: Int) { self.value = value }
 }
 
 extension Tabindex {
@@ -89,7 +87,5 @@ extension Tabindex {
 
 extension Tabindex: CustomStringConvertible {
     /// Returns the string representation of the tabindex value
-    public var description: String {
-        return String(self.value)
-    }
+    public var description: String { return String(self.value) }
 }

@@ -18,15 +18,10 @@ import WHATWG_HTML
 #elseif canImport(Foundation)
 #endif
 
-@Suite
-struct `Part Test` {
-    @Test
-    func `Part attribute should be part`() {
-        #expect(Part.attribute == "part")
-    }
+@Suite struct `Part Test` {
+    @Test func `Part attribute should be part`() { #expect(Part.attribute == "part") }
 
-    @Test
-    func `Part description should reflect the initialized values`() {
+    @Test func `Part description should reflect the initialized values`() {
         let singlePart = Part("header")
         #expect(singlePart.description == "header")
 
@@ -37,8 +32,7 @@ struct `Part Test` {
         #expect(emptyPart.description.isEmpty)
     }
 
-    @Test
-    func `Part can be initialized with single string or array of strings`() {
+    @Test func `Part can be initialized with single string or array of strings`() {
         let singlePart: Part = "header"
         let arrayPart: Part = "header"
         #expect(singlePart.description == arrayPart.description)

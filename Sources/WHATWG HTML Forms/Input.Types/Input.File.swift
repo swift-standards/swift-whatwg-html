@@ -75,12 +75,7 @@ extension Input {
             disabled: disabled,
             form: form,
             type: .file(
-                .init(
-                    accept: accept,
-                    capture: capture,
-                    multiple: multiple,
-                    required: required
-                )
+                .init(accept: accept, capture: capture, multiple: multiple, required: required)
             )
         )
     }

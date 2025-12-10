@@ -13,15 +13,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `For Test` {
-    @Test
-    func `For attribute should be for`() {
-        #expect(For.attribute == "for")
-    }
+@Suite struct `For Test` {
+    @Test func `For attribute should be for`() { #expect(For.attribute == "for") }
 
-    @Test
-    func `For should support array literal`() {
+    @Test func `For should support array literal`() {
         let forAttribute: For = ["input1", "input2"]
         #expect(forAttribute.rawValue == "input1 input2")
     }

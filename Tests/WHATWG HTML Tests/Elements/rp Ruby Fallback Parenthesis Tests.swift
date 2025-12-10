@@ -13,7 +13,6 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `Ruby Fallback Parenthesis Test` {
+@Suite struct `Ruby Fallback Parenthesis Test` {
 
 }

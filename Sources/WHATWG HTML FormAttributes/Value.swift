@@ -82,15 +82,11 @@ public struct Value<Element: Sendable & Hashable>: WHATWG_HTML.Attribute {
     /// The value
     public var value: Element
 
-    public init(_ value: Element) {
-        self.value = value
-    }
+    public init(_ value: Element) { self.value = value }
 }
 
 extension Value: LosslessStringConvertible where Element == String {
-    public init?(_ description: String) {
-        self = .init(description)
-    }
+    public init?(_ description: String) { self = .init(description) }
 }
 
 extension Value: ExpressibleByStringLiteral where Element: ExpressibleByStringLiteral {
@@ -130,13 +126,9 @@ extension Value: ExpressibleByIntegerLiteral where Element: ExpressibleByInteger
 extension Value: ExpressibleByFloatLiteral where Element: ExpressibleByFloatLiteral {
     public typealias FloatLiteralType = Element.FloatLiteralType
 
-    public init(floatLiteral value: FloatLiteralType) {
-        self.value = Element(floatLiteral: value)
-    }
+    public init(floatLiteral value: FloatLiteralType) { self.value = Element(floatLiteral: value) }
 }
 
 extension Value: CustomStringConvertible where Element: CustomStringConvertible {
-    public var description: String {
-        value.description
-    }
+    public var description: String { value.description }
 }

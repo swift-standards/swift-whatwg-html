@@ -53,16 +53,13 @@ public import WHATWG_HTML_Shared
 /// <!-- Better than just inputmode="tel" -->
 /// <input type="tel" inputmode="tel" placeholder="Phone number">
 /// ```
-@dynamicMemberLookup
-public struct Inputmode: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct Inputmode: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "inputmode" }
 
     public let rawValue: String
 
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }
 
 extension Inputmode {
@@ -155,13 +152,6 @@ extension Inputmode {
 
 extension Inputmode: CaseIterable {
     public static let allCases: [Inputmode] = [
-        .none,
-        .text,
-        .decimal,
-        .numeric,
-        .tel,
-        .search,
-        .email,
-        .url,
+        .none, .text, .decimal, .numeric, .tel, .search, .email, .url,
     ]
 }

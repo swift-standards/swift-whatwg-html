@@ -38,15 +38,11 @@ extension WHATWG_HTML {
 }
 
 extension WHATWG_HTML.BooleanAttribute {
-    public init?(rawValue value: Bool) {
-        self = .init(value: value)
-    }
+    public init?(rawValue value: Bool) { self = .init(value: value) }
 }
 
 extension WHATWG_HTML.BooleanAttribute {
-    public init(booleanLiteral value: Bool) {
-        self = .init(value: value)
-    }
+    public init(booleanLiteral value: Bool) { self = .init(value: value) }
 }
 
 extension WHATWG_HTML.BooleanAttribute {
@@ -55,9 +51,7 @@ extension WHATWG_HTML.BooleanAttribute {
     /// For attributes implementing byte serialization (Autofocus, etc.),
     /// use the RFC pattern: String(attribute)
     /// For others, returns "true" or "false"
-    public var description: String {
-        rawValue ? "true" : "false"
-    }
+    public var description: String { rawValue ? "true" : "false" }
 }
 
 extension WHATWG_HTML.BooleanAttribute {

@@ -29,8 +29,7 @@ public import WHATWG_HTML_Shared
 /// <button popovertarget="my-popover" popovertargetaction="hide">Hide Popover</button>
 /// <div id="my-popover" popover>Popover content</div>
 /// ```
-@dynamicMemberLookup
-public struct PopoverTargetAction: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct PopoverTargetAction: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "popovertargetaction" }
 
@@ -38,9 +37,7 @@ public struct PopoverTargetAction: WHATWG_HTML.StringAttribute {
     public var rawValue: String
 
     /// Initialize with a popover action
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }
 
 extension PopoverTargetAction {

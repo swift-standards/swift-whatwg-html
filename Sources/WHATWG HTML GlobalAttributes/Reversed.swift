@@ -26,8 +26,7 @@ public import WHATWG_HTML_Shared
 ///   <li>This will be item #1</li>
 /// </ol>
 /// ```
-@dynamicMemberLookup
-public struct Reversed: WHATWG_HTML.BooleanAttribute {
+@dynamicMemberLookup public struct Reversed: WHATWG_HTML.BooleanAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "reversed" }
 
@@ -35,7 +34,5 @@ public struct Reversed: WHATWG_HTML.BooleanAttribute {
     public var rawValue: Bool
 
     /// Initialize with a boolean value
-    public init(value: Bool = true) {
-        self.rawValue = value
-    }
+    public init(value: Bool = true) { self.rawValue = value }
 }

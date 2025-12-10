@@ -37,39 +37,29 @@ public import WHATWG_HTML_Shared
 /// img.height(300)
 /// ```
 extension Geometry<Int>.Height: @retroactive ExpressibleByUnicodeScalarLiteral {
-    @inlinable
-    public init(unicodeScalarLiteral value: String) {
-        self.init(Int(value) ?? 0)
-    }
+    @inlinable public init(unicodeScalarLiteral value: String) { self.init(Int(value) ?? 0) }
 }
 
 extension Geometry<Int>.Height: @retroactive ExpressibleByExtendedGraphemeClusterLiteral {
-    @inlinable
-    public init(extendedGraphemeClusterLiteral value: String) {
+    @inlinable public init(extendedGraphemeClusterLiteral value: String) {
         self.init(Int(value) ?? 0)
     }
 }
 
 extension Geometry<Int>.Height: @retroactive ExpressibleByStringLiteral {
-    @inlinable
-    public init(stringLiteral value: String) {
-        self.init(Int(value) ?? 0)
-    }
+    @inlinable public init(stringLiteral value: String) { self.init(Int(value) ?? 0) }
 }
 
 extension Geometry<Int>.Height: @retroactive ExpressibleByStringInterpolation {}
 
 extension Geometry<Int>.Height: @retroactive CustomStringConvertible {
-    @inlinable
-    public var description: String { String(value) }
+    @inlinable public var description: String { String(value) }
 }
 
 extension Geometry<Int>.Height: @retroactive RawRepresentable {
-    @inlinable
-    public var rawValue: String { String(value) }
+    @inlinable public var rawValue: String { String(value) }
 
-    @inlinable
-    public init?(rawValue: String) {
+    @inlinable public init?(rawValue: String) {
         guard let intValue = Int(rawValue) else { return nil }
         self.init(intValue)
     }
@@ -77,16 +67,12 @@ extension Geometry<Int>.Height: @retroactive RawRepresentable {
 
 extension Geometry<Int>.Height: WHATWG_HTML.Attribute {
     /// The name of the HTML attribute
-    @inlinable
-    public static var attribute: String { "height" }
+    @inlinable public static var attribute: String { "height" }
 }
 
 extension Geometry<Int>.Height: WHATWG_HTML.StringAttribute {
     /// Initialize with a string value
-    @inlinable
-    public init(value: String) {
-        self.init(Int(value) ?? 0)
-    }
+    @inlinable public init(value: String) { self.init(Int(value) ?? 0) }
 }
 
 /// Typealias for convenience - use `Height` as shorthand for `Geometry<Int>.Height`

@@ -87,8 +87,7 @@ public import WHATWG_HTML_Shared
 ///     input().type(.submit).value("Open in New Tab").formtarget("_blank")
 /// }
 /// ```
-@dynamicMemberLookup
-public struct Target: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct Target: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "target" }
 
@@ -96,20 +95,14 @@ public struct Target: WHATWG_HTML.StringAttribute {
     public var rawValue: String
 
     /// Initialize with a string value
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 
     /// Initialize with a target value
-    public init(_ value: String) {
-        self.init(value: value)
-    }
+    public init(_ value: String) { self.init(value: value) }
 }
 
 extension Target: ExpressibleByStringLiteral {
-    public init(stringLiteral value: StringLiteralType) {
-        self.init(value)
-    }
+    public init(stringLiteral value: StringLiteralType) { self.init(value) }
 }
 
 extension Target {

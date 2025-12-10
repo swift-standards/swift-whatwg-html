@@ -29,17 +29,14 @@ public import WHATWG_HTML_Shared
 /// <form accept-charset="UTF-8">...</form>
 /// <form accept-charset="ISO-8859-1,UTF-8">...</form>
 /// ```
-@dynamicMemberLookup
-public struct AcceptCharset: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct AcceptCharset: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "accept-charset" }
 
     /// The URL for form submission
     public let rawValue: String
 
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }
 
 // MARK: - Common Character Encodings

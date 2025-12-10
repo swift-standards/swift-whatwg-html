@@ -18,17 +18,12 @@ import WHATWG_HTML
 #elseif canImport(Foundation)
 #endif
 
-@Suite
-struct `Inputmode Test` {
-    @Test
-    func `Inputmode attribute should be inputmode`() {
+@Suite struct `Inputmode Test` {
+    @Test func `Inputmode attribute should be inputmode`() {
         #expect(Inputmode.attribute == "inputmode")
     }
 
-    @Test(
-        "Inputmode cases description should match the spec",
-        arguments: Inputmode.allCases
-    )
+    @Test("Inputmode cases description should match the spec", arguments: Inputmode.allCases)
     func cases(inputmode: Inputmode) {
         switch inputmode {
         case .none: #expect(inputmode.description == "none")
@@ -43,8 +38,7 @@ struct `Inputmode Test` {
         }
     }
 
-    @Test
-    func `Inputmode should conform to CaseIterable`() {
+    @Test func `Inputmode should conform to CaseIterable`() {
         #expect(Inputmode.allCases.count == 8)
         #expect(Inputmode.allCases.contains(.none))
         #expect(Inputmode.allCases.contains(.text))
@@ -56,10 +50,7 @@ struct `Inputmode Test` {
         #expect(Inputmode.allCases.contains(.url))
     }
 
-    @Test(
-        "Inputmode rawValue should match description",
-        arguments: Inputmode.allCases
-    )
+    @Test("Inputmode rawValue should match description", arguments: Inputmode.allCases)
     func rawValueMatchesDescription(inputmode: Inputmode) {
         #expect(inputmode.rawValue == inputmode.description)
     }
@@ -67,17 +58,11 @@ struct `Inputmode Test` {
     @Test(
         "Inputmode should be initializable from rawValue",
         arguments: [
-            ("none", Inputmode.none),
-            ("text", Inputmode.text),
-            ("decimal", Inputmode.decimal),
-            ("numeric", Inputmode.numeric),
-            ("tel", Inputmode.tel),
-            ("search", Inputmode.search),
-            ("email", Inputmode.email),
-            ("url", Inputmode.url),
+            ("none", Inputmode.none), ("text", Inputmode.text), ("decimal", Inputmode.decimal),
+            ("numeric", Inputmode.numeric), ("tel", Inputmode.tel), ("search", Inputmode.search),
+            ("email", Inputmode.email), ("url", Inputmode.url),
         ]
-    )
-    func initializableFromRawValue(input: String, expected: Inputmode?) {
+    ) func initializableFromRawValue(input: String, expected: Inputmode?) {
         #expect(Inputmode(rawValue: input) == expected)
     }
 }

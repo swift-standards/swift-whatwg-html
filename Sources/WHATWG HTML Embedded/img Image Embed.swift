@@ -20,11 +20,7 @@ public struct Image: WHATWG_HTML.Element.`Protocol` {
     public var alt: Alt?
     public var loading: Loading?
 
-    public init(
-        src: Src? = nil,
-        alt: Alt? = nil,
-        loading: Loading? = nil
-    ) {
+    public init(src: Src? = nil, alt: Alt? = nil, loading: Loading? = nil) {
         self.src = src
         self.alt = alt
         self.loading = loading

@@ -13,10 +13,6 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `Async Test` {
-    @Test
-    func `Async attribute should be async`() {
-        #expect(Async.attribute == "async")
-    }
+@Suite struct `Async Test` {
+    @Test func `Async attribute should be async`() { #expect(Async.attribute == "async") }
 }

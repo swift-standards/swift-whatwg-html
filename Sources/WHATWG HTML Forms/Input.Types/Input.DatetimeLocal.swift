@@ -89,14 +89,7 @@ extension Input {
             name: name,
             disabled: disabled,
             form: form,
-            type: .datetimeLocal(
-                .init(
-                    value: value,
-                    min: min,
-                    max: max,
-                    step: step
-                )
-            )
+            type: .datetimeLocal(.init(value: value, min: min, max: max, step: step))
         )
     }
 }

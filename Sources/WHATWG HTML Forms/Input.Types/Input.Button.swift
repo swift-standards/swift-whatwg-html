@@ -65,11 +65,7 @@ extension Input {
         /// If not specified, you get an empty button.
         public var value: Value<String>?
 
-        public init(
-            value: Value<String>? = nil
-        ) {
-            self.value = value
-        }
+        public init(value: Value<String>? = nil) { self.value = value }
     }
 }
 
@@ -83,15 +79,6 @@ extension Input {
         disabled: Disabled? = nil,
         form: WHATWG_HTML_FormAttributes.Form.ID? = nil
     ) -> Self {
-        .init(
-            name: name,
-            disabled: disabled,
-            form: form,
-            type: .button(
-                .init(
-                    value: value
-                )
-            )
-        )
+        .init(name: name, disabled: disabled, form: form, type: .button(.init(value: value)))
     }
 }

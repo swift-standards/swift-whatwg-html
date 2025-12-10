@@ -13,28 +13,21 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `Action Test` {
-    @Test
-    func `Action attribute should be action`() {
-        #expect(Action.attribute == "action")
-    }
+@Suite struct `Action Test` {
+    @Test func `Action attribute should be action`() { #expect(Action.attribute == "action") }
 
-    @Test
-    func `Action relative path factory`() {
+    @Test func `Action relative path factory`() {
         #expect(Action.relative("submit").rawValue == "/submit")
         #expect(Action.relative("/submit").rawValue == "/submit")
     }
 
-    @Test
-    func `Action absolute URL factory`() {
+    @Test func `Action absolute URL factory`() {
         #expect(
             Action.absolute("https://example.com/submit").rawValue == "https://example.com/submit"
         )
     }
 
-    @Test
-    func `Action convenience properties`() {
+    @Test func `Action convenience properties`() {
         #expect(Action.current.rawValue == ".")
         #expect(Action.clientSide.rawValue == "#")
     }

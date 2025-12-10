@@ -28,8 +28,7 @@ public import WHATWG_HTML_Shared
 /// <font size="5">Larger text</font>
 /// <font size="+2">Relatively larger text</font>
 /// ```
-@dynamicMemberLookup
-public struct FontSize: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct FontSize: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "size" }
 
@@ -37,15 +36,11 @@ public struct FontSize: WHATWG_HTML.StringAttribute {
     public let rawValue: String
 
     /// Initialize with a value for the size attribute
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }
 
 extension FontSize: ExpressibleByIntegerLiteral {
-    public init(integerLiteral value: IntegerLiteralType) {
-        self.init(numericValue: value)
-    }
+    public init(integerLiteral value: IntegerLiteralType) { self.init(numericValue: value) }
 }
 
 extension FontSize {

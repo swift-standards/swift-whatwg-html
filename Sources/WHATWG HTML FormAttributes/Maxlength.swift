@@ -68,20 +68,14 @@ public struct Maxlength: WHATWG_HTML.Attribute {
 
 extension Maxlength {
     /// Create a maxlength attribute with the given number of characters
-    public static func characters(_ count: Int) -> Maxlength {
-        return Maxlength(count)
-    }
+    public static func characters(_ count: Int) -> Maxlength { return Maxlength(count) }
 }
 
 extension Maxlength: ExpressibleByIntegerLiteral {
-    public init(integerLiteral value: IntegerLiteralType) {
-        self.value = max(0, value)
-    }
+    public init(integerLiteral value: IntegerLiteralType) { self.value = max(0, value) }
 }
 
 extension Maxlength: CustomStringConvertible {
     /// Returns the string representation of the maxlength value
-    public var description: String {
-        return String(self.value)
-    }
+    public var description: String { return String(self.value) }
 }

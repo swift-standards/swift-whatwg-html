@@ -13,7 +13,6 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `Input.Hidden Test` {
+@Suite struct `Input.Hidden Test` {
 
 }

@@ -68,8 +68,7 @@ public import WHATWG_HTML_Shared
 /// // Using string value
 /// HTML.form.method("post")
 /// ```
-@dynamicMemberLookup
-public struct Method: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct Method: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "method" }
 
@@ -77,17 +76,13 @@ public struct Method: WHATWG_HTML.StringAttribute {
     public let rawValue: String
 
     /// Initialize with a value for the method attribute
-    public init(value: String) {
-        self.rawValue = value.lowercased()
-    }
+    public init(value: String) { self.rawValue = value.lowercased() }
 }
 
 extension Method {
 
     /// Initialize with a predefined HTTP method
-    public init(_ method: HTTPMethod) {
-        self.rawValue = method.rawValue
-    }
+    public init(_ method: HTTPMethod) { self.rawValue = method.rawValue }
 
     /// Predefined HTTP methods for form submission
     public enum HTTPMethod: String {

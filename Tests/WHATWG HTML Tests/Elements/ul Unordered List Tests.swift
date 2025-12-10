@@ -13,7 +13,6 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `Unordered List Test` {
+@Suite struct `Unordered List Test` {
 
 }

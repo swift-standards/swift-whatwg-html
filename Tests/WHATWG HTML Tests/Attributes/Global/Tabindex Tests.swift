@@ -18,27 +18,22 @@ import WHATWG_HTML
 #elseif canImport(Foundation)
 #endif
 
-@Suite
-struct `Tabindex Test` {
-    @Test
-    func `Tabindex attribute should be tabindex`() {
+@Suite struct `Tabindex Test` {
+    @Test func `Tabindex attribute should be tabindex`() {
         #expect(Tabindex.attribute == "tabindex")
     }
 
-    @Test
-    func `Tabindex should store and return its value`() {
+    @Test func `Tabindex should store and return its value`() {
         let tabindex = Tabindex(2)
         #expect(tabindex.value == 2)
     }
 
-    @Test
-    func `Tabindex description should return its value as string`() {
+    @Test func `Tabindex description should return its value as string`() {
         let tabindex = Tabindex(-1)
         #expect(tabindex.description == "-1")
     }
 
-    @Test
-    func `Tabindex should have predefined constants`() {
+    @Test func `Tabindex should have predefined constants`() {
         #expect(Tabindex.notTabbable.value == -1)
         #expect(Tabindex.inDocumentOrder.value == 0)
     }

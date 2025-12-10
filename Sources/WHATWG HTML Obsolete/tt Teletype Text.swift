@@ -9,8 +9,7 @@ public import WHATWG_HTML_Shared
 ///
 /// The `<tt>` element is obsolete in HTML5. Use `<code>`, `<kbd>`, `<samp>`, or CSS instead.
 public struct TeletypeText: WHATWG_HTML.Element.`Protocol` {
-    @inlinable
-    public static var tag: String { "tt" }
+    @inlinable public static var tag: String { "tt" }
 
     public init() {}
 }

@@ -13,15 +13,12 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `HttpEquiv Test` {
-    @Test
-    func `HttpEquiv attribute should be http-equiv`() {
+@Suite struct `HttpEquiv Test` {
+    @Test func `HttpEquiv attribute should be http-equiv`() {
         #expect(HttpEquiv.attribute == "http-equiv")
     }
 
-    @Test
-    func `HttpEquiv convenience properties`() {
+    @Test func `HttpEquiv convenience properties`() {
         #expect(HttpEquiv.contentSecurityPolicy.rawValue == "content-security-policy")
         #expect(HttpEquiv.contentType.rawValue == "content-type")
         #expect(HttpEquiv.defaultStyle.rawValue == "default-style")

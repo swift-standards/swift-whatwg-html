@@ -70,6 +70,5 @@ public struct DataList: WHATWG_HTML.Element.`Protocol` {
     ///
     /// - Parameters:
     ///   - id: The ID attribute, used to associate the datalist with an input element
-    public init() {
-    }
+    public init() {}
 }

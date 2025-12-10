@@ -79,17 +79,14 @@ public import WHATWG_HTML_Shared
 /// - "pt" - Portuguese
 /// - "ru" - Russian
 /// - "zh" - Chinese
-@dynamicMemberLookup
-public struct Lang: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct Lang: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "lang" }
 
     /// The language tag value
     public let rawValue: String
 
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }
 
 extension Lang {
@@ -98,13 +95,9 @@ extension Lang {
     public init(language: String, script: String? = nil, region: String? = nil) {
         var value = language
 
-        if let script = script {
-            value += "-\(script)"
-        }
+        if let script = script { value += "-\(script)" }
 
-        if let region = region {
-            value += "-\(region)"
-        }
+        if let region = region { value += "-\(region)" }
 
         self = .init(value: value)
     }

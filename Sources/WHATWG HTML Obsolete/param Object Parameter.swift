@@ -14,10 +14,8 @@ public import WHATWG_HTML_Shared
     *,
     deprecated,
     message: "Plugin-based content is deprecated. Use modern web standards instead."
-)
-public struct Param: WHATWG_HTML.Element.`Protocol` {
-    @inlinable
-    public static var tag: String { "param" }
+) public struct Param: WHATWG_HTML.Element.`Protocol` {
+    @inlinable public static var tag: String { "param" }
 
     /// Name of the parameter
     public var name: Name?
@@ -25,10 +23,7 @@ public struct Param: WHATWG_HTML.Element.`Protocol` {
     /// Value of the parameter
     public var value: Value<String>?
 
-    public init(
-        name: Name? = nil,
-        value: Value<String>? = nil
-    ) {
+    public init(name: Name? = nil, value: Value<String>? = nil) {
         self.name = name
         self.value = value
     }

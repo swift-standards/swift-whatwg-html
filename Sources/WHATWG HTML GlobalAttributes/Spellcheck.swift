@@ -62,14 +62,11 @@ public import WHATWG_HTML_Shared
 /// <label for="password">Password:</label>
 /// <input type="password" id="password" name="password" spellcheck="false">
 /// ```
-@dynamicMemberLookup
-public struct Spellcheck: WHATWG_HTML.BooleanAttribute {
+@dynamicMemberLookup public struct Spellcheck: WHATWG_HTML.BooleanAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "spellcheck" }
 
     public var rawValue: Bool
 
-    public init(value: Bool = true) {
-        self.rawValue = value
-    }
+    public init(value: Bool = true) { self.rawValue = value }
 }

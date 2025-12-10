@@ -58,8 +58,7 @@ public import WHATWG_HTML_Shared
 ///   <option>Option 6</option>
 /// </select>
 /// ```
-@dynamicMemberLookup
-public struct Size: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct Size: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "size" }
 
@@ -67,9 +66,7 @@ public struct Size: WHATWG_HTML.StringAttribute {
     public var rawValue: String
 
     /// Initialize with a string value
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }
 
 extension Size {
@@ -87,7 +84,5 @@ extension Size {
 }
 
 extension Size: ExpressibleByIntegerLiteral {
-    public init(integerLiteral value: IntegerLiteralType) {
-        self.rawValue = String(max(1, value))
-    }
+    public init(integerLiteral value: IntegerLiteralType) { self.rawValue = String(max(1, value)) }
 }

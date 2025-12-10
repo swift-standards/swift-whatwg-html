@@ -13,10 +13,8 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `PopoverTarget Test` {
-    @Test
-    func `PopoverTarget attribute should be popovertarget`() {
+@Suite struct `PopoverTarget Test` {
+    @Test func `PopoverTarget attribute should be popovertarget`() {
         #expect(PopoverTarget.attribute == "popovertarget")
     }
 }

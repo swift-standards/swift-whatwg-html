@@ -13,10 +13,8 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `Nomodule Test` {
-    @Test
-    func `Nomodule attribute should be nomodule`() {
+@Suite struct `Nomodule Test` {
+    @Test func `Nomodule attribute should be nomodule`() {
         #expect(Nomodule.attribute == "nomodule")
     }
 }

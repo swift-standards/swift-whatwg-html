@@ -13,10 +13,8 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `DisablePictureInPicture Test` {
-    @Test
-    func `DisablePictureInPicture attribute should be disablepictureinpicture`() {
+@Suite struct `DisablePictureInPicture Test` {
+    @Test func `DisablePictureInPicture attribute should be disablepictureinpicture`() {
         #expect(DisablePictureInPicture.attribute == "disablepictureinpicture")
     }
 }

@@ -13,22 +13,18 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `FormMethod Test` {
-    @Test
-    func `FormMethod attribute should be formmethod`() {
+@Suite struct `FormMethod Test` {
+    @Test func `FormMethod attribute should be formmethod`() {
         #expect(FormMethod.attribute == "formmethod")
     }
 
-    @Test
-    func `FormMethod should have predefined values`() {
+    @Test func `FormMethod should have predefined values`() {
         #expect(FormMethod.get.rawValue == "get")
         #expect(FormMethod.post.rawValue == "post")
         #expect(FormMethod.dialog.rawValue == "dialog")
     }
 
-    @Test
-    func `FormMethod should convert to lowercase`() {
+    @Test func `FormMethod should convert to lowercase`() {
         let method = FormMethod(value: "POST")
         #expect(method.rawValue == "post")
     }

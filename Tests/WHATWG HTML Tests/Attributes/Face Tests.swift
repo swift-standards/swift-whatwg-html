@@ -13,10 +13,6 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `Face Test` {
-    @Test
-    func `Face attribute should be face`() {
-        #expect(Face.attribute == "face")
-    }
+@Suite struct `Face Test` {
+    @Test func `Face attribute should be face`() { #expect(Face.attribute == "face") }
 }

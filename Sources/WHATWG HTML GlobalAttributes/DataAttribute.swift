@@ -82,14 +82,10 @@ public struct DataAttribute: WHATWG_HTML.Attribute {
     }
 
     /// The full attribute name including the "data-" prefix
-    public var attributeName: String {
-        return "\(Self.prefix)\(name)"
-    }
+    public var attributeName: String { return "\(Self.prefix)\(name)" }
 }
 
 extension DataAttribute: CustomStringConvertible {
     /// Returns the value of the data attribute
-    public var description: String {
-        return self.value
-    }
+    public var description: String { return self.value }
 }

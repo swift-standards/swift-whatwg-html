@@ -18,10 +18,6 @@ import WHATWG_HTML
 #elseif canImport(Foundation)
 #endif
 
-@Suite
-struct `Inert Test` {
-    @Test
-    func `Inert attribute should be inert`() {
-        #expect(Inert.attribute == "inert")
-    }
+@Suite struct `Inert Test` {
+    @Test func `Inert attribute should be inert`() { #expect(Inert.attribute == "inert") }
 }

@@ -21,9 +21,7 @@ extension WHATWG_HTML.Element {
         /// The content model for this element.
         public var model: Model
 
-        public init(model: Model) {
-            self.model = model
-        }
+        public init(model: Model) { self.model = model }
     }
 }
 
@@ -34,9 +32,7 @@ extension WHATWG_HTML.Element.Content {
     public static func categories(for tag: String) -> Set<Category> {
         var result: Set<Category> = []
         for category in Category.allCases {
-            if category.elements.contains(tag) {
-                result.insert(category)
-            }
+            if category.elements.contains(tag) { result.insert(category) }
         }
         return result
     }
@@ -48,40 +44,33 @@ extension WHATWG_HTML.Element.Content {
     public static func model(for tag: String) -> Model {
         switch tag {
         // Void elements have "nothing" content model
-        case "area", "base", "br", "col", "embed", "hr", "img", "input",
-            "link", "meta", "source", "track", "wbr":
+        case "area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source",
+            "track", "wbr":
             return .nothing
 
         // Text-only content
-        case "title", "textarea", "script", "style":
-            return .text
+        case "title", "textarea", "script", "style": return .text
 
         // Transparent content models
-        case "a", "ins", "del", "map", "noscript", "slot", "object", "canvas":
-            return .transparent
+        case "a", "ins", "del", "map", "noscript", "slot", "object", "canvas": return .transparent
 
         // Metadata content
-        case "head":
-            return .categories([.metadata])
+        case "head": return .categories([.metadata])
 
         // Select element inner content
-        case "select":
-            return .categories([.`select element inner content`])
+        case "select": return .categories([.`select element inner content`])
 
         // Optgroup element inner content
-        case "optgroup":
-            return .categories([.`optgroup element inner content`])
+        case "optgroup": return .categories([.`optgroup element inner content`])
 
         // Option element inner content
-        case "option":
-            return .categories([.`option element inner content`])
+        case "option": return .categories([.`option element inner content`])
 
         // Phrasing content elements
-        case "abbr", "b", "bdi", "bdo", "cite", "code", "data", "dfn",
-            "em", "i", "kbd", "mark", "output", "q", "rp", "rt", "s",
-            "samp", "small", "span", "strong", "sub", "sup", "time",
-            "u", "var", "label", "button", "meter", "progress",
-            "h1", "h2", "h3", "h4", "h5", "h6", "p", "pre", "legend", "summary":
+        case "abbr", "b", "bdi", "bdo", "cite", "code", "data", "dfn", "em", "i", "kbd", "mark",
+            "output", "q", "rp", "rt", "s", "samp", "small", "span", "strong", "sub", "sup", "time",
+            "u", "var", "label", "button", "meter", "progress", "h1", "h2", "h3", "h4", "h5", "h6",
+            "p", "pre", "legend", "summary":
             return .categories([.phrasing])
 
         default:
@@ -106,8 +95,7 @@ extension WHATWG_HTML.Element.Content {
     ]
 
     /// Checks whether an element has a transparent content model.
-    @inlinable
-    public static func isTransparent(_ element: String) -> Bool {
+    @inlinable public static func isTransparent(_ element: String) -> Bool {
         transparentElements.contains(element)
     }
 }
@@ -120,9 +108,7 @@ extension WHATWG_HTML.Element.Content {
     /// Paragraphs in flow content are defined relative to what the document looks
     /// like without these elements complicating matters, since they can straddle
     /// paragraph boundaries with their hybrid content models.
-    public static let paragraphStraddlingElements: Set<String> = [
-        "a", "ins", "del", "map",
-    ]
+    public static let paragraphStraddlingElements: Set<String> = ["a", "ins", "del", "map"]
 }
 
 // MARK: - Content Model Validation
@@ -131,12 +117,9 @@ extension WHATWG_HTML.Element.Content.Model {
     /// Checks if this content model allows a specific category.
     public func allows(category: WHATWG_HTML.Element.Content.Category) -> Bool {
         switch self {
-        case .nothing:
-            return false
-        case .text:
-            return false
-        case .categories(let allowed):
-            return allowed.contains(category)
+        case .nothing: return false
+        case .text: return false
+        case .categories(let allowed): return allowed.contains(category)
         case .transparent:
             // When no parent, transparent accepts any flow content
             return category == .flow
@@ -149,14 +132,11 @@ extension WHATWG_HTML.Element.Content.Model {
     /// Checks if this content model allows text content.
     public var allowsText: Bool {
         switch self {
-        case .nothing:
-            return false
-        case .text:
-            return true
+        case .nothing: return false
+        case .text: return true
         case .categories(let categories):
             return categories.contains(.phrasing) || categories.contains(.flow)
-        case .transparent:
-            return true
+        case .transparent: return true
         }
     }
 }

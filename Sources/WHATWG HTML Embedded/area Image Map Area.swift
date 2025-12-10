@@ -164,12 +164,7 @@ public struct Area: WHATWG_HTML.Element.`Protocol` {
     ///   - href: URL for the hyperlink target (required)
     ///   - alt: Alternative text description (required for accessibility)
     ///   - target: Where to display the linked resource
-    public init(
-        shape: Shape,
-        href: Href,
-        alt: Alt,
-        target: Target? = nil
-    ) {
+    public init(shape: Shape, href: Href, alt: Alt, target: Target? = nil) {
         self.shape = shape
         self.href = href
         self.alt = alt
@@ -227,12 +222,7 @@ extension Area {
         target: Target? = nil
     ) -> Area {
         let coords = "\(x1),\(y1),\(x2),\(y2)"
-        return Area(
-            shape: .rect(coords: coords),
-            href: href,
-            alt: alt,
-            target: target
-        )
+        return Area(shape: .rect(coords: coords), href: href, alt: alt, target: target)
     }
 
     /// Creates a circular area in an image map.
@@ -254,12 +244,7 @@ extension Area {
         target: Target? = nil
     ) -> Area {
         let coords = "\(x),\(y),\(radius)"
-        return Area(
-            shape: .circle(coords: coords),
-            href: href,
-            alt: alt,
-            target: target
-        )
+        return Area(shape: .circle(coords: coords), href: href, alt: alt, target: target)
     }
 
     /// Creates a polygon area in an image map.
@@ -270,20 +255,14 @@ extension Area {
     ///   - alt: Alternative text description
     ///   - target: Where to display the linked resource
     /// - Returns: An Area with polygon shape
-    @_disfavoredOverload
-    public static func polygon(
+    @_disfavoredOverload public static func polygon(
         points: [(Int, Int)],
         href: Href,
         alt: Alt,
         target: Target? = nil
     ) -> Area {
         let coords = points.map { "\($0.0),\($0.1)" }.joined(separator: ",")
-        return Area(
-            shape: .poly(coords: coords),
-            href: href,
-            alt: alt,
-            target: target
-        )
+        return Area(shape: .poly(coords: coords), href: href, alt: alt, target: target)
     }
 
     /// Creates a default area in an image map (entire region beyond defined shapes).
@@ -293,16 +272,7 @@ extension Area {
     ///   - alt: Alternative text description
     ///   - target: Where to display the linked resource
     /// - Returns: An Area with default shape
-    public static func defaultArea(
-        href: Href,
-        alt: Alt,
-        target: Target? = nil
-    ) -> Area {
-        return Area(
-            shape: .default,
-            href: href,
-            alt: alt,
-            target: target
-        )
+    public static func defaultArea(href: Href, alt: Alt, target: Target? = nil) -> Area {
+        return Area(shape: .default, href: href, alt: alt, target: target)
     }
 }

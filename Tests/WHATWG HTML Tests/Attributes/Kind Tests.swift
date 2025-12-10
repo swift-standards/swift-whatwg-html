@@ -13,15 +13,10 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `Kind Test` {
-    @Test
-    func `Kind attribute should be kind`() {
-        #expect(Kind.attribute == "kind")
-    }
+@Suite struct `Kind Test` {
+    @Test func `Kind attribute should be kind`() { #expect(Kind.attribute == "kind") }
 
-    @Test
-    func `Kind convenience properties`() {
+    @Test func `Kind convenience properties`() {
         #expect(Kind.subtitles.rawValue == "subtitles")
         #expect(Kind.captions.rawValue == "captions")
         #expect(Kind.chapters.rawValue == "chapters")

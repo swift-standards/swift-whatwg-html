@@ -54,8 +54,7 @@ public import WHATWG_HTML_Shared
 /// ```
 /// message=سلام&message-direction=rtl
 /// ```
-@dynamicMemberLookup
-public struct Dirname: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct Dirname: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "dirname" }
 
@@ -63,9 +62,7 @@ public struct Dirname: WHATWG_HTML.StringAttribute {
     public let rawValue: String
 
     /// Initialize with a value for the directionality information
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }
 
 extension Dirname {

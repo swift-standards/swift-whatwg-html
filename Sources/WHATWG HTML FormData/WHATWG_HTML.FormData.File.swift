@@ -69,33 +69,24 @@ extension Form.Data {
         ///   - name: The filename
         ///   - type: The MIME type of the file
         ///   - body: The binary content of the file
-        @inlinable
-        public init(name: String, type: String, body: [UInt8]) {
+        @inlinable public init(name: String, type: String, body: [UInt8]) {
             self.name = name
             self.type = type
             self.body = body
         }
 
         /// The size of the file in bytes.
-        @inlinable
-        public var size: Int {
-            body.count
-        }
+        @inlinable public var size: Int { body.count }
 
         /// Returns whether this file appears to be empty.
-        @inlinable
-        public var isEmpty: Bool {
-            body.isEmpty
-        }
+        @inlinable public var isEmpty: Bool { body.isEmpty }
     }
 }
 
 // MARK: - CustomStringConvertible
 
 extension Form.Data.File: CustomStringConvertible {
-    public var description: String {
-        "<File: \(name), type: \(type), size: \(size) bytes>"
-    }
+    public var description: String { "<File: \(name), type: \(type), size: \(size) bytes>" }
 }
 
 // MARK: - Common MIME Types

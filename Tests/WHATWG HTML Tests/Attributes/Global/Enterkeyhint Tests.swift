@@ -18,17 +18,12 @@ import WHATWG_HTML
 #elseif canImport(Foundation)
 #endif
 
-@Suite
-struct `Enterkeyhint Test` {
-    @Test
-    func `Enterkeyhint attribute should be enterkeyhint`() {
+@Suite struct `Enterkeyhint Test` {
+    @Test func `Enterkeyhint attribute should be enterkeyhint`() {
         #expect(Enterkeyhint.attribute == "enterkeyhint")
     }
 
-    @Test(
-        "Enterkeyhint cases description should match the spec",
-        arguments: Enterkeyhint.allCases
-    )
+    @Test("Enterkeyhint cases description should match the spec", arguments: Enterkeyhint.allCases)
     func cases(enterkeyhint: Enterkeyhint) {
         switch enterkeyhint {
         case .enter: #expect(enterkeyhint.description == "enter")
@@ -42,8 +37,7 @@ struct `Enterkeyhint Test` {
         }
     }
 
-    @Test
-    func `Enterkeyhint should conform to CaseIterable`() {
+    @Test func `Enterkeyhint should conform to CaseIterable`() {
         #expect(Enterkeyhint.allCases.count == 7)
         #expect(Enterkeyhint.allCases.contains(.enter))
         #expect(Enterkeyhint.allCases.contains(.done))
@@ -54,10 +48,7 @@ struct `Enterkeyhint Test` {
         #expect(Enterkeyhint.allCases.contains(.send))
     }
 
-    @Test(
-        "Enterkeyhint rawValue should match description",
-        arguments: Enterkeyhint.allCases
-    )
+    @Test("Enterkeyhint rawValue should match description", arguments: Enterkeyhint.allCases)
     func rawValueMatchesDescription(enterkeyhint: Enterkeyhint) {
         #expect(enterkeyhint.rawValue == enterkeyhint.description)
     }
@@ -65,16 +56,11 @@ struct `Enterkeyhint Test` {
     @Test(
         "Enterkeyhint should be initializable from rawValue",
         arguments: [
-            ("enter", Enterkeyhint.enter),
-            ("done", Enterkeyhint.done),
-            ("go", Enterkeyhint.go),
-            ("next", Enterkeyhint.next),
-            ("previous", Enterkeyhint.previous),
-            ("search", Enterkeyhint.search),
-            ("send", Enterkeyhint.send),
+            ("enter", Enterkeyhint.enter), ("done", Enterkeyhint.done), ("go", Enterkeyhint.go),
+            ("next", Enterkeyhint.next), ("previous", Enterkeyhint.previous),
+            ("search", Enterkeyhint.search), ("send", Enterkeyhint.send),
         ]
-    )
-    func initializableFromRawValue(input: String, expected: Enterkeyhint?) {
+    ) func initializableFromRawValue(input: String, expected: Enterkeyhint?) {
         #expect(Enterkeyhint(rawValue: input) == expected)
     }
 }

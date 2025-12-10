@@ -57,10 +57,7 @@ public struct ProgressIndicator: WHATWG_HTML.Element.`Protocol` {
     /// - Parameters:
     ///   - max: The maximum value, describing how much work the task requires. Default is 1.
     ///   - value: The current progress value. If nil, the progress bar is indeterminate., typically a text fallback for browsers that don't support the progress element.
-    public init(
-        max: Max? = nil,
-        value: Value<Float>? = nil
-    ) {
+    public init(max: Max? = nil, value: Value<Float>? = nil) {
         self.max = max
         self.value = value
 

@@ -59,10 +59,7 @@ public struct OptionGroup: WHATWG_HTML.Element.`Protocol` {
     /// - Parameters:
     ///   - disabled: If set, none of the items in this option group will be selectable
     ///   - label: The name of the group of options (mandatory) (typically `<option>` elements)
-    public init(
-        disabled: Disabled? = nil,
-        label: WHATWG_HTML_MediaAttributes.Label? = nil
-    ) {
+    public init(disabled: Disabled? = nil, label: WHATWG_HTML_MediaAttributes.Label? = nil) {
         self.disabled = disabled
         self.label = label
 

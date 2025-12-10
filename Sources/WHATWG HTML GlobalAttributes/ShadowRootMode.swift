@@ -39,8 +39,7 @@ public import WHATWG_HTML_Shared
 ///   <p>Private shadow DOM content</p>
 /// </template>
 /// ```
-@dynamicMemberLookup
-public struct ShadowRootMode: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct ShadowRootMode: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "shadowrootmode" }
 
@@ -48,9 +47,7 @@ public struct ShadowRootMode: WHATWG_HTML.StringAttribute {
     public var rawValue: String
 
     /// Initialize with a string value
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }
 
 extension ShadowRootMode {

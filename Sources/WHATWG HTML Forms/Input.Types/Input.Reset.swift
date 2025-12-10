@@ -30,10 +30,7 @@ extension Input {
         public var required: Required?
 
         /// Creates a new reset input configuration
-        public init(
-            value: Value<String>? = nil,
-            required: Required? = nil
-        ) {
+        public init(value: Value<String>? = nil, required: Required? = nil) {
             self.value = value
             self.required = required
         }
@@ -51,15 +48,6 @@ extension Input {
         disabled: Disabled? = nil,
         form: WHATWG_HTML_FormAttributes.Form.ID? = nil
     ) -> Self {
-        .init(
-            name: name,
-            disabled: disabled,
-            form: form,
-            type: .reset(
-                .init(
-                    value: value
-                )
-            )
-        )
+        .init(name: name, disabled: disabled, form: form, type: .reset(.init(value: value)))
     }
 }

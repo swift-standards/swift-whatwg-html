@@ -13,7 +13,6 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `Embed Fallback Test` {
+@Suite struct `Embed Fallback Test` {
 
 }

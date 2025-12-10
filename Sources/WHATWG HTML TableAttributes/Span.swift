@@ -59,27 +59,23 @@ extension Geometry<Int>.Width {
         @inlinable public static var attribute: String { "span" }
 
         /// The raw string value
-        @inlinable
-        public var rawValue: String { String(width.value) }
+        @inlinable public var rawValue: String { String(width.value) }
 
         /// Initialize with a width value
-        @inlinable
-        public init(_ width: Geometry<Int>.Width) {
+        @inlinable public init(_ width: Geometry<Int>.Width) {
             precondition(width.value > 0, "Span value must be a positive integer")
             self.width = width
         }
 
         /// Initialize with a string value
-        @inlinable
-        public init(value: String) {
+        @inlinable public init(value: String) {
             let intValue = Int(value) ?? 1
             precondition(intValue > 0, "Span value must be a positive integer")
             self.width = Geometry<Int>.Width(intValue)
         }
 
         /// Initialize with an integer value
-        @inlinable
-        public init(_ value: Int) {
+        @inlinable public init(_ value: Int) {
             precondition(value > 0, "Span value must be a positive integer")
             self.width = Geometry<Int>.Width(value)
         }
@@ -87,16 +83,14 @@ extension Geometry<Int>.Width {
 }
 
 extension Geometry<Int>.Width.ColumnSpan: ExpressibleByIntegerLiteral {
-    @inlinable
-    public init(integerLiteral value: IntegerLiteralType) {
+    @inlinable public init(integerLiteral value: IntegerLiteralType) {
         precondition(value > 0, "Span value must be a positive integer")
         self.init(value)
     }
 }
 
 extension Geometry<Int>.Width.ColumnSpan: CustomStringConvertible {
-    @inlinable
-    public var description: String { rawValue }
+    @inlinable public var description: String { rawValue }
 }
 
 extension Geometry<Int>.Width.ColumnSpan: Sendable {}

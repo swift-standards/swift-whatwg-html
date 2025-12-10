@@ -62,8 +62,7 @@ extension Form.Data {
         /// - Parameters:
         ///   - name: The name of the entry
         ///   - value: The value of the entry (string or file)
-        @inlinable
-        public init(name: String, value: Value) {
+        @inlinable public init(name: String, value: Value) {
             self.name = name
             self.value = value
         }
@@ -73,8 +72,7 @@ extension Form.Data {
         /// - Parameters:
         ///   - name: The name of the entry
         ///   - stringValue: The string value
-        @inlinable
-        public init(name: String, stringValue: String) {
+        @inlinable public init(name: String, stringValue: String) {
             self.name = name
             self.value = .string(stringValue)
         }
@@ -84,8 +82,7 @@ extension Form.Data {
         /// - Parameters:
         ///   - name: The name of the entry
         ///   - file: The file value
-        @inlinable
-        public init(name: String, file: File) {
+        @inlinable public init(name: String, file: File) {
             self.name = name
             self.value = .file(file)
         }

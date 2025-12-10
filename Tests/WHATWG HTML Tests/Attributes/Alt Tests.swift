@@ -13,10 +13,6 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `Alt Test` {
-    @Test
-    func `Alt attribute should be alt`() {
-        #expect(Alt.attribute == "alt")
-    }
+@Suite struct `Alt Test` {
+    @Test func `Alt attribute should be alt`() { #expect(Alt.attribute == "alt") }
 }

@@ -16,15 +16,12 @@ public import WHATWG_HTML_Shared
 ///
 /// These values are commonly used with the name attribute to provide
 /// various types of document-level metadata.
-@dynamicMemberLookup
-public struct MetaName: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct MetaName: WHATWG_HTML.StringAttribute {
     @inlinable public static var attribute: String { "name" }
 
     public let rawValue: String
 
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }
 
 extension MetaName {

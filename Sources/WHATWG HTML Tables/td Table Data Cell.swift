@@ -62,11 +62,7 @@ public struct TableDataCell: WHATWG_HTML.Element.`Protocol` {
     ///   - colspan: Number of columns this cell spans (default is 1)
     ///   - headers: IDs of related header cells for accessibility
     ///   - rowspan: Number of rows this cell spans (default is 1)
-    public init(
-        colspan: ColSpan? = nil,
-        headers: Headers? = nil,
-        rowspan: RowSpan? = nil
-    ) {
+    public init(colspan: ColSpan? = nil, headers: Headers? = nil, rowspan: RowSpan? = nil) {
         self.colspan = colspan
         self.headers = headers
         self.rowspan = rowspan

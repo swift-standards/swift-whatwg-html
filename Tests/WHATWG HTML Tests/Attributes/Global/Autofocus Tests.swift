@@ -18,10 +18,8 @@ import WHATWG_HTML
 #elseif canImport(Foundation)
 #endif
 
-@Suite
-struct `Autofocus Test` {
-    @Test
-    func `Autofocus attribute should be autofocus`() {
+@Suite struct `Autofocus Test` {
+    @Test func `Autofocus attribute should be autofocus`() {
         #expect(Autofocus.attribute == "autofocus")
     }
 }

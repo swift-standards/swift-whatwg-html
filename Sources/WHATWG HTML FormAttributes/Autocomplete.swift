@@ -30,26 +30,21 @@ public import WHATWG_HTML_Shared
 /// - `"off"`: The browser should not automatically complete or select a value
 /// - `"on"`: The browser may automatically complete the input with no specific guidance
 /// - **Token lists**: Space-separated tokens that describe expected data types (e.g., "email", "name", "street-address")
-@dynamicMemberLookup
-public struct Autocomplete: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct Autocomplete: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "autocomplete" }
 
     /// The autocomplete value
     public let rawValue: String
 
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }
 
 extension Autocomplete: ExpressibleByBooleanLiteral {
     public init(booleanLiteral value: BooleanLiteralType) {
         switch value {
-        case true:
-            self = .on
-        case false:
-            self = .off
+        case true: self = .on
+        case false: self = .off
         }
     }
 }
@@ -67,14 +62,10 @@ extension Autocomplete: ExpressibleByArrayLiteral {
 
 extension Autocomplete {
     /// Initialize with an array of tokens
-    public init(_ tokens: [Token]) {
-        self.init(value: tokens.map(\.value).joined(separator: " "))
-    }
+    public init(_ tokens: [Token]) { self.init(value: tokens.map(\.value).joined(separator: " ")) }
 
     /// Initialize with a variadic list of tokens
-    public init(_ tokens: Token...) {
-        self.init(tokens)
-    }
+    public init(_ tokens: Token...) { self.init(tokens) }
 }
 
 extension Autocomplete {
@@ -137,24 +128,15 @@ extension Autocomplete {
         /// The string value of the token
         public var value: String {
             switch self {
-            case .section(let name):
-                return "section-\(name)"
-            case .grouping(let identifier):
-                return identifier.rawValue
-            case .recipientType(let type):
-                return type.rawValue
-            case .name(let token):
-                return token.rawValue
-            case .address(let token):
-                return token.rawValue
-            case .payment(let token):
-                return token.rawValue
-            case .contact(let token):
-                return token.rawValue
-            case .other(let token):
-                return token.rawValue
-            case .webauthn:
-                return "webauthn"
+            case .section(let name): return "section-\(name)"
+            case .grouping(let identifier): return identifier.rawValue
+            case .recipientType(let type): return type.rawValue
+            case .name(let token): return token.rawValue
+            case .address(let token): return token.rawValue
+            case .payment(let token): return token.rawValue
+            case .contact(let token): return token.rawValue
+            case .other(let token): return token.rawValue
+            case .webauthn: return "webauthn"
             }
         }
     }

@@ -42,8 +42,7 @@ public import WHATWG_HTML_Shared
 ///   Text will only wrap where the user pressed Enter.
 /// </textarea>
 /// ```
-@dynamicMemberLookup
-public struct TextareaWrap: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct TextareaWrap: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "wrap" }
 
@@ -51,14 +50,10 @@ public struct TextareaWrap: WHATWG_HTML.StringAttribute {
     public var rawValue: String
 
     /// Initialize with a string value
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 
     /// Initialize with a wrap value
-    public init(_ value: String) {
-        self.init(value: value)
-    }
+    public init(_ value: String) { self.init(value: value) }
 
     /// Line breaks are automatically inserted
     public static let hard = TextareaWrap("hard")

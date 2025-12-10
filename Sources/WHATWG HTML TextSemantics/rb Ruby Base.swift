@@ -10,8 +10,7 @@ public import WHATWG_HTML_Shared
 /// Note: The `<rb>` element is not part of the WHATWG HTML Living Standard
 /// but is included for compatibility with older ruby annotation implementations.
 public struct RubyBase: WHATWG_HTML.Element.`Protocol` {
-    @inlinable
-    public static var tag: String { "rb" }
+    @inlinable public static var tag: String { "rb" }
 
     public init() {}
 }

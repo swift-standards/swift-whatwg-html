@@ -30,8 +30,7 @@ public import WHATWG_HTML_Shared
 /// ```html
 /// <html xmlns="http://www.w3.org/1999/xhtml">
 /// ```
-@dynamicMemberLookup
-public struct Xmlns: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct Xmlns: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "xmlns" }
 
@@ -39,14 +38,10 @@ public struct Xmlns: WHATWG_HTML.StringAttribute {
     public var rawValue: String
 
     /// Initialize with a string value
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 
     /// Initialize with a value
-    public init(_ value: String) {
-        self.init(value: value)
-    }
+    public init(_ value: String) { self.init(value: value) }
 
     /// Standard HTML namespace
     @inlinable public static var html: Self { "http://www.w3.org/1999/xhtml" }

@@ -13,21 +13,15 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `ColSpan Test` {
-    @Test
-    func `ColSpan attribute should be colspan`() {
-        #expect(ColSpan.attribute == "colspan")
-    }
+@Suite struct `ColSpan Test` {
+    @Test func `ColSpan attribute should be colspan`() { #expect(ColSpan.attribute == "colspan") }
 
-    @Test
-    func `ColSpan should support integer literal`() {
+    @Test func `ColSpan should support integer literal`() {
         let colSpan: ColSpan = 3
         #expect(colSpan.rawValue == "3")
     }
 
-    @Test
-    func `ColSpan description should equal rawValue`() {
+    @Test func `ColSpan description should equal rawValue`() {
         let colSpan = ColSpan(value: "2")
         #expect(colSpan.description == "2")
     }

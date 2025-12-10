@@ -57,24 +57,12 @@ public struct Form: Sendable, Hashable {
 }
 
 extension Form {
-    public mutating func action(_ value: FormAction?) {
-        self.action = value
-    }
+    public mutating func action(_ value: FormAction?) { self.action = value }
 
-    public mutating func enctype(_ value: FormEncType?) {
-        self.enctype = value
-    }
-    public mutating func method(_ value: FormMethod?) {
-        self.method = value
-    }
-    public mutating func novalidate(_ value: FormNovalidate?) {
-        self.novalidate = value
-    }
-    public mutating func target(_ value: FormTarget?) {
-        self.target = value
-    }
+    public mutating func enctype(_ value: FormEncType?) { self.enctype = value }
+    public mutating func method(_ value: FormMethod?) { self.method = value }
+    public mutating func novalidate(_ value: FormNovalidate?) { self.novalidate = value }
+    public mutating func target(_ value: FormTarget?) { self.target = value }
 }
 
-extension Form {
-    public typealias ID = Id
-}
+extension Form { public typealias ID = Id }

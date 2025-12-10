@@ -18,18 +18,12 @@ import WHATWG_HTML
 #elseif canImport(Foundation)
 #endif
 
-@Suite
-struct `Hidden Test` {
-    @Test
-    func `Hidden attribute should be hidden`() {
-        #expect(Hidden.attribute == "hidden")
-    }
+@Suite struct `Hidden Test` {
+    @Test func `Hidden attribute should be hidden`() { #expect(Hidden.attribute == "hidden") }
 
-    @Test(
-        "Hidden cases description should match the spec",
-        arguments: Hidden.allCases
-    )
-    func cases(hidden: Hidden) {
+    @Test("Hidden cases description should match the spec", arguments: Hidden.allCases) func cases(
+        hidden: Hidden
+    ) {
         switch hidden {
         case .hidden: #expect(hidden.description == "hidden")
         case .untilFound: #expect(hidden.description == "until-found")
@@ -38,17 +32,13 @@ struct `Hidden Test` {
         }
     }
 
-    @Test
-    func `Hidden should conform to CaseIterable`() {
+    @Test func `Hidden should conform to CaseIterable`() {
         #expect(Hidden.allCases.count == 3)
         #expect(Hidden.allCases.contains(.hidden))
         #expect(Hidden.allCases.contains(.untilFound))
     }
 
-    @Test(
-        "Hidden rawValue should match description",
-        arguments: Hidden.allCases
-    )
+    @Test("Hidden rawValue should match description", arguments: Hidden.allCases)
     func rawValueMatchesDescription(hidden: Hidden) {
         #expect(hidden.rawValue == hidden.description)
     }
@@ -56,17 +46,14 @@ struct `Hidden Test` {
     @Test(
         "Hidden should be initializable from rawValue",
         arguments: [
-            ("hidden", Hidden.hidden),
-            ("until-found", Hidden.untilFound),
+            ("hidden", Hidden.hidden), ("until-found", Hidden.untilFound),
 
         ]
-    )
-    func initializableFromRawValue(input: String, expected: Hidden?) {
+    ) func initializableFromRawValue(input: String, expected: Hidden?) {
         #expect(Hidden(rawValue: input) == expected)
     }
 
-    @Test
-    func `Empty Hidden should use default mode`() {
+    @Test func `Empty Hidden should use default mode`() {
         let hiddenDefault = Hidden()
         #expect(hiddenDefault == .hidden)
     }

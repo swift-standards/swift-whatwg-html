@@ -61,30 +61,20 @@ public struct Accept: WHATWG_HTML.Attribute {
     private let fileTypes: [FileType]
 
     /// Initialize with a single file type
-    public init(_ fileType: FileType) {
-        self.fileTypes = [fileType]
-    }
+    public init(_ fileType: FileType) { self.fileTypes = [fileType] }
 
     /// Initialize with multiple file types
-    public init(_ fileTypes: [FileType]) {
-        self.fileTypes = fileTypes
-    }
+    public init(_ fileTypes: [FileType]) { self.fileTypes = fileTypes }
 
     /// Initialize with multiple file types as variadic parameters
-    public init(_ fileTypes: FileType...) {
-        self.fileTypes = fileTypes
-    }
+    public init(_ fileTypes: FileType...) { self.fileTypes = fileTypes }
 
     /// Initialize with a raw string value
-    public init(rawValue: String) {
-        self.fileTypes = [FileType(rawValue)]
-    }
+    public init(rawValue: String) { self.fileTypes = [FileType(rawValue)] }
 }
 
 extension Accept: ExpressibleByStringLiteral {
-    public init(stringLiteral value: StringLiteralType) {
-        self = .init(rawValue: value)
-    }
+    public init(stringLiteral value: StringLiteralType) { self = .init(rawValue: value) }
 }
 
 extension Accept: CustomStringConvertible {
@@ -118,23 +108,15 @@ extension Accept {
         public var value: String
 
         /// Initialize with a custom value
-        public init(_ value: String) {
-            self.value = value
-        }
+        public init(_ value: String) { self.value = value }
 
         /// Initialize with an RFC 2045 MIME type
-        public init(contentType: RFC_2045.ContentType) {
-            self.value = contentType.headerValue
-        }
+        public init(contentType: RFC_2045.ContentType) { self.value = contentType.headerValue }
 
         /// String representation of the file type
-        public var description: String {
-            return value
-        }
+        public var description: String { return value }
 
-        public init(stringLiteral value: StringLiteralType) {
-            self = .init(value)
-        }
+        public init(stringLiteral value: StringLiteralType) { self = .init(value) }
     }
 }
 
@@ -299,12 +281,8 @@ extension Accept.FileType {
     }
 
     /// Creates a FileType from an extension (automatically adds the period if needed)
-    public static func ext(_ extension: String) -> Self {
-        .extension(`extension`)
-    }
+    public static func ext(_ extension: String) -> Self { .extension(`extension`) }
 
     /// Creates a FileType from a MIME type
-    public static func mime(_ type: String) -> Self {
-        return .init(type)
-    }
+    public static func mime(_ type: String) -> Self { return .init(type) }
 }

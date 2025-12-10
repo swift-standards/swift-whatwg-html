@@ -67,23 +67,17 @@ public struct Minlength: WHATWG_HTML.Attribute {
     }
 
     /// Create a minlength attribute with the given number of characters
-    public static func characters(_ count: Int) -> Minlength {
-        return Minlength(count)
-    }
+    public static func characters(_ count: Int) -> Minlength { return Minlength(count) }
 
     /// Minimum length of zero (effectively no minimum)
     public static let none = Minlength(0)
 }
 
 extension Minlength: ExpressibleByIntegerLiteral {
-    public init(integerLiteral value: IntegerLiteralType) {
-        self.value = max(0, value)
-    }
+    public init(integerLiteral value: IntegerLiteralType) { self.value = max(0, value) }
 }
 
 extension Minlength: CustomStringConvertible {
     /// Returns the string representation of the minlength value
-    public var description: String {
-        return String(self.value)
-    }
+    public var description: String { return String(self.value) }
 }

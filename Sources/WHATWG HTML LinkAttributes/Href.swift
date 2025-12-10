@@ -63,8 +63,7 @@ public import WHATWG_HTML_Shared
 /// // Relative link
 /// HTML.a.href("/about").text("About Us")
 /// ```
-@dynamicMemberLookup
-public struct Href: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct Href: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "href" }
 
@@ -72,9 +71,7 @@ public struct Href: WHATWG_HTML.StringAttribute {
     public let rawValue: String
 
     /// Initialize with a value for the href attribute
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }
 
 extension Href {
@@ -88,9 +85,7 @@ extension Href {
     /// Create an Href for an email address
     /// - Parameter email: The email address
     /// - Returns: An Href with a mailto: scheme
-    public static func mailto(_ email: String) -> Href {
-        return Href(value: "mailto:\(email)")
-    }
+    public static func mailto(_ email: String) -> Href { return Href(value: "mailto:\(email)") }
 
     /// Create an Href for SMS
     /// - Parameter phoneNumber: The phone number to send SMS to
@@ -102,16 +97,12 @@ extension Href {
     /// Create an Href for a file URL
     /// - Parameter path: The file path
     /// - Returns: An Href with a file: scheme
-    public static func file(_ path: String) -> Href {
-        return Href(value: "file://\(path)")
-    }
+    public static func file(_ path: String) -> Href { return Href(value: "file://\(path)") }
 
     /// Create an Href for a fragment (anchor) within the current page
     /// - Parameter fragment: The fragment identifier (without the # symbol)
     /// - Returns: An Href with just the fragment
-    public static func fragment(_ fragment: String) -> Href {
-        return Href(value: "#\(fragment)")
-    }
+    public static func fragment(_ fragment: String) -> Href { return Href(value: "#\(fragment)") }
 
     /// Create an Href for WhatsApp
     /// - Parameter phoneNumber: The phone number (with country code)
@@ -195,11 +186,8 @@ extension Href {
     /// )
     /// // Result: "mailto:user@example.com?subject=Hello&body=This%20is%20a%20test%20message"
     /// ```
-    public static func email(
-        _ address: String,
-        subject: String? = nil,
-        body: String? = nil
-    ) -> Href {
+    public static func email(_ address: String, subject: String? = nil, body: String? = nil) -> Href
+    {
         var url = "mailto:\(address)"
 
         if subject != nil || body != nil {
@@ -248,9 +236,7 @@ extension Href {
                 // Convert to hex without Foundation
                 let hex = String(char, radix: 16, uppercase: true)
                 result.append("%")
-                if hex.count == 1 {
-                    result.append("0")
-                }
+                if hex.count == 1 { result.append("0") }
                 result.append(hex)
             }
         }

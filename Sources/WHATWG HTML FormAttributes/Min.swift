@@ -76,8 +76,7 @@ public import WHATWG_HTML_Shared
 /// ```html
 /// <input type="range" min="0" step="5" max="100">
 /// ```
-@dynamicMemberLookup
-public struct Min: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct Min: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "min" }
 
@@ -85,9 +84,7 @@ public struct Min: WHATWG_HTML.StringAttribute {
     public let rawValue: String
 
     /// Initialize with a value for the min attribute
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 
     /// Initialize with an ISO 8601 DateTime (for date/time inputs)
     public init(dateTime: ISO_8601.DateTime) {
@@ -119,15 +116,11 @@ extension Min {
 }
 
 extension Min: ExpressibleByIntegerLiteral {
-    public init(integerLiteral value: IntegerLiteralType) {
-        self.rawValue = String(value)
-    }
+    public init(integerLiteral value: IntegerLiteralType) { self.rawValue = String(value) }
 }
 
 extension Min: ExpressibleByFloatLiteral {
-    public init(floatLiteral value: FloatLiteralType) {
-        self.rawValue = String(value)
-    }
+    public init(floatLiteral value: FloatLiteralType) { self.rawValue = String(value) }
 }
 
 extension Min {

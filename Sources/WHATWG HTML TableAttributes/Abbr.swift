@@ -39,15 +39,12 @@ public import WHATWG_HTML_Shared
 ///     "Department of Human Resources"
 /// }
 /// ```
-@dynamicMemberLookup
-public struct Abbr: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct Abbr: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "abbr" }
 
     /// The abbreviated description text
     public let rawValue: String
 
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }

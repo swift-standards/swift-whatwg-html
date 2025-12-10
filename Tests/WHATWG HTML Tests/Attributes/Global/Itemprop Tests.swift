@@ -18,33 +18,27 @@ import WHATWG_HTML
 #elseif canImport(Foundation)
 #endif
 
-@Suite
-struct `Itemprop Test` {
-    @Test
-    func `Itemprop attribute should be itemprop`() {
+@Suite struct `Itemprop Test` {
+    @Test func `Itemprop attribute should be itemprop`() {
         #expect(Itemprop.attribute == "itemprop")
     }
 
-    @Test
-    func `Itemprop should store and return its value`() {
+    @Test func `Itemprop should store and return its value`() {
         let itemprop = Itemprop("name")
         #expect(itemprop.rawValue == "name")
     }
 
-    @Test
-    func `Itemprop description should return its value`() {
+    @Test func `Itemprop description should return its value`() {
         let itemprop = Itemprop("director")
         #expect(itemprop.description == "director")
     }
 
-    @Test
-    func `Itemprop should be initializable with string literal`() {
+    @Test func `Itemprop should be initializable with string literal`() {
         let itemprop: Itemprop = "author"
         #expect(itemprop.rawValue == "author")
     }
 
-    @Test
-    func `Itemprop should be initializable with array literal`() {
+    @Test func `Itemprop should be initializable with array literal`() {
         let itemprop: Itemprop = ["favorite-color", "favorite-fruit"]
         #expect(itemprop.rawValue == "favorite-color favorite-fruit")
     }

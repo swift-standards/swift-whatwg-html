@@ -13,7 +13,6 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `Directory Test` {
+@Suite struct `Directory Test` {
 
 }

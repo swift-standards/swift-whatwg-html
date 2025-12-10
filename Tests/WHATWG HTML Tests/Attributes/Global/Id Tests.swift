@@ -18,27 +18,20 @@ import WHATWG_HTML
 #elseif canImport(Foundation)
 #endif
 
-@Suite
-struct `Id Test` {
-    @Test
-    func `Id attribute should be id`() {
-        #expect(Id.attribute == "id")
-    }
+@Suite struct `Id Test` {
+    @Test func `Id attribute should be id`() { #expect(Id.attribute == "id") }
 
-    @Test
-    func `Id should store and return its value`() {
+    @Test func `Id should store and return its value`() {
         let id = Id("header-section")
         #expect(id.rawValue == "header-section")
     }
 
-    @Test
-    func `Id description should return its value`() {
+    @Test func `Id description should return its value`() {
         let id = Id("main-content")
         #expect(id.description == "main-content")
     }
 
-    @Test
-    func `Id should be initializable with string literal`() {
+    @Test func `Id should be initializable with string literal`() {
         let id: Id = "footer"
         #expect(id.rawValue == "footer")
     }

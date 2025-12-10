@@ -69,8 +69,7 @@ public import WHATWG_HTML_Shared
 /// ```html
 /// <progress max="100" value="75">75%</progress>
 /// ```
-@dynamicMemberLookup
-public struct Max: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct Max: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "max" }
 
@@ -78,9 +77,7 @@ public struct Max: WHATWG_HTML.StringAttribute {
     public let rawValue: String
 
     /// Initialize with a value for the max attribute
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 
     /// Initialize with an ISO 8601 DateTime (for date/time inputs)
     public init(dateTime: ISO_8601.DateTime) {
@@ -109,15 +106,11 @@ extension Max {
 }
 
 extension Max: ExpressibleByIntegerLiteral {
-    public init(integerLiteral value: IntegerLiteralType) {
-        self.rawValue = String(value)
-    }
+    public init(integerLiteral value: IntegerLiteralType) { self.rawValue = String(value) }
 }
 
 extension Max: ExpressibleByFloatLiteral {
-    public init(floatLiteral value: FloatLiteralType) {
-        self.rawValue = String(value)
-    }
+    public init(floatLiteral value: FloatLiteralType) { self.rawValue = String(value) }
 }
 
 extension Max {

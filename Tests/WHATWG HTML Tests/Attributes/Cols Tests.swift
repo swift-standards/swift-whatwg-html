@@ -13,10 +13,6 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `Cols Test` {
-    @Test
-    func `Cols attribute should be cols`() {
-        #expect(Cols.attribute == "cols")
-    }
+@Suite struct `Cols Test` {
+    @Test func `Cols attribute should be cols`() { #expect(Cols.attribute == "cols") }
 }

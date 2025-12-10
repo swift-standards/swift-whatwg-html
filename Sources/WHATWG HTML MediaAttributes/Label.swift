@@ -13,8 +13,7 @@
 public import WHATWG_HTML_Shared
 
 /// Represents the label attribute used in HTML elements like <optgroup>, <option>, and <track>.
-@dynamicMemberLookup
-public struct Label: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct Label: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "label" }
 
@@ -22,7 +21,5 @@ public struct Label: WHATWG_HTML.StringAttribute {
     public let rawValue: String
 
     /// Initialize with a value for the label attribute
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 }

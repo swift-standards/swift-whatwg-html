@@ -63,9 +63,7 @@ public struct Definition: WHATWG_HTML.Element.`Protocol` {
     ///
     /// - Parameters:
     ///   - title: If present, its value is considered to be the term being defined
-    public init(
-        title: WHATWG_HTML_GlobalAttributes.Title? = nil
-    ) {
+    public init(title: WHATWG_HTML_GlobalAttributes.Title? = nil) {
         self.title = title
 
     }

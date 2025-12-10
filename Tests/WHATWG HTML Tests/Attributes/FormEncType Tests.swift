@@ -13,15 +13,12 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `FormEncType Test` {
-    @Test
-    func `FormEncType attribute should be formenctype`() {
+@Suite struct `FormEncType Test` {
+    @Test func `FormEncType attribute should be formenctype`() {
         #expect(FormEncType.attribute == "formenctype")
     }
 
-    @Test
-    func `FormEncType should have predefined values`() {
+    @Test func `FormEncType should have predefined values`() {
         #expect(FormEncType.urlEncoded.rawValue == "application/x-www-form-urlencoded")
         #expect(FormEncType.multipartFormData.rawValue == "multipart/form-data")
         #expect(FormEncType.textPlain.rawValue == "text/plain")

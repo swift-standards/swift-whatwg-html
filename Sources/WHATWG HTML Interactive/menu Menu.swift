@@ -9,8 +9,7 @@ public import WHATWG_HTML_Shared
 ///
 /// The `<menu>` element can be used as a semantic alternative to `<ul>` for toolbars and command lists.
 public struct Menu: WHATWG_HTML.Element.`Protocol` {
-    @inlinable
-    public static var tag: String { "menu" }
+    @inlinable public static var tag: String { "menu" }
 
     public init() {}
 }

@@ -48,9 +48,7 @@ public struct HtmlRoot: WHATWG_HTML.Element.`Protocol` {
     ///
     /// - Parameters:
     ///   - xmlns: The XML namespace (required for XHTML, optional for HTML), typically head and body elements
-    public init(
-        xmlns: Xmlns? = nil
-    ) {
+    public init(xmlns: Xmlns? = nil) {
         self.xmlns = xmlns
 
     }

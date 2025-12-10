@@ -55,11 +55,7 @@ public struct OrderedList: WHATWG_HTML.Element.`Protocol` {
     ///   - reversed: Boolean attribute that reverses the order of items
     ///   - start: The starting number for the list
     ///   - type: The numbering type to use (list items)
-    public init(
-        reversed: Reversed? = nil,
-        start: Start? = nil,
-        type: ListType? = nil
-    ) {
+    public init(reversed: Reversed? = nil, start: Start? = nil, type: ListType? = nil) {
         self.reversed = reversed
         self.start = start
         self.type = type

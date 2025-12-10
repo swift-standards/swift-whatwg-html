@@ -78,10 +78,7 @@ public struct Details: WHATWG_HTML.Element.`Protocol` {
     /// - Parameters:
     ///   - open: When present, indicates that the details should be visible
     ///   - name: Group name for connected details elements (accordion behavior)
-    public init(
-        open: Open? = nil,
-        name: Name? = nil
-    ) {
+    public init(open: Open? = nil, name: Name? = nil) {
         self.open = open
         self.name = name
 

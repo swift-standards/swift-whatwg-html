@@ -56,8 +56,7 @@ public import WHATWG_HTML_Shared
 ///   {"user": "John", "id": 123}
 /// </script>
 /// ```
-@dynamicMemberLookup
-public struct ScriptType: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct ScriptType: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "type" }
 
@@ -65,14 +64,10 @@ public struct ScriptType: WHATWG_HTML.StringAttribute {
     public var rawValue: String
 
     /// Initialize with a string value
-    public init(value: String) {
-        self.rawValue = value
-    }
+    public init(value: String) { self.rawValue = value }
 
     /// Initialize with a MIME content type
-    public init(contentType: RFC_2045.ContentType) {
-        self.rawValue = contentType.headerValue
-    }
+    public init(contentType: RFC_2045.ContentType) { self.rawValue = contentType.headerValue }
 }
 
 // MARK: - Special Keywords

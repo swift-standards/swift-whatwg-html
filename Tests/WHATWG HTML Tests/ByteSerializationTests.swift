@@ -14,13 +14,11 @@ import Testing
 
 @testable import WHATWG_HTML_GlobalAttributes
 
-@Suite("Byte Serialization Tests")
-struct ByteSerializationTests {
+@Suite("Byte Serialization Tests") struct ByteSerializationTests {
 
     // MARK: - Boolean Attributes
 
-    @Test("Autofocus byte serialization - true")
-    func autofocusTrue() {
+    @Test("Autofocus byte serialization - true") func autofocusTrue() {
         let attr: Autofocus = true
         let bytes = [UInt8](attr)
 
@@ -28,8 +26,7 @@ struct ByteSerializationTests {
         #expect(String(attr) == "autofocus")
     }
 
-    @Test("Autofocus byte serialization - false")
-    func autofocusFalse() {
+    @Test("Autofocus byte serialization - false") func autofocusFalse() {
         let attr: Autofocus = false
         let bytes = [UInt8](attr)
 
@@ -39,8 +36,7 @@ struct ByteSerializationTests {
 
     // MARK: - String Attributes
 
-    @Test("Id byte serialization - ASCII")
-    func idASCII() {
+    @Test("Id byte serialization - ASCII") func idASCII() {
         let attr = Id(value: "main")
         let bytes = [UInt8](attr)
         let expected = [UInt8].ascii.unchecked("id=\"main\"")
@@ -49,8 +45,7 @@ struct ByteSerializationTests {
         #expect(String(attr) == "id=\"main\"")
     }
 
-    @Test("Id byte serialization - UTF-8")
-    func idUTF8() {
+    @Test("Id byte serialization - UTF-8") func idUTF8() {
         let attr = Id(value: "日本")
         let bytes = [UInt8](attr)
 
@@ -63,8 +58,7 @@ struct ByteSerializationTests {
         #expect(decoded == "id=\"日本\"")
     }
 
-    @Test("Id byte serialization - complex value")
-    func idComplex() {
+    @Test("Id byte serialization - complex value") func idComplex() {
         let attr = Id(value: "my-complex-id_123")
         let bytes = [UInt8](attr)
         let expected = [UInt8].ascii.unchecked("id=\"my-complex-id_123\"")
@@ -75,8 +69,7 @@ struct ByteSerializationTests {
 
     // MARK: - RFC Pattern Verification
 
-    @Test("String initializer composes through bytes")
-    func stringCompositionThroughBytes() {
+    @Test("String initializer composes through bytes") func stringCompositionThroughBytes() {
         let attr: Autofocus = true
 
         // Verify category theory: Autofocus → [UInt8] → String
@@ -87,8 +80,7 @@ struct ByteSerializationTests {
         #expect(stringFromBytes == stringDirect)
     }
 
-    @Test("Byte serialization is authoritative")
-    func byteSerializationAuthoritative() {
+    @Test("Byte serialization is authoritative") func byteSerializationAuthoritative() {
         let id = Id(value: "test")
 
         // The authoritative serialization

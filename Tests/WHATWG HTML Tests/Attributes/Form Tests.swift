@@ -13,10 +13,8 @@
 import Testing
 import WHATWG_HTML
 
-@Suite
-struct `Form Test` {
-    @Test
-    func `Form should support initialization with form override properties`() {
+@Suite struct `Form Test` {
+    @Test func `Form should support initialization with form override properties`() {
         let form = Form(
             action: FormAction(value: "/submit"),
             method: FormMethod.post,
@@ -30,8 +28,7 @@ struct `Form Test` {
         #expect(form.target == nil)
     }
 
-    @Test
-    func `Form should support mutating methods`() {
+    @Test func `Form should support mutating methods`() {
         var form = Form()
 
         form.action(FormAction(value: "/update"))
