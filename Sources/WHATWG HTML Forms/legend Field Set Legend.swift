@@ -41,8 +41,7 @@ public struct Legend: WHATWG_HTML.Element.`Protocol` {
     /// Creates a new Legend element.
     public init(
 
-        )
-    {
+        ) {
 
     }
 }

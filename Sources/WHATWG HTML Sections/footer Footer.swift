@@ -46,8 +46,7 @@ public struct Footer: WHATWG_HTML.Element.`Protocol` {
     /// Creates a new Footer element.
     public init(
 
-        )
-    {
+        ) {
 
     }
 }

@@ -51,8 +51,7 @@ public struct KeyboardInput: WHATWG_HTML.Element.`Protocol` {
     /// Creates a new keyboard input element.
     public init(
 
-        )
-    {
+        ) {
 
     }
 }

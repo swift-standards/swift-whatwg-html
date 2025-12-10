@@ -54,8 +54,7 @@ public struct IdiomaticText: WHATWG_HTML.Element.`Protocol` {
     /// Creates a new IdiomaticText element with the specified content.
     public init(
 
-        )
-    {
+        ) {
 
     }
 }

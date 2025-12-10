@@ -42,8 +42,7 @@ public struct Samp: WHATWG_HTML.Element.`Protocol` {
     /// Creates a new Sample Output element with the specified content.
     public init(
 
-        )
-    {
+        ) {
 
     }
 }

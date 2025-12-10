@@ -45,8 +45,7 @@ public struct Emphasis: WHATWG_HTML.Element.`Protocol` {
     /// Creates a new Emphasis element.
     public init(
 
-        )
-    {
+        ) {
 
     }
 }

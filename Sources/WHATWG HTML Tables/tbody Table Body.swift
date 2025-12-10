@@ -62,8 +62,7 @@ public struct TableBody: WHATWG_HTML.Element.`Protocol` {
     /// Creates a new TableBody element.
     public init(
 
-        )
-    {
+        ) {
 
     }
 }

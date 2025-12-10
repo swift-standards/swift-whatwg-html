@@ -51,8 +51,9 @@ extension WHATWG_HTML.Element.Content {
 
 extension WHATWG_HTML.Element.Content.Model {
     /// Creates a content model allowing a single category.
-    @inlinable public static func category(_ category: WHATWG_HTML.Element.Content.Category) -> Self
-    { .categories([category]) }
+    @inlinable public static func category(_ category: WHATWG_HTML.Element.Content.Category) -> Self {
+        .categories([category])
+    }
 
     /// Creates a content model allowing flow content.
     @inlinable public static var flow: Self { .category(.flow) }

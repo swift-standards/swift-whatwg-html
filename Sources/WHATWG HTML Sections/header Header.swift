@@ -47,8 +47,7 @@ public struct Header: WHATWG_HTML.Element.`Protocol` {
     /// Creates a new Header element.
     public init(
 
-        )
-    {
+        ) {
 
     }
 }

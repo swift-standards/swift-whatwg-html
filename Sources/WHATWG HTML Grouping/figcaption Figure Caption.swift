@@ -41,8 +41,7 @@ public struct FigureCaption: WHATWG_HTML.Element.`Protocol` {
     /// Creates a new FigureCaption element.
     public init(
 
-        )
-    {
+        ) {
 
     }
 }

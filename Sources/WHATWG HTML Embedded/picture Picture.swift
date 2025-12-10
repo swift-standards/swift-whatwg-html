@@ -48,8 +48,7 @@ public struct Picture: WHATWG_HTML.Element.`Protocol` {
     /// Creates a new Picture element.
     public init(
 
-        )
-    {
+        ) {
 
     }
 }

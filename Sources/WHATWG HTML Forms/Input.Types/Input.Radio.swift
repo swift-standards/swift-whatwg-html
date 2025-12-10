@@ -46,8 +46,7 @@ extension Input {
         public var required: Required?
 
         /// Creates a new radio input configuration
-        public init(value: Value<String>? = nil, checked: Checked? = nil, required: Required? = nil)
-        {
+        public init(value: Value<String>? = nil, checked: Checked? = nil, required: Required? = nil) {
             self.value = value
             self.checked = checked
             self.required = required

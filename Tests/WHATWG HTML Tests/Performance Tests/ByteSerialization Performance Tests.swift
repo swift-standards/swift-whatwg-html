@@ -32,8 +32,7 @@ extension `Performance Tests` {
 
         // MARK: - String Attributes (ASCII)
 
-        @Test("Id ASCII: RFC pattern", .timed(threshold: .milliseconds(1))) func idASCIIRFCPattern()
-        {
+        @Test("Id ASCII: RFC pattern", .timed(threshold: .milliseconds(1))) func idASCIIRFCPattern() {
             let attr = Id(value: "main-content")
             let _ = [UInt8].init(attr)
         }
@@ -47,8 +46,7 @@ extension `Performance Tests` {
 
         // MARK: - String Attributes (UTF-8)
 
-        @Test("Id UTF-8: RFC pattern", .timed(threshold: .milliseconds(1))) func idUTF8RFCPattern()
-        {
+        @Test("Id UTF-8: RFC pattern", .timed(threshold: .milliseconds(1))) func idUTF8RFCPattern() {
             let attr = Id(value: "日本語-コンテンツ")
             let _ = [UInt8](attr)
         }

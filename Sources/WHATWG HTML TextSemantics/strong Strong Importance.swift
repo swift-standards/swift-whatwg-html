@@ -45,8 +45,7 @@ public struct StrongImportance: WHATWG_HTML.Element.`Protocol` {
     /// Creates a new StrongImportance element.
     public init(
 
-        )
-    {
+        ) {
 
     }
 }

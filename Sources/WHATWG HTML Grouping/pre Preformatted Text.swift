@@ -52,8 +52,7 @@ public struct PreformattedText: WHATWG_HTML.Element.`Protocol` {
     /// Creates a new PreformattedText element.
     public init(
 
-        )
-    {
+        ) {
 
     }
 }

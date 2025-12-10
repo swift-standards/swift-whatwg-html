@@ -58,8 +58,7 @@ public struct Title: WHATWG_HTML.Element.`Protocol` {
     /// Creates a new Title element with the specified text content.
     public init(
 
-        )
-    {
+        ) {
 
     }
 }

@@ -58,8 +58,7 @@ public struct Cite: WHATWG_HTML.Element.`Protocol` {
     /// Creates a new Cite element.
     public init(
 
-        )
-    {
+        ) {
 
     }
 }

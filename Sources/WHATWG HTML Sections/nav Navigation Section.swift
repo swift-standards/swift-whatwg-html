@@ -43,8 +43,7 @@ public struct NavigationSection: WHATWG_HTML.Element.`Protocol` {
     /// Creates a new NavigationSection element.
     public init(
 
-        )
-    {
+        ) {
 
     }
 }

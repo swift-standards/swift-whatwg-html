@@ -70,8 +70,7 @@ public struct Table: WHATWG_HTML.Element.`Protocol` {
     /// Creates a new Table element.
     public init(
 
-        )
-    {
+        ) {
 
     }
 }

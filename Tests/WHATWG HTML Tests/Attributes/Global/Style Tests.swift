@@ -38,8 +38,7 @@ import WHATWG_HTML
         #expect(style.rawValue == "background-color: blue;")
     }
 
-    @Test func `WHATWG_HTML_GlobalAttributes.Style should support dictionary-based initialization`()
-    {
+    @Test func `WHATWG_HTML_GlobalAttributes.Style should support dictionary-based initialization`() {
         let style = WHATWG_HTML_GlobalAttributes.Style(["color": "red", "font-size": "14px"])
 
         #expect(style.description.contains("color: red"))

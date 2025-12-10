@@ -50,8 +50,7 @@ public struct Figure: WHATWG_HTML.Element.`Protocol` {
     /// Creates a new Figure element with the specified content.
     public init(
 
-        )
-    {
+        ) {
 
     }
 }

@@ -45,8 +45,7 @@ public struct Superscript: WHATWG_HTML.Element.`Protocol` {
     /// Creates a new superscript element.
     public init(
 
-        )
-    {
+        ) {
 
     }
 }
