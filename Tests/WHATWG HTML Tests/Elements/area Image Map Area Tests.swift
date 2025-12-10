@@ -28,7 +28,7 @@ struct `Image Map Area Tests` {
     @Test
     func `Area conforms to HTMLElement`() {
         let area = Area()
-        let element: any WHATWG_HTML.Element = area
+        let element: any WHATWG_HTML.Element.`Protocol` = area
         #expect(type(of: element).tag == "area")
     }
 

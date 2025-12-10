@@ -26,7 +26,7 @@ struct `Bidirectional Text Override Tests` {
     @Test
     func `BDO element conforms to HTMLElement`() {
         let bdo = BidirectionalTextOverride(dir: .rtl)
-        let element: any WHATWG_HTML.Element = bdo
+        let element: any WHATWG_HTML.Element.`Protocol` = bdo
         #expect(type(of: element).tag == "bdo")
     }
 
@@ -221,7 +221,7 @@ struct `Bidirectional Text Override Tests` {
         @Test
         func `BDO element within content flow`() {
             let bdo = BidirectionalTextOverride(dir: .rtl)
-            let element: any WHATWG_HTML.Element = bdo
+            let element: any WHATWG_HTML.Element.`Protocol` = bdo
 
             #expect(type(of: element).tag == "bdo")
             #expect(bdo.dir.rawValue == "rtl")
@@ -235,8 +235,8 @@ struct `Bidirectional Text Override Tests` {
             #expect(BidirectionalTextOverride.tag == "bdo")
             #expect(outerBdo.dir.rawValue == "rtl")
             #expect(innerBdo.dir.rawValue == "ltr")
-            #expect(outerBdo is any WHATWG_HTML.Element)
-            #expect(innerBdo is any WHATWG_HTML.Element)
+            #expect(outerBdo is any WHATWG_HTML.Element.`Protocol`)
+            #expect(innerBdo is any WHATWG_HTML.Element.`Protocol`)
         }
 
         @Test
@@ -276,7 +276,7 @@ struct `Bidirectional Text Override Tests` {
         @Test
         func `HTMLElement protocol compliance`() {
             let bdo = BidirectionalTextOverride(dir: .ltr)
-            #expect(bdo is any WHATWG_HTML.Element)
+            #expect(bdo is any WHATWG_HTML.Element.`Protocol`)
         }
     }
 

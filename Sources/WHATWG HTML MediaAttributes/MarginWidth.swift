@@ -13,6 +13,7 @@
 public import Geometry
 public import WHATWG_HTML_Shared
 
+// Required protocol conformances for StringAttribute
 /// Extends `Geometry<Int>.Width` to serve as an HTML marginwidth attribute.
 ///
 /// The `marginwidth` attribute specifies the horizontal margin for frame elements.
@@ -30,8 +31,6 @@ public import WHATWG_HTML_Shared
 /// let marginWidth: MarginWidth = 10
 /// iframe.marginwidth(marginWidth)
 /// ```
-
-// Required protocol conformances for StringAttribute
 extension Geometry<Int>.Width {
     /// A wrapper to use Geometry<Int>.Width as an HTML marginwidth attribute
     public struct Margin: WHATWG_HTML.StringAttribute {

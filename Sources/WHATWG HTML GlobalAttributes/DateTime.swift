@@ -10,8 +10,8 @@
 //
 // ===----------------------------------------------------------------------===//
 
-public import ISO_8601
 import Formatting
+public import ISO_8601
 public import WHATWG_HTML_Shared
 
 /// Represents the HTML `datetime` attribute used with the `<time>`, `<ins>`, and `<del>` elements.
@@ -153,7 +153,9 @@ extension DateTime {
 
     /// Create a year-month datetime
     public static func yearMonth(year: Int, month: Int) -> DateTime {
-        DateTime("\(year.formatted(.number.zeroPadded(width: 4)))-\(month.formatted(.number.zeroPadded(width: 2)))")
+        DateTime(
+            "\(year.formatted(.number.zeroPadded(width: 4)))-\(month.formatted(.number.zeroPadded(width: 2)))"
+        )
     }
 
     /// Create a year-only datetime

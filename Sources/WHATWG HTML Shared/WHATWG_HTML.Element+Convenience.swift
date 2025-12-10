@@ -34,7 +34,7 @@ extension WHATWG_HTML.Element.Content.Category {
                 "main", "map", "mark", "menu", "meter", "nav", "noscript", "object", "ol", "output",
                 "p", "picture", "pre", "progress", "q", "ruby", "s", "samp", "script",
                 "search", "section", "select", "slot", "small", "span", "strong", "sub",
-                "sup", "table", "template", "textarea", "time", "u", "ul", "var", "video", "wbr"
+                "sup", "table", "template", "textarea", "time", "u", "ul", "var", "video", "wbr",
             ]
 
         case .sectioning:
@@ -50,7 +50,7 @@ extension WHATWG_HTML.Element.Content.Category {
                 "img", "input", "ins", "kbd", "label", "map", "mark", "meter", "noscript",
                 "object", "output", "picture", "progress", "q", "ruby", "s", "samp",
                 "script", "select", "slot", "small", "span", "strong", "sub", "sup",
-                "template", "textarea", "time", "u", "var", "video", "wbr"
+                "template", "textarea", "time", "u", "var", "video", "wbr",
             ]
 
         case .embedded:
@@ -68,7 +68,7 @@ extension WHATWG_HTML.Element.Content.Category {
                 "label", "main", "map", "mark", "meter", "nav", "object", "output", "p",
                 "picture", "pre", "progress", "q", "ruby", "s", "samp", "search", "section",
                 "select", "small", "span", "strong", "sub", "sup", "table", "textarea",
-                "time", "u", "var", "video"
+                "time", "u", "var", "video",
             ]
 
         case .`script-supporting`:

@@ -13,6 +13,7 @@
 public import Geometry
 public import WHATWG_HTML_Shared
 
+// Required protocol conformances for StringAttribute
 /// Extends `Geometry<Int>.Height` to serve as an HTML marginheight attribute.
 ///
 /// The `marginheight` attribute specifies the vertical margin for frame elements.
@@ -30,8 +31,6 @@ public import WHATWG_HTML_Shared
 /// let marginHeight: MarginHeight = 10
 /// iframe.marginheight(marginHeight)
 /// ```
-
-// Required protocol conformances for StringAttribute
 extension Geometry<Int>.Height {
     /// A wrapper to use Geometry<Int>.Height as an HTML marginheight attribute
     public struct Margin: WHATWG_HTML.StringAttribute {

@@ -25,7 +25,7 @@ struct `Bidirectional Isolate Tests` {
     @Test
     func `BDI element conforms to HTMLElement`() {
         let bdi = BidirectionalIsolate()
-        let element: any WHATWG_HTML.Element = bdi
+        let element: any WHATWG_HTML.Element.`Protocol` = bdi
         #expect(type(of: element).tag == "bdi")
     }
 
@@ -201,7 +201,7 @@ struct `Bidirectional Isolate Tests` {
         @Test
         func `BDI element within content flow`() {
             let bdi = BidirectionalIsolate()
-            let element: any WHATWG_HTML.Element = bdi
+            let element: any WHATWG_HTML.Element.`Protocol` = bdi
 
             #expect(type(of: element).tag == "bdi")
         }
@@ -212,8 +212,8 @@ struct `Bidirectional Isolate Tests` {
             let innerBdi = BidirectionalIsolate()
 
             #expect(BidirectionalIsolate.tag == "bdi")
-            #expect(outerBdi is any WHATWG_HTML.Element)
-            #expect(innerBdi is any WHATWG_HTML.Element)
+            #expect(outerBdi is any WHATWG_HTML.Element.`Protocol`)
+            #expect(innerBdi is any WHATWG_HTML.Element.`Protocol`)
         }
 
         @Test

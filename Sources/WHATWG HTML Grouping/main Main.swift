@@ -55,4 +55,3 @@ public struct Main: WHATWG_HTML.Element.`Protocol` {
     public init() {
     }
 }
-

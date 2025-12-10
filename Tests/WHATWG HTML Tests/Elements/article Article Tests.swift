@@ -25,7 +25,7 @@ struct `Article Tests` {
     @Test
     func `Article conforms to HTMLElement`() {
         let article = Article()
-        let element: any WHATWG_HTML.Element = article
+        let element: any WHATWG_HTML.Element.`Protocol` = article
         #expect(type(of: element).tag == "article")
     }
 
@@ -78,8 +78,8 @@ struct `Article Tests` {
             let commentArticle = Article()
 
             #expect(Article.tag == "article")
-            #expect(mainArticle is any WHATWG_HTML.Element)
-            #expect(commentArticle is any WHATWG_HTML.Element)
+            #expect(mainArticle is any WHATWG_HTML.Element.`Protocol`)
+            #expect(commentArticle is any WHATWG_HTML.Element.`Protocol`)
         }
 
         @Test
@@ -89,9 +89,9 @@ struct `Article Tests` {
             let part2 = Article()
 
             #expect(Article.tag == "article")
-            #expect(containerArticle is any WHATWG_HTML.Element)
-            #expect(part1 is any WHATWG_HTML.Element)
-            #expect(part2 is any WHATWG_HTML.Element)
+            #expect(containerArticle is any WHATWG_HTML.Element.`Protocol`)
+            #expect(part1 is any WHATWG_HTML.Element.`Protocol`)
+            #expect(part2 is any WHATWG_HTML.Element.`Protocol`)
         }
 
         @Test
@@ -100,8 +100,8 @@ struct `Article Tests` {
             let relatedArticle = Article()
 
             #expect(Article.tag == "article")
-            #expect(mainArticle is any WHATWG_HTML.Element)
-            #expect(relatedArticle is any WHATWG_HTML.Element)
+            #expect(mainArticle is any WHATWG_HTML.Element.`Protocol`)
+            #expect(relatedArticle is any WHATWG_HTML.Element.`Protocol`)
         }
     }
 
@@ -194,7 +194,7 @@ struct `Article Tests` {
 
             #expect(allArticles.count == 3)
             allArticles.forEach { article in
-                #expect(article is any WHATWG_HTML.Element)
+                #expect(article is any WHATWG_HTML.Element.`Protocol`)
                 #expect(type(of: article).tag == "article")
             }
         }
@@ -202,7 +202,7 @@ struct `Article Tests` {
         @Test
         func `Article as independent component`() {
             let article = Article()
-            let element: any WHATWG_HTML.Element = article
+            let element: any WHATWG_HTML.Element.`Protocol` = article
 
             #expect(type(of: element).tag == "article")
         }

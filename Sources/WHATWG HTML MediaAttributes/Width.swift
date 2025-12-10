@@ -13,6 +13,7 @@
 @_exported public import Geometry
 public import WHATWG_HTML_Shared
 
+// Required protocol conformances for StringAttribute
 /// Extends `Geometry<Int>.Width` to serve as an HTML width attribute.
 ///
 /// The `width` attribute defines the width of an element in pixels (for images, videos, and similar)
@@ -35,8 +36,6 @@ public import WHATWG_HTML_Shared
 /// // Or directly with integer literal
 /// img.width(400)
 /// ```
-
-// Required protocol conformances for StringAttribute
 extension Geometry<Int>.Width: @retroactive ExpressibleByUnicodeScalarLiteral {
     @inlinable
     public init(unicodeScalarLiteral value: String) {

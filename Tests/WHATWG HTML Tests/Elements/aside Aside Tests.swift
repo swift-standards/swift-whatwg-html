@@ -25,7 +25,7 @@ struct `Aside Tests` {
     @Test
     func `Aside conforms to HTMLElement`() {
         let aside = Aside()
-        let element: any WHATWG_HTML.Element = aside
+        let element: any WHATWG_HTML.Element.`Protocol` = aside
         #expect(type(of: element).tag == "aside")
     }
 
@@ -170,8 +170,8 @@ struct `Aside Tests` {
             let secondaryAside = Aside()
 
             #expect(Aside.tag == "aside")
-            #expect(primaryAside is any WHATWG_HTML.Element)
-            #expect(secondaryAside is any WHATWG_HTML.Element)
+            #expect(primaryAside is any WHATWG_HTML.Element.`Protocol`)
+            #expect(secondaryAside is any WHATWG_HTML.Element.`Protocol`)
         }
     }
 
@@ -181,7 +181,7 @@ struct `Aside Tests` {
         @Test
         func `Aside within article`() {
             let aside = Aside()
-            let element: any WHATWG_HTML.Element = aside
+            let element: any WHATWG_HTML.Element.`Protocol` = aside
 
             #expect(type(of: element).tag == "aside")
         }
@@ -192,8 +192,8 @@ struct `Aside Tests` {
             let nestedAside = Aside()
 
             #expect(Aside.tag == "aside")
-            #expect(parentAside is any WHATWG_HTML.Element)
-            #expect(nestedAside is any WHATWG_HTML.Element)
+            #expect(parentAside is any WHATWG_HTML.Element.`Protocol`)
+            #expect(nestedAside is any WHATWG_HTML.Element.`Protocol`)
         }
 
         @Test

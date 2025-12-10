@@ -26,7 +26,7 @@ struct `Block Quotation Tests` {
     @Test
     func `BlockQuote element conforms to HTMLElement`() {
         let blockquote = BlockQuote()
-        let element: any WHATWG_HTML.Element = blockquote
+        let element: any WHATWG_HTML.Element.`Protocol` = blockquote
         #expect(type(of: element).tag == "blockquote")
     }
 
@@ -266,7 +266,7 @@ struct `Block Quotation Tests` {
         func `BlockQuote element within content flow`() {
             let cite = Cite(value: "https://example.com/source")
             let blockquote = BlockQuote(cite: cite)
-            let element: any WHATWG_HTML.Element = blockquote
+            let element: any WHATWG_HTML.Element.`Protocol` = blockquote
 
             #expect(type(of: element).tag == "blockquote")
         }

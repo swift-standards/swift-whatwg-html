@@ -22,11 +22,11 @@ extension WHATWG_HTML.Element {
         /// only if `href` is present).
         static var categories: Set<WHATWG_HTML.Element.Content.Category> { get }
 
-//        /// Resolved content categories for this instance.
-//        ///
-//        /// Returns the unconditional categories plus any conditional categories
-//        /// that apply based on this instance's attributes and context.
-//        var categories: Set<WHATWG_HTML.Element.Content.Category> { get }
+        //        /// Resolved content categories for this instance.
+        //        ///
+        //        /// Returns the unconditional categories plus any conditional categories
+        //        /// that apply based on this instance's attributes and context.
+        //        var categories: Set<WHATWG_HTML.Element.Content.Category> { get }
 
         /// The content for this element.
         ///

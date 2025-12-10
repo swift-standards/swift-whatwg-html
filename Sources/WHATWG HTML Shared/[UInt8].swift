@@ -115,10 +115,10 @@ extension [UInt8] {
         self.reserveCapacity(attributeBytes + 3 + valueBytes)
 
         // Build: attribute="value"
-        self.append(contentsOf: T.attribute.utf8)        // attribute name
-        self.append(UInt8.ascii.equalsSign)              // =
-        self.append(UInt8.ascii.dquote)                  // "
-        self.append(contentsOf: attribute.rawValue.utf8) // value (UTF-8 safe)
-        self.append(UInt8.ascii.dquote)                  // "
+        self.append(contentsOf: T.attribute.utf8)  // attribute name
+        self.append(UInt8.ascii.equalsSign)  // =
+        self.append(UInt8.ascii.dquote)  // "
+        self.append(contentsOf: attribute.rawValue.utf8)  // value (UTF-8 safe)
+        self.append(UInt8.ascii.dquote)  // "
     }
 }

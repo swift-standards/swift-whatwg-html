@@ -55,6 +55,6 @@ extension WHATWG_HTML {
     /// ## Specification
     /// [WHATWG HTML Living Standard - Content Models](https://html.spec.whatwg.org/multipage/dom.html#content-models)
     public struct Element {
-        
+
     }
 }

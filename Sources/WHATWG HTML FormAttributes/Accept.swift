@@ -112,7 +112,8 @@ extension Accept {
     /// - A MIME type (RFC 2045 ContentType)
     /// - A file extension (.jpg, .pdf, etc.)
     /// - A wildcard (image/*, video/*, etc.)
-    public struct FileType: Sendable, Hashable, CustomStringConvertible, ExpressibleByStringLiteral {
+    public struct FileType: Sendable, Hashable, CustomStringConvertible, ExpressibleByStringLiteral
+    {
         /// The string value for the file type
         public var value: String
 

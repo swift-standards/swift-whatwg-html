@@ -45,7 +45,8 @@ public struct HeadingGroup: WHATWG_HTML.Element.`Protocol` {
     /// Creates a new HeadingGroup element.
     public init(
 
-        ) {
+        )
+    {
 
     }
 }

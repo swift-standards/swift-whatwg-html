@@ -34,7 +34,7 @@ struct `Audio Tests` {
     @Test
     func `Audio conforms to HTMLElement`() {
         let audio = Audio()
-        let element: any WHATWG_HTML.Element = audio
+        let element: any WHATWG_HTML.Element.`Protocol` = audio
         #expect(type(of: element).tag == "audio")
     }
 
@@ -374,7 +374,7 @@ struct `Audio Tests` {
 
             #expect(audioElements.count == 3)
             audioElements.forEach { audio in
-                #expect(audio is any WHATWG_HTML.Element)
+                #expect(audio is any WHATWG_HTML.Element.`Protocol`)
                 #expect(type(of: audio).tag == "audio")
                 #expect(audio.controls != nil)
             }
@@ -398,7 +398,7 @@ struct `Audio Tests` {
         @Test
         func `Audio as HTMLElement`() {
             let audio = Audio(src: Src("test.mp3"))
-            let element: any WHATWG_HTML.Element = audio
+            let element: any WHATWG_HTML.Element.`Protocol` = audio
 
             #expect(type(of: element).tag == "audio")
         }

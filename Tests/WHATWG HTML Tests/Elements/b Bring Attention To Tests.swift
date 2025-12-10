@@ -25,7 +25,7 @@ struct `Bring Attention To Tests` {
     @Test
     func `B element conforms to HTMLElement`() {
         let b = B()
-        let element: any WHATWG_HTML.Element = b
+        let element: any WHATWG_HTML.Element.`Protocol` = b
         #expect(type(of: element).tag == "b")
     }
 
@@ -213,7 +213,7 @@ struct `Bring Attention To Tests` {
         @Test
         func `B element within content flow`() {
             let b = B()
-            let element: any WHATWG_HTML.Element = b
+            let element: any WHATWG_HTML.Element.`Protocol` = b
 
             #expect(type(of: element).tag == "b")
         }
@@ -224,8 +224,8 @@ struct `Bring Attention To Tests` {
             let innerB = B()
 
             #expect(B.tag == "b")
-            #expect(outerB is any WHATWG_HTML.Element)
-            #expect(innerB is any WHATWG_HTML.Element)
+            #expect(outerB is any WHATWG_HTML.Element.`Protocol`)
+            #expect(innerB is any WHATWG_HTML.Element.`Protocol`)
         }
     }
 

@@ -25,7 +25,7 @@ struct `Bigger Text Tests` {
     @Test
     func `Big element conforms to HTMLElement`() {
         let big = Big()
-        let element: any WHATWG_HTML.Element = big
+        let element: any WHATWG_HTML.Element.`Protocol` = big
         #expect(type(of: element).tag == "big")
     }
 
@@ -225,7 +225,7 @@ struct `Bigger Text Tests` {
         @Test
         func `Big element within content flow`() {
             let big = Big()
-            let element: any WHATWG_HTML.Element = big
+            let element: any WHATWG_HTML.Element.`Protocol` = big
 
             #expect(type(of: element).tag == "big")
         }
@@ -236,8 +236,8 @@ struct `Bigger Text Tests` {
             let innerBig = Big()
 
             #expect(Big.tag == "big")
-            #expect(outerBig is any WHATWG_HTML.Element)
-            #expect(innerBig is any WHATWG_HTML.Element)
+            #expect(outerBig is any WHATWG_HTML.Element.`Protocol`)
+            #expect(innerBig is any WHATWG_HTML.Element.`Protocol`)
         }
 
         @Test

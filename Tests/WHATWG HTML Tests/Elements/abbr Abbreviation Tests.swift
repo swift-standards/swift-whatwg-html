@@ -30,7 +30,7 @@ struct `Abbreviation Tests` {
     @Test
     func `Abbreviation conforms to HTMLElement`() {
         let abbreviation = Abbreviation()
-        let element: any WHATWG_HTML.Element = abbreviation
+        let element: any WHATWG_HTML.Element.`Protocol` = abbreviation
         #expect(type(of: element).tag == "abbr")
     }
 

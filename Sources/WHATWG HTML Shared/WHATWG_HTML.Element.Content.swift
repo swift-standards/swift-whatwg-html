@@ -49,7 +49,7 @@ extension WHATWG_HTML.Element.Content {
         switch tag {
         // Void elements have "nothing" content model
         case "area", "base", "br", "col", "embed", "hr", "img", "input",
-             "link", "meta", "source", "track", "wbr":
+            "link", "meta", "source", "track", "wbr":
             return .nothing
 
         // Text-only content
@@ -78,10 +78,10 @@ extension WHATWG_HTML.Element.Content {
 
         // Phrasing content elements
         case "abbr", "b", "bdi", "bdo", "cite", "code", "data", "dfn",
-             "em", "i", "kbd", "mark", "output", "q", "rp", "rt", "s",
-             "samp", "small", "span", "strong", "sub", "sup", "time",
-             "u", "var", "label", "button", "meter", "progress",
-             "h1", "h2", "h3", "h4", "h5", "h6", "p", "pre", "legend", "summary":
+            "em", "i", "kbd", "mark", "output", "q", "rp", "rt", "s",
+            "samp", "small", "span", "strong", "sub", "sup", "time",
+            "u", "var", "label", "button", "meter", "progress",
+            "h1", "h2", "h3", "h4", "h5", "h6", "p", "pre", "legend", "summary":
             return .categories([.phrasing])
 
         default:
@@ -91,13 +91,7 @@ extension WHATWG_HTML.Element.Content {
     }
 }
 
-
-
-
-
 // MARK: - Inter-element Whitespace
-
-
 
 // MARK: - Transparent Content Model
 
@@ -108,7 +102,7 @@ extension WHATWG_HTML.Element.Content {
     /// of its parent element. When a transparent element has no parent, the transparent
     /// part must be treated as accepting any flow content.
     public static let transparentElements: Set<String> = [
-        "a", "ins", "del", "object", "video", "audio", "map", "noscript", "canvas", "slot"
+        "a", "ins", "del", "object", "video", "audio", "map", "noscript", "canvas", "slot",
     ]
 
     /// Checks whether an element has a transparent content model.
@@ -127,7 +121,7 @@ extension WHATWG_HTML.Element.Content {
     /// like without these elements complicating matters, since they can straddle
     /// paragraph boundaries with their hybrid content models.
     public static let paragraphStraddlingElements: Set<String> = [
-        "a", "ins", "del", "map"
+        "a", "ins", "del", "map",
     ]
 }
 
@@ -145,7 +139,10 @@ extension WHATWG_HTML.Element.Content.Model {
             return allowed.contains(category)
         case .transparent:
             // When no parent, transparent accepts any flow content
-            return category == .flow || WHATWG_HTML.Element.Content.Category.flow.elements.isSuperset(of: category.elements)
+            return category == .flow
+                || WHATWG_HTML.Element.Content.Category.flow.elements.isSuperset(
+                    of: category.elements
+                )
         }
     }
 
@@ -171,4 +168,3 @@ extension WHATWG_HTML.Element.Content.Model: ExpressibleByArrayLiteral {
         self = .categories(Set(elements))
     }
 }
-

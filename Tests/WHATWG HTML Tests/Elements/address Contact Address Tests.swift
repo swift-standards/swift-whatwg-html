@@ -25,7 +25,7 @@ struct `Contact Address Tests` {
     @Test
     func `Address conforms to HTMLElement`() {
         let address = Address()
-        let element: any WHATWG_HTML.Element = address
+        let element: any WHATWG_HTML.Element.`Protocol` = address
         #expect(type(of: element).tag == "address")
     }
 

@@ -13,6 +13,7 @@
 @_exported public import Geometry
 public import WHATWG_HTML_Shared
 
+// Required protocol conformances for StringAttribute
 /// Extends `Geometry<Int>.Height` to serve as an HTML height attribute.
 ///
 /// The `height` attribute defines the height of an element in pixels (for images, videos, and similar)
@@ -35,8 +36,6 @@ public import WHATWG_HTML_Shared
 /// // Or directly with integer literal
 /// img.height(300)
 /// ```
-
-// Required protocol conformances for StringAttribute
 extension Geometry<Int>.Height: @retroactive ExpressibleByUnicodeScalarLiteral {
     @inlinable
     public init(unicodeScalarLiteral value: String) {

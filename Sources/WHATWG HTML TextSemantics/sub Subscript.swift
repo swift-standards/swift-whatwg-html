@@ -41,7 +41,8 @@ public struct Subscript: WHATWG_HTML.Element.`Protocol` {
     /// Creates a new subscript element.
     public init(
 
-        ) {
+        )
+    {
 
     }
 }

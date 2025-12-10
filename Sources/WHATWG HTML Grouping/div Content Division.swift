@@ -45,7 +45,8 @@ public struct ContentDivision: WHATWG_HTML.Element.`Protocol` {
     /// Creates a new ContentDivision element.
     public init(
 
-        ) {
+        )
+    {
 
     }
 }

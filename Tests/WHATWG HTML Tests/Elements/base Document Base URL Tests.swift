@@ -48,7 +48,7 @@ struct `Document Base URL Tests` {
     func `Base element conforms to HTMLElement`() {
         let href = Href("https://example.com/")
         let base = Base(href: href)
-        let element: any WHATWG_HTML.Element = base
+        let element: any WHATWG_HTML.Element.`Protocol` = base
         #expect(type(of: element).tag == "base")
     }
 
@@ -280,7 +280,7 @@ struct `Document Base URL Tests` {
         func `Base element for document head`() {
             let href = Href("https://example.com/")
             let base = Base(href: href)
-            let element: any WHATWG_HTML.Element = base
+            let element: any WHATWG_HTML.Element.`Protocol` = base
 
             #expect(type(of: element).tag == "base")
         }
@@ -295,7 +295,7 @@ struct `Document Base URL Tests` {
 
             #expect(bases.count == 3)
             bases.forEach { base in
-                #expect(base is any WHATWG_HTML.Element)
+                #expect(base is any WHATWG_HTML.Element.`Protocol`)
                 #expect(type(of: base).tag == "base")
             }
         }
@@ -304,7 +304,7 @@ struct `Document Base URL Tests` {
         func `Base element as HTMLElement`() {
             let href = Href("https://example.com/")
             let base = Base(href: href)
-            let element: any WHATWG_HTML.Element = base
+            let element: any WHATWG_HTML.Element.`Protocol` = base
 
             #expect(type(of: element).tag == "base")
         }
@@ -391,7 +391,7 @@ struct `Document Base URL Tests` {
             let href = Href("https://example.com/")
             let base = Base(href: href)
 
-            #expect(base is any WHATWG_HTML.Element)
+            #expect(base is any WHATWG_HTML.Element.`Protocol`)
         }
 
         @Test
