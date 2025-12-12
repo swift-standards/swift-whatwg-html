@@ -31,36 +31,49 @@ public import WHATWG_HTML_Shared
 /// let marginWidth: MarginWidth = 10
 /// iframe.marginwidth(marginWidth)
 /// ```
-extension Geometry<Int>.Width {
-    /// A wrapper to use Geometry<Int>.Width as an HTML marginwidth attribute
-    public struct Margin: WHATWG_HTML.StringAttribute {
-        /// The underlying width value
-        public var width: Geometry<Int>.Width
 
-        /// The name of the HTML attribute
-        @inlinable public static var attribute: String { "marginwidth" }
+@dynamicMemberLookup public struct MarginWidth: WHATWG_HTML.StringAttribute {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "marginwidth" }
 
-        /// The raw string value
-        @inlinable public var rawValue: String { String(width.value) }
+    /// The attribute value
+    public let rawValue: String
 
-        /// Initialize with a width value
-        @inlinable public init(_ width: Geometry<Int>.Width) { self.width = width }
-
-        /// Initialize with a string value
-        @inlinable public init(value: String) { self.width = Geometry<Int>.Width(Int(value) ?? 0) }
-
-        /// Initialize with an integer value
-        @inlinable public init(_ value: Int) { self.width = Geometry<Int>.Width(value) }
-    }
+    /// Initialize with a value for the imagesizes attribute
+    public init(value: String) { self.rawValue = value }
 }
 
-extension Geometry<Int>.Width.Margin: ExpressibleByIntegerLiteral {
-    @inlinable public init(integerLiteral value: IntegerLiteralType) { self.init(value) }
-}
 
-extension Geometry<Int>.Width.Margin: Sendable {}
-extension Geometry<Int>.Width.Margin: Equatable {}
-extension Geometry<Int>.Width.Margin: Hashable {}
-
-/// Typealias for convenience - use `MarginWidth` as shorthand for `Geometry<Int>.Width.Margin`
-public typealias MarginWidth = Geometry<Int>.Width.Margin
+//extension Geometry<Int>.Width {
+//    /// A wrapper to use Geometry<Int>.Width as an HTML marginwidth attribute
+//    public struct Margin: WHATWG_HTML.StringAttribute {
+//        /// The underlying width value
+//        public var width: Geometry<Int>.Width
+//
+//        /// The name of the HTML attribute
+//        @inlinable public static var attribute: String { "marginwidth" }
+//
+//        /// The raw string value
+//        @inlinable public var rawValue: String { String(width.value) }
+//
+//        /// Initialize with a width value
+//        @inlinable public init(_ width: Geometry<Int>.Width) { self.width = width }
+//
+//        /// Initialize with a string value
+//        @inlinable public init(value: String) { self.width = Geometry<Int>.Width(Int(value) ?? 0) }
+//
+//        /// Initialize with an integer value
+//        @inlinable public init(_ value: Int) { self.width = Geometry<Int>.Width(value) }
+//    }
+//}
+//
+//extension Geometry<Int>.Width.Margin: ExpressibleByIntegerLiteral {
+//    @inlinable public init(integerLiteral value: IntegerLiteralType) { self.init(value) }
+//}
+//
+//extension Geometry<Int>.Width.Margin: Sendable {}
+//extension Geometry<Int>.Width.Margin: Equatable {}
+//extension Geometry<Int>.Width.Margin: Hashable {}
+//
+///// Typealias for convenience - use `MarginWidth` as shorthand for `Geometry<Int>.Width.Margin`
+//public typealias MarginWidth = Geometry<Int>.Width.Margin

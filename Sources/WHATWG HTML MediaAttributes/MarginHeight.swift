@@ -31,38 +31,13 @@ public import WHATWG_HTML_Shared
 /// let marginHeight: MarginHeight = 10
 /// iframe.marginheight(marginHeight)
 /// ```
-extension Geometry<Int>.Height {
-    /// A wrapper to use Geometry<Int>.Height as an HTML marginheight attribute
-    public struct Margin: WHATWG_HTML.StringAttribute {
-        /// The underlying height value
-        public var height: Geometry<Int>.Height
+@dynamicMemberLookup public struct MarginHeight: WHATWG_HTML.StringAttribute {
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "marginheight" }
 
-        /// The name of the HTML attribute
-        @inlinable public static var attribute: String { "marginheight" }
+    /// The attribute value
+    public let rawValue: String
 
-        /// The raw string value
-        @inlinable public var rawValue: String { String(height.value) }
-
-        /// Initialize with a height value
-        @inlinable public init(_ height: Geometry<Int>.Height) { self.height = height }
-
-        /// Initialize with a string value
-        @inlinable public init(value: String) {
-            self.height = Geometry<Int>.Height(Int(value) ?? 0)
-        }
-
-        /// Initialize with an integer value
-        @inlinable public init(_ value: Int) { self.height = Geometry<Int>.Height(value) }
-    }
+    /// Initialize with a value for the imagesizes attribute
+    public init(value: String) { self.rawValue = value }
 }
-
-extension Geometry<Int>.Height.Margin: ExpressibleByIntegerLiteral {
-    @inlinable public init(integerLiteral value: IntegerLiteralType) { self.init(value) }
-}
-
-extension Geometry<Int>.Height.Margin: Sendable {}
-extension Geometry<Int>.Height.Margin: Equatable {}
-extension Geometry<Int>.Height.Margin: Hashable {}
-
-/// Typealias for convenience - use `MarginHeight` as shorthand for `Geometry<Int>.Height.Margin`
-public typealias MarginHeight = Geometry<Int>.Height.Margin

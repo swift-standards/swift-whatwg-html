@@ -36,44 +36,13 @@ public import WHATWG_HTML_Shared
 /// // Or directly with integer literal
 /// img.width(400)
 /// ```
-extension Geometry<Int>.Width: @retroactive ExpressibleByUnicodeScalarLiteral {
-    @inlinable public init(unicodeScalarLiteral value: String) { self.init(Int(value) ?? 0) }
-}
-
-extension Geometry<Int>.Width: @retroactive ExpressibleByExtendedGraphemeClusterLiteral {
-    @inlinable public init(extendedGraphemeClusterLiteral value: String) {
-        self.init(Int(value) ?? 0)
-    }
-}
-
-extension Geometry<Int>.Width: @retroactive ExpressibleByStringLiteral {
-    @inlinable public init(stringLiteral value: String) { self.init(Int(value) ?? 0) }
-}
-
-extension Geometry<Int>.Width: @retroactive ExpressibleByStringInterpolation {}
-
-extension Geometry<Int>.Width: @retroactive CustomStringConvertible {
-    @inlinable public var description: String { String(value) }
-}
-
-extension Geometry<Int>.Width: @retroactive RawRepresentable {
-    @inlinable public var rawValue: String { String(value) }
-
-    @inlinable public init?(rawValue: String) {
-        guard let intValue = Int(rawValue) else { return nil }
-        self.init(intValue)
-    }
-}
-
-extension Geometry<Int>.Width: WHATWG_HTML.Attribute {
+@dynamicMemberLookup public struct Width: WHATWG_HTML.StringAttribute {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "width" }
-}
 
-extension Geometry<Int>.Width: WHATWG_HTML.StringAttribute {
-    /// Initialize with a string value
-    @inlinable public init(value: String) { self.init(Int(value) ?? 0) }
-}
+    /// The attribute value
+    public let rawValue: String
 
-/// Typealias for convenience - use `Width` as shorthand for `Geometry<Int>.Width`
-public typealias Width = Geometry<Int>.Width
+    /// Initialize with a value for the imagesizes attribute
+    public init(value: String) { self.rawValue = value }
+}

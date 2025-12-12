@@ -46,56 +46,31 @@ public import WHATWG_HTML_Shared
 /// <col span="3" style="background-color: yellow;" />
 /// ```
 
-extension Geometry<Int>.Width {
-    /// A wrapper to use Geometry<Int>.Width as an HTML span attribute for col/colgroup elements.
-    ///
-    /// Since span on col/colgroup represents the number of columns (horizontal),
-    /// it semantically aligns with width.
-    public struct ColumnSpan: WHATWG_HTML.StringAttribute {
-        /// The underlying width value representing column count
-        public var width: Geometry<Int>.Width
+/// A wrapper to use Geometry<Int>.Width as an HTML span attribute for col/colgroup elements.
+///
+/// Since span on col/colgroup represents the number of columns (horizontal),
+/// it semantically aligns with width.
+public struct ColumnSpan: WHATWG_HTML.StringAttribute {
+    /// The underlying width value representing column count
+    public var width: Int
 
-        /// The name of the HTML attribute
-        @inlinable public static var attribute: String { "span" }
+    /// The name of the HTML attribute
+    @inlinable public static var attribute: String { "span" }
 
-        /// The raw string value
-        @inlinable public var rawValue: String { String(width.value) }
+    /// The raw string value
+    @inlinable public var rawValue: String { width.description }
 
-        /// Initialize with a width value
-        @inlinable public init(_ width: Geometry<Int>.Width) {
-            precondition(width.value > 0, "Span value must be a positive integer")
-            self.width = width
-        }
 
-        /// Initialize with a string value
-        @inlinable public init(value: String) {
-            let intValue = Int(value) ?? 1
-            precondition(intValue > 0, "Span value must be a positive integer")
-            self.width = Geometry<Int>.Width(intValue)
-        }
-
-        /// Initialize with an integer value
-        @inlinable public init(_ value: Int) {
-            precondition(value > 0, "Span value must be a positive integer")
-            self.width = Geometry<Int>.Width(value)
-        }
+    /// Initialize with a string value
+    @inlinable public init(value: String) {
+        let intValue = Int(value) ?? 1
+        precondition(intValue > 0, "Span value must be a positive integer")
+        self.width = try! Int(value)
     }
-}
 
-extension Geometry<Int>.Width.ColumnSpan: ExpressibleByIntegerLiteral {
-    @inlinable public init(integerLiteral value: IntegerLiteralType) {
+    /// Initialize with an integer value
+    @inlinable public init(_ value: Int) {
         precondition(value > 0, "Span value must be a positive integer")
-        self.init(value)
+        self.width = value
     }
 }
-
-extension Geometry<Int>.Width.ColumnSpan: CustomStringConvertible {
-    @inlinable public var description: String { rawValue }
-}
-
-extension Geometry<Int>.Width.ColumnSpan: Sendable {}
-extension Geometry<Int>.Width.ColumnSpan: Equatable {}
-extension Geometry<Int>.Width.ColumnSpan: Hashable {}
-
-/// Typealias for convenience - use `Span` as shorthand for `Geometry<Int>.Width.ColumnSpan`
-public typealias Span = Geometry<Int>.Width.ColumnSpan
