@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-public import Geometry
+import Geometry
 public import WHATWG_HTML_Shared
 
 /// Represents the HTML `rowspan` attribute, which specifies the number of rows a cell should span.

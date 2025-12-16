@@ -94,27 +94,6 @@ import WHATWG_HTML
     @Suite struct `Content Structure` {
 
         @Test func `Article with heading structure`() {
-            let article = Article()
-            #expect(Article.tag == "article")
-        }
-
-        @Test func `Article with sections`() {
-            let article = Article()
-            #expect(Article.tag == "article")
-        }
-
-        @Test func `Article with metadata`() {
-            let article = Article()
-            #expect(Article.tag == "article")
-        }
-
-        @Test func `Article with author information`() {
-            let article = Article()
-            #expect(Article.tag == "article")
-        }
-
-        @Test func `Article with publication date`() {
-            let article = Article()
             #expect(Article.tag == "article")
         }
     }
@@ -122,22 +101,6 @@ import WHATWG_HTML
     @Suite struct `Semantic Usage` {
 
         @Test func `Standalone content article`() {
-            let article = Article()
-            #expect(Article.tag == "article")
-        }
-
-        @Test func `Syndicated content article`() {
-            let article = Article()
-            #expect(Article.tag == "article")
-        }
-
-        @Test func `User-generated content article`() {
-            let article = Article()
-            #expect(Article.tag == "article")
-        }
-
-        @Test func `Widget-like article`() {
-            let article = Article()
             #expect(Article.tag == "article")
         }
     }
@@ -170,24 +133,6 @@ import WHATWG_HTML
             let element: any WHATWG_HTML.Element.`Protocol` = article
 
             #expect(type(of: element).tag == "article")
-        }
-    }
-
-    @Suite struct `Accessibility and SEO` {
-
-        @Test func `Article with proper heading hierarchy`() {
-            let article = Article()
-            #expect(Article.tag == "article")
-        }
-
-        @Test func `Article with descriptive content`() {
-            let article = Article()
-            #expect(Article.tag == "article")
-        }
-
-        @Test func `Article with structured data compatibility`() {
-            let article = Article()
-            #expect(Article.tag == "article")
         }
     }
 }

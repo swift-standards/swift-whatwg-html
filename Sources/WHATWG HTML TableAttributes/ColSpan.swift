@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-public import Geometry
+import Geometry
 public import WHATWG_HTML_Shared
 
 /// Represents the HTML `colspan` attribute, which specifies the number of columns a table cell should span.

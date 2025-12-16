@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-public import Geometry
+import Geometry
 public import WHATWG_HTML_Shared
 
 // Required protocol conformances for StringAttribute

@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-public import Geometry
+import Geometry
 public import WHATWG_HTML_Shared
 
 /// An attribute that specifies the number of columns a `<col>` or `<colgroup>` element should span.
