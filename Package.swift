@@ -84,6 +84,7 @@ extension Target.Dependency {
     static var rfc2045: Self { .product(name: "RFC 2045", package: "swift-rfc-2045") }
     static var iso8601: Self { .product(name: "ISO 8601", package: "swift-iso-8601") }
     static var standards: Self { .product(name: "Standards", package: "swift-standards") }
+    static var geometry: Self { .product(name: "Geometry", package: "swift-standards") }
     static var incits41986: Self { .product(name: "INCITS 4 1986", package: "swift-incits-4-1986") }
 
     // Test dependencies
@@ -246,6 +247,7 @@ let package = Package(
             name: .whatwgHTMLShared,
             dependencies: [
                 .standards,
+                .geometry,
                 .incits41986
             ]
         ),
