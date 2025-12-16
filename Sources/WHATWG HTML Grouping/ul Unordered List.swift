@@ -74,7 +74,8 @@ public struct UnorderedList: WHATWG_HTML.Element.`Protocol` {
     /// Creates a new UnorderedList element.
     public init(
 
-        ) {
+        )
+    {
 
     }
 }

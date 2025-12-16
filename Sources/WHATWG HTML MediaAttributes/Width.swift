@@ -36,7 +36,7 @@ public import WHATWG_HTML_Shared
 /// // Or directly with integer literal
 /// img.width(400)
 /// ```
-@dynamicMemberLookup public struct Width: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct Width: WHATWG_HTML.StringAttribute, ExpressibleByIntegerLiteral {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "width" }
 
@@ -45,4 +45,7 @@ public import WHATWG_HTML_Shared
 
     /// Initialize with a value for the imagesizes attribute
     public init(value: String) { self.rawValue = value }
+
+    /// Initialize with an integer literal
+    public init(integerLiteral value: Int) { self.rawValue = String(value) }
 }

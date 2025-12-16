@@ -53,7 +53,8 @@ public struct DisclosureSummary: WHATWG_HTML.Element.`Protocol` {
     /// Creates a new DisclosureSummary element.
     public init(
 
-        ) {
+        )
+    {
 
     }
 }

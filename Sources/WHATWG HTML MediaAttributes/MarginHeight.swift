@@ -31,7 +31,7 @@ public import WHATWG_HTML_Shared
 /// let marginHeight: MarginHeight = 10
 /// iframe.marginheight(marginHeight)
 /// ```
-@dynamicMemberLookup public struct MarginHeight: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct MarginHeight: WHATWG_HTML.StringAttribute, ExpressibleByIntegerLiteral {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "marginheight" }
 
@@ -40,4 +40,7 @@ public import WHATWG_HTML_Shared
 
     /// Initialize with a value for the imagesizes attribute
     public init(value: String) { self.rawValue = value }
+
+    /// Initialize with an integer literal
+    public init(integerLiteral value: Int) { self.rawValue = String(value) }
 }

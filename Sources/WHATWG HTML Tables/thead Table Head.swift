@@ -56,7 +56,8 @@ public struct TableHead: WHATWG_HTML.Element.`Protocol` {
     /// Creates a new TableHead element.
     public init(
 
-        ) {
+        )
+    {
 
     }
 }

@@ -43,7 +43,8 @@ public struct DescriptionDetails: WHATWG_HTML.Element.`Protocol` {
     /// Creates a new DescriptionDetails element.
     public init(
 
-        ) {
+        )
+    {
 
     }
 }

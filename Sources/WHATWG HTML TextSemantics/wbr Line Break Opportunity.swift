@@ -65,7 +65,8 @@ public struct LineBreakOpportunity: WHATWG_HTML.Element.`Protocol` {
     /// Creates a new LineBreakOpportunity element.
     public init(
 
-        ) {
+        )
+    {
 
     }
 }

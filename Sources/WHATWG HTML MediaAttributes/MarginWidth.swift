@@ -32,7 +32,7 @@ public import WHATWG_HTML_Shared
 /// iframe.marginwidth(marginWidth)
 /// ```
 
-@dynamicMemberLookup public struct MarginWidth: WHATWG_HTML.StringAttribute {
+@dynamicMemberLookup public struct MarginWidth: WHATWG_HTML.StringAttribute, ExpressibleByIntegerLiteral {
     /// The name of the HTML attribute
     @inlinable public static var attribute: String { "marginwidth" }
 
@@ -41,10 +41,12 @@ public import WHATWG_HTML_Shared
 
     /// Initialize with a value for the imagesizes attribute
     public init(value: String) { self.rawValue = value }
+
+    /// Initialize with an integer literal
+    public init(integerLiteral value: Int) { self.rawValue = String(value) }
 }
 
-
-//extension Geometry<Int>.Width {
+// extension Geometry<Int>.Width {
 //    /// A wrapper to use Geometry<Int>.Width as an HTML marginwidth attribute
 //    public struct Margin: WHATWG_HTML.StringAttribute {
 //        /// The underlying width value
@@ -65,15 +67,15 @@ public import WHATWG_HTML_Shared
 //        /// Initialize with an integer value
 //        @inlinable public init(_ value: Int) { self.width = Geometry<Int>.Width(value) }
 //    }
-//}
+// }
 //
-//extension Geometry<Int>.Width.Margin: ExpressibleByIntegerLiteral {
+// extension Geometry<Int>.Width.Margin: ExpressibleByIntegerLiteral {
 //    @inlinable public init(integerLiteral value: IntegerLiteralType) { self.init(value) }
-//}
+// }
 //
-//extension Geometry<Int>.Width.Margin: Sendable {}
-//extension Geometry<Int>.Width.Margin: Equatable {}
-//extension Geometry<Int>.Width.Margin: Hashable {}
+// extension Geometry<Int>.Width.Margin: Sendable {}
+// extension Geometry<Int>.Width.Margin: Equatable {}
+// extension Geometry<Int>.Width.Margin: Hashable {}
 //
 ///// Typealias for convenience - use `MarginWidth` as shorthand for `Geometry<Int>.Width.Margin`
-//public typealias MarginWidth = Geometry<Int>.Width.Margin
+// public typealias MarginWidth = Geometry<Int>.Width.Margin

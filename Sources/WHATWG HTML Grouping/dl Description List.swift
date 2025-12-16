@@ -55,7 +55,8 @@ public struct DescriptionList: WHATWG_HTML.Element.`Protocol` {
     /// Creates a new Description List element.
     public init(
 
-        ) {
+        )
+    {
 
     }
 }

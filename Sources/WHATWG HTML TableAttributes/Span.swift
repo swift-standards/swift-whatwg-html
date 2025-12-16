@@ -50,7 +50,7 @@ public import WHATWG_HTML_Shared
 ///
 /// Since span on col/colgroup represents the number of columns (horizontal),
 /// it semantically aligns with width.
-public struct ColumnSpan: WHATWG_HTML.StringAttribute {
+public struct Span: WHATWG_HTML.StringAttribute, ExpressibleByIntegerLiteral {
     /// The underlying width value representing column count
     public var width: Int
 
@@ -60,16 +60,21 @@ public struct ColumnSpan: WHATWG_HTML.StringAttribute {
     /// The raw string value
     @inlinable public var rawValue: String { width.description }
 
-
     /// Initialize with a string value
     @inlinable public init(value: String) {
         let intValue = Int(value) ?? 1
         precondition(intValue > 0, "Span value must be a positive integer")
-        self.width = try! Int(value)
+        self.width = intValue
     }
 
     /// Initialize with an integer value
     @inlinable public init(_ value: Int) {
+        precondition(value > 0, "Span value must be a positive integer")
+        self.width = value
+    }
+
+    /// Initialize with an integer literal
+    @inlinable public init(integerLiteral value: Int) {
         precondition(value > 0, "Span value must be a positive integer")
         self.width = value
     }

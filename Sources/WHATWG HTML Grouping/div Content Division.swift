@@ -41,11 +41,12 @@ public import WHATWG_HTML_Shared
 public struct ContentDivision: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "div" }
-    
+
     /// Creates a new ContentDivision element.
     public init(
-        
-    ) {
-        
+
+        )
+    {
+
     }
 }

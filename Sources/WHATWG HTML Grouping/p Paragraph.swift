@@ -48,7 +48,8 @@ public struct Paragraph: WHATWG_HTML.Element.`Protocol` {
     /// Creates a new paragraph element with the specified content.
     public init(
 
-        ) {
+        )
+    {
 
     }
 }

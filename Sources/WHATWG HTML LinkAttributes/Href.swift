@@ -186,7 +186,8 @@ extension Href {
     /// )
     /// // Result: "mailto:user@example.com?subject=Hello&body=This%20is%20a%20test%20message"
     /// ```
-    public static func email(_ address: String, subject: String? = nil, body: String? = nil) -> Href {
+    public static func email(_ address: String, subject: String? = nil, body: String? = nil) -> Href
+    {
         var url = "mailto:\(address)"
 
         if subject != nil || body != nil {

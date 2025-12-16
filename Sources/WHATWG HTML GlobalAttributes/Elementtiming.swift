@@ -80,7 +80,8 @@ extension Elementtiming {
     }
 
     /// Common predefined timing categories for semantic naming
-    public struct Category: Sendable, Hashable, ExpressibleByStringLiteral, CustomStringConvertible {
+    public struct Category: Sendable, Hashable, ExpressibleByStringLiteral, CustomStringConvertible
+    {
         public var value: String
 
         public init(_ value: String) { self.value = value }

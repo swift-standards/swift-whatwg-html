@@ -46,7 +46,8 @@ public struct Ruby: WHATWG_HTML.Element.`Protocol` {
     /// Creates a new Ruby element with the specified attributes.
     public init(
 
-        ) {
+        )
+    {
 
     }
 }

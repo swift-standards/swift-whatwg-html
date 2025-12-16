@@ -47,7 +47,6 @@ public struct RowSpan: WHATWG_HTML.StringAttribute {
     /// The raw string value
     @inlinable public var rawValue: String { String(height) }
 
-
     /// Initialize with a string value
     @inlinable public init(value: String) {
         self.height = .init(value) ?? 1

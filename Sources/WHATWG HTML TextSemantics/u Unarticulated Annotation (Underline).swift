@@ -47,7 +47,8 @@ public struct UnarticulatedAnnotation: WHATWG_HTML.Element.`Protocol` {
     /// Creates a new UnarticulatedAnnotation element.
     public init(
 
-        ) {
+        )
+    {
 
     }
 }
