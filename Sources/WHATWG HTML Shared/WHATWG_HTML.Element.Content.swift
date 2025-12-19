@@ -25,63 +25,6 @@ extension WHATWG_HTML.Element {
     }
 }
 
-extension WHATWG_HTML.Element.Content {
-    /// Returns the content categories for a given tag name.
-    ///
-    /// This is the single source of truth for unconditional category membership.
-    public static func categories(for tag: String) -> Set<Category> {
-        var result: Set<Category> = []
-        for category in Category.allCases {
-            if category.elements.contains(tag) { result.insert(category) }
-        }
-        return result
-    }
-
-    /// Returns the content model for a given tag name.
-    ///
-    /// This is the single source of truth for content models as defined
-    /// in the WHATWG HTML Living Standard.
-    public static func model(for tag: String) -> Model {
-        switch tag {
-        // Void elements have "nothing" content model
-        case "area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source",
-            "track", "wbr":
-            return .nothing
-
-        // Text-only content
-        case "title", "textarea", "script", "style": return .text
-
-        // Transparent content models
-        case "a", "ins", "del", "map", "noscript", "slot", "object", "canvas": return .transparent
-
-        // Metadata content
-        case "head": return .categories([.metadata])
-
-        // Select element inner content
-        case "select": return .categories([.`select element inner content`])
-
-        // Optgroup element inner content
-        case "optgroup": return .categories([.`optgroup element inner content`])
-
-        // Option element inner content
-        case "option": return .categories([.`option element inner content`])
-
-        // Phrasing content elements
-        case "abbr", "b", "bdi", "bdo", "cite", "code", "data", "dfn", "em", "i", "kbd", "mark",
-            "output", "q", "rp", "rt", "s", "samp", "small", "span", "strong", "sub", "sup", "time",
-            "u", "var", "label", "button", "meter", "progress", "h1", "h2", "h3", "h4", "h5", "h6",
-            "p", "pre", "legend", "summary":
-            return .categories([.phrasing])
-
-        default:
-            // Default to flow content for most elements
-            return .categories([.flow])
-        }
-    }
-}
-
-// MARK: - Inter-element Whitespace
-
 // MARK: - Transparent Content Model
 
 extension WHATWG_HTML.Element.Content {
@@ -122,10 +65,7 @@ extension WHATWG_HTML.Element.Content.Model {
         case .categories(let allowed): return allowed.contains(category)
         case .transparent:
             // When no parent, transparent accepts any flow content
-            return category == .flow
-                || WHATWG_HTML.Element.Content.Category.flow.elements.isSuperset(
-                    of: category.elements
-                )
+            return true
         }
     }
 
