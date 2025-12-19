@@ -57,6 +57,8 @@ public import WHATWG_HTML_Shared
 ///   attributes based on the metadata type.
 public struct Meta: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "meta" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.metadata]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .nothing)
 
     /// Declares the document's character encoding.
     ///

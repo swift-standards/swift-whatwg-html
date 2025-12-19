@@ -60,6 +60,8 @@ public import WHATWG_HTML_Shared
 ///   appropriate attributes based on the configuration.
 public struct Area: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "area" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .nothing)
 
     /// The shape of the associated hot spot.
     ///

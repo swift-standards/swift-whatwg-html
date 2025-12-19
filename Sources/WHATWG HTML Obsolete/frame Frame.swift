@@ -34,6 +34,8 @@ public import WHATWG_HTML_Shared
 public struct Frame: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "frame" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 
     /// The URL of the document to be displayed in the frame
     public var src: Src?

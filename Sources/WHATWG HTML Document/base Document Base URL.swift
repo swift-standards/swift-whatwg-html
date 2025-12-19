@@ -38,6 +38,8 @@ public import WHATWG_HTML_Shared
 ///   It is a void element and does not have a closing tag.
 public struct Base: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "base" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.metadata]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .nothing)
 
     /// The configuration for the base element, which must include an href, a target, or both.
     public var configuration: Configuration

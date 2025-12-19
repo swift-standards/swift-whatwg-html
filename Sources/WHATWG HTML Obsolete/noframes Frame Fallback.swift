@@ -14,6 +14,8 @@ public import WHATWG_HTML_Shared
     message: "The noframes element is obsolete. Use modern layout techniques instead."
 ) public struct FrameFallback: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "noframes" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 
     public init() {}
 }

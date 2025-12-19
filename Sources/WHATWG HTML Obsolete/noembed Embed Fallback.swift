@@ -14,6 +14,8 @@ public import WHATWG_HTML_Shared
     message: "The <noembed> element is deprecated. Modern browsers support <embed>."
 ) public struct EmbedFallback: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "noembed" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 
     public init() {}
 }

@@ -40,6 +40,8 @@ public import WHATWG_HTML_Shared
 public struct HtmlRoot: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "html" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 
     /// The XML namespace of the document (required for XHTML)
     public var xmlns: Xmlns?

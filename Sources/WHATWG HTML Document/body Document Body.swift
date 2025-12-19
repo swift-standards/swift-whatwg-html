@@ -57,6 +57,8 @@ public import WHATWG_HTML_Shared
 ///   all the visible content of the webpage.
 public struct Body: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "body" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 
     /// Function to call after the user has printed the document.
     @available(*, deprecated, message: "Use JavaScript addEventListener('afterprint') instead")

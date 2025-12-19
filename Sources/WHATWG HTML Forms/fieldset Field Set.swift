@@ -48,6 +48,9 @@ public struct FieldSet: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "fieldset" }
 
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .palpable]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
+
     /// Disables all form controls that are descendants of the fieldset
     public var disabled: Disabled?
 

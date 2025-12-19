@@ -59,6 +59,8 @@ public import WHATWG_HTML_TableAttributes
 public struct TableColumn: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "col" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .nothing)
 
     /// The number of consecutive columns this column element spans
     public var span: Span?

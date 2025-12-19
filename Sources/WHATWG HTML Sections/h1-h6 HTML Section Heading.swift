@@ -25,6 +25,8 @@ public import WHATWG_HTML_Shared
 // MARK: - H1 Element
 public struct H1: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "h1" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .heading, .palpable]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 
     public init() {}
 }
@@ -32,6 +34,8 @@ public struct H1: WHATWG_HTML.Element.`Protocol` {
 // MARK: - H2 Element
 public struct H2: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "h2" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .heading, .palpable]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 
     public init() {}
 }
@@ -39,6 +43,8 @@ public struct H2: WHATWG_HTML.Element.`Protocol` {
 // MARK: - H3 Element
 public struct H3: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "h3" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .heading, .palpable]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 
     public init() {}
 }
@@ -46,6 +52,8 @@ public struct H3: WHATWG_HTML.Element.`Protocol` {
 // MARK: - H4 Element
 public struct H4: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "h4" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .heading, .palpable]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 
     public init() {}
 }
@@ -53,6 +61,8 @@ public struct H4: WHATWG_HTML.Element.`Protocol` {
 // MARK: - H5 Element
 public struct H5: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "h5" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .heading, .palpable]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 
     public init() {}
 }
@@ -60,6 +70,8 @@ public struct H5: WHATWG_HTML.Element.`Protocol` {
 // MARK: - H6 Element
 public struct H6: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "h6" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .heading, .palpable]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
 
     public init() {}
 }

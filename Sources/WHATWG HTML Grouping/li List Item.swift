@@ -53,6 +53,8 @@ public import WHATWG_HTML_Shared
 public struct ListItem: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "li" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 
     /// The ordinal value of the list item (only meaningful within `<ol>` elements).
     /// This integer attribute indicates the current ordinal value as defined by the

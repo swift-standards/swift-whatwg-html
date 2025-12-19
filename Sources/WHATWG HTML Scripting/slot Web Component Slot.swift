@@ -37,6 +37,9 @@ public struct WebComponentSlot: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "slot" }
 
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .phrasing]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .transparent)
+
     /// The slot's name.
     /// When the slot's containing component gets rendered, the slot is rendered with the
     /// custom element's child that has a matching slot attribute.

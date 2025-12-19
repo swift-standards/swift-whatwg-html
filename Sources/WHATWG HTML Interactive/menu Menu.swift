@@ -11,5 +11,8 @@ public import WHATWG_HTML_Shared
 public struct Menu: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "menu" }
 
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
+
     public init() {}
 }

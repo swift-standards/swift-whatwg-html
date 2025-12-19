@@ -14,6 +14,8 @@ public import WHATWG_HTML_Shared
     message: "The <plaintext> element is deprecated. Use <pre> or <code> instead."
 ) public struct PlainText: WHATWG_HTML.Element.`Protocol` {
     @inlinable public static var tag: String { "plaintext" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.flow]))
 
     public init() {}
 }

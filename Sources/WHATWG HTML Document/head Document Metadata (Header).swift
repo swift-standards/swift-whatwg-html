@@ -47,6 +47,8 @@ public import WHATWG_HTML_Shared
 public struct Head: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "head" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.metadata]))
 
     /// Creates a new Head element with the specified content.
     public init() {}

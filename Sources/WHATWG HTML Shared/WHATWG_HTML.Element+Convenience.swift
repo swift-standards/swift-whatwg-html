@@ -5,18 +5,6 @@
 //  Created by Coen ten Thije Boonkkamp on 05/12/2025.
 //
 
-extension WHATWG_HTML.Element.`Protocol` {
-    /// Default implementation: derives categories from tag name lookup.
-    @inlinable public static var categories: Set<WHATWG_HTML.Element.Content.Category> {
-        WHATWG_HTML.Element.Content.categories(for: Self.tag)
-    }
-
-    /// Default implementation: derives content from tag name lookup.
-    @inlinable public static var content: WHATWG_HTML.Element.Content {
-        .init(model: WHATWG_HTML.Element.Content.model(for: Self.tag))
-    }
-}
-
 extension WHATWG_HTML.Element.Content.Category {
     /// Elements that unconditionally belong to this category.
     var elements: Set<String> {

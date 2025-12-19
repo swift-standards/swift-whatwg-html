@@ -41,6 +41,9 @@ public struct ProgressIndicator: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "progress" }
 
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.flow, .phrasing, .palpable]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
+
     /// This attribute describes how much work the task indicated by the progress element requires.
     /// The max attribute, if present, must have a value greater than 0 and be a valid floating point number.
     /// The default value is `1`.

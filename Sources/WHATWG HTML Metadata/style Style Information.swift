@@ -43,6 +43,8 @@ public import WHATWG_HTML_Shared
 public struct Style: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "style" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.metadata]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .text)
 
     /// Defines which media the style should be applied to. Its value is a media query, which defaults to "all" if the attribute is missing.
     public var media: Media?

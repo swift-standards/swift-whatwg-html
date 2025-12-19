@@ -50,6 +50,9 @@ public struct DisclosureSummary: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "summary" }
 
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .categories([.phrasing]))
+
     /// Creates a new DisclosureSummary element.
     public init(
 

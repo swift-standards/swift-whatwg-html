@@ -43,6 +43,8 @@ public import WHATWG_HTML_Shared
 public struct Track: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "track" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = []
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .nothing)
 
     /// Indicates that the track should be enabled by default unless the user's preferences indicate otherwise
     public var `default`: Default?

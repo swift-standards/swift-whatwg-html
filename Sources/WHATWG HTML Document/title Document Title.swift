@@ -54,6 +54,8 @@ public import WHATWG_HTML_Shared
 public struct Title: WHATWG_HTML.Element.`Protocol` {
     /// The HTML tag name
     @inlinable public static var tag: String { "title" }
+    public static let categories: Set<WHATWG_HTML.Element.Content.Category> = [.metadata]
+    public static let content: WHATWG_HTML.Element.Content = .init(model: .text)
 
     /// Creates a new Title element with the specified text content.
     public init(
