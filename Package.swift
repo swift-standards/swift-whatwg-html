@@ -83,12 +83,13 @@ extension Target.Dependency {
     // External dependencies
     static var rfc2045: Self { .product(name: "RFC 2045", package: "swift-rfc-2045") }
     static var iso8601: Self { .product(name: "ISO 8601", package: "swift-iso-8601") }
-    static var standards: Self { .product(name: "Standards", package: "swift-standards") }
-    static var geometry: Self { .product(name: "Geometry", package: "swift-standards") }
+    static var standards: Self { .product(name: "Standard Library Extensions", package: "swift-standard-library-extensions") }
+    static var geometry: Self { .product(name: "Geometry Primitives", package: "swift-geometry-primitives") }
     static var incits41986: Self { .product(name: "INCITS 4 1986", package: "swift-incits-4-1986") }
 
     // Test dependencies
-    static var standardsTestSupport: Self { .product(name: "StandardsTestSupport", package: "swift-standards") }
+    static var standardsTestSupport: Self { .product(name: "Test Primitives", package: "swift-test-primitives") }
+    static var binary: Self { .product(name: "Binary Primitives", package: "swift-binary-primitives") }
 }
 
 // MARK: - Package Definition
@@ -234,10 +235,13 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/swift-standards/swift-rfc-2045", from: "0.3.3"),
-        .package(url: "https://github.com/swift-standards/swift-iso-8601", from: "0.2.2"),
-        .package(url: "https://github.com/swift-standards/swift-standards", from: "0.16.1"),
-        .package(url: "https://github.com/swift-standards/swift-incits-4-1986", from: "0.6.3"),
+        .package(path: "../swift-rfc-2045"),
+        .package(path: "../swift-iso-8601"),
+        .package(path: "../../swift-primitives/swift-standard-library-extensions"),
+        .package(path: "../../swift-primitives/swift-geometry-primitives"),
+        .package(path: "../../swift-primitives/swift-binary-primitives"),
+        .package(path: "../../swift-primitives/swift-test-primitives"),
+        .package(path: "../swift-incits-4-1986"),
     ],
     targets: [
         // ============================================================
@@ -270,7 +274,8 @@ let package = Package(
             name: .whatwgHTMLGlobalAttributes,
             dependencies: [
                 .whatwgHTMLShared,
-                .iso8601
+                .iso8601,
+                .binary
             ]
         ),
         .target(

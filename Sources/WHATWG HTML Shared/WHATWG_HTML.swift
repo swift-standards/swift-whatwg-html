@@ -12,7 +12,7 @@
 
 @_exported import INCITS_4_1986
 // Re-export shared dependencies
-@_exported import Standards
+@_exported import Standard_Library_Extensions
 
 /// WHATWG HTML Living Standard namespace
 ///

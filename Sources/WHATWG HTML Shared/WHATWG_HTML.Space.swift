@@ -15,7 +15,7 @@
 ///
 /// This space marker enables typed geometry operations that distinguish
 /// between different coordinate systems.
-import Geometry
+public import Geometry_Primitives
 
 public typealias GeometryTypeAlias = Geometry
 

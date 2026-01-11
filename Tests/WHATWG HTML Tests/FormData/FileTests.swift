@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import Standards
+import Standard_Library_Extensions
 import Testing
 import WHATWG_HTML_Forms
 

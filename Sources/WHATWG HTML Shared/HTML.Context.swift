@@ -5,7 +5,7 @@
 ////  Context wrappers that convert geometry types to HTML attribute strings.
 ////
 //
-//import Geometry
+//import Geometry_Primitives
 //
 //// MARK: - HTML Geometry Conversion
 //
