@@ -17,7 +17,7 @@
 //        /// - Parameter width: The width in HTML space.
 //        /// - Returns: String representation for HTML attribute (e.g., "400").
 //        public static func attribute(width: WHATWG_HTML.Width) -> String {
-//            String(width._rawValue)
+//            String(width.rawValue)
 //        }
 //
 //        /// Convert a height value to an HTML attribute string.
@@ -25,7 +25,7 @@
 //        /// - Parameter height: The height in HTML space.
 //        /// - Returns: String representation for HTML attribute (e.g., "300").
 //        public static func attribute(height: WHATWG_HTML.Height) -> String {
-//            String(height._rawValue)
+//            String(height.rawValue)
 //        }
 //    }
 //}
@@ -41,12 +41,12 @@
 //
 //        /// Width attribute value (rounded to integer).
 //        public var width: String {
-//            String(Int(rectangle.width._rawValue))
+//            String(Int(rectangle.width.rawValue))
 //        }
 //
 //        /// Height attribute value (rounded to integer).
 //        public var height: String {
-//            String(Int(rectangle.height._rawValue))
+//            String(Int(rectangle.height.rawValue))
 //        }
 //    }
 //}
