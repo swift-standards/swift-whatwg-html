@@ -5,7 +5,7 @@
 //  Created by Coen ten Thije Boonkkamp on 05/12/2025.
 //
 
-import INCITS_4_1986
+import ASCII
 
 extension WHATWG_HTML.Element.Content {
     /// Represents text content within an element.

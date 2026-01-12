@@ -85,7 +85,7 @@ extension Target.Dependency {
     static var iso8601: Self { .product(name: "ISO 8601", package: "swift-iso-8601") }
     static var standards: Self { .product(name: "Standard Library Extensions", package: "swift-standard-library-extensions") }
     static var geometry: Self { .product(name: "Geometry Primitives", package: "swift-geometry-primitives") }
-    static var incits41986: Self { .product(name: "INCITS 4 1986", package: "swift-incits-4-1986") }
+    static var incits41986: Self { .product(name: "ASCII", package: "swift-ascii") }
 
     // Test dependencies
     static var standardsTestSupport: Self { .product(name: "Test Primitives", package: "swift-test-primitives") }
@@ -241,7 +241,7 @@ let package = Package(
         .package(path: "../../swift-primitives/swift-geometry-primitives"),
         .package(path: "../../swift-primitives/swift-binary-primitives"),
         .package(path: "../../swift-primitives/swift-test-primitives"),
-        .package(path: "../swift-incits-4-1986"),
+        .package(path: "../../swift-foundations/swift-ascii"),
     ],
     targets: [
         // ============================================================

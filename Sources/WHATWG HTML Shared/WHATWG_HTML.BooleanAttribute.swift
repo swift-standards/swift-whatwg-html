@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-import INCITS_4_1986
+import ASCII
 
 extension WHATWG_HTML {
     /// Protocol for HTML boolean attributes

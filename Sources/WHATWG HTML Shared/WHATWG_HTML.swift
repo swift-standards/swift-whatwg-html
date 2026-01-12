@@ -10,7 +10,7 @@
 //
 // ===----------------------------------------------------------------------===//
 
-@_exported import INCITS_4_1986
+@_exported import ASCII
 // Re-export shared dependencies
 @_exported import Standard_Library_Extensions
 
