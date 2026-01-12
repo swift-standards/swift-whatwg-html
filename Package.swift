@@ -235,13 +235,13 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(path: "../swift-rfc-2045"),
-        .package(path: "../swift-iso-8601"),
-        .package(path: "../../swift-primitives/swift-standard-library-extensions"),
-        .package(path: "../../swift-primitives/swift-geometry-primitives"),
-        .package(path: "../../swift-primitives/swift-binary-primitives"),
-        .package(path: "../../swift-primitives/swift-test-primitives"),
-        .package(path: "../../swift-foundations/swift-ascii"),
+        .package(url: "https://github.com/swift-standards/swift-rfc-2045.git", from: "0.0.1"),
+        .package(url: "https://github.com/swift-standards/swift-iso-8601.git", from: "0.0.1"),
+        .package(url: "https://github.com/swift-primitives/swift-standard-library-extensions.git", from: "0.0.1"),
+        .package(url: "https://github.com/swift-primitives/swift-geometry-primitives.git", from: "0.0.1"),
+        .package(url: "https://github.com/swift-primitives/swift-binary-primitives.git", from: "0.0.1"),
+        .package(url: "https://github.com/swift-primitives/swift-test-primitives.git", from: "0.0.1"),
+        .package(url: "https://github.com/swift-foundations/swift-ascii.git", from: "0.0.1"),
     ],
     targets: [
         // ============================================================
