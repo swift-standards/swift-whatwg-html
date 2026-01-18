@@ -101,131 +101,131 @@ let package = Package(
         .iOS(.v26),
         .tvOS(.v26),
         .watchOS(.v26),
-        .visionOS(.v26),
+        .visionOS(.v26)
     ],
     products: [
         // ============================================================
         // MARK: Core Shared Module
         // ============================================================
         .library(
-            name: .whatwgHTMLShared,
-            targets: [.whatwgHTMLShared]
+            name: "WHATWG HTML Shared",
+            targets: ["WHATWG HTML Shared"]
         ),
 
         // ============================================================
         // MARK: Data Types Module
         // ============================================================
         .library(
-            name: .whatwgHTMLFormData,
-            targets: [.whatwgHTMLFormData]
+            name: "WHATWG HTML FormData",
+            targets: ["WHATWG HTML FormData"]
         ),
 
         // ============================================================
         // MARK: Element Modules (Section-Based)
         // ============================================================
         .library(
-            name: .whatwgHTMLDocument,
-            targets: [.whatwgHTMLDocument]
+            name: "WHATWG HTML Document",
+            targets: ["WHATWG HTML Document"]
         ),
         .library(
-            name: .whatwgHTMLMetadata,
-            targets: [.whatwgHTMLMetadata]
+            name: "WHATWG HTML Metadata",
+            targets: ["WHATWG HTML Metadata"]
         ),
         .library(
-            name: .whatwgHTMLSections,
-            targets: [.whatwgHTMLSections]
+            name: "WHATWG HTML Sections",
+            targets: ["WHATWG HTML Sections"]
         ),
         .library(
-            name: .whatwgHTMLGrouping,
-            targets: [.whatwgHTMLGrouping]
+            name: "WHATWG HTML Grouping",
+            targets: ["WHATWG HTML Grouping"]
         ),
         .library(
-            name: .whatwgHTMLTextSemantics,
-            targets: [.whatwgHTMLTextSemantics]
+            name: "WHATWG HTML TextSemantics",
+            targets: ["WHATWG HTML TextSemantics"]
         ),
         .library(
-            name: .whatwgHTMLLinks,
-            targets: [.whatwgHTMLLinks]
+            name: "WHATWG HTML Links",
+            targets: ["WHATWG HTML Links"]
         ),
         .library(
-            name: .whatwgHTMLEdits,
-            targets: [.whatwgHTMLEdits]
+            name: "WHATWG HTML Edits",
+            targets: ["WHATWG HTML Edits"]
         ),
         .library(
-            name: .whatwgHTMLEmbedded,
-            targets: [.whatwgHTMLEmbedded]
+            name: "WHATWG HTML Embedded",
+            targets: ["WHATWG HTML Embedded"]
         ),
         .library(
-            name: .whatwgHTMLTables,
-            targets: [.whatwgHTMLTables]
+            name: "WHATWG HTML Tables",
+            targets: ["WHATWG HTML Tables"]
         ),
         .library(
-            name: .whatwgHTMLForms,
-            targets: [.whatwgHTMLForms]
+            name: "WHATWG HTML Forms",
+            targets: ["WHATWG HTML Forms"]
         ),
         .library(
-            name: .whatwgHTMLInteractive,
-            targets: [.whatwgHTMLInteractive]
+            name: "WHATWG HTML Interactive",
+            targets: ["WHATWG HTML Interactive"]
         ),
         .library(
-            name: .whatwgHTMLScripting,
-            targets: [.whatwgHTMLScripting]
+            name: "WHATWG HTML Scripting",
+            targets: ["WHATWG HTML Scripting"]
         ),
         .library(
-            name: .whatwgHTMLCustomElements,
-            targets: [.whatwgHTMLCustomElements]
+            name: "WHATWG HTML CustomElements",
+            targets: ["WHATWG HTML CustomElements"]
         ),
         .library(
-            name: .whatwgHTMLObsolete,
-            targets: [.whatwgHTMLObsolete]
+            name: "WHATWG HTML Obsolete",
+            targets: ["WHATWG HTML Obsolete"]
         ),
 
         // ============================================================
         // MARK: Attribute Modules (Usage-Based)
         // ============================================================
         .library(
-            name: .whatwgHTMLGlobalAttributes,
-            targets: [.whatwgHTMLGlobalAttributes]
+            name: "WHATWG HTML GlobalAttributes",
+            targets: ["WHATWG HTML GlobalAttributes"]
         ),
         .library(
-            name: .whatwgHTMLFormAttributes,
-            targets: [.whatwgHTMLFormAttributes]
+            name: "WHATWG HTML FormAttributes",
+            targets: ["WHATWG HTML FormAttributes"]
         ),
         .library(
-            name: .whatwgHTMLLinkAttributes,
-            targets: [.whatwgHTMLLinkAttributes]
+            name: "WHATWG HTML LinkAttributes",
+            targets: ["WHATWG HTML LinkAttributes"]
         ),
         .library(
-            name: .whatwgHTMLMediaAttributes,
-            targets: [.whatwgHTMLMediaAttributes]
+            name: "WHATWG HTML MediaAttributes",
+            targets: ["WHATWG HTML MediaAttributes"]
         ),
         .library(
-            name: .whatwgHTMLTableAttributes,
-            targets: [.whatwgHTMLTableAttributes]
+            name: "WHATWG HTML TableAttributes",
+            targets: ["WHATWG HTML TableAttributes"]
         ),
         .library(
-            name: .whatwgHTMLScriptAttributes,
-            targets: [.whatwgHTMLScriptAttributes]
+            name: "WHATWG HTML ScriptAttributes",
+            targets: ["WHATWG HTML ScriptAttributes"]
         ),
 
         // ============================================================
         // MARK: Convenience Umbrella Products
         // ============================================================
         .library(
-            name: .whatwgHTMLElements,
-            targets: [.whatwgHTMLElements]
+            name: "WHATWG HTML Elements",
+            targets: ["WHATWG HTML Elements"]
         ),
         .library(
-            name: .whatwgHTMLAttributes,
-            targets: [.whatwgHTMLAttributes]
+            name: "WHATWG HTML Attributes",
+            targets: ["WHATWG HTML Attributes"]
         ),
 
         // ============================================================
         // MARK: Main Umbrella (Everything)
         // ============================================================
         .library(
-            name: .whatwgHTML,
-            targets: [.whatwgHTML]
+            name: "WHATWG HTML",
+            targets: ["WHATWG HTML"]
         )
     ],
     traits: [
@@ -240,15 +240,14 @@ let package = Package(
         .package(path: "../../swift-primitives/swift-standard-library-extensions"),
         .package(path: "../../swift-primitives/swift-geometry-primitives"),
         .package(path: "../../swift-primitives/swift-binary-primitives"),
-        .package(path: "../../swift-primitives/swift-test-primitives"),
-        .package(path: "../../swift-foundations/swift-ascii"),
+        .package(path: "../../swift-foundations/swift-ascii")
     ],
     targets: [
         // ============================================================
         // MARK: Core Shared Target (Namespace + Protocols)
         // ============================================================
         .target(
-            name: .whatwgHTMLShared,
+            name: "WHATWG HTML Shared",
             dependencies: [
                 .standards,
                 .geometry,
@@ -260,7 +259,7 @@ let package = Package(
         // MARK: Data Types Target
         // ============================================================
         .target(
-            name: .whatwgHTMLFormData,
+            name: "WHATWG HTML FormData",
             dependencies: [
                 .whatwgHTMLShared,
                 .whatwgHTMLForms
@@ -271,7 +270,7 @@ let package = Package(
         // MARK: Attribute Targets (Usage-Based)
         // ============================================================
         .target(
-            name: .whatwgHTMLGlobalAttributes,
+            name: "WHATWG HTML GlobalAttributes",
             dependencies: [
                 .whatwgHTMLShared,
                 .iso8601,
@@ -279,7 +278,7 @@ let package = Package(
             ]
         ),
         .target(
-            name: .whatwgHTMLFormAttributes,
+            name: "WHATWG HTML FormAttributes",
             dependencies: [
                 .whatwgHTMLShared,
                 .whatwgHTMLGlobalAttributes,
@@ -288,7 +287,7 @@ let package = Package(
             ]
         ),
         .target(
-            name: .whatwgHTMLLinkAttributes,
+            name: "WHATWG HTML LinkAttributes",
             dependencies: [
                 .whatwgHTMLShared,
                 .rfc2045,
@@ -296,18 +295,18 @@ let package = Package(
             ]
         ),
         .target(
-            name: .whatwgHTMLMediaAttributes,
+            name: "WHATWG HTML MediaAttributes",
             dependencies: [
                 .whatwgHTMLShared,
                 .rfc2045
             ]
         ),
         .target(
-            name: .whatwgHTMLTableAttributes,
+            name: "WHATWG HTML TableAttributes",
             dependencies: [.whatwgHTMLShared]
         ),
         .target(
-            name: .whatwgHTMLScriptAttributes,
+            name: "WHATWG HTML ScriptAttributes",
             dependencies: [
                 .whatwgHTMLShared,
                 .rfc2045
@@ -320,7 +319,7 @@ let package = Package(
 
         // 4.1 The document element
         .target(
-            name: .whatwgHTMLDocument,
+            name: "WHATWG HTML Document",
             dependencies: [
                 .whatwgHTMLShared,
                 .whatwgHTMLGlobalAttributes,
@@ -330,7 +329,7 @@ let package = Package(
 
         // 4.2 Document metadata
         .target(
-            name: .whatwgHTMLMetadata,
+            name: "WHATWG HTML Metadata",
             dependencies: [
                 .whatwgHTMLShared,
                 .whatwgHTMLGlobalAttributes,
@@ -342,7 +341,7 @@ let package = Package(
 
         // 4.3 Sections
         .target(
-            name: .whatwgHTMLSections,
+            name: "WHATWG HTML Sections",
             dependencies: [
                 .whatwgHTMLShared,
                 .whatwgHTMLGlobalAttributes
@@ -351,29 +350,29 @@ let package = Package(
 
         // 4.4 Grouping content
         .target(
-            name: .whatwgHTMLGrouping,
+            name: "WHATWG HTML Grouping",
             dependencies: [
                 .whatwgHTMLShared,
                 .whatwgHTMLGlobalAttributes,
                 .whatwgHTMLFormAttributes  // For li element (Value)
-            ]
+    ]
         ),
 
         // 4.5 Text-level semantics
         .target(
-            name: .whatwgHTMLTextSemantics,
+            name: "WHATWG HTML TextSemantics",
             dependencies: [
                 .whatwgHTMLShared,
                 .whatwgHTMLGlobalAttributes,
                 .whatwgHTMLLinkAttributes,  // For <a> element
                 .whatwgHTMLFormAttributes,  // For <a> element (Target), <data> element (Value)
                 .whatwgHTMLMediaAttributes  // For <a> element (AttributionSrc)
-            ]
+    ]
         ),
 
         // 4.6 Links
         .target(
-            name: .whatwgHTMLLinks,
+            name: "WHATWG HTML Links",
             dependencies: [
                 .whatwgHTMLShared,
                 .whatwgHTMLLinkAttributes
@@ -382,7 +381,7 @@ let package = Package(
 
         // 4.7 Edits
         .target(
-            name: .whatwgHTMLEdits,
+            name: "WHATWG HTML Edits",
             dependencies: [
                 .whatwgHTMLShared,
                 .whatwgHTMLGlobalAttributes
@@ -391,7 +390,7 @@ let package = Package(
 
         // 4.8 Embedded content
         .target(
-            name: .whatwgHTMLEmbedded,
+            name: "WHATWG HTML Embedded",
             dependencies: [
                 .whatwgHTMLShared,
                 .whatwgHTMLGlobalAttributes,
@@ -404,7 +403,7 @@ let package = Package(
 
         // 4.9 Tabular data
         .target(
-            name: .whatwgHTMLTables,
+            name: "WHATWG HTML Tables",
             dependencies: [
                 .whatwgHTMLShared,
                 .whatwgHTMLGlobalAttributes,
@@ -415,7 +414,7 @@ let package = Package(
 
         // 4.10 Forms
         .target(
-            name: .whatwgHTMLForms,
+            name: "WHATWG HTML Forms",
             dependencies: [
                 .whatwgHTMLShared,
                 .whatwgHTMLGlobalAttributes,
@@ -423,22 +422,22 @@ let package = Package(
                 .whatwgHTMLTableAttributes,  // For textarea (Cols, Rows)
                 .whatwgHTMLMediaAttributes,  // For input[type=image] (Src, Alt, Width, Height)
                 .whatwgHTMLLinkAttributes  // For form element (Rel)
-            ]
+    ]
         ),
 
         // 4.11 Interactive elements
         .target(
-            name: .whatwgHTMLInteractive,
+            name: "WHATWG HTML Interactive",
             dependencies: [
                 .whatwgHTMLShared,
                 .whatwgHTMLGlobalAttributes,
                 .whatwgHTMLFormAttributes  // For details element (Name)
-            ]
+    ]
         ),
 
         // 4.12 Scripting
         .target(
-            name: .whatwgHTMLScripting,
+            name: "WHATWG HTML Scripting",
             dependencies: [
                 .whatwgHTMLShared,
                 .whatwgHTMLGlobalAttributes,
@@ -446,12 +445,12 @@ let package = Package(
                 .whatwgHTMLFormAttributes,  // For slot element (Name)
                 .whatwgHTMLMediaAttributes,  // For script element (AttributionSrc)
                 .whatwgHTMLLinkAttributes  // For script element (ReferrerPolicy, Integrity, Crossorigin)
-            ]
+    ]
         ),
 
         // 4.13 Custom elements
         .target(
-            name: .whatwgHTMLCustomElements,
+            name: "WHATWG HTML CustomElements",
             dependencies: [
                 .whatwgHTMLShared,
                 .whatwgHTMLGlobalAttributes
@@ -460,14 +459,14 @@ let package = Package(
 
         // Obsolete features
         .target(
-            name: .whatwgHTMLObsolete,
+            name: "WHATWG HTML Obsolete",
             dependencies: [
                 .whatwgHTMLShared,
                 .whatwgHTMLGlobalAttributes,
                 .whatwgHTMLTableAttributes,  // For Frameset (Cols, Rows)
                 .whatwgHTMLFormAttributes,   // For Frame (Name)
                 .whatwgHTMLMediaAttributes   // For Frame (Src, MarginHeight, MarginWidth)
-            ]
+    ]
         ),
 
         // ============================================================
@@ -476,7 +475,7 @@ let package = Package(
 
         // Umbrella for all elements
         .target(
-            name: .whatwgHTMLElements,
+            name: "WHATWG HTML Elements",
             dependencies: [
                 .whatwgHTMLDocument,
                 .whatwgHTMLMetadata,
@@ -497,7 +496,7 @@ let package = Package(
 
         // Umbrella for all attributes
         .target(
-            name: .whatwgHTMLAttributes,
+            name: "WHATWG HTML Attributes",
             dependencies: [
                 .whatwgHTMLGlobalAttributes,
                 .whatwgHTMLFormAttributes,
@@ -512,7 +511,7 @@ let package = Package(
         // MARK: Main Umbrella Target (Everything)
         // ============================================================
         .target(
-            name: .whatwgHTML,
+            name: "WHATWG HTML",
             dependencies: [
                 .whatwgHTMLShared,
                 .whatwgHTMLFormData,
@@ -523,15 +522,7 @@ let package = Package(
 
         // ============================================================
         // MARK: Test Targets
-        // ============================================================
-        .testTarget(
-            name: .whatwgHTML.tests,
-            dependencies: [
-                .whatwgHTML,
-                .standardsTestSupport
-            ]
-        )
-    ],
+        // ============================================================],
     swiftLanguageModes: [.v6]
 )
 
