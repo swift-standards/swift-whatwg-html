@@ -180,7 +180,7 @@ extension Form.Data.Entry.List: Collection {
 
 // MARK: - Sequence Protocol
 
-extension Form.Data.Entry.List: Sequence {
+extension Form.Data.Entry.List: Swift.Sequence {
     @inlinable public func makeIterator() -> Array<Form.Data.Entry>.Iterator {
         entries.makeIterator()
     }
